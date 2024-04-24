@@ -1,0 +1,84 @@
+# Producción
+
+Aquí vendría el texto sobre la producción y la metodología sobre la toma de muestras.
+
+```{r}
+source('C:/Hemera/garces/reporte/book/paquetes.R')
+
+data_produccion <- read_rds('C:/Hemera/garces/data/data_processed/cosecha/produccion.rds')
+
+produccion_info <- data_produccion |>
+  select(sitio,temporada,tratamiento,unidad,codigo) |>
+  distinct() |>
+  arrange(temporada,sitio,tratamiento,unidad)
+```
+
+## Peso total
+
+```{r}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_produccion |>
+  ggplot(aes(unidad,peso_total, fill = sitio)) +
+  geom_bar(stat = "identity", alpha = .7) +
+  geom_text(data = produccion_info, aes(unidad,25,label = codigo),size=3) +
+  facet_grid(temporada+sitio~tratamiento, labeller = as_labeller(names)) +
+  labs(y = 'Peso total (kg)',
+       x = 'Unidad') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+
+## Rendimiento
+
+Considerando el área de influencia de cada árbol como 8 m2, el rendimiento se determinó dividiendo el peso total de la producción del árbol entre su área de influencia en hectareas (0.0008 ha).
+
+```{r}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_produccion |>
+  ggplot(aes(unidad,rendimiento/1000, fill = sitio)) +
+  geom_bar(stat = "identity", alpha = .7) +
+  geom_text(data = produccion_info, aes(unidad,35,label = codigo),size=3) +
+  facet_grid(temporada+sitio~tratamiento, labeller = as_labeller(names)) +
+  labs(y = 'Rendimiento (ton/ha)',
+       x = 'Unidad') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+
+## Densidad
+
+Para estimar la densidad de la producción, se tomó una muestra aleatoria de 1 kg de la producción total del árbol. Posteriormente se contabilizaron los frutos de aquella muestra para obtener la densidad como la cantidad de frutos por kilogramo.
+
+```{r}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_produccion |>
+  ggplot(aes(unidad,densidad, fill = sitio)) +
+  geom_bar(stat = "identity", alpha = .7) +
+  geom_text(data = produccion_info, aes(unidad,300,label = codigo),size=3) +
+  facet_grid(temporada+sitio~tratamiento, labeller = as_labeller(names)) +
+  labs(y = 'Densidad (frutos/kg)',
+       x = 'Unidad') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```

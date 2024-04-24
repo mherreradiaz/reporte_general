@@ -1,0 +1,153 @@
+# Calidad
+
+Aquí vendría el texto sobre la calidad y la metodología sobre la toma de muestras.
+
+```{r}
+source('C:/Hemera/garces/reporte/book/paquetes.R')
+```
+
+## Apariencia
+
+La apariencia de los frutos se evaluó considerando su peso, diámetro y color. Para llevar a cabo este análisis, se seleccionaron al azar 20 frutos de una muestra representativa equivalente a 1 kg de la producción total.
+
+```{r}
+data_apariencia <- read_rds('C:/HEMERA/garces/data/data_processed/cosecha/apariencia.rds')
+
+apariencia_info <- data_apariencia |>
+  select(sitio,temporada,tratamiento,unidad,codigo) |>
+  distinct() |>
+  arrange(temporada,sitio,tratamiento,unidad)
+```
+
+### Peso
+
+```{r}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_apariencia |>
+  ggplot(aes(unidad,peso, fill = sitio)) +
+  geom_boxplot(alpha = .7) +
+  geom_text(data = apariencia_info, aes(unidad,20,label = codigo),size=3) +
+  facet_grid(temporada+sitio~tratamiento, labeller = as_labeller(names)) +
+  labs(y = 'Peso (gr)',
+       x = 'Unidad') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+
+### Diametro
+
+```{r}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_apariencia |>
+  ggplot(aes(unidad,diametro, fill = sitio)) +
+  geom_boxplot(alpha = .7) +
+  geom_text(data = apariencia_info, aes(unidad,42,label = codigo),size=3) +
+  facet_grid(temporada+sitio~tratamiento, labeller = as_labeller(names)) +
+  labs(y = 'Diametro (mm)',
+       x = 'Unidad') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+
+### Color
+
+Para cuantificar y calificar el color dentro de las muestras, se categorizó el color de cada fruto como se muestra en la @fig-escala.
+
+![Escala de color de cerezas.](figuras/misc/10_tabla_de_color.jpg){#fig-escala}
+
+```{r}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_apariencia |>
+  ggplot(aes(unidad,color, fill = sitio)) +
+  geom_boxplot(alpha = .7) +
+  geom_text(data = apariencia_info, aes(unidad,7.5,label = codigo),size=3) +
+  facet_grid(temporada+sitio~tratamiento, labeller = as_labeller(names)) +
+  labs(y = 'Grado de color',
+       x = 'Unidad') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+
+## Contenido de azucar
+
+Para determinar el contenido de azúcar, se midieron los grados Brix de cada fruto mediante la utilización de un refractrometro. Los frutos utilizados correspondieron a cinco frutos de cada árbol escogidos al azar, a partir de una selección de frutos de buena apariencia dentro de la muestra de 1 kg.
+
+```{r}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_brix <- read_rds('C:/HEMERA/garces/data/data_processed/cosecha/brix.rds')
+
+brix_info <- data_brix |>
+  select(sitio,temporada,tratamiento,unidad,codigo) |>
+  distinct() |>
+  arrange(temporada,sitio,tratamiento,unidad)
+
+data_brix |>
+  ggplot(aes(unidad,brix, fill = sitio)) +
+  geom_boxplot(alpha = .7) +
+  geom_text(data = brix_info, aes(unidad,33,label = codigo),size=3) +
+  facet_grid(temporada+sitio~tratamiento, labeller = as_labeller(names)) +
+  labs(y = 'Grados brix',
+       x = 'Unidad') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+
+## Daño
+
+Para determinar el daño de la producción, se estimó el porcentaje de frutos dañados a partir de una muesrtra aleatoria de 1 kg de la producción total. Los frutos dañados se consideraron como aquellos que presentaban desde daños severos o de la marchitez total del fruto hasta cracking leves, además de frutos dobles.
+
+```{r}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_daño <- read_rds('C:/Hemera/garces/data/data_processed/cosecha/daño.rds')
+
+daño_info <- data_daño |>
+  select(sitio,temporada,tratamiento,unidad,codigo) |>
+  distinct() |>
+  arrange(temporada,sitio,tratamiento,unidad)
+
+data_daño |>
+  mutate(daño = 100-(d_nulo/n)*100) |>
+  ggplot(aes(unidad,daño, fill = sitio)) +
+  geom_bar(stat = "identity", alpha = .7) +
+  geom_text(data = daño_info, aes(unidad,60,label = codigo),size=3) +
+  facet_grid(temporada+sitio~tratamiento, labeller = as_labeller(names)) +
+  labs(y = 'Daño (%)',
+       x = 'Unidad') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```

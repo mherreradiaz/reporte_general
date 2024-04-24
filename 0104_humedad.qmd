@@ -1,0 +1,108 @@
+# Humedad de suelo
+
+```{r}
+source('C:/Hemera/garces/reporte/book/paquetes.R')
+```
+
+Los datos de humedad de suelo se recopilaron mediante sensores ubicados en cada unidad de medición. Estos se conectaron al transmisor Yara igual que los sensores ZIM de turgor, y proporcionaron datos contínuos de humedad de suelo (%VWC) cada media hora para los dos sitios durante ambas temporadas.
+
+::: panel-tabset
+# Distribución
+
+```{r}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_sm <- read_rds('C:/Hemera/garces/data/data_processed/zim_sm.rds')
+
+sm_info <- data_sm |>
+  select(sitio,temporada,tratamiento,unidad,codigo) |>
+  distinct() |>
+  arrange(temporada,sitio,tratamiento,unidad)
+
+data_sm |> 
+  ggplot(aes(unidad,sm, fill = sitio)) +
+  geom_boxplot(alpha = .7) +
+  geom_text(data = sm_info, aes(unidad,110,label = codigo),size=3) +
+  facet_grid(temporada+sitio~tratamiento, labeller = as_labeller(names)) +
+  labs(y = 'Humedad de suelo (%VWC)',
+       x = 'Unidad') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 12),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+
+# Serie temporal 2022-2023
+
+```{r}
+#| fig-width: 13
+#| fig-height: 10
+#| fig-align: center
+#| lightbox: true
+
+data_sm |>
+  filter(temporada == '2022-2023') |>
+  mutate(fecha_hora = as.POSIXct(paste0(fecha,' ',hora,':00'), 
+                                 format = "%Y-%m-%d %H:%M")) |>
+  ggplot(aes(fecha_hora,sm)) +
+  geom_point(size = .1) +
+  ylim(0,60) +
+  scale_x_datetime(date_breaks = "2 month", date_labels = "%b",
+               limits = as.POSIXct(c("2022-10-30", "2023-03-01"))) +
+  facet_grid(tratamiento+unidad~sitio, labeller = as_labeller(names)) +
+  labs(x = "Meses", y = 'Humedad de suelo (%VWC)') +
+  theme_light() +
+  theme(text = element_text(size = 13),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+
+# Serie temporal 2023-2024
+
+```{r}
+#| fig-width: 13
+#| fig-height: 10
+#| fig-align: center
+#| lightbox: true
+
+data_sm |>
+  filter(temporada == '2023-2024') |>
+  mutate(fecha_hora = as.POSIXct(paste0(fecha,' ',hora,':00'), 
+                                 format = "%Y-%m-%d %H:%M")) |>
+  ggplot(aes(fecha_hora,sm)) +
+  geom_point(size = .1) +
+  ylim(0,60) +
+  scale_x_datetime(date_breaks = "2 month", date_labels = "%b",
+               limits = as.POSIXct(c("2023-10-30", "2024-03-01"))) +
+  facet_grid(tratamiento+unidad~sitio, labeller = as_labeller(names)) +
+  labs(x = "Meses", y = 'Humedad de suelo (%VWC)') +
+  theme_light() +
+  theme(text = element_text(size = 13),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+
+# Población de datos
+
+La siguiente tabla presenta la población de datos según temporada, sitio y tratamiento.
+
+```{r}
+data_sm |>
+  group_by(temporada,sitio,tratamiento,unidad) |>
+  summarise(n = sum(!is.na(sm))) |>
+  mutate(unidad = as.character(unidad),
+         tratamiento = ifelse(unidad != 1,"",tratamiento),
+         sitio= ifelse(tratamiento != 'T1',"",sitio),
+         temporada = ifelse(sitio != 'la_esperanza',"",temporada),
+         sitio = str_to_title(str_replace_all(sitio, "_", " "))) |>
+  rename(Temporada = temporada,
+         Sitio = sitio,
+         Tratamiento = tratamiento,
+         Unidad = unidad) |>
+  knitr::kable()
+```
+:::
