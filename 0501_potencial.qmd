@@ -1,0 +1,8 @@
+# Unidimensional: turgor
+
+```{r}
+source('C:/Hemera/garces/reporte/book/paquetes.R')
+
+
+```
+

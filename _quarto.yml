@@ -1,0 +1,64 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Reporte ID23_10297"
+  output-file: "reporte_general"
+  author: "M. Abel Herrera"
+  date: "24/4/2024"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - part: 'Capítulo 1: Análisis explotatorio'
+      chapters:
+        - 0101_produccion.qmd
+        - 0102_calidad.qmd
+        - 0103_parametros.qmd
+        - 0104_humedad.qmd
+        - 0105_clima.qmd
+        - 0106_pv.qmd
+    - part: 0200_capitulo_2.qmd
+      chapters: 
+        - 0201_clustering.qmd
+        - 0202_limpieza.qmd
+        - 0203_estandarizacion.qmd
+        - 0204_preprocesado.qmd
+    - part: 'Capítulo 3: Punto de pérdida de turgor'
+      chapters: 
+        - 0301_tlp.qmd
+    - part: 0400_capitulo_4.qmd
+      chapters:
+        - 0401_produccion.qmd
+        - 0402_calidad.qmd
+        - 0403_parametros.qmd
+        - 0404_humedad.qmd
+    - part: 'Capítulo 5: Modelo de potencial'
+      chapters: 
+        - 0501_potencial.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+filters:
+  - lightbox
+
+format:
+  html:
+    theme: cosmo
+    mermaid: 
+        theme: neutral
+  pdf:
+    documentclass: scrreprt
+
+execute:
+  echo: false
+  warning: false
+  message: false
+
+number-depth: 4
+lang: es
+
+editor: visual
+

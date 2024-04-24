@@ -1,0 +1,86 @@
+# Humedad de suelo
+
+::: panel-tabset
+
+# Por tratamiento
+```{r, results = 'hide'}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+source('C:/Hemera/garces/reporte/book/paquetes.R')
+
+data_sm <- read_rds('C:/Hemera/garces/data/data_processed/zim_sm.rds') |>
+  na.omit()
+
+data_cld <- data_sm |>
+  group_by(temporada,sitio) |>
+  reframe(cld(sm,tratamiento)) |>
+  rename(tratamiento = grupo)
+
+add <- diff(range(data_sm$sm))*0.2
+
+data_cld <- data_sm |>
+  group_by(temporada,sitio,tratamiento) |>
+  reframe(min = min(ifelse(length(boxplot.stats(sm)$out) != 0,
+                           min(boxplot.stats(sm)$out),9999999),
+                        boxplot.stats(sm)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(sm)$out) != 0,
+                           max(boxplot.stats(sm)$out),-9999999),
+                        boxplot.stats(sm)$stats[5])+add) |>
+  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+
+data_sm |>
+  ggplot(aes(tratamiento,sm,fill = sitio)) +
+  geom_boxplot() +
+  geom_text(data = data_cld, aes(tratamiento, max,label = cld),size=4) +
+  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  labs(y = 'Humedad de suelo (VWC%)',
+       x = 'Tratamiento') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+
+# Por temporada
+```{r, results = 'hide'}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_sm <- data_sm |>
+  mutate(temporada = as.factor(ifelse(temporada == '2022-2023',1,2)))
+
+data_cld <- data_sm |>
+  group_by(sitio, tratamiento) |>
+  reframe(cld(sm,temporada)) |>
+  rename(temporada = grupo)
+
+data_cld <- data_sm |>
+  group_by(temporada,sitio,tratamiento) |>
+  reframe(min = min(ifelse(length(boxplot.stats(sm)$out) != 0,
+                           min(boxplot.stats(sm)$out),9999999),
+                        boxplot.stats(sm)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(sm)$out) != 0,
+                           max(boxplot.stats(sm)$out),-9999999),
+                        boxplot.stats(sm)$stats[5])+add) |>
+  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+
+data_sm |>
+  ggplot(aes(temporada,sm,fill=tratamiento)) +
+  geom_boxplot() +
+  geom_text(data = data_cld, aes(temporada, max,label = cld),size=4) +
+  facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
+  labs(y = 'Huemdad de suelo (VWC%)',
+       x = 'Temporada') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+:::
