@@ -1,14 +1,14 @@
 # Parámetros fisiológicos
 
 ```{r}
-source('C:/Hemera/garces/reporte/book/paquetes.R')
+source('C:/Hemera/garces/script/funciones/paquetes.R')
 ```
 
 ## Fluorescencia
 
 ::: panel-tabset
-
 # Por tratamiento
+
 ```{r, results='hide'}
 #| fig-width: 10
 #| fig-height: 7
@@ -49,6 +49,7 @@ data_fluo |>
 ```
 
 # Por temporada
+
 ```{r, results='hide'}
 #| fig-width: 10
 #| fig-height: 7
@@ -91,8 +92,8 @@ data_fluo |>
 ## Potencial
 
 ::: panel-tabset
-
 # Por tratamiento
+
 ```{r, results='hide'}
 #| fig-width: 10
 #| fig-height: 7
@@ -135,6 +136,7 @@ data_potencial |>
 ```
 
 # Por temporada
+
 ```{r, results='hide'}
 #| fig-width: 10
 #| fig-height: 7
@@ -177,8 +179,8 @@ data_potencial |>
 ## LAI
 
 ::: panel-tabset
-
 # Por tratamiento
+
 ```{r, results='hide'}
 #| fig-width: 10
 #| fig-height: 7
@@ -219,6 +221,7 @@ data_lai |>
 ```
 
 # Por temporada
+
 ```{r, results='hide'}
 #| fig-width: 10
 #| fig-height: 7

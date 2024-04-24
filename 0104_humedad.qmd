@@ -1,7 +1,7 @@
 # Humedad de suelo
 
 ```{r}
-source('C:/Hemera/garces/reporte/book/paquetes.R')
+source('C:/Hemera/garces/script/funciones/paquetes.R')
 ```
 
 Los datos de humedad de suelo se recopilaron mediante sensores ubicados en cada unidad de medición. Estos se conectaron al transmisor Yara igual que los sensores ZIM de turgor, y proporcionaron datos contínuos de humedad de suelo (%VWC) cada media hora para los dos sitios durante ambas temporadas.

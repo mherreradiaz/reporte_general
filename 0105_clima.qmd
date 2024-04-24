@@ -1,7 +1,7 @@
 # Clima
 
 ```{r}
-source('C:/Hemera/garces/reporte/book/paquetes.R')
+source('C:/Hemera/garces/script/funciones/paquetes.R')
 ```
 
 Las variables climáticas fueron obtenidas de las estaciones meteorológicas de Garces Fruits ubicadas en ambos sitios.

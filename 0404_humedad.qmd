@@ -1,15 +1,15 @@
 # Humedad de suelo
 
 ::: panel-tabset
-
 # Por tratamiento
+
 ```{r, results = 'hide'}
 #| fig-width: 10
 #| fig-height: 7
 #| fig-align: center
 #| lightbox: true
 
-source('C:/Hemera/garces/reporte/book/paquetes.R')
+source('C:/Hemera/garces/script/funciones/paquetes.R')
 
 data_sm <- read_rds('C:/Hemera/garces/data/data_processed/zim_sm.rds') |>
   na.omit()
@@ -46,6 +46,7 @@ data_sm |>
 ```
 
 # Por temporada
+
 ```{r, results = 'hide'}
 #| fig-width: 10
 #| fig-height: 7

@@ -1,7 +1,7 @@
 # Calidad
 
 ```{r}
-source('C:/Hemera/garces/reporte/book/paquetes.R')
+source('C:/Hemera/garces/script/funciones/paquetes.R')
 
 data_apariencia <- read_rds('C:/Hemera/garces/data/data_processed/cosecha/apariencia.rds')
 ```
@@ -11,8 +11,8 @@ data_apariencia <- read_rds('C:/Hemera/garces/data/data_processed/cosecha/aparie
 ### Peso
 
 ::: panel-tabset
-
 # Por tratamiento
+
 ```{r, results='hide'}
 #| fig-width: 10
 #| fig-height: 7
@@ -52,6 +52,7 @@ data_apariencia |>
 ```
 
 # Por temporada
+
 ```{r, results = 'hide'}
 #| fig-width: 10
 #| fig-height: 7
@@ -95,8 +96,8 @@ data_apariencia_2 |>
 ### Diametro
 
 ::: panel-tabset
-
 # Por tratamiento
+
 ```{r, results = 'hide'}
 #| fig-width: 10
 #| fig-height: 7
@@ -135,6 +136,7 @@ data_apariencia |>
 ```
 
 # Por temporada
+
 ```{r, results='hide'}
 #| fig-width: 10
 #| fig-height: 7
@@ -178,8 +180,8 @@ data_apariencia_2 |>
 # Color
 
 ::: panel-tabset
-
 # Por tratamiento
+
 ```{r, results = 'hide'}
 #| fig-width: 10
 #| fig-height: 7
@@ -218,6 +220,7 @@ data_apariencia |>
 ```
 
 # Por temporada
+
 ```{r, results='hide'}
 #| fig-width: 10
 #| fig-height: 7
@@ -261,8 +264,8 @@ data_apariencia_2 |>
 ## Contenido de azucar
 
 ::: panel-tabset
-
 # Por tratamiento
+
 ```{r, results='hide'}
 #| fig-width: 10
 #| fig-height: 7
@@ -303,6 +306,7 @@ data_brix |>
 ```
 
 # Por temporada
+
 ```{r, results = 'hide'}
 #| fig-width: 10
 #| fig-height: 7
@@ -347,8 +351,8 @@ data_brix_2 |>
 ## Daño
 
 ::: panel-tabset
-
 # Por tratamiento
+
 ```{r, results='hide'}
 #| fig-width: 10
 #| fig-height: 7
@@ -390,6 +394,7 @@ data_daño |>
 ```
 
 # Por temporada
+
 ```{r, results = 'hide'}
 #| fig-width: 10
 #| fig-height: 7
