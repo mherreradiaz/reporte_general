@@ -1,0 +1,217 @@
+# Datos preprocesados
+
+## A nivel de unidad
+
+Para obtener el turgor preprocesado por árbol según tratamiento, se promediaron las series de los sensores por cada unidad, obteniendo una serie única para cada árbol de los tratamientos.
+
+### La Esperanza
+
+::: panel-tabset
+# T1 (2022-2023)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T1_Unidad_3.png){.lightbox}
+
+# T2 (2022-2023)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T2_Unidad_3.png){.lightbox}
+
+# T3 (2022-2023)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T3_Unidad_3.png){.lightbox}
+
+# T4 (2022-2023)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T4_Unidad_3.png){.lightbox}
+
+# T1 (2023-2024)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T1_Unidad_3.png){.lightbox}
+
+# T2 (2023-2024)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T2_Unidad_3.png){.lightbox}
+
+# T3 (2023-2024)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T3_Unidad_3.png){.lightbox}
+
+# T4 (2023-2024)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T4_Unidad_3.png){.lightbox}
+:::
+
+### Rio Claro
+
+::: panel-tabset
+# T1 (2022-2023)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T1_Unidad_3.png){.lightbox}
+
+# T2 (2022-2023)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T2_Unidad_3.png){.lightbox}
+
+# T3 (2022-2023)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T3_Unidad_3.png){.lightbox}
+
+# T4 (2022-2023)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T4_Unidad_3.png){.lightbox}
+
+# T1 (2023-2024)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T1_Unidad_3.png){.lightbox}
+
+# T2 (2023-2024)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T2_Unidad_3.png){.lightbox}
+
+# T3 (2023-2024)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T3_Unidad_3.png){.lightbox}
+
+# T4 (2023-2024)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T4_Unidad_3.png){.lightbox}
+:::
+
+## A nivel de tratamiento
+
+Para obtener el turgor preprocesado a nivel de tratamiento, se promediaron las series promediadas de cada unidad según tratamiento, obteniendo una serie única para cada tratamiento de en ambos sitios.
+
+### La Esperanza
+
+::: panel-tabset
+# T1 (2022-2023)
+
+![](figuras/05_turgor_tratamiento/2022_2023_La_Esperanza_T1.png){.lightbox}
+
+# T2 (2022-2023)
+
+![](figuras/05_turgor_tratamiento/2022_2023_La_Esperanza_T2.png){.lightbox}
+
+# T3 (2022-2023)
+
+![](figuras/05_turgor_tratamiento/2022_2023_La_Esperanza_T3.png){.lightbox}
+
+# T4 (2022-2023)
+
+![](figuras/05_turgor_tratamiento/2022_2023_La_Esperanza_T4.png){.lightbox}
+
+# T1 (2023-2024)
+
+![](figuras/05_turgor_tratamiento/2023_2024_La_Esperanza_T1.png){.lightbox}
+
+# T2 (2023-2024)
+
+![](figuras/05_turgor_tratamiento/2023_2024_La_Esperanza_T2.png){.lightbox}
+
+# T3 (2023-2024)
+
+![](figuras/05_turgor_tratamiento/2023_2024_La_Esperanza_T3.png){.lightbox}
+
+# T4 (2023-2024)
+
+![](figuras/05_turgor_tratamiento/2023_2024_La_Esperanza_T4.png){.lightbox}
+:::
+
+#### Rio Claro
+
+::: panel-tabset
+# T1 (2022-2023)
+
+![](figuras/05_turgor_tratamiento/2022_2023_Rio_Claro_T1.png){.lightbox}
+
+# T2 (2022-2023)
+
+![](figuras/05_turgor_tratamiento/2022_2023_Rio_Claro_T2.png){.lightbox}
+
+# T3 (2022-2023)
+
+![](figuras/05_turgor_tratamiento/2022_2023_Rio_Claro_T3.png){.lightbox}
+
+# T4 (2022-2023)
+
+![](figuras/05_turgor_tratamiento/2022_2023_Rio_Claro_T4.png){.lightbox}
+
+# T1 (2023-2024)
+
+![](figuras/05_turgor_tratamiento/2023_2024_Rio_Claro_T1.png){.lightbox}
+
+# T2 (2023-2024)
+
+![](figuras/05_turgor_tratamiento/2023_2024_Rio_Claro_T2.png){.lightbox}
+
+# T3 (2023-2024)
+
+![](figuras/05_turgor_tratamiento/2023_2024_Rio_Claro_T3.png){.lightbox}
+
+# T4 (2023-2024)
+
+![](figuras/05_turgor_tratamiento/2023_2024_Rio_Claro_T4.png){.lightbox}
+:::

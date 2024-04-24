@@ -1,0 +1,7 @@
+# Capítulo 4: Análisis comparativo
+
+Para hallar diferencias significativas tanto a nivel de tratamiento como de temporada en un mismo sitio, se utilizó el test de Dunn, el cual corresponde a una prueba post-hoc del test de Kruskal-Wallis para comparar múltiples grupos sin necesidad de que los datos posean una distribución normal (no-paramétrica).
+
+A nivel de tratamiento, se investigaron las diferencias entre los distintos tratamientos aplicados en un mismo sitio y temporada. Mientras que, a nivel de temporada, se examinaron las diferencias entre distintas temporadas dentro del mismo sitio. Para ambos análisis se utilizó un p-value ajustado de 0.05/2.
+
+Para visualizar las diferencias entre grupos, se generaron letras que se colocaron en cada boxplot. Estas letras indican los grupos de semejanza entre sí, permitiendo una interpretación más clara y detallada de los resultados obtenidos en el análisis estadístico.

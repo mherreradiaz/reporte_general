@@ -1,0 +1,35 @@
+# Punto de pérdida de turgor
+
+A continuación se presentan los puntos de pérdida de turgor de cada unidad, según tratamiento, sitio y temporada, a partir de las curvas presión-volumen, como fue descrito en la sección [-@sec-pv].
+
+```{r}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+source('C:/Hemera/garces/reporte/book/paquetes.R')
+
+data_tlp <- read_rds('C:/Hemera/garces/data/data_processed/tlp.rds') |>
+  mutate(tlp = -10*tlp)
+
+tlp_info <- data_tlp |>
+  select(-tlp) |>
+  distinct() |>
+  arrange(temporada,sitio,tratamiento,unidad)
+
+data_tlp |>
+  ggplot(aes(unidad,tlp, fill = sitio)) +
+  geom_bar(stat = "identity", alpha = .7) +
+  geom_text(data = tlp_info, aes(unidad,40,label = codigo),size=3) +
+  facet_grid(temporada+sitio~tratamiento, labeller = as_labeller(names)) +
+  labs(y = expression(paste("Potencial ", (kPa^-1))),
+       x = 'Unidad') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+
+
+```
+
