@@ -8,9 +8,10 @@ book:
   author: "M. Abel Herrera"
   date: "24/4/2024"
   chapters:
-    - index.qmd
-    - summary.qmd
-    - intro.qmd
+    - part: index.qmd
+      chapters:
+        - summary.qmd
+        - intro.qmd
     - part: 'Capítulo 1: Análisis explotatorio'
       chapters:
         - 0101_produccion.qmd
