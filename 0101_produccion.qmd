@@ -1,11 +1,11 @@
 # Producción
 
-Aquí vendría el texto sobre la producción y la metodología sobre la toma de muestras.
+La metodología utilizada para la determinación del peso total, rendimiento y densidad de frutos fue la misma que en el [reporte 2022-2023](https://mherreradiaz.github.io/reporte_general/anexo/01_reporte_calidad_produccion.pdf). Las cosechas se realizaron el 23 de diciembre de 2022 en Río Claro y el 12 de diciembre de 2022 en La Esperanza.
 
 ```{r}
-source('C:/Hemera/garces/script/funciones/paquetes.R')
+source('C:/Users/mauricio.herrera/Documents/Projectos/garces/script/funciones/paquetes.R')
 
-data_produccion <- read_rds('C:/Hemera/garces/data/data_processed/cosecha/produccion.rds')
+data_produccion <- read_rds('C:/Users/mauricio.herrera/Documents/Projectos/garces/data/processed/cosecha/produccion.rds')
 
 produccion_info <- data_produccion |>
   select(sitio,temporada,tratamiento,unidad,codigo) |>
@@ -14,6 +14,8 @@ produccion_info <- data_produccion |>
 ```
 
 ## Peso total
+
+En La Esperanza, el peso total de la producción fue menor en la temporada 2023-2024 en comparación con 2022-2023, con una reducción general en todos los tratamientos, incluido el control (T0). En ambos años, T2 y T4 presentaron valores ligeramente superiores en comparación con los demás tratamientos con déficit. En Río Claro, T2 mostró los valores más altos, mientras que T4 presentó los más bajos.
 
 ```{r}
 #| fig-width: 10
@@ -37,8 +39,6 @@ data_produccion |>
 
 ## Rendimiento
 
-Considerando el área de influencia de cada árbol como 8 m2, el rendimiento se determinó dividiendo el peso total de la producción del árbol entre su área de influencia en hectareas (0.0008 ha).
-
 ```{r}
 #| fig-width: 10
 #| fig-height: 7
@@ -61,7 +61,7 @@ data_produccion |>
 
 ## Densidad
 
-Para estimar la densidad de la producción, se tomó una muestra aleatoria de 1 kg de la producción total del árbol. Posteriormente se contabilizaron los frutos de aquella muestra para obtener la densidad como la cantidad de frutos por kilogramo.
+Los resultados en la densidad muestran que, en La Esperanza, los valores fueron relativamente similares entre tratamientos y entre las temporadas, sin variaciones destacadas, lo que también ocurrió en T0. En Río Claro, se observaron mayores diferencias durante la temporada 2022-2023, donde T3 presentó valores más altos, superando los 200 frutos/kg en las tres unidades.
 
 ```{r}
 #| fig-width: 10

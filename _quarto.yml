@@ -9,8 +9,8 @@ book:
   date: "24/4/2024"
   chapters:
     - index.qmd
-    - intro.qmd
     - summary.qmd
+    - intro.qmd
     - part: 'Capítulo 1: Análisis explotatorio'
       chapters:
         - 0101_produccion.qmd
