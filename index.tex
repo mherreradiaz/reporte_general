@@ -43,14 +43,28 @@
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{4}
 % Make \paragraph and \subparagraph free-standing
+\makeatletter
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
 \fi
 \ifx\subparagraph\undefined\else
   \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\makeatother
 
 
 \providecommand{\tightlist}{%
@@ -66,15 +80,17 @@
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
 % Set default figure placement to htbp
-\makeatletter
 \def\fps@figure{htbp}
 \makeatother
 % definitions for citeproc citations
@@ -156,6 +172,7 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
+
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
 \else
@@ -165,9 +182,6 @@
 % get rid of language-specific shorthands (see #6817):
 \let\LanguageShortHands\languageshorthands
 \def\languageshorthands#1{}
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 \usepackage{bookmark}
 
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
@@ -183,9 +197,10 @@
   urlcolor={Blue},
   pdfcreator={LaTeX via pandoc}}
 
+
 \title{Reporte ID23\_10297}
 \author{M. Abel Herrera}
-\date{Invalid Date}
+\date{2025-03-20}
 
 \begin{document}
 \maketitle
@@ -196,633 +211,226 @@
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
-\bookmarksetup{startatroot}
 
-\chapter*{Prefacio}\label{prefacio}
-\addcontentsline{toc}{chapter}{Prefacio}
-
-\markboth{Prefacio}{Prefacio}
+\part{Prefacio}
 
 Reporte general del proyecto ID23\textbar10297, a cargo de Dr.~Francisco
 Zambrano de la Universidad Mayor, en cooperación con Garces Fruit.
-
-\bookmarksetup{startatroot}
-
-\chapter{Introducción}\label{introducciuxf3n}
-
-{[}Introducción{]}
-
-\bookmarksetup{startatroot}
 
 \chapter{Resumen}\label{resumen}
 
 {[}Resumen{]}
 
-\part{Capítulo 1: Análisis explotatorio}
+\chapter{Introducción}\label{introducciuxf3n}
 
-\chapter{Producción}\label{producciuxf3n}
+El cambio climático ha intensificado la sequía en diversas regiones del
+mundo, afectando particularmente a Chile Central, donde se ha registrado
+un evento de Mega Sequía sin precedentes en los últimos milenios. Desde
+2010, la zona ha experimentado una reducción sostenida de las
+precipitaciones, con déficits promedio entre 20-40\% (Garreaud et
+al.~2020). Este fenómeno impacta directamente la disponibilidad hídrica
+para la agricultura, con repercusiones en la productividad y
+sostenibilidad del sector (Peña-Guerrero et al.~2020). Ante este
+escenario, se requieren estrategias de gestión del agua más eficientes
+que permitan a los productores agrícolas adaptarse a la variabilidad
+climática (Hurlbert y Gupta 2017).
 
-Aquí vendría el texto sobre la producción y la metodología sobre la toma
-de muestras.
+En este contexto, el riego deficitario controlado (RDC) ha sido
+identificado como una estrategia eficaz para optimizar el uso del agua
+en cultivos perennes como los frutales, donde las opciones de adaptación
+son limitadas (Pechan et al.~2023). Esta práctica permite reducir el
+consumo hídrico sin afectar significativamente la producción ni la
+calidad de la cosecha, mejorando la eficiencia del recurso disponible
+(Victor Blanco et al.~2019; López-Olivari y Ortega-Klose 2021). Entre
+los frutales de exportación, el cerezo es el segundo producto de mayor
+valor en la agroindustria chilena, con más de 25 000 hectáreas bajo
+riego y un mercado aproximado de 1560 millones de dólares
+(Carrasco-Benavides, Antunez-Quilobrán, et al.~2020; González 2022). La
+optimización del riego en este cultivo es fundamental para mejorar la
+sostenibilidad del sector y mantener su competitividad a nivel
+internacional.
+
+La presente investigación tiene como objetivo desarrollar un prototipo
+de servicio web para la optimización del riego en cerezo (SatOri), que
+permita a los productores ajustar los tiempos y volúmenes de riego en
+función de datos obtenidos de sensores satelitales ópticos y de radar,
+complementados con ensayos de riego deficitario controlado. Para ello,
+se evaluará el nivel de riego deficitario óptimo en huertos de cerezo
+ubicados en la región de O'Higgins durante las temporadas 2022-2023,
+desarrollando un modelo de estimación del potencial hídrico xilemático
+(Ψs) basado en variables meteorológicas y satelitales. Posteriormente,
+el modelo y los niveles óptimos de riego serán validados en la temporada
+2023-2024, con el fin de integrarlos en una plataforma web que entregue
+información en tiempo real sobre la gestión del riego, contribuyendo así
+a la eficiencia en el uso del agua en la producción de cerezas.
+
+\part{Producción}
+
+\chapter{Producción}\label{producciuxf3n-1}
+
+La metodología utilizada para la determinación del peso total,
+rendimiento y densidad de frutos fue la misma que en el
+\href{https://mherreradiaz.github.io/reporte_general/anexo/01_reporte_calidad_produccion.pdf}{reporte
+2022-2023}. Las cosechas se realizaron el 23 de diciembre de 2022 en Río
+Claro y el 12 de diciembre de 2022 en La Esperanza.
 
 \section{Peso total}\label{peso-total}
 
+En La Esperanza, el peso total de la producción fue menor en la
+temporada 2023-2024 en comparación con 2022-2023, con una reducción
+general en todos los tratamientos, incluido el control (T0). En ambos
+años, T2 y T4 presentaron valores ligeramente superiores en comparación
+con los demás tratamientos con déficit. En Río Claro, T2 mostró los
+valores más altos, mientras que T4 presentó los más bajos.
+
+\chapter{Por tratamiento}
+
 \begin{center}
-\includegraphics{0101_produccion_files/figure-pdf/unnamed-chunk-2-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{001_produccion_files/figure-pdf/unnamed-chunk-2-1.pdf}}
+\end{center}
+
+\chapter{Por temporada}
+
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{001_produccion_files/figure-pdf/unnamed-chunk-3-1.pdf}}
 \end{center}
 
 \section{Rendimiento}\label{rendimiento}
 
-Considerando el área de influencia de cada árbol como 8 m2, el
-rendimiento se determinó dividiendo el peso total de la producción del
-árbol entre su área de influencia en hectareas (0.0008 ha).
+\chapter{Por tratamiento}
 
 \begin{center}
-\includegraphics{0101_produccion_files/figure-pdf/unnamed-chunk-3-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{001_produccion_files/figure-pdf/unnamed-chunk-4-1.pdf}}
+\end{center}
+
+\chapter{Por temporada}
+
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{001_produccion_files/figure-pdf/unnamed-chunk-5-1.pdf}}
 \end{center}
 
 \section{Densidad}\label{densidad}
 
-Para estimar la densidad de la producción, se tomó una muestra aleatoria
-de 1 kg de la producción total del árbol. Posteriormente se
-contabilizaron los frutos de aquella muestra para obtener la densidad
-como la cantidad de frutos por kilogramo.
+Los resultados en la densidad muestran que, en La Esperanza, los valores
+fueron relativamente similares entre tratamientos y entre las
+temporadas, sin variaciones destacadas, lo que también ocurrió en T0. En
+Río Claro, se observaron mayores diferencias durante la temporada
+2022-2023, donde T3 presentó valores más altos, superando los 200
+frutos/kg en las tres unidades.
+
+\chapter{Por tratamiento}
 
 \begin{center}
-\includegraphics{0101_produccion_files/figure-pdf/unnamed-chunk-4-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{001_produccion_files/figure-pdf/unnamed-chunk-6-1.pdf}}
+\end{center}
+
+\chapter{Por temporada}
+
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{001_produccion_files/figure-pdf/unnamed-chunk-7-1.pdf}}
 \end{center}
 
 \chapter{Calidad}\label{calidad}
 
-Aquí vendría el texto sobre la calidad y la metodología sobre la toma de
-muestras.
-
 \section{Apariencia}\label{apariencia}
-
-La apariencia de los frutos se evaluó considerando su peso, diámetro y
-color. Para llevar a cabo este análisis, se seleccionaron al azar 20
-frutos de una muestra representativa equivalente a 1 kg de la producción
-total.
 
 \subsection{Peso}\label{peso}
 
+\chapter{Por tratamiento}
+
 \begin{center}
-\includegraphics{0102_calidad_files/figure-pdf/unnamed-chunk-3-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{002_calidad_files/figure-pdf/unnamed-chunk-2-1.pdf}}
+\end{center}
+
+\chapter{Por temporada}
+
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{002_calidad_files/figure-pdf/unnamed-chunk-3-1.pdf}}
 \end{center}
 
 \subsection{Diametro}\label{diametro}
 
+\chapter{Por tratamiento}
+
 \begin{center}
-\includegraphics{0102_calidad_files/figure-pdf/unnamed-chunk-4-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{002_calidad_files/figure-pdf/unnamed-chunk-4-1.pdf}}
 \end{center}
 
-\subsection{Color}\label{color}
-
-Para cuantificar y calificar el color dentro de las muestras, se
-categorizó el color de cada fruto como se muestra en la
-Figura~\ref{fig-escala}.
-
-\begin{figure}
-
-\centering{
-
-\includegraphics{figuras/misc/10_tabla_de_color.jpg}
-
-}
-
-\caption{\label{fig-escala}Escala de color de cerezas.}
-
-\end{figure}%
+\chapter{Por temporada}
 
 \begin{center}
-\includegraphics{0102_calidad_files/figure-pdf/unnamed-chunk-5-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{002_calidad_files/figure-pdf/unnamed-chunk-5-1.pdf}}
+\end{center}
+
+\chapter{Color}\label{color}
+
+\chapter{Por tratamiento}
+
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{002_calidad_files/figure-pdf/unnamed-chunk-6-1.pdf}}
+\end{center}
+
+\chapter{Por temporada}
+
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{002_calidad_files/figure-pdf/unnamed-chunk-7-1.pdf}}
 \end{center}
 
 \section{Contenido de azucar}\label{contenido-de-azucar}
 
-Para determinar el contenido de azúcar, se midieron los grados Brix de
-cada fruto mediante la utilización de un refractrometro. Los frutos
-utilizados correspondieron a cinco frutos de cada árbol escogidos al
-azar, a partir de una selección de frutos de buena apariencia dentro de
-la muestra de 1 kg.
+\chapter{Por tratamiento}
 
 \begin{center}
-\includegraphics{0102_calidad_files/figure-pdf/unnamed-chunk-6-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{002_calidad_files/figure-pdf/unnamed-chunk-8-1.pdf}}
+\end{center}
+
+\chapter{Por temporada}
+
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{002_calidad_files/figure-pdf/unnamed-chunk-9-1.pdf}}
 \end{center}
 
 \section{Daño}\label{dauxf1o}
 
-Para determinar el daño de la producción, se estimó el porcentaje de
-frutos dañados a partir de una muesrtra aleatoria de 1 kg de la
-producción total. Los frutos dañados se consideraron como aquellos que
-presentaban desde daños severos o de la marchitez total del fruto hasta
-cracking leves, además de frutos dobles.
+\chapter{Por tratamiento}
 
 \begin{center}
-\includegraphics{0102_calidad_files/figure-pdf/unnamed-chunk-7-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{002_calidad_files/figure-pdf/unnamed-chunk-10-1.pdf}}
 \end{center}
 
-\chapter{Parámetros fisiológicos}\label{paruxe1metros-fisioluxf3gicos}
-
-\section{Fluorescencia}\label{fluorescencia}
-
-Los datos de fluorescencia han sido recopilados mediante el uso de
-fluorómetro FluorPen (FUENTE), entre 13:00 y 14:00 de forma semanal, en
-ambos sitios para la temporada 2022-2023 y 2023-2024.
-
-El índice utilizado es el Rendimiento Cuántico Máximo del Fotosistema II
-(ΦP0).
-
-\chapter{Distribución}
+\chapter{Por temporada}
 
 \begin{center}
-\includegraphics{0103_parametros_files/figure-pdf/unnamed-chunk-2-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{002_calidad_files/figure-pdf/unnamed-chunk-11-1.pdf}}
 \end{center}
 
-\chapter{Serie temporal}
-
-\begin{center}
-\includegraphics{0103_parametros_files/figure-pdf/unnamed-chunk-3-1.pdf}
-\end{center}
-
-\chapter{Población de datos}
-
-La siguiente tabla presenta la población de datos según temporada,
-sitio, tratamiento y unidad.
-
-\begin{longtable}[]{@{}llllr@{}}
-\toprule\noalign{}
-Temporada & Sitio & Tratamiento & Unidad & n \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-2022-2023 & La Esperanza & T0 & 1 & 14 \\
-& & & 2 & 14 \\
-& & & 3 & 14 \\
-& & T1 & 1 & 16 \\
-& & & 2 & 16 \\
-& & & 3 & 16 \\
-& & T2 & 1 & 16 \\
-& & & 2 & 16 \\
-& & & 3 & 16 \\
-& & T3 & 1 & 16 \\
-& & & 2 & 16 \\
-& & & 3 & 16 \\
-& & T4 & 1 & 16 \\
-& & & 2 & 16 \\
-& & & 3 & 16 \\
-& Rio Claro & T0 & 1 & 16 \\
-& & & 2 & 16 \\
-& & & 3 & 16 \\
-& & T1 & 1 & 18 \\
-& & & 2 & 18 \\
-& & & 3 & 18 \\
-& & T2 & 1 & 18 \\
-& & & 2 & 18 \\
-& & & 3 & 18 \\
-& & T3 & 1 & 18 \\
-& & & 2 & 18 \\
-& & & 3 & 18 \\
-& & T4 & 1 & 18 \\
-& & & 2 & 18 \\
-& & & 3 & 18 \\
-2023-2024 & La Esperanza & T0 & 1 & 15 \\
-& & & 2 & 15 \\
-& & & 3 & 15 \\
-& & T1 & 1 & 15 \\
-& & & 2 & 15 \\
-& & & 3 & 15 \\
-& & T2 & 1 & 15 \\
-& & & 2 & 15 \\
-& & & 3 & 15 \\
-& & T3 & 1 & 15 \\
-& & & 2 & 15 \\
-& & & 3 & 15 \\
-& & T4 & 1 & 15 \\
-& & & 2 & 15 \\
-& & & 3 & 15 \\
-& Rio Claro & T0 & 1 & 13 \\
-& & & 2 & 13 \\
-& & & 3 & 13 \\
-& & T1 & 1 & 13 \\
-& & & 2 & 13 \\
-& & & 3 & 13 \\
-& & T2 & 1 & 13 \\
-& & & 2 & 13 \\
-& & & 3 & 13 \\
-& & T3 & 1 & 13 \\
-& & & 2 & 13 \\
-& & & 3 & 13 \\
-& & T4 & 1 & 13 \\
-& & & 2 & 13 \\
-& & & 3 & 13 \\
-\end{longtable}
-
-\section{Potencial}\label{potencial}
-
-Los datos de potencial hídrico xilemático han sido recopilados mediante
-el uso de una camara de presión o bomba Scholander (FUENTE), entre 13:00
-y 14:00 de forma semanal, en ambos sitios para la temporada 2022-2023 y
-2023-2024.
-
-\chapter{Distribución}
-
-\begin{center}
-\includegraphics{0103_parametros_files/figure-pdf/unnamed-chunk-5-1.pdf}
-\end{center}
-
-\chapter{Serie temporal}
-
-\begin{center}
-\includegraphics{0103_parametros_files/figure-pdf/unnamed-chunk-6-1.pdf}
-\end{center}
-
-\chapter{Población de datos}
-
-La siguiente tabla presenta la población de datos según temporada, sitio
-y tratamiento.
-
-\begin{longtable}[]{@{}llllr@{}}
-\toprule\noalign{}
-Temporada & Sitio & Tratamiento & Unidad & n \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-2022-2023 & La Esperanza & T0 & 1 & 11 \\
-& & & 2 & 11 \\
-& & & 3 & 11 \\
-& & T1 & 1 & 12 \\
-& & & 2 & 12 \\
-& & & 3 & 11 \\
-& & T2 & 1 & 12 \\
-& & & 2 & 12 \\
-& & & 3 & 12 \\
-& & T3 & 1 & 12 \\
-& & & 2 & 12 \\
-& & & 3 & 12 \\
-& & T4 & 1 & 12 \\
-& & & 2 & 12 \\
-& & & 3 & 12 \\
-& Rio Claro & T0 & 1 & 13 \\
-& & & 2 & 13 \\
-& & & 3 & 13 \\
-& & T1 & 1 & 14 \\
-& & & 2 & 14 \\
-& & & 3 & 15 \\
-& & T2 & 1 & 15 \\
-& & & 2 & 14 \\
-& & & 3 & 15 \\
-& & T3 & 1 & 14 \\
-& & & 2 & 14 \\
-& & & 3 & 15 \\
-& & T4 & 1 & 14 \\
-& & & 2 & 14 \\
-& & & 3 & 15 \\
-2023-2024 & La Esperanza & T0 & 1 & 21 \\
-& & & 2 & 21 \\
-& & & 3 & 21 \\
-& & T1 & 1 & 21 \\
-& & & 2 & 20 \\
-& & & 3 & 21 \\
-& & T2 & 1 & 20 \\
-& & & 2 & 21 \\
-& & & 3 & 21 \\
-& & T3 & 1 & 21 \\
-& & & 2 & 21 \\
-& & & 3 & 20 \\
-& & T4 & 1 & 21 \\
-& & & 2 & 20 \\
-& & & 3 & 20 \\
-& Rio Claro & T0 & 1 & 14 \\
-& & & 2 & 13 \\
-& & & 3 & 13 \\
-& & T1 & 1 & 14 \\
-& & & 2 & 14 \\
-& & & 3 & 13 \\
-& & T2 & 1 & 13 \\
-& & & 2 & 13 \\
-& & & 3 & 14 \\
-& & T3 & 1 & 13 \\
-& & & 2 & 13 \\
-& & & 3 & 13 \\
-& & T4 & 1 & 13 \\
-& & & 2 & 13 \\
-& & & 3 & 14 \\
-\end{longtable}
-
-\subsection{Ciclio diario}\label{ciclio-diario}
-
-Además del valor de potencial único diario que se recopilaba en cierto
-rango horario para cada unidad de muestreo, también se realizaron
-jornadas de recopilación de valores horarios de potencial a lo largo del
-día, con el fin de caracterizar el ciclo diario o perfil horario de este
-en las distintas unidades. Estos valores se recopilaron cada una hora
-desde las 8 am hasta las 8 pm, mediante la misma metodología que la
-extracción del valor único diario pero con menor tiempo de oscuridad y
-sellado en las hojas (30 a 45 min).
-
-A continuación se muestran los resultados de la caracterización del
-ciclo diario del potencial.
-
-\begin{center}
-\includegraphics{0103_parametros_files/figure-pdf/unnamed-chunk-8-1.pdf}
-\end{center}
-
-\section{LAI}\label{lai}
-
-Los datos de LAI han sido recopilados mediante el uso de ceptometro LP80
-(FUENTE), entre 12:30 y 13:30 de forma semanal, en ambos sitios para la
-temporada 2022-2023 y 2023-2024.
-
-\chapter{Distribución}
-
-\begin{center}
-\includegraphics{0103_parametros_files/figure-pdf/unnamed-chunk-9-1.pdf}
-\end{center}
-
-\chapter{Serie temporal}
-
-\begin{center}
-\includegraphics{0103_parametros_files/figure-pdf/unnamed-chunk-10-1.pdf}
-\end{center}
-
-\chapter{Población de datos}
-
-La siguiente tabla presenta la población de datos según temporada, sitio
-y tratamiento.
-
-\begin{longtable}[]{@{}lllr@{}}
-\toprule\noalign{}
-Temporada & Sitio & Tratamiento & n \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-2022-2023 & La Esperanza & T0 & 9 \\
-& & T1 & 9 \\
-& & T2 & 9 \\
-& & T3 & 9 \\
-& & T4 & 9 \\
-& Rio Claro & T0 & 10 \\
-& & T1 & 10 \\
-& & T2 & 10 \\
-& & T3 & 10 \\
-& & T4 & 10 \\
-2023-2024 & La Esperanza & T0 & 11 \\
-& & T1 & 11 \\
-& & T2 & 11 \\
-& & T3 & 11 \\
-& & T4 & 11 \\
-& Rio Claro & T0 & 11 \\
-& & T1 & 11 \\
-& & T2 & 11 \\
-& & T3 & 11 \\
-& & T4 & 11 \\
-\end{longtable}
-
-\section{Turgor: presión de parche}\label{sec-turgor}
-
-Los datos de turgor han sido recopilados mediante el uso de sensores ZIM
-(FUENTE), los cuales miden presión de parche en una determinada hoja
-cada media hora de forma continua. Estos fueron dispuestos en cada
-unidad de los tratamientos (dos sensores por unidad), en ambos sitios
-durante la temporada 2022-2023 y 2023-2024.
-
-En estos datos se observó presencia de ruido, atribuida a factores como
-la marchitez de las hojas muestreadas, fuerzas externas que provocaban
-el desalineamiento de los imanes del sensor y otras causas que llevaron
-a la recalibración de los sensores. Como resultado, se presentan a
-continuación tanto los datos crudos, con el ruido presente, como los
-datos preprocesados limpios, los cuales han sido depurados de dicho
-ruido.
-
-\chapter{Distribución}
-
-\begin{center}
-\includegraphics{0103_parametros_files/figure-pdf/unnamed-chunk-12-1.pdf}
-\end{center}
-
-\chapter{Serie temporal 2022-2023}
-
-\begin{center}
-\includegraphics{0103_parametros_files/figure-pdf/unnamed-chunk-13-1.pdf}
-\end{center}
-
-\chapter{Serie temporal 2023-2024}
-
-\begin{center}
-\includegraphics{0103_parametros_files/figure-pdf/unnamed-chunk-14-1.pdf}
-\end{center}
-
-\chapter{Ciclo diario 2022-2023}
-
-\begin{center}
-\includegraphics{0103_parametros_files/figure-pdf/unnamed-chunk-15-1.pdf}
-\end{center}
-
-\chapter{Ciclo diario 2023-2024}
-
-\begin{center}
-\includegraphics{0103_parametros_files/figure-pdf/unnamed-chunk-16-1.pdf}
-\end{center}
-
-\chapter{Población de datos}
-
-La siguiente tabla presenta la población de datos según temporada, sitio
-y tratamiento.
-
-\begin{longtable}[]{@{}lllllr@{}}
-\toprule\noalign{}
-Temporada & Sitio & Tratamiento & Unidad & zim & n \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-2022-2023 & La Esperanza & T1 & 1 & Z1 & 4749 \\
-& & & & Z2 & 4418 \\
-& & & 2 & Z1 & 4430 \\
-& & & & Z2 & 4431 \\
-& & & 3 & Z1 & 4417 \\
-& & & & Z2 & 4417 \\
-& & T2 & 1 & Z1 & 4028 \\
-& & & & Z2 & 4028 \\
-& & & 2 & Z1 & 3424 \\
-& & & & Z2 & 3519 \\
-& & & 3 & Z1 & 4102 \\
-& & & & Z2 & 4408 \\
-& & T3 & 1 & Z1 & 4124 \\
-& & & & Z2 & 4124 \\
-& & & 2 & Z1 & 4705 \\
-& & & & Z2 & 4396 \\
-& & & 3 & Z1 & 4374 \\
-& & & & Z2 & 4726 \\
-& & T4 & 1 & Z1 & 4418 \\
-& & & & Z2 & 4102 \\
-& & & 2 & Z1 & 4408 \\
-& & & & Z2 & 4430 \\
-& & & 3 & Z1 & 4417 \\
-& & & & Z2 & 4410 \\
-& Rio Claro & T1 & 1 & Z1 & 3964 \\
-& & & & Z2 & 3941 \\
-& & & 2 & Z1 & 3904 \\
-& & & & Z2 & 3881 \\
-& & & 3 & Z1 & 3857 \\
-& & & & Z2 & 3879 \\
-& & T2 & 1 & Z1 & 4088 \\
-& & & & Z2 & 4089 \\
-& & & 2 & Z1 & 1954 \\
-& & & & Z2 & 1927 \\
-& & & 3 & Z1 & 2702 \\
-& & & & Z2 & 2927 \\
-& & T3 & 1 & Z1 & 4295 \\
-& & & & Z2 & 3942 \\
-& & & 2 & Z1 & 4295 \\
-& & & & Z2 & 4294 \\
-& & & 3 & Z1 & 3263 \\
-& & & & Z2 & 3592 \\
-& & T4 & 1 & Z1 & 4256 \\
-& & & & Z2 & 4255 \\
-& & & 2 & Z1 & 3123 \\
-& & & & Z2 & 3145 \\
-& & & 3 & Z1 & 4175 \\
-& & & & Z2 & 2883 \\
-2023-2024 & La Esperanza & T1 & 1 & Z1 & 4300 \\
-& & & & Z2 & 4300 \\
-& & & 2 & Z1 & 4300 \\
-& & & & Z2 & 4300 \\
-& & & 3 & Z1 & 4299 \\
-& & & & Z2 & 4299 \\
-& & T2 & 1 & Z1 & 4296 \\
-& & & & Z2 & 4296 \\
-& & & 2 & Z1 & 3701 \\
-& & & & Z2 & 3701 \\
-& & & 3 & Z1 & 4297 \\
-& & & & Z2 & 4297 \\
-& & T3 & 1 & Z1 & 4292 \\
-& & & & Z2 & 4292 \\
-& & & 2 & Z1 & 4296 \\
-& & & & Z2 & 4296 \\
-& & & 3 & Z1 & 4295 \\
-& & & & Z2 & 4295 \\
-& & T4 & 1 & Z1 & 4301 \\
-& & & & Z2 & 4301 \\
-& & & 2 & Z1 & 4300 \\
-& & & & Z2 & 4300 \\
-& & & 3 & Z1 & 4300 \\
-& & & & Z2 & 4299 \\
-& Rio Claro & T1 & 1 & Z1 & 3842 \\
-& & & & Z2 & 3841 \\
-& & & 2 & Z1 & 1678 \\
-& & & & Z2 & 1678 \\
-& & & 3 & Z1 & 3842 \\
-& & & & Z2 & 3842 \\
-& & T2 & 1 & Z1 & 3619 \\
-& & & & Z2 & 3619 \\
-& & & 2 & Z1 & 3943 \\
-& & & & Z2 & 3943 \\
-& & & 3 & Z1 & 3538 \\
-& & & & Z2 & 3538 \\
-& & T3 & 1 & Z1 & 3843 \\
-& & & & Z2 & 3841 \\
-& & & 2 & Z1 & 3842 \\
-& & & & Z2 & 3840 \\
-& & & 3 & Z1 & 3843 \\
-& & & & Z2 & 3841 \\
-& & T4 & 1 & Z1 & 3842 \\
-& & & & Z2 & 3842 \\
-& & & 2 & Z1 & 3536 \\
-& & & & Z2 & 3536 \\
-& & & 3 & Z1 & 3843 \\
-& & & & Z2 & 3843 \\
-\end{longtable}
+\part{Variables meteorológicas}
 
 \chapter{Humedad de suelo}\label{humedad-de-suelo}
 
-Los datos de humedad de suelo se recopilaron mediante sensores ubicados
-en cada unidad de medición. Estos se conectaron al transmisor Yara igual
-que los sensores ZIM de turgor, y proporcionaron datos contínuos de
-humedad de suelo (\%VWC) cada media hora para los dos sitios durante
-ambas temporadas.
-
-\chapter{Distribución}
+\chapter{Por tratamiento}
 
 \begin{center}
-\includegraphics{0104_humedad_files/figure-pdf/unnamed-chunk-2-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{003_humedad_files/figure-pdf/unnamed-chunk-1-1.pdf}}
+\end{center}
+
+\chapter{Por temporada}
+
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{003_humedad_files/figure-pdf/unnamed-chunk-2-1.pdf}}
 \end{center}
 
 \chapter{Serie temporal 2022-2023}
 
 \begin{center}
-\includegraphics{0104_humedad_files/figure-pdf/unnamed-chunk-3-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{003_humedad_files/figure-pdf/unnamed-chunk-3-1.pdf}}
 \end{center}
 
 \chapter{Serie temporal 2023-2024}
 
 \begin{center}
-\includegraphics{0104_humedad_files/figure-pdf/unnamed-chunk-4-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{003_humedad_files/figure-pdf/unnamed-chunk-4-1.pdf}}
 \end{center}
-
-\chapter{Población de datos}
-
-La siguiente tabla presenta la población de datos según temporada, sitio
-y tratamiento.
-
-\begin{longtable}[]{@{}llllr@{}}
-\toprule\noalign{}
-Temporada & Sitio & Tratamiento & Unidad & n \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-2022-2023 & La Esperanza & T1 & 1 & 3013 \\
-& & & 2 & 3013 \\
-& & & 3 & 3013 \\
-& & T2 & 1 & 2610 \\
-& & & 2 & 1510 \\
-& & & 3 & 3013 \\
-& & T3 & 1 & 3013 \\
-& & & 2 & 3013 \\
-& & & 3 & 3013 \\
-& & T4 & 1 & 3013 \\
-& & & 2 & 3013 \\
-& & & 3 & 3013 \\
-& Rio Claro & T1 & 1 & 3013 \\
-& & & 2 & 3000 \\
-& & & 3 & 2940 \\
-& & T2 & 1 & 1639 \\
-& & & 2 & 1141 \\
-& & & 3 & 2415 \\
-& & T3 & 1 & 3013 \\
-& & & 2 & 3013 \\
-& & & 3 & 3013 \\
-& & T4 & 1 & 3005 \\
-& & & 2 & 1801 \\
-& & & 3 & 3010 \\
-2023-2024 & La Esperanza & T1 & 1 & 829 \\
-& & & 2 & 3743 \\
-& & & 3 & 3741 \\
-& & T2 & 1 & 3737 \\
-& & & 3 & 2689 \\
-& & T3 & 1 & 3738 \\
-& & & 2 & 3742 \\
-& & & 3 & 3741 \\
-& & & 2 & 831 \\
-& & & 3 & 3740 \\
-& Rio Claro & T1 & 1 & 807 \\
-& & & 2 & 1962 \\
-& & & 3 & 4165 \\
-& & T2 & 1 & 3939 \\
-& & & 2 & 3725 \\
-& & & 3 & 3825 \\
-& & T3 & 1 & 4162 \\
-& & & 2 & 4163 \\
-& & & 3 & 4165 \\
-& & T4 & 1 & 4126 \\
-& & & 2 & 722 \\
-& & & 3 & 236 \\
-\end{longtable}
 
 \chapter{Clima}\label{clima}
 
@@ -832,121 +440,105 @@ meteorológicas de Garces Fruits ubicadas en ambos sitios.
 \chapter{Temperatura}
 
 \begin{center}
-\includegraphics{0105_clima_files/figure-pdf/unnamed-chunk-3-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{004_clima_files/figure-pdf/unnamed-chunk-3-1.pdf}}
 \end{center}
 
 \chapter{Déficit de presión de vapor (VPD)}
 
 \begin{center}
-\includegraphics{0105_clima_files/figure-pdf/unnamed-chunk-4-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{004_clima_files/figure-pdf/unnamed-chunk-4-1.pdf}}
 \end{center}
 
 \chapter{Evapotranspiración de referencia (ET0)}
 
 \begin{center}
-\includegraphics{0105_clima_files/figure-pdf/unnamed-chunk-5-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{004_clima_files/figure-pdf/unnamed-chunk-5-1.pdf}}
 \end{center}
 
 \chapter{Precipitación}
 
 \begin{center}
-\includegraphics{0105_clima_files/figure-pdf/unnamed-chunk-6-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{004_clima_files/figure-pdf/unnamed-chunk-6-1.pdf}}
 \end{center}
 
-\chapter{Curva Presión-volumen}\label{sec-pv}
+\part{Parámetros fisiológicos}
 
-Los datos utilizados para las curvas Presión-volumen corresponden a
-mediciones de potencial hídrico xilemático y peso en hojas tomadas en
-laboratorio con cámara de presión Scholander y balanza analítica.
-{[}Metodología de toma de datos{]}.
+\chapter{Parámetros fisiológicos}\label{paruxe1metros-fisioluxf3gicos-1}
 
-Según la metodología descrita por Halbritter et~al. (2020), el punto de
-pérdida de turgor (TLP) se estima como el último punto de la curva del Ψ
-inverso en función del RWD (1 - RWC) antes de comenzar su fracción
-lineal, como se muestra en la Figura~\ref{fig-tlp}.
+\section{Fluorescencia}\label{fluorescencia}
 
-\begin{figure}
+\chapter{Por tratamiento}
 
-\centering{
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{005_parametros_files/figure-pdf/unnamed-chunk-2-1.pdf}}
+\end{center}
 
-\includegraphics{figuras/misc/tlp.png}
+\chapter{Por temporada}
 
-}
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{005_parametros_files/figure-pdf/unnamed-chunk-3-1.pdf}}
+\end{center}
 
-\caption{\label{fig-tlp}Ejemplo de una curva presión-volumen. Los
-círculos llenos representan las primeras 5 mediciones iterativas: los
-círculos abiertos representan las últimas 6 mediciones. La porción
-lineal (línea sólida) muestra el potencial osmótico (Ψo), la porción
-curva (línea discontinua) es el potencial hídrico antes del punto de
-pérdida de turgencia (TLP), y el área sombreada es el potencial de
-turgencia (Ψp).Fuente: Halbritter et~al. (2020) (2020).}
+\chapter{Series temporales}
 
-\end{figure}%
+\pandocbounded{\includegraphics[keepaspectratio]{005_parametros_files/figure-pdf/unnamed-chunk-4-1.pdf}}
 
-En base a esta misma metodología, a continuación se presentan las curvas
-presión-volumen de cada unidad medida.
+\section{Potencial}\label{potencial}
 
-\section{La Esperanza}\label{la-esperanza}
+\chapter{Por tratamiento}
 
-\chapter{Tratamiento 0 (control)}
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{005_parametros_files/figure-pdf/unnamed-chunk-5-1.pdf}}
+\end{center}
 
-Unidad 1 \includegraphics{figuras/06_tlp/tlp_la_esperanza_T0_1.png}
+\chapter{Por temporada}
 
-Unidad 2 \includegraphics{figuras/06_tlp/tlp_la_esperanza_T0_2.png}
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{005_parametros_files/figure-pdf/unnamed-chunk-6-1.pdf}}
+\end{center}
 
-Unidad 3 \includegraphics{figuras/06_tlp/tlp_la_esperanza_T0_3.png}
+\chapter{Serie temporal}
 
-\chapter{Tratamiento 4}
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{005_parametros_files/figure-pdf/unnamed-chunk-7-1.pdf}}
+\end{center}
 
-Unidad 1 \includegraphics{figuras/06_tlp/tlp_la_esperanza_T4_1.png}
+\section{LAI}\label{lai}
 
-Unidad 2 \includegraphics{figuras/06_tlp/tlp_la_esperanza_T4_2.png}
+\chapter{Por tratamiento}
 
-Unidad 3 \includegraphics{figuras/06_tlp/tlp_la_esperanza_T4_3.png}
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{005_parametros_files/figure-pdf/unnamed-chunk-8-1.pdf}}
+\end{center}
 
-\section{Rio Claro}\label{rio-claro}
+\chapter{Por temporada}
 
-\chapter{Tratamiento 0 (control)}
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{005_parametros_files/figure-pdf/unnamed-chunk-9-1.pdf}}
+\end{center}
 
-Unidad 1 \includegraphics{figuras/06_tlp/tlp_rio_claro_T0_1.png}
+\chapter{Serie temporal}
 
-Unidad 2 \includegraphics{figuras/06_tlp/tlp_rio_claro_T0_2.png}
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{005_parametros_files/figure-pdf/unnamed-chunk-10-1.pdf}}
+\end{center}
 
-Unidad 3 \includegraphics{figuras/06_tlp/tlp_rio_claro_T0_3.png}
+\chapter{Punto de pérdida de
+turgor}\label{punto-de-puxe9rdida-de-turgor}
 
-\chapter{Tratamiento 1}
+A continuación se presentan los puntos de pérdida de turgor de cada
+unidad, según tratamiento, sitio y temporada, a partir de las curvas
+presión-volumen, como se describe en el anexo
+\href{https://mherreradiaz.github.io/reporte_general/anexo/0061_pv.qmd}{Curvas
+Presión-Volumen}.
 
-Unidad 1 \includegraphics{figuras/06_tlp/tlp_rio_claro_T1_1.png}
-
-Unidad 2 \includegraphics{figuras/06_tlp/tlp_rio_claro_T1_2.png}
-
-Unidad 3 \includegraphics{figuras/06_tlp/tlp_rio_claro_T1_3.png}
-
-\chapter{Tratamiento 2}
-
-Unidad 1 \includegraphics{figuras/06_tlp/tlp_rio_claro_T2_1.png}
-
-Unidad 3 \includegraphics{figuras/06_tlp/tlp_rio_claro_T2_3.png}
-
-\chapter{Tratamiento 3}
-
-Unidad 1 \includegraphics{figuras/06_tlp/tlp_rio_claro_T3_1.png}
-
-Unidad 2 \includegraphics{figuras/06_tlp/tlp_rio_claro_T3_2.png}
-
-Unidad 3 \includegraphics{figuras/06_tlp/tlp_rio_claro_T3_3.png}
-
-\chapter{Tratamiento 4}
-
-Unidad 1 \includegraphics{figuras/06_tlp/tlp_rio_claro_T4_1.png}
-
-Unidad 2 \includegraphics{figuras/06_tlp/tlp_rio_claro_T4_2.png}
-
-Unidad 3 \includegraphics{figuras/06_tlp/tlp_rio_claro_T4_3.png}
+\begin{center}
+\pandocbounded{\includegraphics[keepaspectratio]{006_tlp_files/figure-pdf/unnamed-chunk-1-1.pdf}}
+\end{center}
 
 \part{Capítulo 2: Preprocesamiento de datos de turgor}
 
-Como se mencionó en la sección Sección~\ref{sec-turgor}, para el
+Como se mencionó en la sección \textbf{?@sec-turgor}, para el
 preprocesamiento de los datos se llevó a cabo una limpieza basada en
 clustering y la correlación con la temperatura y VPD. Esto permitió
 diferenciar periodos que se alejaban del comportamiento normal del
@@ -954,7 +546,7 @@ turgor (i.e.~puntos máximos a la hora de más demanda hídrica del día y
 disminución en las horas de la noche). A continuación se presenta el
 diagrama de flujo del preprocesamiento de los datos de turgor.
 
-\includegraphics[width=5.82in,height=7.44in]{0200_capitulo_2_files/figure-latex/mermaid-figure-1.png}
+\includegraphics[width=6.1in,height=9.81in]{100_preproceso_turgor_files/figure-latex/mermaid-figure-1.png}
 
 \chapter{Clustering}\label{clustering}
 
@@ -966,185 +558,185 @@ turgor mínimo y máximo para cada uno de ellos, junto con su ciclo
 horario diario, abarcando todos los sensores en todas las unidades
 durante las temporadas 2022-2023 y 2023-2024.
 
-\section{La Esperanza}\label{la-esperanza-1}
+\section{La Esperanza}\label{la-esperanza}
 
 \chapter{T1 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T1_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T1_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T1_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T1_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T1_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T1_Unidad_3.png}}
 
 \chapter{T2 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_3.png}}
 
 \chapter{T3 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_3.png}}
 
 \chapter{T4 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_3.png}}
 
 \chapter{T1 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_3.png}}
 
 \chapter{T2 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_3.png}}
 
 \chapter{T3 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_3.png}}
 
 \chapter{T4 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_3.png}}
 
-\section{Rio Claro}\label{rio-claro-1}
+\section{Rio Claro}\label{rio-claro}
 
 \chapter{T1 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_3.png}}
 
 \chapter{T2 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_3.png}}
 
 \chapter{T3 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_3.png}}
 
 \chapter{T4 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_3.png}}
 
 \chapter{T1 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_3.png}}
 
 \chapter{T2 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_3.png}}
 
 \chapter{T3 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_3.png}}
 
 \chapter{T4 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_3.png}}
 
 \chapter{Limpieza de datos: eliminación de
 clusters}\label{limpieza-de-datos-eliminaciuxf3n-de-clusters}
@@ -1158,185 +750,185 @@ promedio en relación con ambas variables, y se estableció un umbral de
 corte de r \textgreater{} 0.5. Aquellos clusters de turgor cuyo promedio
 de correlación resultó menor a 0.5 fueron descartados.
 
-\section{La Esperanza}\label{la-esperanza-2}
+\section{La Esperanza}\label{la-esperanza-1}
 
 \chapter{T1 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T1_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T1_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T1_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T1_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T1_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T1_Unidad_3.png}}
 
 \chapter{T2 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_3.png}}
 
 \chapter{T3 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_3.png}}
 
 \chapter{T4 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_3.png}}
 
 \chapter{T1 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_3.png}}
 
 \chapter{T2 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_3.png}}
 
 \chapter{T3 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_3.png}}
 
 \chapter{T4 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_3.png}}
 
-\section{Rio Claro}\label{rio-claro-2}
+\section{Rio Claro}\label{rio-claro-1}
 
 \chapter{T1 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_3.png}}
 
 \chapter{T2 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_3.png}}
 
 \chapter{T3 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_3.png}}
 
 \chapter{T4 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_3.png}}
 
 \chapter{T1 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T1_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T1_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T1_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T1_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T1_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T1_Unidad_3.png}}
 
 \chapter{T2 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T2_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T2_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T2_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T2_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T2_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T2_Unidad_3.png}}
 
 \chapter{T3 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T3_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T3_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T3_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T3_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T3_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T3_Unidad_3.png}}
 
 \chapter{T4 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T4_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T4_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T4_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T4_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T4_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T4_Unidad_3.png}}
 
 \chapter{Estandarización de
 clusters}\label{estandarizaciuxf3n-de-clusters}
@@ -1348,185 +940,185 @@ unificación las series temporales de estos a nivel de sensor. A
 continuación se muestran dichas series resultantes, además de su
 correlación con temperatura y VPD, y el ciclo horario del día.
 
-\section{La Esperanza}\label{la-esperanza-3}
+\section{La Esperanza}\label{la-esperanza-2}
 
 \chapter{T1 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/03_turgor_union/2022_2023_La_Esperanza_T1_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_La_Esperanza_T1_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/03_turgor_union/2022_2023_La_Esperanza_T1_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_La_Esperanza_T1_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/03_turgor_union/2022_2023_La_Esperanza_T1_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_La_Esperanza_T1_Unidad_3.png}}
 
 \chapter{T2 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/03_turgor_union/2022_2023_La_Esperanza_T2_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_La_Esperanza_T2_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/03_turgor_union/2022_2023_La_Esperanza_T2_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_La_Esperanza_T2_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/03_turgor_union/2022_2023_La_Esperanza_T2_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_La_Esperanza_T2_Unidad_3.png}}
 
 \chapter{T3 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/03_turgor_union/2022_2023_La_Esperanza_T3_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_La_Esperanza_T3_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/03_turgor_union/2022_2023_La_Esperanza_T3_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_La_Esperanza_T3_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/03_turgor_union/2022_2023_La_Esperanza_T3_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_La_Esperanza_T3_Unidad_3.png}}
 
 \chapter{T4 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/03_turgor_union/2022_2023_La_Esperanza_T4_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_La_Esperanza_T4_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/03_turgor_union/2022_2023_La_Esperanza_T4_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_La_Esperanza_T4_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/03_turgor_union/2022_2023_La_Esperanza_T4_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_La_Esperanza_T4_Unidad_3.png}}
 
 \chapter{T1 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/03_turgor_union/2023_2024_La_Esperanza_T1_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_La_Esperanza_T1_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/03_turgor_union/2023_2024_La_Esperanza_T1_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_La_Esperanza_T1_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/03_turgor_union/2023_2024_La_Esperanza_T1_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_La_Esperanza_T1_Unidad_3.png}}
 
 \chapter{T2 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/03_turgor_union/2023_2024_La_Esperanza_T2_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_La_Esperanza_T2_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/03_turgor_union/2023_2024_La_Esperanza_T2_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_La_Esperanza_T2_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/03_turgor_union/2023_2024_La_Esperanza_T2_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_La_Esperanza_T2_Unidad_3.png}}
 
 \chapter{T3 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/03_turgor_union/2023_2024_La_Esperanza_T3_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_La_Esperanza_T3_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/03_turgor_union/2023_2024_La_Esperanza_T3_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_La_Esperanza_T3_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/03_turgor_union/2023_2024_La_Esperanza_T3_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_La_Esperanza_T3_Unidad_3.png}}
 
 \chapter{T4 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/03_turgor_union/2023_2024_La_Esperanza_T4_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_La_Esperanza_T4_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/03_turgor_union/2023_2024_La_Esperanza_T4_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_La_Esperanza_T4_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/03_turgor_union/2023_2024_La_Esperanza_T4_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_La_Esperanza_T4_Unidad_3.png}}
 
-\section{Rio Claro}\label{rio-claro-3}
+\section{Rio Claro}\label{rio-claro-2}
 
 \chapter{T1 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/03_turgor_union/2022_2023_Rio_Claro_T1_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_Rio_Claro_T1_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/03_turgor_union/2022_2023_Rio_Claro_T1_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_Rio_Claro_T1_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/03_turgor_union/2022_2023_Rio_Claro_T1_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_Rio_Claro_T1_Unidad_3.png}}
 
 \chapter{T2 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/03_turgor_union/2022_2023_Rio_Claro_T2_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_Rio_Claro_T2_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/03_turgor_union/2022_2023_Rio_Claro_T2_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_Rio_Claro_T2_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/03_turgor_union/2022_2023_Rio_Claro_T2_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_Rio_Claro_T2_Unidad_3.png}}
 
 \chapter{T3 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/03_turgor_union/2022_2023_Rio_Claro_T3_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_Rio_Claro_T3_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/03_turgor_union/2022_2023_Rio_Claro_T3_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_Rio_Claro_T3_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/03_turgor_union/2022_2023_Rio_Claro_T3_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_Rio_Claro_T3_Unidad_3.png}}
 
 \chapter{T4 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/03_turgor_union/2022_2023_Rio_Claro_T4_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_Rio_Claro_T4_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/03_turgor_union/2022_2023_Rio_Claro_T4_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_Rio_Claro_T4_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/03_turgor_union/2022_2023_Rio_Claro_T4_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2022_2023_Rio_Claro_T4_Unidad_3.png}}
 
 \chapter{T1 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/03_turgor_union/2023_2024_Rio_Claro_T1_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_Rio_Claro_T1_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/03_turgor_union/2023_2024_Rio_Claro_T1_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_Rio_Claro_T1_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/03_turgor_union/2023_2024_Rio_Claro_T1_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_Rio_Claro_T1_Unidad_3.png}}
 
 \chapter{T2 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/03_turgor_union/2023_2024_Rio_Claro_T2_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_Rio_Claro_T2_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/03_turgor_union/2023_2024_Rio_Claro_T2_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_Rio_Claro_T2_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/03_turgor_union/2023_2024_Rio_Claro_T2_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_Rio_Claro_T2_Unidad_3.png}}
 
 \chapter{T3 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/03_turgor_union/2023_2024_Rio_Claro_T3_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_Rio_Claro_T3_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/03_turgor_union/2023_2024_Rio_Claro_T3_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_Rio_Claro_T3_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/03_turgor_union/2023_2024_Rio_Claro_T3_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_Rio_Claro_T3_Unidad_3.png}}
 
 \chapter{T4 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/03_turgor_union/2023_2024_Rio_Claro_T4_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_Rio_Claro_T4_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/03_turgor_union/2023_2024_Rio_Claro_T4_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_Rio_Claro_T4_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/03_turgor_union/2023_2024_Rio_Claro_T4_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/03_turgor_union/2023_2024_Rio_Claro_T4_Unidad_3.png}}
 
 \chapter{Datos preprocesados}\label{datos-preprocesados}
 
@@ -1536,185 +1128,185 @@ Para obtener el turgor preprocesado por árbol según tratamiento, se
 promediaron las series de los sensores por cada unidad, obteniendo una
 serie única para cada árbol de los tratamientos.
 
-\subsection{La Esperanza}\label{la-esperanza-4}
+\subsection{La Esperanza}\label{la-esperanza-3}
 
 \chapter{T1 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T1_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T1_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T1_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T1_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T1_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T1_Unidad_3.png}}
 
 \chapter{T2 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T2_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T2_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T2_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T2_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T2_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T2_Unidad_3.png}}
 
 \chapter{T3 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T3_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T3_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T3_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T3_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T3_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T3_Unidad_3.png}}
 
 \chapter{T4 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T4_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T4_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T4_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T4_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T4_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_La_Esperanza_T4_Unidad_3.png}}
 
 \chapter{T1 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T1_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T1_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T1_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T1_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T1_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T1_Unidad_3.png}}
 
 \chapter{T2 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T2_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T2_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T2_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T2_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T2_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T2_Unidad_3.png}}
 
 \chapter{T3 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T3_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T3_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T3_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T3_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T3_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T3_Unidad_3.png}}
 
 \chapter{T4 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T4_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T4_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T4_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T4_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T4_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_La_Esperanza_T4_Unidad_3.png}}
 
-\subsection{Rio Claro}\label{rio-claro-4}
+\subsection{Rio Claro}\label{rio-claro-3}
 
 \chapter{T1 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T1_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T1_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T1_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T1_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T1_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T1_Unidad_3.png}}
 
 \chapter{T2 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T2_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T2_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T2_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T2_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T2_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T2_Unidad_3.png}}
 
 \chapter{T3 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T3_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T3_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T3_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T3_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T3_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T3_Unidad_3.png}}
 
 \chapter{T4 (2022-2023)}
 
 Unidad 1
-\includegraphics{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T4_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T4_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T4_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T4_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T4_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2022_2023_Rio_Claro_T4_Unidad_3.png}}
 
 \chapter{T1 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T1_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T1_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T1_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T1_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T1_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T1_Unidad_3.png}}
 
 \chapter{T2 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T2_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T2_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T2_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T2_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T2_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T2_Unidad_3.png}}
 
 \chapter{T3 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T3_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T3_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T3_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T3_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T3_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T3_Unidad_3.png}}
 
 \chapter{T4 (2023-2024)}
 
 Unidad 1
-\includegraphics{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T4_Unidad_1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T4_Unidad_1.png}}
 
 Unidad 2
-\includegraphics{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T4_Unidad_2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T4_Unidad_2.png}}
 
 Unidad 3
-\includegraphics{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T4_Unidad_3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/04_turgor_unidad/2023_2024_Rio_Claro_T4_Unidad_3.png}}
 
 \section{A nivel de tratamiento}\label{a-nivel-de-tratamiento}
 
@@ -1722,285 +1314,82 @@ Para obtener el turgor preprocesado a nivel de tratamiento, se
 promediaron las series promediadas de cada unidad según tratamiento,
 obteniendo una serie única para cada tratamiento de en ambos sitios.
 
-\subsection{La Esperanza}\label{la-esperanza-5}
+\subsection{La Esperanza}\label{la-esperanza-4}
 
 \chapter{T1 (2022-2023)}
 
-\includegraphics{figuras/05_turgor_tratamiento/2022_2023_La_Esperanza_T1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/05_turgor_tratamiento/2022_2023_La_Esperanza_T1.png}}
 
 \chapter{T2 (2022-2023)}
 
-\includegraphics{figuras/05_turgor_tratamiento/2022_2023_La_Esperanza_T2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/05_turgor_tratamiento/2022_2023_La_Esperanza_T2.png}}
 
 \chapter{T3 (2022-2023)}
 
-\includegraphics{figuras/05_turgor_tratamiento/2022_2023_La_Esperanza_T3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/05_turgor_tratamiento/2022_2023_La_Esperanza_T3.png}}
 
 \chapter{T4 (2022-2023)}
 
-\includegraphics{figuras/05_turgor_tratamiento/2022_2023_La_Esperanza_T4.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/05_turgor_tratamiento/2022_2023_La_Esperanza_T4.png}}
 
 \chapter{T1 (2023-2024)}
 
-\includegraphics{figuras/05_turgor_tratamiento/2023_2024_La_Esperanza_T1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/05_turgor_tratamiento/2023_2024_La_Esperanza_T1.png}}
 
 \chapter{T2 (2023-2024)}
 
-\includegraphics{figuras/05_turgor_tratamiento/2023_2024_La_Esperanza_T2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/05_turgor_tratamiento/2023_2024_La_Esperanza_T2.png}}
 
 \chapter{T3 (2023-2024)}
 
-\includegraphics{figuras/05_turgor_tratamiento/2023_2024_La_Esperanza_T3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/05_turgor_tratamiento/2023_2024_La_Esperanza_T3.png}}
 
 \chapter{T4 (2023-2024)}
 
-\includegraphics{figuras/05_turgor_tratamiento/2023_2024_La_Esperanza_T4.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/05_turgor_tratamiento/2023_2024_La_Esperanza_T4.png}}
 
-\subsubsection{Rio Claro}\label{rio-claro-5}
+\subsubsection{Rio Claro}\label{rio-claro-4}
 
 \chapter{T1 (2022-2023)}
 
-\includegraphics{figuras/05_turgor_tratamiento/2022_2023_Rio_Claro_T1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/05_turgor_tratamiento/2022_2023_Rio_Claro_T1.png}}
 
 \chapter{T2 (2022-2023)}
 
-\includegraphics{figuras/05_turgor_tratamiento/2022_2023_Rio_Claro_T2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/05_turgor_tratamiento/2022_2023_Rio_Claro_T2.png}}
 
 \chapter{T3 (2022-2023)}
 
-\includegraphics{figuras/05_turgor_tratamiento/2022_2023_Rio_Claro_T3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/05_turgor_tratamiento/2022_2023_Rio_Claro_T3.png}}
 
 \chapter{T4 (2022-2023)}
 
-\includegraphics{figuras/05_turgor_tratamiento/2022_2023_Rio_Claro_T4.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/05_turgor_tratamiento/2022_2023_Rio_Claro_T4.png}}
 
 \chapter{T1 (2023-2024)}
 
-\includegraphics{figuras/05_turgor_tratamiento/2023_2024_Rio_Claro_T1.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/05_turgor_tratamiento/2023_2024_Rio_Claro_T1.png}}
 
 \chapter{T2 (2023-2024)}
 
-\includegraphics{figuras/05_turgor_tratamiento/2023_2024_Rio_Claro_T2.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/05_turgor_tratamiento/2023_2024_Rio_Claro_T2.png}}
 
 \chapter{T3 (2023-2024)}
 
-\includegraphics{figuras/05_turgor_tratamiento/2023_2024_Rio_Claro_T3.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/05_turgor_tratamiento/2023_2024_Rio_Claro_T3.png}}
 
 \chapter{T4 (2023-2024)}
 
-\includegraphics{figuras/05_turgor_tratamiento/2023_2024_Rio_Claro_T4.png}
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/05_turgor_tratamiento/2023_2024_Rio_Claro_T4.png}}
 
-\part{Capítulo 3: Punto de pérdida de turgor}
+\part{Modelo de potencial y SatOri}
 
-\chapter{Punto de pérdida de
-turgor}\label{punto-de-puxe9rdida-de-turgor}
+\chapter{Modelos basados en tres
+algoritmos}\label{modelos-basados-en-tres-algoritmos}
 
-A continuación se presentan los puntos de pérdida de turgor de cada
-unidad, según tratamiento, sitio y temporada, a partir de las curvas
-presión-volumen, como fue descrito en la sección \ref{sec-pv}.
+\pandocbounded{\includegraphics[keepaspectratio]{figuras/07_modelo_potencial/modelo.png}}
 
-\begin{center}
-\includegraphics{0301_tlp_files/figure-pdf/unnamed-chunk-1-1.pdf}
-\end{center}
-
-\part{Capítulo 4: Análisis comparativo}
-
-Para hallar diferencias significativas tanto a nivel de tratamiento como
-de temporada en un mismo sitio, se utilizó el test de Dunn, el cual
-corresponde a una prueba post-hoc del test de Kruskal-Wallis para
-comparar múltiples grupos sin necesidad de que los datos posean una
-distribución normal (no-paramétrica).
-
-A nivel de tratamiento, se investigaron las diferencias entre los
-distintos tratamientos aplicados en un mismo sitio y temporada. Mientras
-que, a nivel de temporada, se examinaron las diferencias entre distintas
-temporadas dentro del mismo sitio. Para ambos análisis se utilizó un
-p-value ajustado de 0.05/2.
-
-Para visualizar las diferencias entre grupos, se generaron letras que se
-colocaron en cada boxplot. Estas letras indican los grupos de semejanza
-entre sí, permitiendo una interpretación más clara y detallada de los
-resultados obtenidos en el análisis estadístico.
-
-\chapter{Producción}\label{producciuxf3n-1}
-
-\section{Peso total}\label{peso-total-1}
-
-\chapter{Por tratamiento}
-
-\begin{center}
-\includegraphics{0401_produccion_files/figure-pdf/unnamed-chunk-2-1.pdf}
-\end{center}
-
-\chapter{Por temporada}
-
-\begin{center}
-\includegraphics{0401_produccion_files/figure-pdf/unnamed-chunk-3-1.pdf}
-\end{center}
-
-\section{Rendimiento}\label{rendimiento-1}
-
-\chapter{Por tratamiento}
-
-\begin{center}
-\includegraphics{0401_produccion_files/figure-pdf/unnamed-chunk-4-1.pdf}
-\end{center}
-
-\chapter{Por temporada}
-
-\begin{center}
-\includegraphics{0401_produccion_files/figure-pdf/unnamed-chunk-5-1.pdf}
-\end{center}
-
-\section{Densidad}\label{densidad-1}
-
-\chapter{Por tratamiento}
-
-\begin{center}
-\includegraphics{0401_produccion_files/figure-pdf/unnamed-chunk-6-1.pdf}
-\end{center}
-
-\chapter{Por temporada}
-
-\begin{center}
-\includegraphics{0401_produccion_files/figure-pdf/unnamed-chunk-7-1.pdf}
-\end{center}
-
-\chapter{Calidad}\label{calidad-1}
-
-\section{Apariencia}\label{apariencia-1}
-
-\subsection{Peso}\label{peso-1}
-
-\chapter{Por tratamiento}
-
-\begin{center}
-\includegraphics{0402_calidad_files/figure-pdf/unnamed-chunk-2-1.pdf}
-\end{center}
-
-\chapter{Por temporada}
-
-\begin{center}
-\includegraphics{0402_calidad_files/figure-pdf/unnamed-chunk-3-1.pdf}
-\end{center}
-
-\subsection{Diametro}\label{diametro-1}
-
-\chapter{Por tratamiento}
-
-\begin{center}
-\includegraphics{0402_calidad_files/figure-pdf/unnamed-chunk-4-1.pdf}
-\end{center}
-
-\chapter{Por temporada}
-
-\begin{center}
-\includegraphics{0402_calidad_files/figure-pdf/unnamed-chunk-5-1.pdf}
-\end{center}
-
-\chapter{Color}\label{color-1}
-
-\chapter{Por tratamiento}
-
-\begin{center}
-\includegraphics{0402_calidad_files/figure-pdf/unnamed-chunk-6-1.pdf}
-\end{center}
-
-\chapter{Por temporada}
-
-\begin{center}
-\includegraphics{0402_calidad_files/figure-pdf/unnamed-chunk-7-1.pdf}
-\end{center}
-
-\section{Contenido de azucar}\label{contenido-de-azucar-1}
-
-\chapter{Por tratamiento}
-
-\begin{center}
-\includegraphics{0402_calidad_files/figure-pdf/unnamed-chunk-8-1.pdf}
-\end{center}
-
-\chapter{Por temporada}
-
-\begin{center}
-\includegraphics{0402_calidad_files/figure-pdf/unnamed-chunk-9-1.pdf}
-\end{center}
-
-\section{Daño}\label{dauxf1o-1}
-
-\chapter{Por tratamiento}
-
-\begin{center}
-\includegraphics{0402_calidad_files/figure-pdf/unnamed-chunk-10-1.pdf}
-\end{center}
-
-\chapter{Por temporada}
-
-\begin{center}
-\includegraphics{0402_calidad_files/figure-pdf/unnamed-chunk-11-1.pdf}
-\end{center}
-
-\chapter{Parámetros fisiológicos}\label{paruxe1metros-fisioluxf3gicos-1}
-
-\section{Fluorescencia}\label{fluorescencia-1}
-
-\chapter{Por tratamiento}
-
-\begin{center}
-\includegraphics{0403_parametros_files/figure-pdf/unnamed-chunk-2-1.pdf}
-\end{center}
-
-\chapter{Por temporada}
-
-\begin{center}
-\includegraphics{0403_parametros_files/figure-pdf/unnamed-chunk-3-1.pdf}
-\end{center}
-
-\section{Potencial}\label{potencial-1}
-
-\chapter{Por tratamiento}
-
-\begin{center}
-\includegraphics{0403_parametros_files/figure-pdf/unnamed-chunk-4-1.pdf}
-\end{center}
-
-\chapter{Por temporada}
-
-\begin{center}
-\includegraphics{0403_parametros_files/figure-pdf/unnamed-chunk-5-1.pdf}
-\end{center}
-
-\section{LAI}\label{lai-1}
-
-\chapter{Por tratamiento}
-
-\begin{center}
-\includegraphics{0403_parametros_files/figure-pdf/unnamed-chunk-6-1.pdf}
-\end{center}
-
-\chapter{Por temporada}
-
-\begin{center}
-\includegraphics{0403_parametros_files/figure-pdf/unnamed-chunk-7-1.pdf}
-\end{center}
-
-\chapter{Humedad de suelo}\label{humedad-de-suelo-1}
-
-\chapter{Por tratamiento}
-
-\begin{center}
-\includegraphics{0404_humedad_files/figure-pdf/unnamed-chunk-1-1.pdf}
-\end{center}
-
-\chapter{Por temporada}
-
-\begin{center}
-\includegraphics{0404_humedad_files/figure-pdf/unnamed-chunk-2-1.pdf}
-\end{center}
-
-\part{Capítulo 5: Modelo de potencial}
-
-\chapter{Unidimensional: turgor}\label{unidimensional-turgor}
+\chapter{SatOri}\label{satori}
 
 \bookmarksetup{startatroot}
 
@@ -2010,14 +1399,9 @@ resultados obtenidos en el análisis estadístico.
 \markboth{References}{References}
 
 \phantomsection\label{refs}
-\begin{CSLReferences}{1}{0}
-\bibitem[\citeproctext]{ref-halbritter}
-Halbritter, Aud H., Amy Eycott, Sabine Reinsch, y Hans De Boeck. 2020.
-{«The handbook for standardised field and laboratory measurements in
-terrestrial climate-change experiments and observational studies
-(ClimEx)»}. \emph{Methods in Ecology and Evolution} 11 (1): 22-37.
-
+\begin{CSLReferences}{0}{1}
 \end{CSLReferences}
+
 
 
 

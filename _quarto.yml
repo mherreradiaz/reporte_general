@@ -6,7 +6,7 @@ book:
   title: "Reporte ID23_10297"
   output-file: "reporte_general"
   author: "M. Abel Herrera"
-  date: "24/4/2024"
+  date: today
   chapters:
     - part: index.qmd
       chapters:
@@ -30,9 +30,10 @@ book:
         - 102_limpieza.qmd
         - 103_estandarizacion.qmd
         - 104_preprocesado.qmd
-    - part: 'Capítulo 5: Modelo de potencial'
+    - part: 'Modelo de potencial y SatOri'
       chapters: 
-        - 0501_potencial.qmd
+        - 007_potencial.qmd
+        - 008_satori.qmd
     - references.qmd
 
 bibliography: references.bib

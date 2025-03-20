@@ -1,0 +1,4 @@
+# Modelos basados en tres algoritmos
+
+![](figuras/07_modelo_potencial/modelo.png)
+
