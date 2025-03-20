@@ -1,9 +1,9 @@
 # Calidad
 
 ```{r}
-source('C:/Hemera/garces/script/funciones/paquetes.R')
+source('C:/Users/mauricio.herrera/Documents/Projectos/garces/script/funciones/paquetes.R')
 
-data_apariencia <- read_rds('C:/Hemera/garces/data/data_processed/cosecha/apariencia.rds')
+data_apariencia <- read_rds('C:/Users/mauricio.herrera/Documents/Projectos/garces/data/processed/cosecha/apariencia.rds')
 ```
 
 ## Apariencia
@@ -272,7 +272,7 @@ data_apariencia_2 |>
 #| fig-align: center
 #| lightbox: true
 
-data_brix <- read_rds('C:/Hemera/garces/data/data_processed/cosecha/brix.rds')
+data_brix <- read_rds('C:/Users/mauricio.herrera/Documents/Projectos/garces/data/processed/cosecha/brix.rds')
 
 data_cld <- data_brix |>
   group_by(temporada,sitio) |>
@@ -359,7 +359,7 @@ data_brix_2 |>
 #| fig-align: center
 #| lightbox: true
 
-data_daño <- read_rds('C:/Hemera/garces/data/data_processed/cosecha/daño.rds') |>
+data_daño <- read_rds('C:/Users/mauricio.herrera/Documents/Projectos/garces/data/processed/cosecha/daño.rds') |>
   mutate(daño = 100-(d_nulo/n)*100)
 
 data_cld <- data_daño |>

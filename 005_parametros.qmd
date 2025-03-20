@@ -1,7 +1,7 @@
 # Parámetros fisiológicos
 
 ```{r}
-source('C:/Hemera/garces/script/funciones/paquetes.R')
+source('C:/Users/mauricio.herrera/Documents/Projectos/garces/script/funciones/paquetes.R')
 ```
 
 ## Fluorescencia
@@ -15,7 +15,7 @@ source('C:/Hemera/garces/script/funciones/paquetes.R')
 #| fig-align: center
 #| lightbox: true
 
-data_fluo <- read_rds('C:/Hemera/garces/data/data_processed/fluorescencia.rds')
+data_fluo <- read_rds('C:/Users/mauricio.herrera/Documents/Projectos/garces/data/processed/fluorescencia.rds')
 
 data_cld <- data_fluo |>
   group_by(temporada,sitio) |>
@@ -87,6 +87,28 @@ data_fluo |>
         axis.title.y = element_text(margin = margin(r = 17)),
         axis.title.x = element_text(margin = margin(t = 17)))
 ```
+
+# Series temporales
+
+```{r, results='hide'}
+fluo_info <- data_fluo |>
+  select(sitio,temporada,tratamiento,unidad,codigo) |>
+  distinct() |>
+  arrange(temporada,sitio,tratamiento,unidad)
+
+data_fluo |> 
+  ggplot(aes(unidad,Phi_Po, fill = sitio)) +
+  geom_boxplot(alpha = .7) +
+  geom_text(data = fluo_info, aes(unidad,1,label = codigo),size=3) +
+  facet_grid(temporada+sitio~tratamiento, labeller = as_labeller(names)) +
+  labs(y = expression(Phi[P0]),
+       x = 'Unidad') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 12),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
 :::
 
 ## Potencial
@@ -100,7 +122,7 @@ data_fluo |>
 #| fig-align: center
 #| lightbox: true
 
-data_potencial <- read_rds('C:/Hemera/garces/data/data_processed/potencial.rds') |>
+data_potencial <- read_rds('C:/Users/mauricio.herrera/Documents/Projectos/garces/data/processed/potencial.rds') |>
   mutate(MPa = -potencial_bar/10) |>
   na.omit()
 
@@ -174,6 +196,32 @@ data_potencial |>
         axis.title.y = element_text(margin = margin(r = 17)),
         axis.title.x = element_text(margin = margin(t = 17)))
 ```
+
+# Serie temporal
+
+```{r}
+#| fig-width: 12
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_potencial |>
+  mutate(fecha = case_when(temporada == '2023-2024' ~ as.Date(fecha) - years(1),
+                           temporada == '2022-2023' ~ as.Date(fecha))) |>
+  ggplot(aes(fecha,MPa,color=unidad)) +
+  geom_point(size=1) +
+  geom_line(linewidth = .5) +
+  scale_x_date(date_breaks = "2 month", date_labels = "%b",
+               limits = as.Date(c("2022-10-01", "2023-03-3"))) +
+  facet_grid(temporada+sitio~tratamiento, labeller = as_labeller(names)) +
+    labs(y = 'Potencial (MPa)',
+       x = 'Meses',
+       color = 'Unidad') +
+  theme_light() +
+  theme(text = element_text(size = 15),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
 :::
 
 ## LAI
@@ -187,7 +235,7 @@ data_potencial |>
 #| fig-align: center
 #| lightbox: true
 
-data_lai <- read_rds('C:/Hemera/garces/data/data_processed/ceptometro.rds')
+data_lai <- read_rds('C:/Users/mauricio.herrera/Documents/Projectos/garces/data/processed/ceptometro.rds')
 
 data_cld <- data_lai |>
   group_by(temporada,sitio) |>
@@ -256,6 +304,32 @@ data_lai |>
   theme_light() +
   theme(legend.position = "none",
         text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+
+# Serie temporal
+
+```{r}
+#| fig-width: 13
+#| fig-height: 5
+#| fig-align: center
+#| lightbox: true
+
+data_lai |>
+  mutate(fecha = case_when(temporada == '2023-2024' ~ fecha - years(1),
+                           temporada == '2022-2023' ~ fecha)) |>
+  ggplot(aes(fecha,lai,color=tratamiento)) +
+  geom_point(size=1) +
+  geom_line(linewidth = .5) +
+  scale_x_date(date_breaks = "2 month", date_labels = "%b",
+               limits = as.Date(c("2022-10-01", "2023-03-3"))) +
+  facet_grid(~temporada+sitio, labeller = as_labeller(names)) +
+    labs(y = 'LAI',
+       x = 'Meses',
+       color = 'Unidad') +
+  theme_light() +
+  theme(text = element_text(size = 15),
         axis.title.y = element_text(margin = margin(r = 17)),
         axis.title.x = element_text(margin = margin(t = 17)))
 ```

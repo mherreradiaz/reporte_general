@@ -12,29 +12,24 @@ book:
       chapters:
         - summary.qmd
         - intro.qmd
-    - part: 'Capítulo 1: Análisis explotatorio'
+    - part: 'Producción'
       chapters:
-        - 0101_produccion.qmd
-        - 0102_calidad.qmd
-        - 0103_parametros.qmd
-        - 0104_humedad.qmd
-        - 0105_clima.qmd
-        - 0106_pv.qmd
-    - part: 0200_capitulo_2.qmd
+        - 001_produccion.qmd
+        - 002_calidad.qmd
+    - part: 'Variables meteorológicas'
       chapters: 
-        - 0201_clustering.qmd
-        - 0202_limpieza.qmd
-        - 0203_estandarizacion.qmd
-        - 0204_preprocesado.qmd
-    - part: 'Capítulo 3: Punto de pérdida de turgor'
-      chapters: 
-        - 0301_tlp.qmd
-    - part: 0400_capitulo_4.qmd
+        - 003_humedad.qmd
+        - 004_clima.qmd
+    - part: 'Parámetros fisiológicos'
       chapters:
-        - 0401_produccion.qmd
-        - 0402_calidad.qmd
-        - 0403_parametros.qmd
-        - 0404_humedad.qmd
+        - 005_parametros.qmd
+        - 006_tlp.qmd
+    - part: 100_preproceso_turgor.qmd
+      chapters: 
+        - 101_clustering.qmd
+        - 102_limpieza.qmd
+        - 103_estandarizacion.qmd
+        - 104_preprocesado.qmd
     - part: 'Capítulo 5: Modelo de potencial'
       chapters: 
         - 0501_potencial.qmd

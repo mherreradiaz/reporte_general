@@ -1,8 +1,6 @@
 # Curva Presión-volumen {#sec-pv}
 
-Los datos utilizados para las curvas Presión-volumen corresponden a mediciones de potencial hídrico xilemático y peso en hojas tomadas en laboratorio con cámara de presión Scholander y balanza analítica. \[Metodología de toma de datos\].
-
-Según la metodología descrita por @halbritter, el punto de pérdida de turgor (TLP) se estima como el último punto de la curva del Ψ inverso en función del RWD (1 - RWC) antes de comenzar su fracción lineal, como se muestra en la @fig-tlp.
+Los datos utilizados para las curvas Presión-volumen corresponden a mediciones de potencial hídrico xilemático y peso en hojas tomadas en laboratorio con cámara de presión Scholander y balanza analítica. Según la metodología descrita por @halbritter, el punto de pérdida de turgor (TLP) se estima como el último punto de la curva del Ψ inverso en función del RWD (1 - RWC) antes de comenzar su fracción lineal, como se muestra en la @fig-tlp.
 
 ![Ejemplo de una curva presión-volumen. Los círculos llenos representan las primeras 5 mediciones iterativas: los círculos abiertos representan las últimas 6 mediciones. La porción lineal (línea sólida) muestra el potencial osmótico (Ψo), la porción curva (línea discontinua) es el potencial hídrico antes del punto de pérdida de turgencia (TLP), y el área sombreada es el potencial de turgencia (Ψp).Fuente: @halbritter (2020).](figuras/misc/tlp.png){#fig-tlp}
 
