@@ -1,4 +1,4 @@
-# Capítulo 2: Preprocesamiento de datos de turgor
+# Preprocesamiento de datos de turgor
 
 ```{r}
 source('C:/Users/mauricio.herrera/Documents/Projectos/garces/script/funciones/paquetes.R')

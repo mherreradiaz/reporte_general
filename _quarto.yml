@@ -3,9 +3,9 @@ project:
   output-dir: docs
 
 book:
-  title: "Reporte ID23_10297"
+  title: "Reporte ID21I10297"
   output-file: "reporte_general"
-  author: "M. Abel Herrera"
+  author: "M. Abel Herrera y Francisco Zambrano"
   date: today
   chapters:
     - part: index.qmd
