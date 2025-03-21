@@ -1,9 +1,9 @@
 # Producción
 
-La metodología utilizada para la determinación del peso total, rendimiento y densidad de frutos fue la misma que en el [reporte 2022-2023](https://mherreradiaz.github.io/reporte_general/anexo/01_reporte_calidad_produccion.pdf){target="_blank"}. Las cosechas se realizaron el 23 de diciembre de 2022 en Río Claro y el 12 de diciembre de 2022 en La Esperanza.
+La metodología utilizada para la determinación del peso total, rendimiento y densidad de frutos fue la misma que en el [reporte 2022-2023](https://mherreradiaz.github.io/reporte_general/anexo/01_reporte_calidad_produccion.pdf){target="_blank"}.
 
 ```{r}
-source('C:/Users/mauricio.herrera/Documents/Projectos/garces/script/funciones/paquetes.R')
+source('script/setup.R')
 ```
 
 ## Peso total
@@ -19,7 +19,7 @@ En La Esperanza, el peso total de la producción fue menor en la temporada 2023-
 #| fig-align: center
 #| lightbox: true
 
-data_produccion <- read_rds('C:/Users/mauricio.herrera/Documents/Projectos/garces/data/processed/cosecha/produccion.rds')
+data_produccion <- read_rds('data/produccion.rds')
 
 data_cld <- data_produccion |>
   group_by(temporada,sitio) |>

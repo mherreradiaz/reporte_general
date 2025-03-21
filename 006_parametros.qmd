@@ -1,0 +1,336 @@
+# Parámetros fisiológicos
+
+```{r}
+source('script/setup.R')
+```
+
+## Fluorescencia
+
+::: panel-tabset
+# Por tratamiento
+
+```{r, results='hide'}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_fluo <- read_rds('data/fluorescencia.rds')
+
+data_cld <- data_fluo |>
+  group_by(temporada,sitio) |>
+  reframe(cld(Phi_Po,tratamiento)) |>
+  rename(tratamiento = grupo)
+
+add <- diff(range(data_fluo$Phi_Po))*0.2
+
+data_cld <- data_fluo |>
+  group_by(temporada,sitio,tratamiento) |>
+  reframe(min = min(ifelse(length(boxplot.stats(Phi_Po)$out) != 0,
+                           min(boxplot.stats(Phi_Po)$out),9999999),
+                        boxplot.stats(Phi_Po)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(Phi_Po)$out) != 0,
+                           max(boxplot.stats(Phi_Po)$out),-9999999),
+                        boxplot.stats(Phi_Po)$stats[5])+add) |>
+  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+
+data_fluo |>
+  ggplot(aes(tratamiento,Phi_Po,fill = sitio)) +
+  geom_boxplot() +
+  geom_text(data = data_cld, aes(tratamiento, max,label = cld),size=4) +
+  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  labs(y = expression(Phi[P0]),
+       x = 'Tratamiento') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+
+# Por temporada
+
+```{r, results='hide'}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_fluo <- data_fluo |>
+  mutate(temporada = as.factor(ifelse(temporada == '2022-2023',1,2)))
+
+data_cld <- data_fluo |>
+  group_by(sitio, tratamiento) |>
+  reframe(cld(Phi_Po,temporada)) |>
+  rename(temporada = grupo)
+
+data_cld <- data_fluo |>
+  group_by(temporada,sitio,tratamiento) |>
+  reframe(min = min(ifelse(length(boxplot.stats(Phi_Po)$out) != 0,
+                           min(boxplot.stats(Phi_Po)$out),9999999),
+                        boxplot.stats(Phi_Po)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(Phi_Po)$out) != 0,
+                           max(boxplot.stats(Phi_Po)$out),-9999999),
+                        boxplot.stats(Phi_Po)$stats[5])+add) |>
+  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+
+data_fluo |>
+  ggplot(aes(temporada,Phi_Po,fill=tratamiento)) +
+  geom_boxplot() +
+  geom_text(data = data_cld, aes(temporada, max,label = cld),size=4) +
+  facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
+  labs(y = expression(Phi[P0]),
+       x = 'Temporada') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+
+# Series temporales
+
+```{r, results='hide'}
+fluo_info <- data_fluo |>
+  select(sitio,temporada,tratamiento,unidad,codigo) |>
+  distinct() |>
+  arrange(temporada,sitio,tratamiento,unidad)
+
+data_fluo |> 
+  ggplot(aes(unidad,Phi_Po, fill = sitio)) +
+  geom_boxplot(alpha = .7) +
+  geom_text(data = fluo_info, aes(unidad,1,label = codigo),size=3) +
+  facet_grid(temporada+sitio~tratamiento, labeller = as_labeller(names)) +
+  labs(y = expression(Phi[P0]),
+       x = 'Unidad') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 12),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+:::
+
+## Potencial
+
+::: panel-tabset
+# Por tratamiento
+
+```{r, results='hide'}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_potencial <- read_rds('data/potencial.rds') |>
+  mutate(MPa = -potencial_bar/10) |>
+  na.omit()
+
+data_cld <- data_potencial |>
+  group_by(temporada,sitio) |>
+  reframe(cld(MPa,tratamiento)) |>
+  rename(tratamiento = grupo)
+
+add <- diff(range(data_potencial$MPa))*0.2
+
+data_cld <- data_potencial |>
+  group_by(temporada,sitio,tratamiento) |>
+  reframe(min = min(ifelse(length(boxplot.stats(MPa)$out) != 0,
+                           min(boxplot.stats(MPa)$out),9999999),
+                        boxplot.stats(MPa)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(MPa)$out) != 0,
+                           max(boxplot.stats(MPa)$out),-9999999),
+                        boxplot.stats(MPa)$stats[5])+add) |>
+  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+
+data_potencial |>
+  ggplot(aes(tratamiento,MPa,fill = sitio)) +
+  geom_boxplot() +
+  geom_text(data = data_cld, aes(tratamiento, max,label = cld),size=4) +
+  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  labs(y = 'Potencial (MPa)',
+       x = 'Tratamiento') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+
+# Por temporada
+
+```{r, results='hide'}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_potencial <- data_potencial |>
+  mutate(temporada = as.factor(ifelse(temporada == '2022-2023',1,2)))
+
+data_cld <- data_potencial |>
+  group_by(sitio, tratamiento) |>
+  reframe(cld(MPa,temporada)) |>
+  rename(temporada = grupo)
+
+data_cld <- data_potencial |>
+  group_by(temporada,sitio,tratamiento) |>
+  reframe(min = min(ifelse(length(boxplot.stats(MPa)$out) != 0,
+                           min(boxplot.stats(MPa)$out),9999999),
+                        boxplot.stats(MPa)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(MPa)$out) != 0,
+                           max(boxplot.stats(MPa)$out),-9999999),
+                        boxplot.stats(MPa)$stats[5])+add) |>
+  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+
+data_potencial |>
+  ggplot(aes(temporada,MPa,fill=tratamiento)) +
+  geom_boxplot() +
+  geom_text(data = data_cld, aes(temporada, max,label = cld),size=4) +
+  facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
+  labs(y = 'Potencial (MPa)',
+       x = 'Temporada') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+
+# Serie temporal
+
+```{r}
+#| fig-width: 12
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_potencial |>
+  mutate(fecha = case_when(temporada == '2023-2024' ~ as.Date(fecha) - years(1),
+                           temporada == '2022-2023' ~ as.Date(fecha))) |>
+  ggplot(aes(fecha,MPa,color=unidad)) +
+  geom_point(size=1) +
+  geom_line(linewidth = .5) +
+  scale_x_date(date_breaks = "2 month", date_labels = "%b",
+               limits = as.Date(c("2022-10-01", "2023-03-3"))) +
+  facet_grid(temporada+sitio~tratamiento, labeller = as_labeller(names)) +
+    labs(y = 'Potencial (MPa)',
+       x = 'Meses',
+       color = 'Unidad') +
+  theme_light() +
+  theme(text = element_text(size = 15),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+:::
+
+## LAI
+
+::: panel-tabset
+# Por tratamiento
+
+```{r, results='hide'}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_lai <- read_rds('data/ceptometro.rds')
+
+data_cld <- data_lai |>
+  group_by(temporada,sitio) |>
+  reframe(cld(lai,tratamiento)) |>
+  rename(tratamiento = grupo)
+
+add <- diff(range(data_lai$lai))*0.2
+
+data_cld <- data_lai |>
+  group_by(temporada,sitio,tratamiento) |>
+  reframe(min = min(ifelse(length(boxplot.stats(lai)$out) != 0,
+                           min(boxplot.stats(lai)$out),9999999),
+                        boxplot.stats(lai)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(lai)$out) != 0,
+                           max(boxplot.stats(lai)$out),-9999999),
+                        boxplot.stats(lai)$stats[5])+add) |>
+  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+
+data_lai |>
+  ggplot(aes(tratamiento,lai,fill = sitio)) +
+  geom_boxplot() +
+  geom_text(data = data_cld, aes(tratamiento, max,label = cld),size=4) +
+  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  labs(y = 'LAI',
+       x = 'Tratamiento') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+
+# Por temporada
+
+```{r, results='hide'}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_lai <- data_lai |>
+  mutate(temporada = as.factor(ifelse(temporada == '2022-2023',1,2)))
+
+data_cld <- data_lai |>
+  group_by(sitio, tratamiento) |>
+  reframe(cld(lai,temporada)) |>
+  rename(temporada = grupo)
+
+data_cld <- data_lai |>
+  group_by(temporada,sitio,tratamiento) |>
+  reframe(min = min(ifelse(length(boxplot.stats(lai)$out) != 0,
+                           min(boxplot.stats(lai)$out),9999999),
+                        boxplot.stats(lai)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(lai)$out) != 0,
+                           max(boxplot.stats(lai)$out),-9999999),
+                        boxplot.stats(lai)$stats[5])+add) |>
+  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+
+data_lai |>
+  ggplot(aes(temporada,lai,fill=tratamiento)) +
+  geom_boxplot() +
+  geom_text(data = data_cld, aes(temporada, max,label = cld),size=4) +
+  facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
+  labs(y = 'LAI',
+       x = 'Temporada') +
+  theme_light() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+
+# Serie temporal
+
+```{r}
+#| fig-width: 13
+#| fig-height: 5
+#| fig-align: center
+#| lightbox: true
+
+data_lai |>
+  mutate(fecha = case_when(temporada == '2023-2024' ~ fecha - years(1),
+                           temporada == '2022-2023' ~ fecha)) |>
+  ggplot(aes(fecha,lai,color=tratamiento)) +
+  geom_point(size=1) +
+  geom_line(linewidth = .5) +
+  scale_x_date(date_breaks = "2 month", date_labels = "%b",
+               limits = as.Date(c("2022-10-01", "2023-03-3"))) +
+  facet_grid(~temporada+sitio, labeller = as_labeller(names)) +
+    labs(y = 'LAI',
+       x = 'Meses',
+       color = 'Unidad') +
+  theme_light() +
+  theme(text = element_text(size = 15),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)))
+```
+:::

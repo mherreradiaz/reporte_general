@@ -1,13 +1,13 @@
 # Clima
 
 ```{r}
-source('C:/Users/mauricio.herrera/Documents/Projectos/garces/script/funciones/paquetes.R')
+source('script/setup.R')
 ```
 
 Las variables climáticas fueron obtenidas de las estaciones meteorológicas de Garces Fruits ubicadas en ambos sitios.
 
 ```{r}
-data_clima <- read_rds('C:/Users/mauricio.herrera/Documents/Projectos/garces/data/processed/clima_hora.rds') |>
+data_clima <- read_rds('data/clima_hora.rds') |>
   mutate(fecha_hora = as.POSIXct(paste0(fecha,' ',hora,':00'), format = "%Y-%m-%d %H:%M"),
          temporada = as.factor(temporada),
          sitio = as.factor(sitio))
