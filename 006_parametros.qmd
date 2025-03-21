@@ -91,6 +91,11 @@ data_fluo |>
 # Series temporales
 
 ```{r, results='hide'}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
 fluo_info <- data_fluo |>
   select(sitio,temporada,tratamiento,unidad,codigo) |>
   distinct() |>
@@ -206,8 +211,8 @@ data_potencial |>
 #| lightbox: true
 
 data_potencial |>
-  mutate(fecha = case_when(temporada == '2023-2024' ~ as.Date(fecha) - years(1),
-                           temporada == '2022-2023' ~ as.Date(fecha))) |>
+  mutate(fecha = case_when(temporada == 2 ~ as.Date(fecha) - years(1),
+                           temporada == 1 ~ as.Date(fecha))) |>
   ggplot(aes(fecha,MPa,color=unidad)) +
   geom_point(size=1) +
   geom_line(linewidth = .5) +
@@ -317,8 +322,8 @@ data_lai |>
 #| lightbox: true
 
 data_lai |>
-  mutate(fecha = case_when(temporada == '2023-2024' ~ fecha - years(1),
-                           temporada == '2022-2023' ~ fecha)) |>
+  mutate(fecha = case_when(temporada == 2 ~ fecha - years(1),
+                           temporada == 1 ~ fecha)) |>
   ggplot(aes(fecha,lai,color=tratamiento)) +
   geom_point(size=1) +
   geom_line(linewidth = .5) +
