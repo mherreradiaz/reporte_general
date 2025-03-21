@@ -21,14 +21,13 @@ book:
   repo-branch: main
   repo-actions: [edit, issue]
   chapters:
-    - part: 000_reporte.qmd
     - part: index.qmd
-    - index.qmd
     - prefacio.qmd
     - part: "Introducción"
       chapters:
         - summary.qmd
         - intro.qmd
+    - part: 000_reporte.qmd
     - part: 'Producción'
       chapters:
         - 001_produccion.qmd
