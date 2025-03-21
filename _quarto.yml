@@ -21,7 +21,7 @@ book:
   repo-branch: main
   repo-actions: [edit, issue]
   chapters:
-    - part: index.qmd
+    - index.qmd
     - prefacio.qmd
     - part: "Introducción"
       chapters:
