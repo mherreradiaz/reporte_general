@@ -8,11 +8,11 @@ Para el preprocesamiento de los datos se llevó a cabo una limpieza basada en cl
 
 ```{mermaid}
 flowchart TD
-  A["Datos brutos de turgor\n (sensor)"] --> B(Clustering)
-  B --> C["Datos clusterizados\n (sensor)"]
-  D[Temperatura y VPD] --> E("Limpieza de datos:\n eliminación de clusters")
+  A["Datos brutos de turgor (sensor)"] --> B(Clustering)
+  B --> C["Datos clusterizados (sensor)"]
+  D[Temperatura y VPD] --> E("Limpieza de datos: eliminación de clusters")
   C --> E
-  E --> F["Datos clusterizados limpios\n (sensor)"]
+  E --> F["Datos clusterizados limpios (sensor)"]
   F --> G(Estandarización de clusters)
   G --> H["Datos preprocesados (sensor)"]
   H --> I["Datos preprocesados (unidad)"]
