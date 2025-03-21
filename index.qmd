@@ -1,8 +1,8 @@
 # Prefacio {.unnumbered}
 
-Reporte general del proyecto ID21I10297, financiado por la Agencia Nacional de Investigación y Desarrollo (ANID) por medio del rpoyecto FONDEF IDEA 2021.
+Reporte general del proyecto ID21I10297, financiado por la Agencia Nacional de Investigación y Desarrollo (ANID) por medio del proyecto FONDEF IDEA 2021.
 
-Esto proyecto estubo a cargo del director Dr. Francisco Zambrano Bigiarini de la Universidad Mayor.
+Esto proyecto estuvo a cargo del director Dr. Francisco Zambrano Bigiarini de la Universidad Mayor.
 
 Investigadores que participaron el el proyecto:
 
