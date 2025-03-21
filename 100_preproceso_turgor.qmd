@@ -1,10 +1,10 @@
 # Preprocesamiento de datos de turgor
 
 ```{r}
-source('C:/Users/mauricio.herrera/Documents/Projectos/garces/script/funciones/paquetes.R')
+source('script/setup.R')
 ```
 
-Como se mencionó en la sección @sec-turgor, para el preprocesamiento de los datos se llevó a cabo una limpieza basada en clustering y la correlación con la temperatura y VPD. Esto permitió diferenciar periodos que se alejaban del comportamiento normal del turgor (i.e. puntos máximos a la hora de más demanda hídrica del día y disminución en las horas de la noche). A continuación se presenta el diagrama de flujo del preprocesamiento de los datos de turgor.
+Para el preprocesamiento de los datos se llevó a cabo una limpieza basada en clustering y la correlación con la temperatura y VPD. Esto permitió diferenciar periodos que se alejaban del comportamiento normal del turgor (i.e. puntos máximos a la hora de más demanda hídrica del día y disminución en las horas de la noche). A continuación se presenta el diagrama de flujo del preprocesamiento de los datos de turgor.
 
 ```{mermaid}
 flowchart TD
