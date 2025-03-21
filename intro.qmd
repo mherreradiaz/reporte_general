@@ -1,4 +1,4 @@
-# Introducción
+# Introducción {.unnumbered}
 
 El cambio climático ha intensificado la sequía en diversas regiones del mundo, afectando particularmente a Chile Central, donde se ha registrado un evento de Mega Sequía sin precedentes en los últimos milenios. Desde 2010, la zona ha experimentado una reducción sostenida de las precipitaciones, con déficits promedio entre 20-40% (Garreaud et al. 2020). Este fenómeno impacta directamente la disponibilidad hídrica para la agricultura, con repercusiones en la productividad y sostenibilidad del sector (Peña-Guerrero et al. 2020). Ante este escenario, se requieren estrategias de gestión del agua más eficientes que permitan a los productores agrícolas adaptarse a la variabilidad climática (Hurlbert y Gupta 2017).
 

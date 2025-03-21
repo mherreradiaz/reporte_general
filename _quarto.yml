@@ -23,10 +23,8 @@ book:
   chapters:
     - index.qmd
     - prefacio.qmd
-    - part: "Introducción"
-      chapters:
-        - summary.qmd
-        - intro.qmd
+    - summary.qmd
+    - intro.qmd
     - 000_reporte.qmd
     - part: 'Producción'
       chapters:
