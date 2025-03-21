@@ -1,15 +1,15 @@
 # Punto de pérdida de turgor
 
-A continuación se presentan los puntos de pérdida de turgor de cada unidad, según tratamiento, sitio y temporada, a partir de las curvas presión-volumen, como se describe en el anexo [Curvas Presión-Volumen](https://mherreradiaz.github.io/reporte_general/anexo/0061_pv.qmd).
+A continuación se presentan los puntos de pérdida de turgor de cada unidad, según tratamiento, sitio y temporada, a partir de las curvas presión-volumen, como se describe en el anexo [Curvas Presión-Volumen](https://mherreradiaz.github.io/reporte_general/anexos/pv_metodology.html).
 
 ```{r}
 #| fig-width: 10
 #| fig-height: 7
 #| fig-align: center
 #| lightbox: true
-source('C:/Users/mauricio.herrera/Documents/Projectos/garces/script/funciones/paquetes.R')
+source('script/setup.R')
 
-data_tlp <- read_rds('C:/Users/mauricio.herrera/Documents/Projectos/garces/data/processed/tlp.rds') |>
+data_tlp <- read_rds('data/tlp.rds') |>
   mutate(tlp = -10*tlp)
 
 tlp_info <- data_tlp |>

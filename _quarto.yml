@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: docs
+  resources:
+    - static/**
 
 book:
   title: "Informe ID21I10297"
@@ -19,14 +21,11 @@ book:
   repo-branch: main
   repo-actions: [edit, issue]
   chapters:
-<<<<<<< HEAD
     - part: 000_reporte.qmd
     - part: index.qmd
-=======
     - index.qmd
     - prefacio.qmd
     - part: "Introducción"
->>>>>>> 199054bf20549fbce47fef026c40da5190bd43a2
       chapters:
         - summary.qmd
         - intro.qmd

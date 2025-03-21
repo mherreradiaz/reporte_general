@@ -1,7 +1,5 @@
 # Producción
 
-La metodología utilizada para la determinación del peso total, rendimiento y densidad de frutos fue la misma que en el [reporte 2022-2023](https://mherreradiaz.github.io/reporte_general/anexo/01_reporte_calidad_produccion.pdf){target="_blank"}.
-
 ```{r}
 source('script/setup.R')
 ```
