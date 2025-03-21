@@ -282,15 +282,6 @@ planta y así no haya merma en la producción y calidad de la fruta.
 
 \bookmarksetup{startatroot}
 
-\chapter*{Resumen}\label{resumen}
-\addcontentsline{toc}{chapter}{Resumen}
-
-\markboth{Resumen}{Resumen}
-
-{[}Resumen{]}
-
-\bookmarksetup{startatroot}
-
 \chapter*{Introducción}\label{introducciuxf3n}
 \addcontentsline{toc}{chapter}{Introducción}
 
@@ -430,6 +421,14 @@ frutos/kg en las tres unidades.
 
 \subsection{Peso}\label{peso}
 
+En La Esperanza, no se observaron diferencias significativas en el peso
+de las cerezas entre tratamientos en ninguna de las temporadas, salvo
+por T4 en la temporada 2022-2023 donde el peso fue mayor. En contraste,
+en Río Claro durante la temporada 2022-2023, el peso del fruto disminuyó
+significativamente en los tratamientos con RDC respecto al control (T0),
+con la reducción más pronunciada en T3. T4 mostró una recuperación
+parcial, aunque sin alcanzar los valores del control.
+
 \chapter{Por tratamiento}
 
 \begin{center}
@@ -444,6 +443,16 @@ frutos/kg en las tres unidades.
 
 \subsection{Diametro}\label{diametro}
 
+En La Esperanza, los tratamientos con RDC mostraron algunas diferencias
+significativas en el diámetro del fruto en 2022-2023, donde T2 presentó
+menores valores que T0, mientras que T4 tuvo diámetros ligeramente
+mayores que T2 y T3. En 2023-2024, no hubo diferencias significativas
+entre tratamientos, excepto por T4, que mostró un leve incremento
+respecto al resto. En Río Claro, el RDC redujo significativamente el
+diámetro del fruto en 2022-2023, con T3 mostrando los menores valores y
+diferencias significativas con T0, mientras que T2 y T4 presentaron
+valores intermedios.
+
 \chapter{Por tratamiento}
 
 \begin{center}
@@ -456,7 +465,14 @@ frutos/kg en las tres unidades.
 \pandocbounded{\includegraphics[keepaspectratio]{002_calidad_files/figure-pdf/unnamed-chunk-5-1.pdf}}
 \end{center}
 
-\chapter{Color}\label{color}
+\section{Color}\label{color}
+
+En La Esperanza, el grado de color presentó diferencias significativas
+en 2022-2023, con T2 mostrando valores menores que T0 y T4, mientras que
+T3 tuvo valores intermedios. En 2023-2024, T0 mostró valores inferiores
+a T3 y T4, sin diferencias entre los demás tratamientos. En Río Claro,
+en 2022-2023, T2, T3 y T4 presentaron valores menores que T0 y T1, sin
+diferencias entre ellos.
 
 \chapter{Por tratamiento}
 
@@ -471,6 +487,13 @@ frutos/kg en las tres unidades.
 \end{center}
 
 \section{Contenido de azucar}\label{contenido-de-azucar}
+
+En La Esperanza, los sólidos solubles presentaron diferencias
+significativas solo en la temporada 2022-2023, con T3 mostrando los
+mayores valores y T4 los menores.En 2023-2024, no se observaron
+diferencias significativas entre tratamientos. En Río Claro, en
+2022-2023, T4 presentó valores significativamente mayores que el resto
+de los tratamientos, los cuales no mostraron diferencias entre sí.
 
 \chapter{Por tratamiento}
 
@@ -654,14 +677,24 @@ Presión-Volumen}.
 
 \part{Preprocesamiento de datos de turgor}
 
-Para el preprocesamiento de los datos se llevó a cabo una limpieza
-basada en clustering y la correlación con la temperatura y VPD. Esto
-permitió diferenciar periodos que se alejaban del comportamiento normal
-del turgor (i.e.~puntos máximos a la hora de más demanda hídrica del día
-y disminución en las horas de la noche). A continuación se presenta el
-diagrama de flujo del preprocesamiento de los datos de turgor.
+El preprocesamiento de los datos de turgor consistió en tres etapas
+principales: filtrado, clustering y modelado. Primero, se eliminaron
+registros inconsistentes mediante tres criterios: (i) estabilidad en la
+serie de turgor (diferencias estandarizadas \textless{} 1), (ii)
+correlaciones esperadas con temperatura y VPD (positiva y negativa,
+respectivamente) y (iii) una correlación mínima de 0.5 con al menos una
+de estas variables. Posteriormente, se excluyeron valores fuera del
+rango temporal relevante.
 
-\includegraphics[width=6.1in,height=9.81in]{100_preproceso_turgor_files/figure-latex/mermaid-figure-1.png}
+Luego, se agruparon los datos por sitio, temporada y sensor, calculando
+estadísticos diarios (mediana, máximo y mínimo) y aplicando clustering
+con DBSCAN para identificar patrones coherentes. Finalmente, se
+ajustaron modelos lineales entre turgor y los primeros componentes
+principales (PC1 y PC2), obteniendo coeficientes de regresión para cada
+grupo. Con estos parámetros, se generó una serie modelada de turgor a
+partir de la información PCA y se escaló para comparación.
+
+\includegraphics[width=6.1in,height=9.56in]{100_preproceso_turgor_files/figure-latex/mermaid-figure-1.png}
 
 \chapter{Clustering}\label{clustering}
 

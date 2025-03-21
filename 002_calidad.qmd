@@ -8,6 +8,8 @@ source('script/setup.R')
 
 ### Peso
 
+En La Esperanza, no se observaron diferencias significativas en el peso de las cerezas entre tratamientos en ninguna de las temporadas, salvo por T4 en la temporada 2022-2023 donde el peso fue mayor. En contraste, en Río Claro durante la temporada 2022-2023, el peso del fruto disminuyó significativamente en los tratamientos con RDC respecto al control (T0), con la reducción más pronunciada en T3. T4 mostró una recuperación parcial, aunque sin alcanzar los valores del control.
+
 ::: panel-tabset
 # Por tratamiento
 
@@ -95,6 +97,8 @@ data_apariencia_2 |>
 
 ### Diametro
 
+En La Esperanza, los tratamientos con RDC mostraron algunas diferencias significativas en el diámetro del fruto en 2022-2023, donde T2 presentó menores valores que T0, mientras que T4 tuvo diámetros ligeramente mayores que T2 y T3. En 2023-2024, no hubo diferencias significativas entre tratamientos, excepto por T4, que mostró un leve incremento respecto al resto. En Río Claro, el RDC redujo significativamente el diámetro del fruto en 2022-2023, con T3 mostrando los menores valores y diferencias significativas con T0, mientras que T2 y T4 presentaron valores intermedios.
+
 ::: panel-tabset
 # Por tratamiento
 
@@ -177,7 +181,9 @@ data_apariencia_2 |>
 ```
 :::
 
-# Color
+## Color
+
+En La Esperanza, el grado de color presentó diferencias significativas en 2022-2023, con T2 mostrando valores menores que T0 y T4, mientras que T3 tuvo valores intermedios. En 2023-2024, T0 mostró valores inferiores a T3 y T4, sin diferencias entre los demás tratamientos. En Río Claro, en 2022-2023, T2, T3 y T4 presentaron valores menores que T0 y T1, sin diferencias entre ellos.
 
 ::: panel-tabset
 # Por tratamiento
@@ -262,6 +268,8 @@ data_apariencia_2 |>
 :::
 
 ## Contenido de azucar
+
+En La Esperanza, los sólidos solubles presentaron diferencias significativas solo en la temporada 2022-2023, con T3 mostrando los mayores valores y T4 los menores.En 2023-2024, no se observaron diferencias significativas entre tratamientos. En Río Claro, en 2022-2023, T4 presentó valores significativamente mayores que el resto de los tratamientos, los cuales no mostraron diferencias entre sí.
 
 ::: panel-tabset
 # Por tratamiento

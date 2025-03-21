@@ -23,7 +23,6 @@ book:
   chapters:
     - index.qmd
     - prefacio.qmd
-    - summary.qmd
     - intro.qmd
     - reporte.qmd
     - part: 'Producción'

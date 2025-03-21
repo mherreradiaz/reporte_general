@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.21)  21 MAR 2025 16:06
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.3.21)  21 MAR 2025 16:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -940,23 +940,19 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 [6
 
 ]
-
-[7
-
-]
 part I.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 367.
+(scrkbase)              on input line 358.
 
 
-[8
+[7
 
 ]
 chapter 1.
 
 
-[9
+[8
 
 ]
 chapter 2.
@@ -964,7 +960,7 @@ File: 001_produccion_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type p
 <use 001_produccion_files/figure-pdf/unnamed-chunk-2-1.pdf>
 
 
-[10
+[9
 
 ]
 chapter 3.
@@ -972,7 +968,7 @@ File: 001_produccion_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type p
 <use 001_produccion_files/figure-pdf/unnamed-chunk-3-1.pdf>
 
 
-[11
+[10
 
 ]
 chapter 4.
@@ -980,7 +976,7 @@ File: 001_produccion_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type p
 <use 001_produccion_files/figure-pdf/unnamed-chunk-4-1.pdf>
 
 
-[12
+[11
 
 ]
 chapter 5.
@@ -988,7 +984,7 @@ File: 001_produccion_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type p
 <use 001_produccion_files/figure-pdf/unnamed-chunk-5-1.pdf>
 
 
-[13
+[12
 
 ]
 chapter 6.
@@ -996,7 +992,7 @@ File: 001_produccion_files/figure-pdf/unnamed-chunk-6-1.pdf Graphic file (type p
 <use 001_produccion_files/figure-pdf/unnamed-chunk-6-1.pdf>
 
 
-[14
+[13
 
 ]
 chapter 7.
@@ -1004,13 +1000,13 @@ File: 001_produccion_files/figure-pdf/unnamed-chunk-7-1.pdf Graphic file (type p
 <use 001_produccion_files/figure-pdf/unnamed-chunk-7-1.pdf>
 
 
-[15
+[14
 
 ]
 chapter 8.
 
 
-[16
+[15
 
 ]
 chapter 9.
@@ -1018,7 +1014,7 @@ File: 002_calidad_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use 002_calidad_files/figure-pdf/unnamed-chunk-2-1.pdf>
 
 
-[17
+[16
 
 ]
 chapter 10.
@@ -1026,7 +1022,7 @@ File: 002_calidad_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use 002_calidad_files/figure-pdf/unnamed-chunk-3-1.pdf>
 
 
-[18
+[17
 
 ]
 chapter 11.
@@ -1034,7 +1030,7 @@ File: 002_calidad_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use 002_calidad_files/figure-pdf/unnamed-chunk-4-1.pdf>
 
 
-[19
+[18
 
 ]
 chapter 12.
@@ -1042,73 +1038,67 @@ File: 002_calidad_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use 002_calidad_files/figure-pdf/unnamed-chunk-5-1.pdf>
 
 
-[20
+[19
 
 ]
 chapter 13.
+File: 002_calidad_files/figure-pdf/unnamed-chunk-6-1.pdf Graphic file (type pdf)
+<use 002_calidad_files/figure-pdf/unnamed-chunk-6-1.pdf>
+
+
+[20
+
+]
+chapter 14.
+File: 002_calidad_files/figure-pdf/unnamed-chunk-7-1.pdf Graphic file (type pdf)
+<use 002_calidad_files/figure-pdf/unnamed-chunk-7-1.pdf>
 
 
 [21
 
 ]
-chapter 14.
-File: 002_calidad_files/figure-pdf/unnamed-chunk-6-1.pdf Graphic file (type pdf)
-<use 002_calidad_files/figure-pdf/unnamed-chunk-6-1.pdf>
+chapter 15.
+File: 002_calidad_files/figure-pdf/unnamed-chunk-8-1.pdf Graphic file (type pdf)
+<use 002_calidad_files/figure-pdf/unnamed-chunk-8-1.pdf>
 
 
 [22
 
 ]
-chapter 15.
-File: 002_calidad_files/figure-pdf/unnamed-chunk-7-1.pdf Graphic file (type pdf)
-<use 002_calidad_files/figure-pdf/unnamed-chunk-7-1.pdf>
+chapter 16.
+File: 002_calidad_files/figure-pdf/unnamed-chunk-9-1.pdf Graphic file (type pdf)
+<use 002_calidad_files/figure-pdf/unnamed-chunk-9-1.pdf>
 
 
 [23
 
 ]
-chapter 16.
-File: 002_calidad_files/figure-pdf/unnamed-chunk-8-1.pdf Graphic file (type pdf)
-<use 002_calidad_files/figure-pdf/unnamed-chunk-8-1.pdf>
+chapter 17.
+File: 002_calidad_files/figure-pdf/unnamed-chunk-10-1.pdf Graphic file (type pdf)
+<use 002_calidad_files/figure-pdf/unnamed-chunk-10-1.pdf>
 
 
 [24
 
 ]
-chapter 17.
-File: 002_calidad_files/figure-pdf/unnamed-chunk-9-1.pdf Graphic file (type pdf)
-<use 002_calidad_files/figure-pdf/unnamed-chunk-9-1.pdf>
+chapter 18.
+File: 002_calidad_files/figure-pdf/unnamed-chunk-11-1.pdf Graphic file (type pdf)
+<use 002_calidad_files/figure-pdf/unnamed-chunk-11-1.pdf>
 
 
 [25
 
 ]
-chapter 18.
-File: 002_calidad_files/figure-pdf/unnamed-chunk-10-1.pdf Graphic file (type pdf)
-<use 002_calidad_files/figure-pdf/unnamed-chunk-10-1.pdf>
+part II.
+Package scrkbase Info: You've told me to use the font selection of the element
+(scrkbase)             `partprefix' that is an alias of element `partnumber'
+(scrkbase)              on input line 524.
 
 
 [26
 
 ]
 chapter 19.
-File: 002_calidad_files/figure-pdf/unnamed-chunk-11-1.pdf Graphic file (type pdf)
-<use 002_calidad_files/figure-pdf/unnamed-chunk-11-1.pdf>
-
-
-[27
-
-]
-part II.
-Package scrkbase Info: You've told me to use the font selection of the element
-(scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 501.
-
-
-[28
-
-]
-chapter 20.
 Missing character: There is no ₀ (U+2080) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ₀ (U+2080) in font [lmroman10-regular]:mapping=tex-text;!
 Missing character: There is no ₀ (U+2080) in font [lmroman10-regular]:mapping=tex-text;!
@@ -1117,235 +1107,264 @@ Missing character: There is no ₀ (U+2080) in font [lmroman10-regular]:mapping=
 File: figuras/misc/riego_lamina.png Graphic file (type bmp)
 <figuras/misc/riego_lamina.png>
 
-Overfull \hbox (10.94572pt too wide) in paragraph at lines 521--522
+Overfull \hbox (10.94572pt too wide) in paragraph at lines 544--545
 [][] 
  []
 
 
 
-[29
+[27
+
+]
+chapter 20.
+
+
+[28
 
 ]
 chapter 21.
+File: 004_clima_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
+<use 004_clima_files/figure-pdf/unnamed-chunk-3-1.pdf>
+
+
+[29
+
+]
+chapter 22.
+File: 004_clima_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type pdf)
+<use 004_clima_files/figure-pdf/unnamed-chunk-4-1.pdf>
 
 
 [30
 
 ]
-chapter 22.
-File: 004_clima_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
-<use 004_clima_files/figure-pdf/unnamed-chunk-3-1.pdf>
+chapter 23.
+File: 004_clima_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type pdf)
+<use 004_clima_files/figure-pdf/unnamed-chunk-5-1.pdf>
 
 
 [31
 
 ]
-chapter 23.
-File: 004_clima_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type pdf)
-<use 004_clima_files/figure-pdf/unnamed-chunk-4-1.pdf>
+chapter 24.
+File: 004_clima_files/figure-pdf/unnamed-chunk-6-1.pdf Graphic file (type pdf)
+<use 004_clima_files/figure-pdf/unnamed-chunk-6-1.pdf>
 
 
 [32
 
 ]
-chapter 24.
-File: 004_clima_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type pdf)
-<use 004_clima_files/figure-pdf/unnamed-chunk-5-1.pdf>
+chapter 25.
 
 
 [33
 
 ]
-chapter 25.
-File: 004_clima_files/figure-pdf/unnamed-chunk-6-1.pdf Graphic file (type pdf)
-<use 004_clima_files/figure-pdf/unnamed-chunk-6-1.pdf>
+chapter 26.
+File: 005_humedad_files/figure-pdf/unnamed-chunk-1-1.pdf Graphic file (type pdf)
+<use 005_humedad_files/figure-pdf/unnamed-chunk-1-1.pdf>
 
 
 [34
 
 ]
-chapter 26.
+chapter 27.
+File: 005_humedad_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
+<use 005_humedad_files/figure-pdf/unnamed-chunk-2-1.pdf>
 
 
 [35
 
 ]
-chapter 27.
-File: 005_humedad_files/figure-pdf/unnamed-chunk-1-1.pdf Graphic file (type pdf)
-<use 005_humedad_files/figure-pdf/unnamed-chunk-1-1.pdf>
+chapter 28.
+File: 005_humedad_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
+<use 005_humedad_files/figure-pdf/unnamed-chunk-3-1.pdf>
 
 
 [36
 
 ]
-chapter 28.
-File: 005_humedad_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
-<use 005_humedad_files/figure-pdf/unnamed-chunk-2-1.pdf>
+chapter 29.
+File: 005_humedad_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type pdf)
+<use 005_humedad_files/figure-pdf/unnamed-chunk-4-1.pdf>
 
 
 [37
 
 ]
-chapter 29.
-File: 005_humedad_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
-<use 005_humedad_files/figure-pdf/unnamed-chunk-3-1.pdf>
+part III.
+Package scrkbase Info: You've told me to use the font selection of the element
+(scrkbase)             `partprefix' that is an alias of element `partnumber'
+(scrkbase)              on input line 601.
 
 
 [38
 
 ]
 chapter 30.
-File: 005_humedad_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type pdf)
-<use 005_humedad_files/figure-pdf/unnamed-chunk-4-1.pdf>
 
 
 [39
 
 ]
-part III.
-Package scrkbase Info: You've told me to use the font selection of the element
-(scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 578.
+chapter 31.
+File: 006_parametros_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
+<use 006_parametros_files/figure-pdf/unnamed-chunk-2-1.pdf>
 
 
 [40
 
 ]
-chapter 31.
+chapter 32.
+File: 006_parametros_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
+<use 006_parametros_files/figure-pdf/unnamed-chunk-3-1.pdf>
 
 
 [41
 
 ]
-chapter 32.
-File: 006_parametros_files/figure-pdf/unnamed-chunk-2-1.pdf Graphic file (type pdf)
-<use 006_parametros_files/figure-pdf/unnamed-chunk-2-1.pdf>
+chapter 33.
+File: 006_parametros_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type pdf)
+<use 006_parametros_files/figure-pdf/unnamed-chunk-4-1.pdf>
 
 
 [42
 
 ]
-chapter 33.
-File: 006_parametros_files/figure-pdf/unnamed-chunk-3-1.pdf Graphic file (type pdf)
-<use 006_parametros_files/figure-pdf/unnamed-chunk-3-1.pdf>
+chapter 34.
+File: 006_parametros_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type pdf)
+<use 006_parametros_files/figure-pdf/unnamed-chunk-5-1.pdf>
 
 
 [43
 
 ]
-chapter 34.
-File: 006_parametros_files/figure-pdf/unnamed-chunk-4-1.pdf Graphic file (type pdf)
-<use 006_parametros_files/figure-pdf/unnamed-chunk-4-1.pdf>
+chapter 35.
+File: 006_parametros_files/figure-pdf/unnamed-chunk-6-1.pdf Graphic file (type pdf)
+<use 006_parametros_files/figure-pdf/unnamed-chunk-6-1.pdf>
 
 
 [44
 
 ]
-chapter 35.
-File: 006_parametros_files/figure-pdf/unnamed-chunk-5-1.pdf Graphic file (type pdf)
-<use 006_parametros_files/figure-pdf/unnamed-chunk-5-1.pdf>
+chapter 36.
+File: 006_parametros_files/figure-pdf/unnamed-chunk-7-1.pdf Graphic file (type pdf)
+<use 006_parametros_files/figure-pdf/unnamed-chunk-7-1.pdf>
 
 
 [45
 
 ]
-chapter 36.
-File: 006_parametros_files/figure-pdf/unnamed-chunk-6-1.pdf Graphic file (type pdf)
-<use 006_parametros_files/figure-pdf/unnamed-chunk-6-1.pdf>
+chapter 37.
+File: 006_parametros_files/figure-pdf/unnamed-chunk-8-1.pdf Graphic file (type pdf)
+<use 006_parametros_files/figure-pdf/unnamed-chunk-8-1.pdf>
 
 
 [46
 
 ]
-chapter 37.
-File: 006_parametros_files/figure-pdf/unnamed-chunk-7-1.pdf Graphic file (type pdf)
-<use 006_parametros_files/figure-pdf/unnamed-chunk-7-1.pdf>
+chapter 38.
+File: 006_parametros_files/figure-pdf/unnamed-chunk-9-1.pdf Graphic file (type pdf)
+<use 006_parametros_files/figure-pdf/unnamed-chunk-9-1.pdf>
 
 
 [47
 
 ]
-chapter 38.
-File: 006_parametros_files/figure-pdf/unnamed-chunk-8-1.pdf Graphic file (type pdf)
-<use 006_parametros_files/figure-pdf/unnamed-chunk-8-1.pdf>
+chapter 39.
+File: 006_parametros_files/figure-pdf/unnamed-chunk-10-1.pdf Graphic file (type pdf)
+<use 006_parametros_files/figure-pdf/unnamed-chunk-10-1.pdf>
 
 
 [48
 
 ]
-chapter 39.
-File: 006_parametros_files/figure-pdf/unnamed-chunk-9-1.pdf Graphic file (type pdf)
-<use 006_parametros_files/figure-pdf/unnamed-chunk-9-1.pdf>
+chapter 40.
+File: 007_tlp_files/figure-pdf/unnamed-chunk-1-1.pdf Graphic file (type pdf)
+<use 007_tlp_files/figure-pdf/unnamed-chunk-1-1.pdf>
 
 
 [49
 
 ]
-chapter 40.
-File: 006_parametros_files/figure-pdf/unnamed-chunk-10-1.pdf Graphic file (type pdf)
-<use 006_parametros_files/figure-pdf/unnamed-chunk-10-1.pdf>
+part IV.
+Package scrkbase Info: You've told me to use the font selection of the element
+(scrkbase)             `partprefix' that is an alias of element `partnumber'
+(scrkbase)              on input line 678.
 
 
 [50
 
 ]
-chapter 41.
-File: 007_tlp_files/figure-pdf/unnamed-chunk-1-1.pdf Graphic file (type pdf)
-<use 007_tlp_files/figure-pdf/unnamed-chunk-1-1.pdf>
-
-
-[51
-
-]
-part IV.
-Package scrkbase Info: You've told me to use the font selection of the element
-(scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 655.
-
-
-[52
-
-]
 File: 100_preproceso_turgor_files/figure-latex/mermaid-figure-1.png Graphic file (type bmp)
 <100_preproceso_turgor_files/figure-latex/mermaid-figure-1.png>
 
-Overfull \hbox (5.0139pt too wide) in paragraph at lines 664--665
+Overfull \hbox (5.0139pt too wide) in paragraph at lines 697--698
 [][] 
  []
 
 
 
-[53]
-Overfull \vbox (126.77423pt too high) has occurred while \output is active []
+[51]
+Overfull \vbox (108.65498pt too high) has occurred while \output is active []
 
 
 
-[54]
-chapter 42.
+[52]
+chapter 41.
 
 
-[55
+[53
 
 ]
-chapter 43.
+chapter 42.
 File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T1_Unidad_1.png Graphic file (type bmp)
 <figuras/01_turgor_sensor/2022_2023_La_Esperanza_T1_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 680--682
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 713--715
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
 File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T1_Unidad_2.png Graphic file (type bmp)
 <figuras/01_turgor_sensor/2022_2023_La_Esperanza_T1_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 683--685
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 716--718
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
 File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T1_Unidad_3.png Graphic file (type bmp)
 <figuras/01_turgor_sensor/2022_2023_La_Esperanza_T1_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 686--688
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 719--721
+[]\TU/lmr/m/n/10.95 Unidad 3 [] 
+ []
+
+
+
+[54
+
+]
+
+[55]
+chapter 43.
+File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_1.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_1.png>
+
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 724--726
+\TU/lmr/m/n/10.95 Unidad 1 [] 
+ []
+
+File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_2.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_2.png>
+
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 727--729
+[]\TU/lmr/m/n/10.95 Unidad 2 [] 
+ []
+
+File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_3.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_3.png>
+
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 730--732
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1357,24 +1376,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 686--688
 
 [57]
 chapter 44.
-File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_1.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_1.png>
+File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_1.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 691--693
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 735--737
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_2.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_2.png>
+File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_2.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 694--696
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 738--740
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_3.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_3.png>
+File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_3.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 697--699
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 741--743
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1386,24 +1405,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 697--699
 
 [59]
 chapter 45.
-File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_1.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_1.png>
+File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_1.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 702--704
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 746--748
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_2.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_2.png>
+File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_2.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 705--707
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 749--751
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_3.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_3.png>
+File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_3.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 708--710
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 752--754
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1415,24 +1434,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 708--710
 
 [61]
 chapter 46.
-File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_1.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_1.png>
+File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_1.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 713--715
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 757--759
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_2.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_2.png>
+File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_2.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 716--718
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 760--762
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_3.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_3.png>
+File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_3.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 719--721
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 763--765
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1444,24 +1463,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 719--721
 
 [63]
 chapter 47.
-File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_1.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_1.png>
+File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_1.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 724--726
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 768--770
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_2.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_2.png>
+File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_2.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 727--729
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 771--773
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_3.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_3.png>
+File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_3.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 730--732
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 774--776
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1473,24 +1492,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 730--732
 
 [65]
 chapter 48.
-File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_1.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_1.png>
+File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_1.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 735--737
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 779--781
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_2.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_2.png>
+File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_2.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 738--740
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 782--784
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_3.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_3.png>
+File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_3.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 741--743
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 785--787
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1502,24 +1521,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 741--743
 
 [67]
 chapter 49.
-File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_1.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_1.png>
+File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_1.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 746--748
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 790--792
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_2.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_2.png>
+File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_2.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 749--751
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 793--795
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_3.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_3.png>
+File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_3.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 752--754
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 796--798
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1531,24 +1550,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 752--754
 
 [69]
 chapter 50.
-File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_1.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_1.png>
+File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_1.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 757--759
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 803--805
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_2.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_2.png>
+File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_2.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 760--762
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 806--808
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_3.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_3.png>
+File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_3.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 763--765
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 809--811
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1560,24 +1579,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 763--765
 
 [71]
 chapter 51.
-File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_1.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_1.png>
+File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_1.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 770--772
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 814--816
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_2.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_2.png>
+File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_2.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 773--775
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 817--819
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_3.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_3.png>
+File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_3.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 776--778
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 820--822
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1589,24 +1608,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 776--778
 
 [73]
 chapter 52.
-File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_1.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_1.png>
+File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_1.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 781--783
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 825--827
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_2.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_2.png>
+File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_2.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 784--786
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 828--830
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_3.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_3.png>
+File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_3.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 787--789
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 831--833
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1618,24 +1637,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 787--789
 
 [75]
 chapter 53.
-File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_1.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_1.png>
+File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_1.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 792--794
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 836--838
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_2.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_2.png>
+File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_2.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 795--797
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 839--841
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_3.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_3.png>
+File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_3.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 798--800
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 842--844
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1647,24 +1666,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 798--800
 
 [77]
 chapter 54.
-File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_1.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_1.png>
+File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_1.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 803--805
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 847--849
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_2.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_2.png>
+File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_2.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 806--808
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 850--852
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_3.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_3.png>
+File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_3.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 809--811
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 853--855
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1676,24 +1695,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 809--811
 
 [79]
 chapter 55.
-File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_1.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_1.png>
+File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_1.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 814--816
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 858--860
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_2.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_2.png>
+File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_2.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 817--819
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 861--863
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_3.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_3.png>
+File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_3.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 820--822
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 864--866
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1705,24 +1724,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 820--822
 
 [81]
 chapter 56.
-File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_1.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_1.png>
+File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_1.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 825--827
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 869--871
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_2.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_2.png>
+File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_2.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 828--830
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 872--874
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_3.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_3.png>
+File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_3.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 831--833
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 875--877
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1734,24 +1753,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 831--833
 
 [83]
 chapter 57.
-File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_1.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_1.png>
+File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_1.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 836--838
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 880--882
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_2.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_2.png>
+File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_2.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 839--841
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 883--885
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_3.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_3.png>
+File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_3.png Graphic file (type bmp)
+<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 842--844
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 886--888
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1763,59 +1782,59 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 842--844
 
 [85]
 chapter 58.
-File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_1.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_1.png>
-
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 847--849
-\TU/lmr/m/n/10.95 Unidad 1 [] 
- []
-
-File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_2.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_2.png>
-
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 850--852
-[]\TU/lmr/m/n/10.95 Unidad 2 [] 
- []
-
-File: figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_3.png Graphic file (type bmp)
-<figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_3.png>
-
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 853--855
-[]\TU/lmr/m/n/10.95 Unidad 3 [] 
- []
-
 
 
 [86
 
 ]
-
-[87]
 chapter 59.
-
-
-[88
-
-]
-chapter 60.
 File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T1_Unidad_1.png Graphic file (type bmp)
 <figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T1_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 872--874
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 905--907
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
 File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T1_Unidad_2.png Graphic file (type bmp)
 <figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T1_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 875--877
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 908--910
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
 File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T1_Unidad_3.png Graphic file (type bmp)
 <figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T1_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 878--880
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 911--913
+[]\TU/lmr/m/n/10.95 Unidad 3 [] 
+ []
+
+
+
+[87
+
+]
+
+[88]
+chapter 60.
+File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_1.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_1.png>
+
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 916--918
+\TU/lmr/m/n/10.95 Unidad 1 [] 
+ []
+
+File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_2.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_2.png>
+
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 919--921
+[]\TU/lmr/m/n/10.95 Unidad 2 [] 
+ []
+
+File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_3.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_3.png>
+
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 922--924
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1827,24 +1846,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 878--880
 
 [90]
 chapter 61.
-File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_1.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_1.png>
+File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_1.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 883--885
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 927--929
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_2.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_2.png>
+File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_2.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 886--888
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 930--932
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_3.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_3.png>
+File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_3.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 889--891
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 933--935
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1856,24 +1875,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 889--891
 
 [92]
 chapter 62.
-File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_1.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_1.png>
+File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_1.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 894--896
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 938--940
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_2.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_2.png>
+File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_2.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 897--899
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 941--943
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_3.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_3.png>
+File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_3.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 900--902
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 944--946
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1885,24 +1904,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 900--902
 
 [94]
 chapter 63.
-File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_1.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_1.png>
+File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_1.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 905--907
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 949--951
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_2.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_2.png>
+File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_2.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 908--910
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 952--954
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_3.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_3.png>
+File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_3.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 911--913
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 955--957
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1914,24 +1933,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 911--913
 
 [96]
 chapter 64.
-File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_1.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_1.png>
+File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_1.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 916--918
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 960--962
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_2.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_2.png>
+File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_2.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 919--921
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 963--965
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_3.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_3.png>
+File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_3.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 922--924
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 966--968
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1943,24 +1962,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 922--924
 
 [98]
 chapter 65.
-File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_1.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_1.png>
+File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_1.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 927--929
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 971--973
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_2.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_2.png>
+File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_2.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 930--932
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 974--976
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_3.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_3.png>
+File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_3.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 933--935
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 977--979
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -1972,24 +1991,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 933--935
 
 [100]
 chapter 66.
-File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_1.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_1.png>
+File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_1.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 938--940
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 982--984
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_2.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_2.png>
+File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_2.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 941--943
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 985--987
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_3.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_3.png>
+File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_3.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 944--946
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 988--990
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -2001,24 +2020,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 944--946
 
 [102]
 chapter 67.
-File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_1.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_1.png>
+File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_1.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 949--951
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 995--997
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_2.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_2.png>
+File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_2.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 952--954
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 998--1000
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_3.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_3.png>
+File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_3.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 955--957
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 1001--1003
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -2030,24 +2049,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 955--957
 
 [104]
 chapter 68.
-File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_1.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_1.png>
+File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_1.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 962--964
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 1006--1008
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_2.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_2.png>
+File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_2.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 965--967
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 1009--1011
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_3.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_3.png>
+File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_3.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 968--970
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 1012--1014
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -2059,24 +2078,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 968--970
 
 [106]
 chapter 69.
-File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_1.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_1.png>
+File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_1.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 973--975
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 1017--1019
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_2.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_2.png>
+File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_2.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 976--978
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 1020--1022
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_3.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_3.png>
+File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_3.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 979--981
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 1023--1025
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -2088,24 +2107,24 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 979--981
 
 [108]
 chapter 70.
-File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_1.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_1.png>
+File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_1.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 984--986
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 1028--1030
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
-File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_2.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_2.png>
+File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_2.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_2.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 987--989
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 1031--1033
 []\TU/lmr/m/n/10.95 Unidad 2 [] 
  []
 
-File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_3.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_3.png>
+File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_3.png Graphic file (type bmp)
+<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_3.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 990--992
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 1034--1036
 []\TU/lmr/m/n/10.95 Unidad 3 [] 
  []
 
@@ -2117,60 +2136,31 @@ Overfull \hbox (56.28319pt too wide) in paragraph at lines 990--992
 
 [110]
 chapter 71.
-File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_1.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_1.png>
-
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 995--997
-\TU/lmr/m/n/10.95 Unidad 1 [] 
- []
-
-File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_2.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_2.png>
-
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 998--1000
-[]\TU/lmr/m/n/10.95 Unidad 2 [] 
- []
-
-File: figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_3.png Graphic file (type bmp)
-<figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_3.png>
-
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 1001--1003
-[]\TU/lmr/m/n/10.95 Unidad 3 [] 
- []
-
-
-
-[111
-
-]
-
-[112]
-chapter 72.
 File: figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T1_Unidad_1.png Graphic file (type bmp)
 <figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T1_Unidad_1.png>
 
-Overfull \hbox (56.28319pt too wide) in paragraph at lines 1006--1008
+Overfull \hbox (56.28319pt too wide) in paragraph at lines 1039--1041
 \TU/lmr/m/n/10.95 Unidad 1 [] 
  []
 
 
-LaTeX Warning: File `figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T1_Unidad_2.png' not found on input line 1010.
+LaTeX Warning: File `figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T1_Unidad_2.png' not found on input line 1043.
 
 ! Unable to load picture or PDF file 'figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T1_Unidad_2.png'.
 <to be read again> 
                    }
-l.1010 ...do/2023_2024_Rio_Claro_T1_Unidad_2.png}}
+l.1043 ...do/2023_2024_Rio_Claro_T1_Unidad_2.png}}
                                                   
 The requested image couldn't be read because
 it was not a recognized image format.
 
  
 Here is how much of TeX's memory you used:
- 25849 strings out of 475786
- 551398 string characters out of 5770105
+ 25848 strings out of 475786
+ 551392 string characters out of 5770105
  1204672 words of memory out of 5000000
- 48435 multiletter control sequences out of 15000+600000
+ 48434 multiletter control sequences out of 15000+600000
  565268 words of font info for 86 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  108i,7n,114p,10900b,411s stack positions out of 10000i,1000n,20000p,200000b,200000s
-Output written on index.pdf (112 pages).
+Output written on index.pdf (110 pages).
