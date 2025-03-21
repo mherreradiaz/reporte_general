@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="M. Abel Herrera y Francisco Zambrano">
 
-<title>Informe ID21I10297</title>
+<title>Prefacio – Informe ID21I10297</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./prefacio.html" rel="next">
+<link href="./summary.html" rel="next">
+<link href="./index.html" rel="prev">
 <link href="./cover.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -82,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Acerca del Informe</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prefacio.html">Prefacio</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -109,13 +138,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Acerca del Informe</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prefacio.html" class="sidebar-item-text sidebar-link">
+  <a href="./prefacio.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Prefacio</span></a>
   </div>
 </li>
@@ -280,40 +309,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Tabla de contenidos</h2>
-   
-  <ul>
-  <li><a href="#acerca-del-informe" id="toc-acerca-del-informe" class="nav-link active" data-scroll-target="#acerca-del-informe">Acerca del Informe</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Informe ID21I10297</h1>
+<h1 class="title">Prefacio</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Autor/a</div>
-    <div class="quarto-title-meta-contents">
-             <p>M. Abel Herrera y Francisco Zambrano </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Fecha de publicación</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">21 de marzo de 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -323,27 +334,11 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-
-<section id="acerca-del-informe" class="level1 unnumbered">
-<h1 class="unnumbered">Acerca del Informe</h1><p><img src="cover.png" title="Informe ID21I10297" class="quarto-cover-image img-fluid"></p>
-<p>Reporte general del proyecto ID21I10297, financiado por la Agencia Nacional de Investigación y Desarrollo (ANID) por medio del proyecto FONDEF IDEA 2021.</p>
-<p>Esto proyecto estuvo a cargo del director Dr.&nbsp;Francisco Zambrano Bigiarini de la Universidad Mayor.</p>
-<p>Investigadores que participaron el el proyecto:</p>
-<ul>
-<li>Dr.&nbsp;Francisco Zambrano - Director - Centro Hemera UMayor</li>
-<li>Dra. Andrea Miyasaka Almeyda - Directora Alterna - Centro CGB UMayor</li>
-<li>Dr.&nbsp;Felipe de La Hoz - Investigador - Externo</li>
-<li>Paulina Vidal - Investigadora - Centro Hemera UMayor</li>
-<li>Idania Briceño - Investigadora - Centro Hemera UMayor</li>
-</ul>
-<p>Además, trabajaron como asistentes de investigación los siguientes profesionales:</p>
-<ul>
-<li>Jesica Garrido - Centro Hemera UMayor</li>
-<li>Abel Herrera - Centro Hemera UMayor</li>
-</ul>
+<p>Este informe presenta metodología y los resultados obtenidos en el marco del proyecto FONDEF ID21I10297. En este proyecto se desarrolló <a href="https://s4tori.cl">SatOri</a>, una aplicación para la optimización de riego en frutales. La que contribuye a la adaptación al cambio climático de la agricultura chilena.</p>
+<p><code>SatOri</code> desarrolló un modelo para la estimación espacial con frecuencia diaria del potencial hídrico xilemático (<span class="math inline">\(\Psi_x\)</span>). El <span class="math inline">\(Psi_x\)</span> permite monitorear la respuesta de la planta a las condiciones medio ambientales y de abastecimiento hídrico. Se utilizaron algoritmos de machine learning, datos meteorológicos y de imagenes satelitales Sentine-2, para el desarrollo del modelo.</p>
+<p>Por otra parte, <code>SatOri</code> calcula el nivel de <span class="math inline">\(Psi_x\)</span> mínimo que pueden alcanzar los árboles. De esta manerá establece un semáforo de acuerdo a este umbral y a los resultados del modelo. Indicando al agricultor cuanto es el tiempo de riego que debe suministrar acada sector, para que no se vea afectado el aparato fotosintético de la planta y así no haya merma en la producción y calidad de la fruta.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -768,10 +763,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Acerca del Informe">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Acerca del Informe</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./prefacio.html" class="pagination-link" aria-label="Prefacio">
-        <span class="nav-page-text">Prefacio</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./summary.html" class="pagination-link" aria-label="Resumen">
+        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Resumen</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
