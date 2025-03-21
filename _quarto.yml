@@ -27,7 +27,7 @@ book:
       chapters:
         - summary.qmd
         - intro.qmd
-    - part: 000_reporte.qmd
+    - 000_reporte.qmd
     - part: 'Producción'
       chapters:
         - 001_produccion.qmd
