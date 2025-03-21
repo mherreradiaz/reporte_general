@@ -7,6 +7,17 @@ book:
   output-file: "reporte_general"
   author: "M. Abel Herrera y Francisco Zambrano"
   date: today
+  page-footer:
+    left: |
+      Informe de metodologías y resultados proyecto FONDEF ID21I10297.
+    right: |
+      Este libro fue creado con <a href="https://quarto.org/">Quarto</a>.
+  cover-image: cover.png
+  favicon: cover.png
+  # site-url: 
+  # repo-url: 
+  repo-branch: main
+  repo-actions: [edit, issue]
   chapters:
     - part: index.qmd
       chapters:
