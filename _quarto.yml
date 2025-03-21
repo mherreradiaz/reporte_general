@@ -19,9 +19,14 @@ book:
   repo-branch: main
   repo-actions: [edit, issue]
   chapters:
+<<<<<<< HEAD
+    - part: 000_reporte.qmd
+    - part: index.qmd
+=======
     - index.qmd
     - prefacio.qmd
     - part: "Introducción"
+>>>>>>> 199054bf20549fbce47fef026c40da5190bd43a2
       chapters:
         - summary.qmd
         - intro.qmd
@@ -31,12 +36,13 @@ book:
         - 002_calidad.qmd
     - part: 'Variables meteorológicas'
       chapters: 
-        - 003_humedad.qmd
+        - 003_riego.qmd
         - 004_clima.qmd
+        - 005_humedad.qmd
     - part: 'Parámetros fisiológicos'
       chapters:
-        - 005_parametros.qmd
-        - 006_tlp.qmd
+        - 006_parametros.qmd
+        - 007_tlp.qmd
     - part: 100_preproceso_turgor.qmd
       chapters: 
         - 101_clustering.qmd
@@ -45,8 +51,8 @@ book:
         - 104_preprocesado.qmd
     - part: 'Modelo de potencial y SatOri'
       chapters: 
-        - 007_potencial.qmd
-        - 008_satori.qmd
+        - 008_potencial.qmd
+        - 009_satori.qmd
     - references.qmd
 
 bibliography: references.bib
