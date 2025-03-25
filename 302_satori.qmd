@@ -1,0 +1,9 @@
+# SatOri
+
+Como pudimos observar en los resultados anteriores, se logró desarrollar un modelo para la
+estimación del potencial hídrico xilemático con frecuencia diaria y de forma espacial. Además,
+para cada uno de los campos se logró obtener el punto umbral de potencial hídrico xilemático.
+El que corresponde al nivel mínimo al cuál puede llegar cada sector de riego.
+
+Con el modelo de estimación diaria y espacial, más el umbral mínimo de potencial
+hídrico xilemático se implementó la plataforma web de SatOri.

@@ -1,0 +1,84 @@
+# Curvas Presión-volumen
+
+```{r}
+source('script/setup.R')
+```
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+::: justify
+Los datos utilizados para las curvas Presión-volumen corresponden a mediciones de potencial hídrico xilemático y peso en hojas de distintas unidades de los tratamientos experimentales, según la metodología descrita por Halbitter *et al.* (2020). El punto de pérdida de turgor (TLP) se estima como el último punto de la curva del Ψ inverso en función del RWD (1 - RWC) antes de comenzar su fracción lineal, como se muestra en la siguiente figura.
+
+![Ejemplo de una curva presión-volumen. Los círculos llenos representan las primeras 5 mediciones iterativas: los círculos abiertos representan las últimas 6 mediciones. La porción lineal (línea sólida) muestra el potencial osmótico (Ψo), la porción curva (línea discontinua) es el potencial hídrico antes del punto de pérdida de turgencia (TLP), y el área sombreada es el potencial de turgencia (Ψp). Fuente: Halbitter *et al.* (2020).](figuras/misc/tlp.png)
+
+En base a esta misma metodología, a continuación se presentan las curvas presión-volumen de cada unidad medida.
+:::
+
+## La Esperanza
+
+::: panel-tabset
+# Tratamiento 0 (control)
+
+Unidad 1 ![](figuras/06_tlp/tlp_la_esperanza_T0_1.png)
+
+Unidad 2 ![](figuras/06_tlp/tlp_la_esperanza_T0_2.png)
+
+Unidad 3 ![](figuras/06_tlp/tlp_la_esperanza_T0_3.png)
+
+# Tratamiento 4
+
+Unidad 1 ![](figuras/06_tlp/tlp_la_esperanza_T4_1.png)
+
+Unidad 2 ![](figuras/06_tlp/tlp_la_esperanza_T4_2.png)
+
+Unidad 3 ![](figuras/06_tlp/tlp_la_esperanza_T4_3.png)
+:::
+
+## Rio Claro
+
+::: panel-tabset
+# Tratamiento 0 (control)
+
+Unidad 1 ![](figuras/06_tlp/tlp_rio_claro_T0_1.png)
+
+Unidad 2 ![](figuras/06_tlp/tlp_rio_claro_T0_2.png)
+
+Unidad 3 ![](figuras/06_tlp/tlp_rio_claro_T0_3.png)
+
+# Tratamiento 1
+
+Unidad 1 ![](figuras/06_tlp/tlp_rio_claro_T1_1.png)
+
+Unidad 2 ![](figuras/06_tlp/tlp_rio_claro_T1_2.png)
+
+Unidad 3 ![](figuras/06_tlp/tlp_rio_claro_T1_3.png)
+
+# Tratamiento 2
+
+Unidad 1 ![](figuras/06_tlp/tlp_rio_claro_T2_1.png)
+
+Unidad 3 ![](figuras/06_tlp/tlp_rio_claro_T2_3.png)
+
+# Tratamiento 3
+
+Unidad 1 ![](figuras/06_tlp/tlp_rio_claro_T3_1.png)
+
+Unidad 2 ![](figuras/06_tlp/tlp_rio_claro_T3_2.png)
+
+Unidad 3 ![](figuras/06_tlp/tlp_rio_claro_T3_3.png)
+
+# Tratamiento 4
+
+Unidad 1 ![](figuras/06_tlp/tlp_rio_claro_T4_1.png)
+
+Unidad 2 ![](figuras/06_tlp/tlp_rio_claro_T4_2.png)
+
+Unidad 3 ![](figuras/06_tlp/tlp_rio_claro_T4_3.png)
+:::
+
+# Referencias
+
+Halbritter, A. H., Eycott, A., Reinsch, S., & De Boeck, H. (2020). The handbook for standardised field and laboratory measurements in terrestrial climate-change experiments and observational studies (ClimEx). Methods in Ecology and Evolution, 11(1), 22–37.

@@ -1,5 +1,12 @@
 # Acerca del Informe {.unnumbered}
 
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+::: justify
 Reporte general del proyecto ID21I10297, financiado por la Agencia Nacional de Investigación y Desarrollo (ANID) por medio del proyecto FONDEF IDEA 2021.
 
 Esto proyecto estuvo a cargo del director Dr. Francisco Zambrano Bigiarini de la Universidad Mayor.
@@ -16,3 +23,4 @@ Además, trabajaron como asistentes de investigación los siguientes profesional
 
 -   Jesica Garrido - Centro Hemera UMayor
 -   Abel Herrera - Centro Hemera UMayor
+:::
