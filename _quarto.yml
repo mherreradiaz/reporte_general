@@ -1,0 +1,77 @@
+project:
+  type: book
+  output-dir: docs
+  resources:
+    - static/**
+
+book:
+  title: "Informe ID21I10297"
+  output-file: "reporte_general"
+  author: "M. Abel Herrera y Francisco Zambrano"
+  date: today
+  page-footer:
+    left: |
+      Informe de metodologías y resultados proyecto FONDEF ID21I10297.
+    right: |
+      Este libro fue creado con <a href="https://quarto.org/">Quarto</a>.
+  cover-image: cover.png
+  favicon: cover.png
+  # site-url: 
+  # repo-url: 
+  repo-branch: main
+  repo-actions: [edit, issue]
+  chapters:
+    - index.qmd
+    - 001_prefacio.qmd
+    - 002_intro.qmd
+    - reporte.qmd
+    - part: 'Producción'
+      chapters:
+        - 101_produccion.qmd
+        - 102_calidad.qmd
+    - part: 'Variables meteorológicas'
+      chapters: 
+        - 103_riego.qmd
+        - 104_clima.qmd
+        - 105_humedad.qmd
+    - part: 'Parámetros fisiológicos'
+      chapters:
+        - 106_parametros.qmd
+        - 107_curvas_pv.qmd
+        - 108_tlp.qmd
+    - part: 200_preproceso_turgor.qmd
+      chapters: 
+        - 201_clustering.qmd
+        - 202_limpieza.qmd
+        - 203_estandarizacion.qmd
+        - 204_preprocesado.qmd
+    - part: 'Modelo de potencial y SatOri'
+      chapters: 
+        - 301_potencial.qmd
+        - 302_satori.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+filters:
+  - lightbox
+
+format:
+  html:
+    theme: cosmo
+    mermaid: 
+        theme: neutral
+  pdf:
+    documentclass: scrreprt
+
+engine: knitr
+
+execute:
+  echo: false
+  warning: false
+  message: false
+
+number-depth: 4
+lang: es
+
+editor: visual

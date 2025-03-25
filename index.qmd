@@ -1,5 +1,8 @@
 # Acerca del Informe {.unnumbered}
 
+```{r}
+source('script/setup.R')
+```
 ```{css, echo = FALSE}
 .justify {
   text-align: justify !important

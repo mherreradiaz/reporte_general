@@ -1,12 +1,15 @@
 # Prefacio {.unnumbered}
 
+```{r}
+source('script/setup.R')
+```
 ```{css, echo = FALSE}
 .justify {
   text-align: justify !important
 }
 ```
 
-::: {.justify}
+::: justify
 Este informe presenta metodología y los resultados obtenidos en el marco del proyecto FONDEF ID21I10297. En este proyecto se desarrolló [SatOri](https://s4tori.cl), una aplicación para la optimización de riego en frutales. La que contribuye a la adaptación al cambio climático de la agricultura chilena.
 
 `SatOri` desarrolló un modelo para la estimación espacial con frecuencia diaria del potencial hídrico xilemático ($\Psi_x$). El $Psi_x$ permite monitorear la respuesta de la planta a las condiciones medio ambientales y de abastecimiento hídrico. Se utilizaron algoritmos de machine learning, datos meteorológicos y de imagenes satelitales Sentine-2, para el desarrollo del modelo.

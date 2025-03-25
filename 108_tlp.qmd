@@ -7,7 +7,7 @@
 ```
 
 ::: justify
-A continuación se presentan los puntos de pérdida de turgor de cada unidad, según tratamiento, sitio y temporada, a partir de las curvas presión-volumen, como se describe en el anexo [Curvas Presión-Volumen](https://mherreradiaz.github.io/reporte_general/static/anexos/pv_metodology.html){target="_blank"}.
+A continuación se presentan los puntos de pérdida de turgor de cada unidad, según tratamiento, sitio y temporada, a partir de las curvas presión-volumen.
 :::
 
 ```{r}

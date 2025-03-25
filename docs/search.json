@@ -1,0 +1,469 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Informe ID21I10297",
+    "section": "",
+    "text": "Acerca del Informe\n\n\n\n\nReporte general del proyecto ID21I10297, financiado por la Agencia Nacional de Investigación y Desarrollo (ANID) por medio del proyecto FONDEF IDEA 2021.\nEsto proyecto estuvo a cargo del director Dr. Francisco Zambrano Bigiarini de la Universidad Mayor.\nInvestigadores que participaron el el proyecto:\n\nDr. Francisco Zambrano - Director - Centro Hemera UMayor\nDra. Andrea Miyasaka Almeyda - Directora Alterna - Centro CGB UMayor\nDr. Felipe de La Hoz - Investigador - Externo\nPaulina Vidal - Investigadora - Centro Hemera UMayor\nIdania Briceño - Investigadora - Centro Hemera UMayor\n\nAdemás, trabajaron como asistentes de investigación los siguientes profesionales:\n\nJesica Garrido - Centro Hemera UMayor\nAbel Herrera - Centro Hemera UMayor",
+    "crumbs": [
+      "Acerca del Informe"
+    ]
+  },
+  {
+    "objectID": "001_prefacio.html",
+    "href": "001_prefacio.html",
+    "title": "Prefacio",
+    "section": "",
+    "text": "Este informe presenta metodología y los resultados obtenidos en el marco del proyecto FONDEF ID21I10297. En este proyecto se desarrolló SatOri, una aplicación para la optimización de riego en frutales. La que contribuye a la adaptación al cambio climático de la agricultura chilena.\nSatOri desarrolló un modelo para la estimación espacial con frecuencia diaria del potencial hídrico xilemático (\\(\\Psi_x\\)). El \\(Psi_x\\) permite monitorear la respuesta de la planta a las condiciones medio ambientales y de abastecimiento hídrico. Se utilizaron algoritmos de machine learning, datos meteorológicos y de imagenes satelitales Sentine-2, para el desarrollo del modelo.\nPor otra parte, SatOri calcula el nivel de \\(Psi_x\\) mínimo que pueden alcanzar los árboles. De esta manerá establece un semáforo de acuerdo a este umbral y a los resultados del modelo. Indicando al agricultor cuanto es el tiempo de riego que debe suministrar acada sector, para que no se vea afectado el aparato fotosintético de la planta y así no haya merma en la producción y calidad de la fruta.",
+    "crumbs": [
+      "Prefacio"
+    ]
+  },
+  {
+    "objectID": "002_intro.html",
+    "href": "002_intro.html",
+    "title": "Introducción",
+    "section": "",
+    "text": "El cambio climático ha intensificado la sequía en diversas regiones del mundo, afectando particularmente a Chile Central, donde se ha registrado un evento de Mega Sequía sin precedentes en los últimos milenios. Desde 2010, la zona ha experimentado una reducción sostenida de las precipitaciones, con déficits promedio entre 20-40% (Garreaud et al. 2020). Este fenómeno impacta directamente la disponibilidad hídrica para la agricultura, con repercusiones en la productividad y sostenibilidad del sector (Peña-Guerrero et al. 2020). Ante este escenario, se requieren estrategias de gestión del agua más eficientes que permitan a los productores agrícolas adaptarse a la variabilidad climática (Hurlbert y Gupta 2017).\nEn este contexto, el riego deficitario controlado (RDC) ha sido identificado como una estrategia eficaz para optimizar el uso del agua en cultivos perennes como los frutales, donde las opciones de adaptación son limitadas (Pechan et al. 2023). Esta práctica permite reducir el consumo hídrico sin afectar significativamente la producción ni la calidad de la cosecha, mejorando la eficiencia del recurso disponible (Victor Blanco et al. 2019; López-Olivari y Ortega-Klose 2021). Entre los frutales de exportación, el cerezo es el segundo producto de mayor valor en la agroindustria chilena, con más de 25 000 hectáreas bajo riego y un mercado aproximado de 1560 millones de dólares (Carrasco-Benavides, Antunez-Quilobrán, et al. 2020; González 2022). La optimización del riego en este cultivo es fundamental para mejorar la sostenibilidad del sector y mantener su competitividad a nivel internacional.\nLa presente investigación tiene como objetivo desarrollar un prototipo de servicio web para la optimización del riego en cerezo (SatOri), que permita a los productores ajustar los tiempos y volúmenes de riego en función de datos obtenidos de sensores satelitales ópticos y de radar, complementados con ensayos de riego deficitario controlado. Para ello, se evaluará el nivel de riego deficitario óptimo en huertos de cerezo ubicados en la región de O’Higgins durante las temporadas 2022-2023, desarrollando un modelo de estimación del potencial hídrico xilemático (Ψs) basado en variables meteorológicas y satelitales. Posteriormente, el modelo y los niveles óptimos de riego serán validados en la temporada 2023-2024, con el fin de integrarlos en una plataforma web que entregue información en tiempo real sobre la gestión del riego, contribuyendo así a la eficiencia en el uso del agua en la producción de cerezas.",
+    "crumbs": [
+      "Introducción"
+    ]
+  },
+  {
+    "objectID": "reporte.html",
+    "href": "reporte.html",
+    "title": "Reporte de Calidad y Producción 2022-2023",
+    "section": "",
+    "text": "El presente libro incluye los resultados de la evaluación de la calidad y producción de cerezos durante las temporadas 2022-2023 y 2023-2024. Sin embargo, los detalles metodológicos sobre la toma de muestras y el procesamiento de variables utilizadas en este estudio han sido descritos en el reporte “Efecto de estrategias de riego deficitario sobre la productividad y calidad de huertos de cerezos, variedad Regina”, elaborado por el Dr. Manuel Muñoz el 3 de diciembre de 2024. Dicho reporte abarca exclusivamente los resultados correspondientes a la temporada 2022-2023.\nLas cosechas se realizaron el 23 de diciembre de 2022 en Río Claro y el 12 de diciembre de 2022 y 2023 en La Esperanza. Para revisar los procedimientos específicos empleados o analizar los resultados de la temporada 2022-2023 de manera independiente, se recomienda acceder al reporte completo en el siguiente enlace.",
+    "crumbs": [
+      "Reporte de Calidad y Producción 2022-2023"
+    ]
+  },
+  {
+    "objectID": "101_produccion.html",
+    "href": "101_produccion.html",
+    "title": "1  Producción",
+    "section": "",
+    "text": "1.1 Peso total",
+    "crumbs": [
+      "Producción",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Producción</span>"
+    ]
+  },
+  {
+    "objectID": "101_produccion.html#peso-total",
+    "href": "101_produccion.html#peso-total",
+    "title": "1  Producción",
+    "section": "",
+    "text": "En La Esperanza, el peso total de la producción fue menor en la temporada 2023-2024 en comparación con 2022-2023, con una reducción general en todos los tratamientos, incluido el control (T0). En ambos años, T2 y T4 presentaron valores ligeramente superiores en comparación con los demás tratamientos con déficit. En Río Claro, T2 mostró los valores más altos, mientras que T4 presentó los más bajos.\n\n\nPor tratamientoPor temporada",
+    "crumbs": [
+      "Producción",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Producción</span>"
+    ]
+  },
+  {
+    "objectID": "101_produccion.html#rendimiento",
+    "href": "101_produccion.html#rendimiento",
+    "title": "1  Producción",
+    "section": "1.2 Rendimiento",
+    "text": "1.2 Rendimiento\n\nPor tratamientoPor temporada",
+    "crumbs": [
+      "Producción",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Producción</span>"
+    ]
+  },
+  {
+    "objectID": "101_produccion.html#densidad",
+    "href": "101_produccion.html#densidad",
+    "title": "1  Producción",
+    "section": "1.3 Densidad",
+    "text": "1.3 Densidad\n\nLos resultados en la densidad muestran que, en La Esperanza, los valores fueron relativamente similares entre tratamientos y entre las temporadas, sin variaciones destacadas, lo que también ocurrió en T0. En Río Claro, se observaron mayores diferencias durante la temporada 2022-2023, donde T3 presentó valores más altos, superando los 200 frutos/kg en las tres unidades.\n\n\nPor tratamientoPor temporada",
+    "crumbs": [
+      "Producción",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Producción</span>"
+    ]
+  },
+  {
+    "objectID": "102_calidad.html",
+    "href": "102_calidad.html",
+    "title": "2  Calidad",
+    "section": "",
+    "text": "2.1 Apariencia",
+    "crumbs": [
+      "Producción",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Calidad</span>"
+    ]
+  },
+  {
+    "objectID": "102_calidad.html#apariencia",
+    "href": "102_calidad.html#apariencia",
+    "title": "2  Calidad",
+    "section": "",
+    "text": "2.1.1 Peso\n\nEn La Esperanza, no se observaron diferencias significativas en el peso de las cerezas entre tratamientos en ninguna de las temporadas, salvo por T4 en la temporada 2022-2023 donde el peso fue mayor. En contraste, en Río Claro durante la temporada 2022-2023, el peso del fruto disminuyó significativamente en los tratamientos con RDC respecto al control (T0), con la reducción más pronunciada en T3. T4 mostró una recuperación parcial, aunque sin alcanzar los valores del control.\n\n\nPor tratamientoPor temporada\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n2.1.2 Diametro\n\nEn La Esperanza, los tratamientos con RDC mostraron algunas diferencias significativas en el diámetro del fruto en 2022-2023, donde T2 presentó menores valores que T0, mientras que T4 tuvo diámetros ligeramente mayores que T2 y T3. En 2023-2024, no hubo diferencias significativas entre tratamientos, excepto por T4, que mostró un leve incremento respecto al resto. En Río Claro, el RDC redujo significativamente el diámetro del fruto en 2022-2023, con T3 mostrando los menores valores y diferencias significativas con T0, mientras que T2 y T4 presentaron valores intermedios.\n\n\nPor tratamientoPor temporada",
+    "crumbs": [
+      "Producción",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Calidad</span>"
+    ]
+  },
+  {
+    "objectID": "102_calidad.html#color",
+    "href": "102_calidad.html#color",
+    "title": "2  Calidad",
+    "section": "2.2 Color",
+    "text": "2.2 Color\n\nEn La Esperanza, el grado de color presentó diferencias significativas en 2022-2023, con T2 mostrando valores menores que T0 y T4, mientras que T3 tuvo valores intermedios. En 2023-2024, T0 mostró valores inferiores a T3 y T4, sin diferencias entre los demás tratamientos. En Río Claro, en 2022-2023, T2, T3 y T4 presentaron valores menores que T0 y T1, sin diferencias entre ellos.\n\n\nPor tratamientoPor temporada",
+    "crumbs": [
+      "Producción",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Calidad</span>"
+    ]
+  },
+  {
+    "objectID": "102_calidad.html#contenido-de-azucar",
+    "href": "102_calidad.html#contenido-de-azucar",
+    "title": "2  Calidad",
+    "section": "2.3 Contenido de azucar",
+    "text": "2.3 Contenido de azucar\n\nEn La Esperanza, los sólidos solubles presentaron diferencias significativas solo en la temporada 2022-2023, con T3 mostrando los mayores valores y T4 los menores.En 2023-2024, no se observaron diferencias significativas entre tratamientos. En Río Claro, en 2022-2023, T4 presentó valores significativamente mayores que el resto de los tratamientos, los cuales no mostraron diferencias entre sí.\n\n\nPor tratamientoPor temporada",
+    "crumbs": [
+      "Producción",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Calidad</span>"
+    ]
+  },
+  {
+    "objectID": "102_calidad.html#daño",
+    "href": "102_calidad.html#daño",
+    "title": "2  Calidad",
+    "section": "2.4 Daño",
+    "text": "2.4 Daño\n\n\n\n\nPor tratamientoPor temporada",
+    "crumbs": [
+      "Producción",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Calidad</span>"
+    ]
+  },
+  {
+    "objectID": "103_riego.html",
+    "href": "103_riego.html",
+    "title": "3  Riego",
+    "section": "",
+    "text": "El gráfico muestra la lámina de agua acumulada correspondiente a la evapotranspiración de referencia (ET₀) y al riego aplicado en cada tratamiento durante las temporadas 2022-2023 y 2023-2024 en ambos sitios. Las estrategias de riego con déficit hídrico (RDC) redujeron significativamente el volumen de agua aplicada en comparación con el riego del productor local (T0). En la temporada 2022-2023, T0 alcanzó el 83% y 47% de la ET₀ en Rio Claro y La Esperanza, respectivamente. Para los tratamientos con restricción hídrica, en Rio Claro, T1 recibió el 61% de la ET₀, T2 el 47%, T3 el 34% y T4 el 21%, mientras que en La Esperanza, T1 recibió el 47%, T2 el 29%, T3 el 11% y T4 solo el 6%. En 2023-2024, T0 representó el 65% y 46% de la ET₀ en Rio Claro y La Esperanza, respectivamente. En Rio Claro, los tratamientos T1 a T4 alcanzaron el 31%, 21%, 16% y 10% de la ET₀, mientras que en La Esperanza no se aplicó riego en estos tratamientos debido a la falta de impacto observado en la temporada anterior.",
+    "crumbs": [
+      "Variables meteorológicas",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Riego</span>"
+    ]
+  },
+  {
+    "objectID": "104_clima.html",
+    "href": "104_clima.html",
+    "title": "4  Clima",
+    "section": "",
+    "text": "Las variables climáticas fueron obtenidas de las estaciones meteorológicas de Garces Fruits ubicadas en ambos sitios.\n\n\nTemperaturaDéficit de presión de vapor (VPD)Evapotranspiración de referencia (ET0)Precipitación",
+    "crumbs": [
+      "Variables meteorológicas",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Clima</span>"
+    ]
+  },
+  {
+    "objectID": "105_humedad.html",
+    "href": "105_humedad.html",
+    "title": "5  Humedad de suelo",
+    "section": "",
+    "text": "Por tratamientoPor temporadaSerie temporal 2022-2023Serie temporal 2023-2024",
+    "crumbs": [
+      "Variables meteorológicas",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Humedad de suelo</span>"
+    ]
+  },
+  {
+    "objectID": "106_parametros.html",
+    "href": "106_parametros.html",
+    "title": "6  Parámetros fisiológicos",
+    "section": "",
+    "text": "6.1 Fluorescencia",
+    "crumbs": [
+      "Parámetros fisiológicos",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Parámetros fisiológicos</span>"
+    ]
+  },
+  {
+    "objectID": "106_parametros.html#fluorescencia",
+    "href": "106_parametros.html#fluorescencia",
+    "title": "6  Parámetros fisiológicos",
+    "section": "",
+    "text": "Por tratamientoPor temporadaSeries temporales",
+    "crumbs": [
+      "Parámetros fisiológicos",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Parámetros fisiológicos</span>"
+    ]
+  },
+  {
+    "objectID": "106_parametros.html#potencial",
+    "href": "106_parametros.html#potencial",
+    "title": "6  Parámetros fisiológicos",
+    "section": "6.2 Potencial",
+    "text": "6.2 Potencial\n\nPor tratamientoPor temporadaSerie temporal",
+    "crumbs": [
+      "Parámetros fisiológicos",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Parámetros fisiológicos</span>"
+    ]
+  },
+  {
+    "objectID": "106_parametros.html#lai",
+    "href": "106_parametros.html#lai",
+    "title": "6  Parámetros fisiológicos",
+    "section": "6.3 LAI",
+    "text": "6.3 LAI\n\nPor tratamientoPor temporadaSerie temporal",
+    "crumbs": [
+      "Parámetros fisiológicos",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Parámetros fisiológicos</span>"
+    ]
+  },
+  {
+    "objectID": "107_curvas_pv.html",
+    "href": "107_curvas_pv.html",
+    "title": "7  Curvas Presión-volumen",
+    "section": "",
+    "text": "7.1 La Esperanza",
+    "crumbs": [
+      "Parámetros fisiológicos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Curvas Presión-volumen</span>"
+    ]
+  },
+  {
+    "objectID": "107_curvas_pv.html#la-esperanza",
+    "href": "107_curvas_pv.html#la-esperanza",
+    "title": "7  Curvas Presión-volumen",
+    "section": "",
+    "text": "Tratamiento 0 (control)Tratamiento 4\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
+    "crumbs": [
+      "Parámetros fisiológicos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Curvas Presión-volumen</span>"
+    ]
+  },
+  {
+    "objectID": "107_curvas_pv.html#rio-claro",
+    "href": "107_curvas_pv.html#rio-claro",
+    "title": "7  Curvas Presión-volumen",
+    "section": "7.2 Rio Claro",
+    "text": "7.2 Rio Claro\n\nTratamiento 0 (control)Tratamiento 1Tratamiento 2Tratamiento 3Tratamiento 4\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
+    "crumbs": [
+      "Parámetros fisiológicos",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Curvas Presión-volumen</span>"
+    ]
+  },
+  {
+    "objectID": "108_tlp.html",
+    "href": "108_tlp.html",
+    "title": "8  Punto de pérdida de turgor",
+    "section": "",
+    "text": "A continuación se presentan los puntos de pérdida de turgor de cada unidad, según tratamiento, sitio y temporada, a partir de las curvas presión-volumen.",
+    "crumbs": [
+      "Parámetros fisiológicos",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Punto de pérdida de turgor</span>"
+    ]
+  },
+  {
+    "objectID": "200_preproceso_turgor.html",
+    "href": "200_preproceso_turgor.html",
+    "title": "Preprocesamiento de datos de turgor",
+    "section": "",
+    "text": "El preprocesamiento de los datos de turgor consistió en tres etapas principales: filtrado, clustering y modelado. Primero, se eliminaron registros inconsistentes mediante tres criterios: (i) estabilidad en la serie de turgor (diferencias estandarizadas &lt; 1), (ii) correlaciones esperadas con temperatura y VPD (positiva y negativa, respectivamente) y (iii) una correlación mínima de 0.5 con al menos una de estas variables. Posteriormente, se excluyeron valores fuera del rango temporal relevante.\nLuego, se agruparon los datos por sitio, temporada y sensor, calculando estadísticos diarios (mediana, máximo y mínimo) y aplicando clustering con DBSCAN para identificar patrones coherentes. Finalmente, se ajustaron modelos lineales entre turgor y los primeros componentes principales (PC1 y PC2), obteniendo coeficientes de regresión para cada grupo. Con estos parámetros, se generó una serie modelada de turgor a partir de la información PCA y se escaló para comparación.\n\n\n\n\n\n\nflowchart TD\n  A[\"Datos brutos de turgor (sensor)\"] --&gt; B(Clustering)\n  B --&gt; C[\"Datos clusterizados (sensor)\"]\n  D[Temperatura y VPD] --&gt; E(\"Limpieza de datos: eliminación de clusters\")\n  C --&gt; E\n  E --&gt; F[\"Datos clusterizados limpios (sensor)\"]\n  F --&gt; G(Estandarización de clusters)\n  G --&gt; H[\"Datos preprocesados (sensor)\"]\n  H --&gt; I[\"Datos preprocesados (unidad)\"]\n  H --&gt; J[\"Datos preprocesados (tratamiento)\"]",
+    "crumbs": [
+      "Preprocesamiento de datos de turgor"
+    ]
+  },
+  {
+    "objectID": "201_clustering.html",
+    "href": "201_clustering.html",
+    "title": "9  Clustering",
+    "section": "",
+    "text": "9.1 La Esperanza",
+    "crumbs": [
+      "Preprocesamiento de datos de turgor",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Clustering</span>"
+    ]
+  },
+  {
+    "objectID": "201_clustering.html#la-esperanza",
+    "href": "201_clustering.html#la-esperanza",
+    "title": "9  Clustering",
+    "section": "",
+    "text": "T1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
+    "crumbs": [
+      "Preprocesamiento de datos de turgor",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Clustering</span>"
+    ]
+  },
+  {
+    "objectID": "201_clustering.html#rio-claro",
+    "href": "201_clustering.html#rio-claro",
+    "title": "9  Clustering",
+    "section": "9.2 Rio Claro",
+    "text": "9.2 Rio Claro\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
+    "crumbs": [
+      "Preprocesamiento de datos de turgor",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Clustering</span>"
+    ]
+  },
+  {
+    "objectID": "202_limpieza.html",
+    "href": "202_limpieza.html",
+    "title": "10  Limpieza de datos: eliminación de clusters",
+    "section": "",
+    "text": "10.1 La Esperanza",
+    "crumbs": [
+      "Preprocesamiento de datos de turgor",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Limpieza de datos: eliminación de clusters</span>"
+    ]
+  },
+  {
+    "objectID": "202_limpieza.html#la-esperanza",
+    "href": "202_limpieza.html#la-esperanza",
+    "title": "10  Limpieza de datos: eliminación de clusters",
+    "section": "",
+    "text": "T1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
+    "crumbs": [
+      "Preprocesamiento de datos de turgor",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Limpieza de datos: eliminación de clusters</span>"
+    ]
+  },
+  {
+    "objectID": "202_limpieza.html#rio-claro",
+    "href": "202_limpieza.html#rio-claro",
+    "title": "10  Limpieza de datos: eliminación de clusters",
+    "section": "10.2 Rio Claro",
+    "text": "10.2 Rio Claro\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
+    "crumbs": [
+      "Preprocesamiento de datos de turgor",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Limpieza de datos: eliminación de clusters</span>"
+    ]
+  },
+  {
+    "objectID": "203_estandarizacion.html",
+    "href": "203_estandarizacion.html",
+    "title": "11  Estandarización de clusters",
+    "section": "",
+    "text": "11.1 La Esperanza",
+    "crumbs": [
+      "Preprocesamiento de datos de turgor",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Estandarización de clusters</span>"
+    ]
+  },
+  {
+    "objectID": "203_estandarizacion.html#la-esperanza",
+    "href": "203_estandarizacion.html#la-esperanza",
+    "title": "11  Estandarización de clusters",
+    "section": "",
+    "text": "T1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
+    "crumbs": [
+      "Preprocesamiento de datos de turgor",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Estandarización de clusters</span>"
+    ]
+  },
+  {
+    "objectID": "203_estandarizacion.html#rio-claro",
+    "href": "203_estandarizacion.html#rio-claro",
+    "title": "11  Estandarización de clusters",
+    "section": "11.2 Rio Claro",
+    "text": "11.2 Rio Claro\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
+    "crumbs": [
+      "Preprocesamiento de datos de turgor",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Estandarización de clusters</span>"
+    ]
+  },
+  {
+    "objectID": "204_preprocesado.html",
+    "href": "204_preprocesado.html",
+    "title": "12  Datos preprocesados",
+    "section": "",
+    "text": "12.1 A nivel de unidad",
+    "crumbs": [
+      "Preprocesamiento de datos de turgor",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Datos preprocesados</span>"
+    ]
+  },
+  {
+    "objectID": "204_preprocesado.html#a-nivel-de-unidad",
+    "href": "204_preprocesado.html#a-nivel-de-unidad",
+    "title": "12  Datos preprocesados",
+    "section": "",
+    "text": "Para obtener el turgor preprocesado por árbol según tratamiento, se promediaron las series de los sensores por cada unidad, obteniendo una serie única para cada árbol de los tratamientos.\n\n\n12.1.1 La Esperanza\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\n\n\n\n12.1.2 Rio Claro\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
+    "crumbs": [
+      "Preprocesamiento de datos de turgor",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Datos preprocesados</span>"
+    ]
+  },
+  {
+    "objectID": "204_preprocesado.html#a-nivel-de-tratamiento",
+    "href": "204_preprocesado.html#a-nivel-de-tratamiento",
+    "title": "12  Datos preprocesados",
+    "section": "12.2 A nivel de tratamiento",
+    "text": "12.2 A nivel de tratamiento\nPara obtener el turgor preprocesado a nivel de tratamiento, se promediaron las series promediadas de cada unidad según tratamiento, obteniendo una serie única para cada tratamiento de en ambos sitios.\n\n12.2.1 La Esperanza\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12.2.1.1 Rio Claro\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)",
+    "crumbs": [
+      "Preprocesamiento de datos de turgor",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Datos preprocesados</span>"
+    ]
+  },
+  {
+    "objectID": "301_potencial.html",
+    "href": "301_potencial.html",
+    "title": "13  Modelos basados en tres algoritmos",
+    "section": "",
+    "text": "Los resultados del modelamiento de potencial se muestran a continuación. Se evaluaron 12 configuraciones mediante remuestreo, combinando tres algoritmos (RF, XGBoost y SVM), dos esquemas de partición y el uso o no de componentes principales (PLS). Los dos esquemas de partición correponden a (i) un esquema aleatorio (rnd_split), donde los datos de entrenamiento y prueba se seleccionaron al azar, y (ii) un esquema temporal independiente (tme_split), en el que se usaron fechas separadas para entrenamiento y prueba. En ambos casos, el 75% de los datos se asignó al entrenamiento y el 25% a la prueba.\n\nBajo rnd_split, los valores de R² oscilaron entre 0.45 y 0.8, con XGBoost (0.77) y RF (0.76) obteniendo el mejor desempeño, seguidos por SVM (0.68). En tme_split, el rendimiento fue menor (R² entre 0.25 y 0.52), con diferencias menos marcadas entre modelos, destacando XGBoost, pls_SVM y SVM (~0.45).\nRespecto a la importancia de las variables, los datos meteorológicos (ET0, VPD y temperatura) fueron los predictores más influyentes en ambos esquemas de partición. En rnd_split, SVM destacó la HR como variable clave, mientras que en tme_split, HR, VPD y temperatura fueron las más relevantes. Las variables derivadas de Sentinel-2 fueron secundarias en importancia, con MSI, DWSI y NDMI como los predictores más relevantes en ambos esquemas.\nTras la evaluación con remuestreo, los modelos fueron entrenados en el conjunto de prueba. En rnd_split, XGBoost y RF alcanzaron un R² de 0.76 y un RMSE de 0.24 MPa, mientras que SVM obtuvo un R² de 0.62 y un RMSE de 0.3 MPa. En tme_split, el desempeño fue similar entre modelos (R² ≈ 0.59), con RMSE entre 0.36 MPa (XGBoost) y 0.39 MPa (SVM). Se observó que el error aumentó en valores inferiores a -1.5 MPa, donde la escasez de datos limitó la capacidad predictiva de los modelos. Esta falta de información en condiciones de estrés hídrico severo se asocia con el cierre estomático, lo que puede afectar la producción y calidad del cultivo.",
+    "crumbs": [
+      "Modelo de potencial y SatOri",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Modelos basados en tres algoritmos</span>"
+    ]
+  },
+  {
+    "objectID": "302_satori.html#descripción-general",
+    "href": "302_satori.html#descripción-general",
+    "title": "14  SatOri",
+    "section": "14.1 Descripción general",
+    "text": "14.1 Descripción general\nEl resultado final de este proyecto corresponde al prototipo de plataforma web SatOri, cuyo objetivo es la optimización del riego en ambos huertos de cerezos (Río Claro y La Esperanza).\nComo se mencionó anteriomente, uno de los resultados del proyecto fue el desarrollo del modelo para la estimación del potencial hídrico xilemático con frecuencia diaria y de forma espacial. Además, para cada uno de los campos se logró obtener el punto umbral de potencial hídrico xilemático (TLP), el que corresponde al nivel mínimo al cuál puede llegar cada sector de riego.\nCon el modelo de estimación diaria y espacial, más el umbral mínimo de potencial hídrico xilemático se implementó la plataforma web de SatOri.",
+    "crumbs": [
+      "Modelo de potencial y SatOri",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>SatOri</span>"
+    ]
+  },
+  {
+    "objectID": "302_satori.html#diseño-de-la-aplicación",
+    "href": "302_satori.html#diseño-de-la-aplicación",
+    "title": "14  SatOri",
+    "section": "14.2 Diseño de la aplicación",
+    "text": "14.2 Diseño de la aplicación\nLa aplicación fue creada en el lenguaje de programación R y con las plataformas de desarrollo Github y el servidor Shinyapps.\nEn Github, mediante los “Github Actions” se automatizó la descarga de datos satelitales y meteorológicos de forma diaria para cada uno de los huertos, de acuerdo a disponibilidad. “Github Actions” se encarga de procesar los datos, suavizar los indicadores de vegetación obtenidos de Sentinel-2 y correr el modelo de machine learning, para estimar el potencial hídrico xilemático para cada día.\nLa plataforma fue creada con el paquete {shiny} de R.\n\n14.2.1 Funcionamiento de la aplicación\nEl riego en los huertos frutales se realiza por sectores de riego, por lo que SatOri debe adaptarse a cómo se riega. Por lo tanto, una vez que se tiene estimado el potencial hídrico xilemático, se promedia su valor para cada sector de riego. Por otra parte, se tienen los valores de umbrales de riego mínimo para cada huerto. De acuerdo a esto, la plataforma define tres zonas de estado hídrico del sector de riego.\nEsto se definió de la siguiente forma, la zona de color verde corresponde, a cuando el potencial hídrico xilemático se encuentra por sobre el umbral más un factor de seguridad. En este caso se asume que el sector se encuentra sin problemas de abastecimiento de agua. Luego, se tiene un sector amarillo, que se encuentra entre el punto umbral y el umbral más el factor de seguridad. Cuando el sector de riego llega a este nivel, la plataforma indica cuánto tiempo se debe regar. Esto lo realiza mediante el cálculo de la evapotranspiración de cultivo de los últimos dos días. Por último se tiene una zona naranja, la que indica que el sector de riego se encuentra por debajo del valor umbral. En este caso, la plataforma indica un tiempo de riego de acuerdo a los últimos cinco días de evapotranspiración de cultivo, esto con el objetivo de provocar un aumento rápido del estado hídrico.",
+    "crumbs": [
+      "Modelo de potencial y SatOri",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>SatOri</span>"
+    ]
+  },
+  {
+    "objectID": "302_satori.html#dashboard-de-la-plataforma",
+    "href": "302_satori.html#dashboard-de-la-plataforma",
+    "title": "14  SatOri",
+    "section": "14.3 Dashboard de la plataforma",
+    "text": "14.3 Dashboard de la plataforma\nEn la Fig. 1 se muestra el dashboard de inicio de la plataforma SatOri. En él, se distinguen dos pestañas: “Panel” y “Resumen Temporada”. La Fig. 1 se encuentra desplegando las opciones de la pestaña “Panel”.\n\n\n\nFigura 1: Dashboard ejemplo de la plataforma SatOri, pestaña “Panel”.\n\n\nEn los botones que se encuentran en la parte izquierda de la pantalla, el usuario puede seleccionar el huerto que quiere revisar, la temporada, y la fecha específica; para poder visualizar el potencial.\nEl mapa visualizará el potencial del huerto seleccionado y para el día seleccionado. En el mapa se puede pinchar en alguno de los sectores de riego. Al pinchar en alguno, los gráficos que se encuentran a la derecha, mostrarán los datos de potencial para dicho sector. La linea en rojo que se muestra, corresponde a los valores de potencial de los últimos siete días. Los colores, verde, amarillo y rojo, indican los diferentes niveles de estado hídrico que pueda alcanzar el sector. En el ejemplo, se ve que la línea para el sector de riego seleccionada se encuentra en verde por lo tanto no es necesario regar.\nEn el caso que la linea roja llegué a la zona de color amarillo, la plataforma dará un aviso de que es necesario regar e indicara el tiempo de riego para cada sector.\nPor otra parte, en la parte superior de la aplicación, se muestra un resumen de cuantos sectores de riego están en verde, amarillo y rojo.\nLa Fig. 2 muestra la plataforma en la pestaña “Panel”. En este caso se muestra un mapa ampliado con el detalle de la variación del potencial hídrico xilemático durante toda la temporada para los sectores de riego.\n\n\n\nFigura 2: Dashboard ejemplo plataforma SatOri, pestaña “Resumen Temporada”.",
+    "crumbs": [
+      "Modelo de potencial y SatOri",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>SatOri</span>"
+    ]
+  },
+  {
+    "objectID": "302_satori.html#acceso-a-la-plataforma",
+    "href": "302_satori.html#acceso-a-la-plataforma",
+    "title": "14  SatOri",
+    "section": "14.4 Acceso a la plataforma",
+    "text": "14.4 Acceso a la plataforma\nSe puede acceder a la plataforma por medio de la página web de difusión del proyecto https://s4tori.cl o directamente por medio del link https://s4tori.cl/app.",
+    "crumbs": [
+      "Modelo de potencial y SatOri",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>SatOri</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Halbritter, Aud H., Amy Eycott, Sabine Reinsch, and Hans De Boeck. 2020.\n“The Handbook for Standardised Field and Laboratory Measurements\nin Terrestrial Climate-Change Experiments and Observational Studies\n(ClimEx).” Methods in Ecology and Evolution 11 (1):\n22–37.",
+    "crumbs": [
+      "References"
+    ]
+  }
+]
