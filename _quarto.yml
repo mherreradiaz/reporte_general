@@ -24,31 +24,33 @@ book:
     - index.qmd
     - 001_prefacio.qmd
     - 002_intro.qmd
-    - reporte.qmd
+    - part: 'Materiales y método'
+      chapters: 
+        - 101_area_estudio.qmd
+        - 102_metodologia.qmd
     - part: 'Producción'
       chapters:
-        - 101_produccion.qmd
-        - 102_calidad.qmd
+        - 201_produccion.qmd
+        - 202_calidad.qmd
     - part: 'Variables meteorológicas'
       chapters: 
-        - 103_riego.qmd
-        - 104_clima.qmd
-        - 105_humedad.qmd
+        - 301_clima.qmd
+        - 302_humedad.qmd
     - part: 'Parámetros fisiológicos'
       chapters:
-        - 106_parametros.qmd
-        - 107_curvas_pv.qmd
-        - 108_tlp.qmd
-    - part: 200_preproceso_turgor.qmd
+        - 401_parametros.qmd
+        - 402_curvas_pv.qmd
+        - 403_tlp.qmd
+    - part: 500_preproceso_turgor.qmd
       chapters: 
-        - 201_clustering.qmd
-        - 202_limpieza.qmd
-        - 203_estandarizacion.qmd
-        - 204_preprocesado.qmd
+        - 501_clustering.qmd
+        - 502_limpieza.qmd
+        - 503_estandarizacion.qmd
+        - 504_preprocesado.qmd
     - part: 'Modelo de potencial y SatOri'
       chapters: 
-        - 301_potencial.qmd
-        - 302_satori.qmd
+        - 601_potencial.qmd
+        - 602_satori.qmd
     - references.qmd
 
 bibliography: references.bib

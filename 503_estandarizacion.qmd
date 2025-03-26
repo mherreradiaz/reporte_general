@@ -1,0 +1,148 @@
+# Estandarización de clusters
+
+```{r}
+source('script/setup.R')
+```
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+::: justify
+Para generar series únicas continuas por sensor (i.e. disminuir las discordancias entre periodos de recalibración de los sensores), se realizó una estandarización de cada cluster, lo cual significó una unificación las series temporales de estos a nivel de sensor. A continuación se muestran dichas series resultantes, además de su correlación con temperatura y VPD, y el ciclo horario del día.
+:::
+
+## La Esperanza
+
+::: panel-tabset
+# T1 (2022-2023)
+
+Unidad 1 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T1_Unidad_3.png){.lightbox}
+
+# T2 (2022-2023)
+
+Unidad 1 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T2_Unidad_3.png){.lightbox}
+
+# T3 (2022-2023)
+
+Unidad 1 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T3_Unidad_3.png){.lightbox}
+
+# T4 (2022-2023)
+
+Unidad 1 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T4_Unidad_3.png){.lightbox}
+
+# T1 (2023-2024)
+
+Unidad 1 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T1_Unidad_3.png){.lightbox}
+
+# T2 (2023-2024)
+
+Unidad 1 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T2_Unidad_3.png){.lightbox}
+
+# T3 (2023-2024)
+
+Unidad 1 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T3_Unidad_3.png){.lightbox}
+
+# T4 (2023-2024)
+
+Unidad 1 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T4_Unidad_3.png){.lightbox}
+:::
+
+## Rio Claro
+
+::: panel-tabset
+# T1 (2022-2023)
+
+Unidad 1 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T1_Unidad_3.png){.lightbox}
+
+# T2 (2022-2023)
+
+Unidad 1 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T2_Unidad_3.png){.lightbox}
+
+# T3 (2022-2023)
+
+Unidad 1 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T3_Unidad_3.png){.lightbox}
+
+# T4 (2022-2023)
+
+Unidad 1 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T4_Unidad_3.png){.lightbox}
+
+# T1 (2023-2024)
+
+Unidad 1 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T1_Unidad_1.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T1_Unidad_3.png){.lightbox}
+
+# T2 (2023-2024)
+
+Unidad 1 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T2_Unidad_3.png){.lightbox}
+
+# T3 (2023-2024)
+
+Unidad 1 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T3_Unidad_3.png){.lightbox}
+
+# T4 (2023-2024)
+
+Unidad 1 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T4_Unidad_3.png){.lightbox}
+:::

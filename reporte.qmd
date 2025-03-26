@@ -1,5 +1,0 @@
-# Reporte de Calidad y Producción 2022-2023 {.unnumbered}
-
-El presente libro incluye los resultados de la evaluación de la calidad y producción de cerezos durante las temporadas 2022-2023 y 2023-2024. Sin embargo, los detalles metodológicos sobre la toma de muestras y el procesamiento de variables utilizadas en este estudio han sido descritos en el reporte "Efecto de estrategias de riego deficitario sobre la productividad y calidad de huertos de cerezos, variedad Regina", elaborado por el Dr. Manuel Muñoz el 3 de diciembre de 2024. Dicho reporte abarca exclusivamente los resultados correspondientes a la temporada 2022-2023.
-
-Las cosechas se realizaron el 23 de diciembre de 2022 en Río Claro y el 12 de diciembre de 2022 y 2023 en La Esperanza. Para revisar los procedimientos específicos empleados o analizar los resultados de la temporada 2022-2023 de manera independiente, se recomienda acceder al reporte completo en el siguiente [enlace](https://mherreradiaz.github.io/reporte_general/static/anexos/01_reporte_calidad_produccion.pdf){target="_blank"}.
