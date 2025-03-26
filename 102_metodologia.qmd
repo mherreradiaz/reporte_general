@@ -1,8 +1,9 @@
-# Metodología y reporte 2022-2023 {.unnumbered}
+# Metodología y reporte 2022-2023
 
 ```{r}
 source('script/setup.R')
 ```
+
 ```{css, echo = FALSE}
 .justify {
   text-align: justify !important
@@ -14,5 +15,5 @@ Los detalles metodológicos sobre la toma de muestras y el procesamiento de vari
 
 Para revisar los procedimientos específicos empleados o analizar los resultados de la temporada 2022-2023 de manera independiente, se recomienda acceder al reporte completo en el siguiente [enlace](https://mherreradiaz.github.io/reporte_general/static/anexos/01_reporte_calidad_produccion.pdf){target="_blank"}.
 
-Para desarrollar los resultados de producción y calidad de los frutos, se llevaron a cabo mediciones en las fechas y eventos de cosecha de cada sitio. Los resultados de producción y calidad que puede ser revisados en el reporte 2022-2023 corresponden a las fechas de cosecha del 23 de diciembre de 2022 en Río Claro y el 12 de diciembre de 2022 en La Esperanza. El reporte actual, en adición, muestra los resultados de la cosecha en la temporada 2023-2024 solo para La Esperanza, con fecha el 12 de diciembre del 2023.
+Las mediciones de producción y calidad de los frutos se realizaron en las fechas de cosecha de cada sitio. Los resultados de producción y calidad que puede ser revisados en el reporte 2022-2023 corresponden a las fechas de cosecha del 23 de diciembre de 2022 en Río Claro y el 12 de diciembre de 2022 en La Esperanza. El reporte actual, en adición, muestra los resultados de la cosecha en la temporada 2023-2024 solo para La Esperanza, con fecha el 12 de diciembre del 2023.
 :::
