@@ -3,6 +3,7 @@
 ```{r}
 source('script/setup.R')
 ```
+
 ```{css, echo = FALSE}
 .justify {
   text-align: justify !important
@@ -10,8 +11,6 @@ source('script/setup.R')
 ```
 
 ::: justify
-\[Metodología de clustering\].
-
 A continuación, se muestran las series temporales de turgor diferenciadas por clúster, así como la distribución de las horas de turgor mínimo y máximo para cada uno de ellos, junto con su ciclo horario diario, abarcando todos los sensores en todas las unidades durante las temporadas 2022-2023 y 2023-2024.
 :::
 

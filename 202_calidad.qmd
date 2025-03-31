@@ -2,7 +2,9 @@
 
 ```{r}
 source('script/setup.R')
+names = c('2022-2023' = '2022-2023','2023-2024' = '2023-2024', 'rio_claro' = 'Rio Claro','la_esperanza' = 'La Esperanza','1' = '202-2023','2' = '2023-2024','T0' = 'T0','T1' = 'T1','T2' = 'T2','T3' = 'T3','T4' = 'T4')
 ```
+
 ```{css, echo = FALSE}
 .justify {
   text-align: justify !important
@@ -13,8 +15,8 @@ source('script/setup.R')
 
 ### Peso
 
-::: {.justify}
-En La Esperanza, no se observaron diferencias significativas en el peso de las cerezas entre tratamientos en ninguna de las temporadas, salvo por T4 en la temporada 2022-2023 donde el peso fue mayor. En contraste, en Río Claro durante la temporada 2022-2023, el peso del fruto disminuyó significativamente en los tratamientos con RDC respecto al control (T0), con la reducción más pronunciada en T3. T4 mostró una recuperación parcial, aunque sin alcanzar los valores del control.
+::: justify
+En La Esperanza, no se observaron diferencias significativas en el peso de las cerezas entre tratamientos en ninguna de las temporadas, salvo por T4 en la temporada 2022-2023 donde el peso fue mayor. En contraste, en Río Claro durante la temporada 2022-2023, el peso del fruto disminuyó significativamente en los tratamientos con restricción hídrica respecto al control (T0), con la reducción más pronunciada en T3. T4 mostró una recuperación parcial, aunque sin alcanzar los valores del control.
 :::
 
 ::: panel-tabset
@@ -52,11 +54,15 @@ data_apariencia |>
   facet_grid(sitio~temporada,labeller = as_labeller(names)) +
   labs(y = 'Peso (gr)',
        x = 'Tratamiento') +
-  theme_light() +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)))
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
 
 ```
 
@@ -64,13 +70,14 @@ data_apariencia |>
 
 ```{r, results = 'hide'}
 #| fig-width: 10
-#| fig-height: 7
+#| fig-height: 5
 #| fig-align: center
 #| lightbox: true
 
 data_apariencia_2 <- data_apariencia |>
-  filter(sitio == 'la_esperanza') |>
-  mutate(temporada = as.factor(ifelse(temporada == '2022-2023',1,2)))
+  filter(sitio == 'la_esperanza')
+
+add <- diff(range(data_apariencia_2$peso))*0.2
 
 data_cld <- data_apariencia_2 |>
   group_by(sitio, tratamiento) |>
@@ -94,18 +101,22 @@ data_apariencia_2 |>
   facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
   labs(y = 'Peso (gr)',
        x = 'Temporada') +
-  theme_light() +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)))
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
 ```
 :::
 
 ### Diametro
 
-::: {.justify}
-En La Esperanza, los tratamientos con RDC mostraron algunas diferencias significativas en el diámetro del fruto en 2022-2023, donde T2 presentó menores valores que T0, mientras que T4 tuvo diámetros ligeramente mayores que T2 y T3. En 2023-2024, no hubo diferencias significativas entre tratamientos, excepto por T4, que mostró un leve incremento respecto al resto. En Río Claro, el RDC redujo significativamente el diámetro del fruto en 2022-2023, con T3 mostrando los menores valores y diferencias significativas con T0, mientras que T2 y T4 presentaron valores intermedios.
+::: justify
+En La Esperanza, los tratamientos con déficit hídrico mostraron algunas diferencias significativas en el diámetro del fruto en 2022-2023, donde T2 presentó menores valores que T0, mientras que T4 tuvo diámetros ligeramente mayores que T2 y T3. En 2023-2024, no hubo diferencias significativas entre tratamientos, excepto por T4, que mostró un leve incremento respecto al resto. En Río Claro, los tratamientos T2 al T4 reflejaron una disminución significativa del diametro del fruto en 2022-2023.
 :::
 
 ::: panel-tabset
@@ -141,24 +152,29 @@ data_apariencia |>
   facet_grid(sitio~temporada,labeller = as_labeller(names)) +
   labs(y = 'Diametro (mm)',
        x = 'Tratamiento') +
-  theme_light() +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)))
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
 ```
 
 # Por temporada
 
 ```{r, results='hide'}
 #| fig-width: 10
-#| fig-height: 7
+#| fig-height: 5
 #| fig-align: center
 #| lightbox: true
 
 data_apariencia_2 <- data_apariencia |>
-  filter(sitio == 'la_esperanza') |>
-  mutate(temporada = as.factor(ifelse(temporada == '2022-2023',1,2)))
+  filter(sitio == 'la_esperanza')
+
+add <- diff(range(data_apariencia_2$diametro))*0.2
 
 data_cld <- data_apariencia_2 |>
   group_by(sitio, tratamiento) |>
@@ -182,18 +198,22 @@ data_apariencia_2 |>
   facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
   labs(y = 'Diametro (mm)',
        x = 'Temporada') +
-  theme_light() +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)))
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
 ```
 :::
 
 ## Color
 
-::: {.justify}
-En La Esperanza, el grado de color presentó diferencias significativas en 2022-2023, con T2 mostrando valores menores que T0 y T4, mientras que T3 tuvo valores intermedios. En 2023-2024, T0 mostró valores inferiores a T3 y T4, sin diferencias entre los demás tratamientos. En Río Claro, en 2022-2023, T2, T3 y T4 presentaron valores menores que T0 y T1, sin diferencias entre ellos.
+::: justify
+En La Esperanza, se presentaron similitudes en el grado de color con T0 en todos los casos, salvo T2 y T4 en la temporada 2022-2023, y T2 en la segunda temporada. En Río Claro, T2, T3 y T4 presentaron diferencias significativas con T0.
 :::
 
 ::: panel-tabset
@@ -229,24 +249,29 @@ data_apariencia |>
   facet_grid(sitio~temporada,labeller = as_labeller(names)) +
   labs(y = 'Grado de color',
        x = 'Tratamiento') +
-  theme_light() +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)))
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
 ```
 
 # Por temporada
 
 ```{r, results='hide'}
 #| fig-width: 10
-#| fig-height: 7
+#| fig-height: 5
 #| fig-align: center
 #| lightbox: true
 
 data_apariencia_2 <- data_apariencia |>
-  filter(sitio == 'la_esperanza') |>
-  mutate(temporada = as.factor(ifelse(temporada == '2022-2023',1,2)))
+  filter(sitio == 'la_esperanza')
+
+add <- diff(range(data_apariencia_2$color))*0.2
 
 data_cld <- data_apariencia_2 |>
   group_by(sitio, tratamiento) |>
@@ -270,18 +295,22 @@ data_apariencia_2 |>
   facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
   labs(y = 'Grado de color',
        x = 'Temporada') +
-  theme_light() +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)))
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
 ```
 :::
 
 ## Contenido de azucar
 
-::: {.justify}
-En La Esperanza, los sólidos solubles presentaron diferencias significativas solo en la temporada 2022-2023, con T3 mostrando los mayores valores y T4 los menores.En 2023-2024, no se observaron diferencias significativas entre tratamientos. En Río Claro, en 2022-2023, T4 presentó valores significativamente mayores que el resto de los tratamientos, los cuales no mostraron diferencias entre sí.
+::: justify
+En La Esperanza, los sólidos solubles de lso tratamientos experimentales no presentaron diferencias significativas respecto a T0, solo entre T3 y T4, mientras que en la segunda temporada no hubo entre ningún tratamiento. En Río Claro, en 2022-2023, T4 presentó valores significativamente mayores que el resto de los tratamientos, los cuales no mostraron diferencias entre sí.
 :::
 
 ::: panel-tabset
@@ -319,24 +348,29 @@ data_brix |>
   facet_grid(sitio~temporada,labeller = as_labeller(names)) +
   labs(y = 'Grados brix',
        x = 'Tratamiento') +
-  theme_light() +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)))
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
 ```
 
 # Por temporada
 
 ```{r, results = 'hide'}
 #| fig-width: 10
-#| fig-height: 7
+#| fig-height: 5
 #| fig-align: center
 #| lightbox: true
 
 data_brix_2 <- data_brix |>
-  filter(sitio == 'la_esperanza') |>
-  mutate(temporada = as.factor(ifelse(temporada == '2022-2023',1,2)))
+  filter(sitio == 'la_esperanza')
+
+add <- diff(range(data_brix_2$brix))*0.2
 
 data_cld <- data_brix_2 |>
   group_by(sitio, tratamiento) |>
@@ -360,19 +394,23 @@ data_brix_2 |>
   facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
   labs(y = 'Grados brix',
        x = 'Temporada') +
-  theme_light() +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)))
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
 
 ```
 :::
 
 ## Daño
 
-::: {.justify}
-
+::: justify
+Respecto al porcentaje de frutos dañados del total de las muestras analizadas, fue posible concluir que no existieron diferencias significativas entre ningún grupo, para todos los casos. Sin embargo, fue posible evidenciar un aumento significativo de frutos dañados trasnversal entre todos los tratamientos para la segunda temporada en La Esperanza.
 :::
 
 ::: panel-tabset
@@ -411,24 +449,29 @@ data_daño |>
   facet_grid(sitio~temporada,labeller = as_labeller(names)) +
   labs(y = 'Daño (%)',
        x = 'Tratamiento') +
-  theme_light() +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)))
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
 ```
 
 # Por temporada
 
 ```{r, results = 'hide'}
 #| fig-width: 10
-#| fig-height: 7
+#| fig-height: 5
 #| fig-align: center
 #| lightbox: true
 
 data_daño_2 <- data_daño |>
-  filter(sitio == 'la_esperanza') |>
-  mutate(temporada = as.factor(ifelse(temporada == '2022-2023',1,2)))
+  filter(sitio == 'la_esperanza')
+
+add <- diff(range(data_daño_2$daño))*0.2
 
 data_cld <- data_daño_2 |>
   group_by(sitio, tratamiento) |>
@@ -452,10 +495,14 @@ data_daño_2 |>
   facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
   labs(y = 'Daño (%)',
        x = 'Temporada') +
-  theme_light() +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)))
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
 ```
 :::

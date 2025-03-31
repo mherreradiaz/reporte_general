@@ -1,4 +1,4 @@
-# Modelos predictivo de potencial
+# Modelos predictivos de potencial
 
 ```{r}
 source('script/setup.R')

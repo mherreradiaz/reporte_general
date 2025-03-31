@@ -2,7 +2,9 @@
 
 ```{r}
 source('script/setup.R')
+names = c('2022-2023' = '2022-2023','2023-2024' = '2023-2024', 'rio_claro' = 'Rio Claro','la_esperanza' = 'La Esperanza','1' = '202-2023','2' = '2023-2024','T0' = 'T0','T1' = 'T1','T2' = 'T2','T3' = 'T3','T4' = 'T4')
 ```
+
 ```{css, echo = FALSE}
 .justify {
   text-align: justify !important
@@ -12,7 +14,7 @@ source('script/setup.R')
 ## Peso total
 
 ::: justify
-En La Esperanza, el peso total de la producción fue menor en la temporada 2023-2024 en comparación con 2022-2023, con una reducción general en todos los tratamientos, incluido el control (T0). En ambos años, T2 y T4 presentaron valores ligeramente superiores en comparación con los demás tratamientos con déficit. En Río Claro, T2 mostró los valores más altos, mientras que T4 presentó los más bajos.
+En La Esperanza, el peso total de la producción fue menor en la temporada 2023-2024 en comparación con 2022-2023, con una reducción general en todos los tratamientos, incluido el control (T0). En ambos años, T2 y T4 presentaron valores ligeramente superiores en comparación con los demás tratamientos con déficit. En la primera temporada de Río Claro, T2 mostró los valores más altos, mientras que T4 presentó los más bajos.
 :::
 
 ::: panel-tabset
@@ -46,15 +48,19 @@ data_cld <- data_produccion |>
 data_produccion |>
   ggplot(aes(tratamiento,peso_total,fill = sitio)) +
   geom_boxplot() +
-  geom_text(data = data_cld, aes(tratamiento, max,label = cld),size=4) +
+  geom_text(data = data_cld, aes(tratamiento, max,label = cld), size=4) +
+  scale_fill_viridis_d(option = "viridis") +
   facet_grid(sitio~temporada,labeller = as_labeller(names)) +
   labs(y = 'Peso total (kg)',
        x = 'Tratamiento') +
-  theme_light() +
+  theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)))
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
 
 ```
 
@@ -66,16 +72,14 @@ data_produccion |>
 #| fig-align: center
 #| lightbox: true
 
-data_produccion_2 <- data_produccion |>
-  filter(sitio == 'la_esperanza') |>
-  mutate(temporada = as.factor(ifelse(temporada == '2022-2023',1,2)))
-
-data_cld <- data_produccion_2 |>
+data_cld <- data_produccion |>
+  filter(sitio == 'la_esperanza') |> 
   group_by(sitio, tratamiento) |>
   reframe(cld(peso_total,temporada)) |>
   rename(temporada = grupo)
-
-data_cld <- data_produccion_2 |>
+  
+data_cld <- data_produccion |>
+  filter(sitio == 'la_esperanza') |> 
   group_by(temporada,sitio,tratamiento) |>
   reframe(min = min(ifelse(length(boxplot.stats(peso_total)$out) != 0,
                            min(boxplot.stats(peso_total)$out),9999999),
@@ -85,18 +89,23 @@ data_cld <- data_produccion_2 |>
                         boxplot.stats(peso_total)$stats[5])+add) |>
   left_join(data_cld,by=c('temporada','sitio','tratamiento'))
 
-data_produccion_2 |>
+data_produccion |>
+  filter(sitio == 'la_esperanza') |> 
   ggplot(aes(temporada,peso_total,fill=tratamiento)) +
   geom_boxplot() +
   geom_text(data = data_cld, aes(temporada, max,label = cld),size=4) +
   facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
   labs(y = 'Peso total (kg)',
        x = 'Temporada') +
-  theme_light() +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)))
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
 ```
 :::
 
@@ -135,11 +144,15 @@ data_produccion |>
   facet_grid(sitio~temporada,labeller = as_labeller(names)) +
   labs(y = 'Rendimiento (ton/ha)',
        x = 'Tratamiento') +
-  theme_light() +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)))
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
 
 ```
 
@@ -152,8 +165,7 @@ data_produccion |>
 #| lightbox: true
 
 data_produccion_2 <- data_produccion |>
-  filter(sitio == 'la_esperanza') |>
-  mutate(temporada = as.factor(ifelse(temporada == '2022-2023',1,2)))
+  filter(sitio == 'la_esperanza')
 
 data_cld <- data_produccion_2 |>
   group_by(sitio, tratamiento) |>
@@ -177,11 +189,15 @@ data_produccion_2 |>
   facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
   labs(y = 'Rendimiento (ton/ha)',
        x = 'Temporada') +
-  theme_light() +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)))
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
 
 ```
 :::
@@ -225,11 +241,15 @@ data_produccion |>
   facet_grid(sitio~temporada,labeller = as_labeller(names)) +
   labs(y = 'Densidad (frutos/kg)',
        x = 'Tratamiento') +
-  theme_light() +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)))
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
 
 ```
 
@@ -242,13 +262,14 @@ data_produccion |>
 #| lightbox: true
 
 data_produccion_2 <- data_produccion |>
-  filter(sitio == 'la_esperanza') |>
-  mutate(temporada = as.factor(ifelse(temporada == '2022-2023',1,2)))
+  filter(sitio == 'la_esperanza')
 
 data_cld <- data_produccion_2 |>
   group_by(sitio, tratamiento) |>
   reframe(cld(densidad,temporada)) |>
   rename(temporada = grupo)
+
+add <- diff(range(data_produccion_2$densidad))*0.2
 
 data_cld <- data_produccion_2 |>
   group_by(temporada,sitio,tratamiento) |>
@@ -267,11 +288,15 @@ data_produccion_2 |>
   facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
   labs(y = 'Densidad (frutos/kg)',
        x = 'Temporada') +
-  theme_light() +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
         axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)))
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
 
 ```
 :::

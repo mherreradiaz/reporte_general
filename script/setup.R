@@ -14,7 +14,7 @@ options(timeout = max(3600, getOption('timeout')))
 names <- c(la_esperanza = 'La Esperanza',rio_claro = 'Rio Claro',
            T1 = 'T1',T2 = 'T2',T3 = 'T3',T4 = 'T4',T0 = 'T0',
            '1' = '1','2' = '2','3' = '3', 
-           '2022-2023' = 'Temporada 2022-2023', '2023-2024' = 'Temporada 2023-2024')
+           '2022-2023' = '2022-2023', '2023-2024' = '2023-2024')
 
 cld <- function(variable, grupo) {
   
