@@ -25,17 +25,16 @@ book:
     - 001_prefacio.qmd
     - 002_intro.qmd
     - part: 'Materiales y método'
-      chapters: 
+      chapters:
         - 101_area_estudio.qmd
-        - 102_metodologia.qmd
+        - 102_tratamientos.qmd
+        - 103_data.qmd
+        - 104_predictores.qmd
+        - 105_modelo_potencial.qmd
     - part: 'Producción'
       chapters:
         - 201_produccion.qmd
         - 202_calidad.qmd
-    - part: 'Variables meteorológicas'
-      chapters: 
-        - 301_clima.qmd
-        - 302_humedad.qmd
     - part: 'Parámetros fisiológicos'
       chapters:
         - 401_parametros.qmd
@@ -60,6 +59,9 @@ filters:
 
 format:
   html:
+    toc: true
+    toc-depth: 4
+    toc_expand: false
     theme: cosmo
     mermaid: 
         theme: neutral
@@ -73,7 +75,6 @@ execute:
   warning: false
   message: false
 
-number-depth: 4
 lang: es
 
 editor: visual

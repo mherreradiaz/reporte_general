@@ -1,0 +1,52 @@
+# Modelado espacial diario de Ψ~s~
+
+```{r}
+source('script/setup.R')
+library(viridisLite)
+```
+
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+## Modelos de machine learning
+
+::: justify
+Para modelar el Ψ~s~, se evaluaron tres algoritmos de machine learning:
+
+-   **Extreme Gradient Boosting** (XGBoost; Chen y Guestrin, 2016)
+-   **Random Forest**(RF; Ho, 1995)
+-   **Support vector Machine** (SVM; Cortes y Vapnik, 1995)
+
+Los dos primeros métodos se basan en árboles de decisión, mientras que el tercero utiliza vectores de soporte. Estos modelos fueron seleccionados por ser considerados de vanguardia, requerir un número reducido de muestras de entrenamiento (en comparación con redes neuronales) y ofrecer interpretabilidad. Todos los algoritmos pueden emplearse tanto para clasificación como para regresión. En este estudio, se realizó un análisis de regresión, utilizando el Ψ~s~ como variable respuesta y 21 predictores: cinco meteorológicos y 16 índices de vegetación (IVs).
+
+El conjunto de datos incluyó mediciones de 26 fechas en la temporada 2022–2023 y 34 en la 2023–2024 (total: 60 fechas). Para cada fecha, se tomaron 30 mediciones (15 por huerto: Río Claro y La Esperanza), lo que resultó en un total de 883 observaciones. El proceso de modelado siguió las siguientes etapas:
+
+-   **Preparación y división de datos**: Segmentación del conjunto de datos en subconjuntos de entrenamiento y prueba.
+-   **Optimización de hiperparámetros**: Ajuste de los parámetros de los algoritmos utilizando el conjunto de entrenamiento.
+-   **Remuestreo**: Evaluación de la confiabilidad del modelo e identificación de las variables más relevantes para estimar Ψ~s~.
+-   **Validación**: Evaluación del rendimiento del modelo con métricas de desempeño.
+
+```{r}
+#| label: fig-split
+#| fig-cap: 'Esquemas de división utilizados para agrupar los conjuntos de entrenamiento y prueba: división aleatoria (rnd_split) y división temporal independiente (tme_split).'
+#| fig-align: center
+#| lightbox: true
+
+knitr::include_graphics('figuras/misc/esquema_split.png')
+```
+
+Se entrenaron los tres modelos utilizando dos esquemas de división ([@fig-split]): uno que consideró una división aleatoria de datos de entrenamiento y prueba (rnd_split) y otro que utilizó fechas independientes para entrenamiento y prueba (tme_split). En ambos casos, se seleccionó el 75% de los datos para entrenamiento y el 25% para prueba. Se aplicaron tres tipos de preprocesamiento a los datos de entrenamiento: i) eliminación de predictores con valores constantes (variables de varianza cero); ii) normalización de predictores (media cero y desviación estándar uno); y iii) una versión del modelo que empleó Partial Least Squares (PLS) para reducir la dimensionalidad, utilizando las cinco componentes principales como predictores. Como resultado, se usaron modelos con predictores normalizados y otros con las componentes principales de PLS.
+
+Para ajustar los parámetros de los modelos (XGBoost, RF, SVM), se empleó optimización de hiperparámetros. Se definieron rangos para cada parámetro y se utilizaron cinco folds de validación cruzada para ambos esquemas de división (rnd_split y tme_split). La optimización evaluó diez combinaciones de parámetros por modelo. El rendimiento se midió con las métricas R², RMSE (root-mean-square error) y MAE (mean absolute error). Finalmente, los modelos se clasificaron según el RMSE más bajo y el R² más alto, seleccionándose aquellos con mejor desempeño.
+:::
+
+## Evaluación e importancia de los modelos
+
+::: justify
+Para evaluar el rendimiento de los modelos, se aplicó remuestreo (resampling) sobre el conjunto de entrenamiento en ambos esquemas de división (rnd_split y tme_split). Se utilizaron cinco particiones y se calcularon las métricas R², MAE (Error Absoluto Medio) y RMSE (Raíz del Error Cuadrático Medio) para cada una de estas.
+
+En cuanto a la importancia de variables, el modelo de Bosques Aleatorios (RF) empleó un método de permutación *out-of-bag* en cada árbol, permutando los predictores y calculando el error cuadrático medio para cada instancia. Para XGBoost, se estimó la contribución fraccional de cada variable según la ganancia total en las divisiones donde participó. En el caso de SVM, se calcularon puntuaciones de importancia basadas en permutaciones (para más detalles, véase Greenwell y Boehmke, 2020).
+:::
