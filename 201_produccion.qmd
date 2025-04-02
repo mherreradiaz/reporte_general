@@ -1,4 +1,4 @@
-# Producción
+# Producción y calidad
 
 ```{r}
 source('script/setup.R')
@@ -11,16 +11,19 @@ names = c('2022-2023' = '2022-2023','2023-2024' = '2023-2024', 'rio_claro' = 'Ri
 }
 ```
 
-## Peso total
+## Producción
+
+### Peso total
 
 ::: justify
-En La Esperanza, el peso total de la producción fue menor en la temporada 2023-2024 en comparación con 2022-2023, con una reducción general en todos los tratamientos, incluido el control (T0). En ambos años, T2 y T4 presentaron valores ligeramente superiores en comparación con los demás tratamientos con déficit. En la primera temporada de Río Claro, T2 mostró los valores más altos, mientras que T4 presentó los más bajos.
+La [@fig-peso] muestra los resultados de peso total de producción en cada unidad experimental. En La Esperanza, el peso total de la producción fue menor en la temporada 2023-2024 en comparación con 2022-2023, con una reducción general en todos los tratamientos, incluido el control (T0). En ambos años, T2 y T4 presentaron valores ligeramente superiores en comparación con los demás tratamientos con déficit. En la primera temporada de Río Claro, T2 mostró los valores más altos, mientras que T4 presentó los más bajos.
 :::
 
 ::: panel-tabset
-# Por tratamiento
+#### Por tratamiento
 
 ```{r, results='hide'}
+#| label: fig-peso-tratamiento
 #| fig-width: 10
 #| fig-height: 7
 #| fig-align: center
@@ -28,31 +31,23 @@ En La Esperanza, el peso total de la producción fue menor en la temporada 2023-
 
 data_produccion <- read_rds('data/produccion.rds')
 
-data_cld <- data_produccion |>
-  group_by(temporada,sitio) |>
-  reframe(cld(peso_total,tratamiento)) |>
-  rename(tratamiento = grupo)
-
-add <- diff(range(data_produccion$peso_total))*0.2
-
-data_cld <- data_produccion |>
-  group_by(temporada,sitio,tratamiento) |>
-  reframe(min = min(ifelse(length(boxplot.stats(peso_total)$out) != 0,
-                           min(boxplot.stats(peso_total)$out),9999999),
-                        boxplot.stats(peso_total)$stats[1])-add,
-          max = max(ifelse(length(boxplot.stats(peso_total)$out) != 0,
-                           max(boxplot.stats(peso_total)$out),-9999999),
-                        boxplot.stats(peso_total)$stats[5])+add) |>
-  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+summary <- dif_summary(data_produccion,'peso_total','tratamiento',c('sitio','temporada')) |> left_join(
+  data_produccion |> 
+  group_by(sitio,temporada,tratamiento) |> 
+  reframe(label_y = max_label(peso_total))
+) |> 
+  suppressMessages()
 
 data_produccion |>
-  ggplot(aes(tratamiento,peso_total,fill = sitio)) +
+  ggplot(aes(tratamiento,peso_total,fill = tratamiento)) +
   geom_boxplot() +
-  geom_text(data = data_cld, aes(tratamiento, max,label = cld), size=4) +
+  geom_point(position = position_jitter(width = 0.2),shape=21,fill='white',size=2) +
   scale_fill_viridis_d(option = "viridis") +
   facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(tratamiento, label_y,label = cld), size=4, vjust = -.5) +
   labs(y = 'Peso total (kg)',
        x = 'Tratamiento') +
+  scale_y_continuous(expand = c(.12,0)) +
   theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
@@ -61,10 +56,9 @@ data_produccion |>
         strip.background = element_rect(fill = 'white'),
         panel.grid.minor.x = element_blank(),
         panel.grid.major.x = element_line(linetype = "dashed"))
-
 ```
 
-# Por temporada
+#### Por temporada
 
 ```{r, results = 'hide'}
 #| fig-width: 10
@@ -72,32 +66,28 @@ data_produccion |>
 #| fig-align: center
 #| lightbox: true
 
-data_cld <- data_produccion |>
-  filter(sitio == 'la_esperanza') |> 
-  group_by(sitio, tratamiento) |>
-  reframe(cld(peso_total,temporada)) |>
-  rename(temporada = grupo)
-  
-data_cld <- data_produccion |>
-  filter(sitio == 'la_esperanza') |> 
-  group_by(temporada,sitio,tratamiento) |>
-  reframe(min = min(ifelse(length(boxplot.stats(peso_total)$out) != 0,
-                           min(boxplot.stats(peso_total)$out),9999999),
-                        boxplot.stats(peso_total)$stats[1])-add,
-          max = max(ifelse(length(boxplot.stats(peso_total)$out) != 0,
-                           max(boxplot.stats(peso_total)$out),-9999999),
-                        boxplot.stats(peso_total)$stats[5])+add) |>
-  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+summary <- dif_summary_two(
+  data_produccion |> 
+    filter(sitio == 'la_esperanza'),
+  'peso_total','temporada',c('sitio','tratamiento')) |> 
+  left_join(
+  data_produccion |> 
+  group_by(sitio,temporada,tratamiento) |> 
+  reframe(label_y = max_label(peso_total))
+) |> 
+  suppressMessages()
 
 data_produccion |>
   filter(sitio == 'la_esperanza') |> 
-  ggplot(aes(temporada,peso_total,fill=tratamiento)) +
+  ggplot(aes(temporada,peso_total,fill = temporada)) +
   geom_boxplot() +
-  geom_text(data = data_cld, aes(temporada, max,label = cld),size=4) +
-  facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
-  labs(y = 'Peso total (kg)',
-       x = 'Temporada') +
+  geom_point(position = position_jitter(width = 0.2),shape=21,fill='white',size=2) +
   scale_fill_viridis_d(option = "viridis") +
+  facet_grid(sitio~tratamiento,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(temporada, label_y,label = cld), size=4, vjust = -.5) +
+  labs(y = 'Peso total (kg)',
+       x = 'Tratamiento') +
+  scale_y_continuous(expand = c(.12,0)) +
   theme_bw() +
   theme(legend.position = "none",
         text = element_text(size = 14),
@@ -109,107 +99,14 @@ data_produccion |>
 ```
 :::
 
-## Rendimiento
-
-::: panel-tabset
-# Por tratamiento
-
-```{r, results='hide'}
-#| fig-width: 10
-#| fig-height: 7
-#| fig-align: center
-#| lightbox: true
-
-data_cld <- data_produccion |>
-  group_by(temporada,sitio) |>
-  reframe(cld(rendimiento,tratamiento)) |>
-  rename(tratamiento = grupo)
-
-add <- diff(range(data_produccion$rendimiento))*0.2
-
-data_cld <- data_produccion |>
-  group_by(temporada,sitio,tratamiento) |>
-  reframe(min = min(ifelse(length(boxplot.stats(rendimiento)$out) != 0,
-                           min(boxplot.stats(rendimiento)$out),9999999),
-                        boxplot.stats(rendimiento)$stats[1])-add,
-          max = max(ifelse(length(boxplot.stats(rendimiento)$out) != 0,
-                           max(boxplot.stats(rendimiento)$out),-9999999),
-                        boxplot.stats(rendimiento)$stats[5])+add) |>
-  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
-
-data_produccion |>
-  ggplot(aes(tratamiento,rendimiento,fill = sitio)) +
-  geom_boxplot() +
-  geom_text(data = data_cld, aes(tratamiento, max,label = cld),size=4) +
-  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
-  labs(y = 'Rendimiento (ton/ha)',
-       x = 'Tratamiento') +
-  scale_fill_viridis_d(option = "viridis") +
-  theme_bw() +
-  theme(legend.position = "none",
-        text = element_text(size = 14),
-        axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)),
-        strip.background = element_rect(fill = 'white'),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.x = element_line(linetype = "dashed"))
-
-```
-
-# Por temporada
-
-```{r, results = 'hide'}
-#| fig-width: 10
-#| fig-height: 5
-#| fig-align: center
-#| lightbox: true
-
-data_produccion_2 <- data_produccion |>
-  filter(sitio == 'la_esperanza')
-
-data_cld <- data_produccion_2 |>
-  group_by(sitio, tratamiento) |>
-  reframe(cld(rendimiento,temporada)) |>
-  rename(temporada = grupo)
-
-data_cld <- data_produccion_2 |>
-  group_by(temporada,sitio,tratamiento) |>
-  reframe(min = min(ifelse(length(boxplot.stats(rendimiento)$out) != 0,
-                           min(boxplot.stats(rendimiento)$out),9999999),
-                        boxplot.stats(rendimiento)$stats[1])-add,
-          max = max(ifelse(length(boxplot.stats(rendimiento)$out) != 0,
-                           max(boxplot.stats(rendimiento)$out),-9999999),
-                        boxplot.stats(rendimiento)$stats[5])+add) |>
-  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
-
-data_produccion_2 |>
-  ggplot(aes(temporada,rendimiento,fill=tratamiento)) +
-  geom_boxplot() +
-  geom_text(data = data_cld, aes(temporada, max,label = cld),size=4) +
-  facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
-  labs(y = 'Rendimiento (ton/ha)',
-       x = 'Temporada') +
-  scale_fill_viridis_d(option = "viridis") +
-  theme_bw() +
-  theme(legend.position = "none",
-        text = element_text(size = 14),
-        axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)),
-        strip.background = element_rect(fill = 'white'),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.x = element_line(linetype = "dashed"))
-
-```
-:::
-
-## Densidad
+### Densidad
 
 ::: justify
 Los resultados en la densidad muestran que, en La Esperanza, los valores fueron relativamente similares entre tratamientos y entre las temporadas, sin variaciones destacadas, lo que también ocurrió en T0. En Río Claro, se observaron mayores diferencias durante la temporada 2022-2023, donde T3 presentó valores más altos, superando los 200 frutos/kg en las tres unidades.
 :::
 
 ::: panel-tabset
-# Por tratamiento
+#### Por tratamiento
 
 ```{r, results='hide'}
 #| fig-width: 10
@@ -217,29 +114,145 @@ Los resultados en la densidad muestran que, en La Esperanza, los valores fueron 
 #| fig-align: center
 #| lightbox: true
 
-data_cld <- data_produccion |>
-  group_by(temporada,sitio) |>
-  reframe(cld(densidad,tratamiento)) |>
-  rename(tratamiento = grupo)
-
-add <- diff(range(data_produccion$densidad))*0.2
-
-data_cld <- data_produccion |>
-  group_by(temporada,sitio,tratamiento) |>
-  reframe(min = min(ifelse(length(boxplot.stats(densidad)$out) != 0,
-                           min(boxplot.stats(densidad)$out),9999999),
-                        boxplot.stats(densidad)$stats[1])-add,
-          max = max(ifelse(length(boxplot.stats(densidad)$out) != 0,
-                           max(boxplot.stats(densidad)$out),-9999999),
-                        boxplot.stats(densidad)$stats[5])+add) |>
-  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+summary <- dif_summary(data_produccion,'densidad','tratamiento',c('sitio','temporada')) |> left_join(
+  data_produccion |> 
+  group_by(sitio,temporada,tratamiento) |> 
+  reframe(label_y = max_label(densidad))
+) |> 
+  suppressMessages()
 
 data_produccion |>
-  ggplot(aes(tratamiento,densidad,fill = sitio)) +
+  ggplot(aes(tratamiento,densidad,fill = tratamiento)) +
+  geom_boxplot() +
+  scale_fill_viridis_d(option = "viridis") +
+  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(tratamiento, label_y,label = cld), size=4, vjust = -.5) +
+  labs(y = 'Densidad (frutos/kg)',
+       x = 'Tratamiento') +
+  scale_y_continuous(expand = c(.12,0)) +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+```
+
+#### Por temporada
+
+```{r, results = 'hide'}
+#| fig-width: 10
+#| fig-height: 5
+#| fig-align: center
+#| lightbox: true
+
+summary <- dif_summary_two(
+  data_produccion |> 
+    filter(sitio == 'la_esperanza'),
+  'densidad','temporada',c('sitio','tratamiento')) |> 
+  left_join(
+  data_produccion |> 
+  group_by(sitio,temporada,tratamiento) |> 
+  reframe(label_y = max_label(densidad))
+) |> 
+  suppressMessages()
+
+data_produccion |>
+  filter(sitio == 'la_esperanza') |> 
+  ggplot(aes(temporada,densidad,fill = temporada)) +
+  geom_boxplot() +
+  scale_fill_viridis_d(option = "viridis") +
+  facet_grid(sitio~tratamiento,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(temporada, label_y,label = cld), size=4, vjust = -.5) +
+  labs(y = 'Densidad (frutos/kg)',
+       x = 'Tratamiento') +
+  scale_y_continuous(expand = c(.12,0)) +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+```
+:::
+
+## Apariencia
+
+### Peso
+
+::: justify
+En La Esperanza, no se observaron diferencias significativas en el peso de las cerezas entre tratamientos en ninguna de las temporadas, salvo por T4 en la temporada 2022-2023 donde el peso fue mayor. En contraste, en Río Claro durante la temporada 2022-2023, el peso del fruto disminuyó significativamente en los tratamientos con restricción hídrica respecto al control (T0), con la reducción más pronunciada en T3. T4 mostró una recuperación parcial, aunque sin alcanzar los valores del control.
+:::
+
+::: panel-tabset
+#### Por tratamiento
+
+```{r, results='hide'}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_apariencia <- read_rds('data/apariencia.rds')
+
+summary <- dif_summary(data_apariencia,'peso','tratamiento',c('sitio','temporada')) |> left_join(
+  data_apariencia |> 
+  group_by(sitio,temporada,tratamiento) |> 
+  reframe(label_y = max_label(peso))
+) |> 
+  suppressMessages()
+
+data_apariencia |>
+  ggplot(aes(tratamiento,peso,fill = tratamiento)) +
+  geom_boxplot() +
+  scale_fill_viridis_d(option = "viridis") +
+  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(tratamiento, label_y,label = cld), size=4, vjust = -.5) +
+  labs(y = 'Peso (frutos/gr)',
+       x = 'Tratamiento') +
+  scale_y_continuous(expand = c(.12,0)) +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+
+
+
+
+data_cld <- data_apariencia |>
+  group_by(temporada,sitio) |>
+  reframe(cld(peso,tratamiento)) |>
+  rename(tratamiento = grupo)
+
+add <- diff(range(data_apariencia$peso))*0.2
+
+data_cld <- data_apariencia |>
+  group_by(temporada,sitio,tratamiento) |>
+  reframe(min = min(ifelse(length(boxplot.stats(peso)$out) != 0,
+                           min(boxplot.stats(peso)$out),9999999),
+                        boxplot.stats(peso)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(peso)$out) != 0,
+                           max(boxplot.stats(peso)$out),-9999999),
+                        boxplot.stats(peso)$stats[5])+add) |>
+  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+
+data_apariencia |>
+  ggplot(aes(tratamiento,peso,fill = sitio)) +
   geom_boxplot() +
   geom_text(data = data_cld, aes(tratamiento, max,label = cld),size=4) +
   facet_grid(sitio~temporada,labeller = as_labeller(names)) +
-  labs(y = 'Densidad (frutos/kg)',
+  labs(y = 'Peso (gr)',
        x = 'Tratamiento') +
   scale_fill_viridis_d(option = "viridis") +
   theme_bw() +
@@ -253,7 +266,7 @@ data_produccion |>
 
 ```
 
-# Por temporada
+#### Por temporada
 
 ```{r, results = 'hide'}
 #| fig-width: 10
@@ -261,32 +274,325 @@ data_produccion |>
 #| fig-align: center
 #| lightbox: true
 
-data_produccion_2 <- data_produccion |>
+data_apariencia_2 <- data_apariencia |>
   filter(sitio == 'la_esperanza')
 
-data_cld <- data_produccion_2 |>
+add <- diff(range(data_apariencia_2$peso))*0.2
+
+data_cld <- data_apariencia_2 |>
   group_by(sitio, tratamiento) |>
-  reframe(cld(densidad,temporada)) |>
+  reframe(cld(peso,temporada)) |>
   rename(temporada = grupo)
 
-add <- diff(range(data_produccion_2$densidad))*0.2
-
-data_cld <- data_produccion_2 |>
+data_cld <- data_apariencia_2 |>
   group_by(temporada,sitio,tratamiento) |>
-  reframe(min = min(ifelse(length(boxplot.stats(densidad)$out) != 0,
-                           min(boxplot.stats(densidad)$out),9999999),
-                        boxplot.stats(densidad)$stats[1])-add,
-          max = max(ifelse(length(boxplot.stats(densidad)$out) != 0,
-                           max(boxplot.stats(densidad)$out),-9999999),
-                        boxplot.stats(densidad)$stats[5])+add) |>
+  reframe(min = min(ifelse(length(boxplot.stats(peso)$out) != 0,
+                           min(boxplot.stats(peso)$out),9999999),
+                        boxplot.stats(peso)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(peso)$out) != 0,
+                           max(boxplot.stats(peso)$out),-9999999),
+                        boxplot.stats(peso)$stats[5])+add) |>
   left_join(data_cld,by=c('temporada','sitio','tratamiento'))
 
-data_produccion_2 |>
-  ggplot(aes(temporada,densidad,fill=tratamiento)) +
+data_apariencia_2 |>
+  ggplot(aes(temporada,peso,fill=tratamiento)) +
   geom_boxplot() +
   geom_text(data = data_cld, aes(temporada, max,label = cld),size=4) +
   facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
-  labs(y = 'Densidad (frutos/kg)',
+  labs(y = 'Peso (gr)',
+       x = 'Temporada') +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+```
+:::
+
+### Diametro
+
+::: justify
+En La Esperanza, los tratamientos con déficit hídrico mostraron algunas diferencias significativas en el diámetro del fruto en 2022-2023, donde T2 presentó menores valores que T0, mientras que T4 tuvo diámetros ligeramente mayores que T2 y T3. En 2023-2024, no hubo diferencias significativas entre tratamientos, excepto por T4, que mostró un leve incremento respecto al resto. En Río Claro, los tratamientos T2 al T4 reflejaron una disminución significativa del diametro del fruto en 2022-2023.
+:::
+
+::: panel-tabset
+#### Por tratamiento
+
+```{r, results = 'hide'}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_cld <- data_apariencia |>
+  group_by(temporada,sitio) |>
+  reframe(cld(diametro,tratamiento)) |>
+  rename(tratamiento = grupo)
+
+add <- diff(range(data_apariencia$diametro))*0.2
+
+data_cld <- data_apariencia |>
+  group_by(temporada,sitio,tratamiento) |>
+  reframe(min = min(ifelse(length(boxplot.stats(diametro)$out) != 0,
+                           min(boxplot.stats(diametro)$out),9999999),
+                        boxplot.stats(diametro)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(diametro)$out) != 0,
+                           max(boxplot.stats(diametro)$out),-9999999),
+                        boxplot.stats(diametro)$stats[5])+add) |>
+  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+
+data_apariencia |>
+  ggplot(aes(tratamiento,diametro,fill = sitio)) +
+  geom_boxplot() +
+  geom_text(data = data_cld, aes(tratamiento, max,label = cld),size=4) +
+  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  labs(y = 'Diametro (mm)',
+       x = 'Tratamiento') +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+```
+
+#### Por temporada
+
+```{r, results='hide'}
+#| fig-width: 10
+#| fig-height: 5
+#| fig-align: center
+#| lightbox: true
+
+data_apariencia_2 <- data_apariencia |>
+  filter(sitio == 'la_esperanza')
+
+add <- diff(range(data_apariencia_2$diametro))*0.2
+
+data_cld <- data_apariencia_2 |>
+  group_by(sitio, tratamiento) |>
+  reframe(cld(diametro,temporada)) |>
+  rename(temporada = grupo)
+
+data_cld <- data_apariencia_2 |>
+  group_by(temporada,sitio,tratamiento) |>
+  reframe(min = min(ifelse(length(boxplot.stats(diametro)$out) != 0,
+                           min(boxplot.stats(diametro)$out),9999999),
+                        boxplot.stats(diametro)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(diametro)$out) != 0,
+                           max(boxplot.stats(diametro)$out),-9999999),
+                        boxplot.stats(diametro)$stats[5])+add) |>
+  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+
+data_apariencia_2 |>
+  ggplot(aes(temporada,diametro,fill=tratamiento)) +
+  geom_boxplot() +
+  geom_text(data = data_cld, aes(temporada, max,label = cld),size=4) +
+  facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
+  labs(y = 'Diametro (mm)',
+       x = 'Temporada') +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+```
+:::
+
+### Color
+
+::: justify
+En La Esperanza, se presentaron similitudes en el grado de color con T0 en todos los casos, salvo T2 y T4 en la temporada 2022-2023, y T2 en la segunda temporada. En Río Claro, T2, T3 y T4 presentaron diferencias significativas con T0.
+:::
+
+::: panel-tabset
+#### Por tratamiento
+
+```{r, results = 'hide'}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_cld <- data_apariencia |>
+  group_by(temporada,sitio) |>
+  reframe(cld(color,tratamiento)) |>
+  rename(tratamiento = grupo)
+
+add <- diff(range(data_apariencia$color))*0.2
+
+data_cld <- data_apariencia |>
+  group_by(temporada,sitio,tratamiento) |>
+  reframe(min = min(ifelse(length(boxplot.stats(color)$out) != 0,
+                           min(boxplot.stats(color)$out),9999999),
+                        boxplot.stats(color)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(color)$out) != 0,
+                           max(boxplot.stats(color)$out),-9999999),
+                        boxplot.stats(color)$stats[5])+add) |>
+  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+
+data_apariencia |>
+  ggplot(aes(tratamiento,color,fill = sitio)) +
+  geom_boxplot() +
+  geom_text(data = data_cld, aes(tratamiento, max,label = cld),size=4) +
+  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  labs(y = 'Grado de color',
+       x = 'Tratamiento') +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+```
+
+#### Por temporada
+
+```{r, results='hide'}
+#| fig-width: 10
+#| fig-height: 5
+#| fig-align: center
+#| lightbox: true
+
+data_apariencia_2 <- data_apariencia |>
+  filter(sitio == 'la_esperanza')
+
+add <- diff(range(data_apariencia_2$color))*0.2
+
+data_cld <- data_apariencia_2 |>
+  group_by(sitio, tratamiento) |>
+  reframe(cld(color,temporada)) |>
+  rename(temporada = grupo)
+
+data_cld <- data_apariencia_2 |>
+  group_by(temporada,sitio,tratamiento) |>
+  reframe(min = min(ifelse(length(boxplot.stats(color)$out) != 0,
+                           min(boxplot.stats(color)$out),9999999),
+                        boxplot.stats(color)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(color)$out) != 0,
+                           max(boxplot.stats(color)$out),-9999999),
+                        boxplot.stats(color)$stats[5])+add) |>
+  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+
+data_apariencia_2 |>
+  ggplot(aes(temporada,color,fill=tratamiento)) +
+  geom_boxplot() +
+  geom_text(data = data_cld, aes(temporada, max,label = cld),size=4) +
+  facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
+  labs(y = 'Grado de color',
+       x = 'Temporada') +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+```
+:::
+
+### Contenido de azucar
+
+::: justify
+En La Esperanza, los sólidos solubles de lso tratamientos experimentales no presentaron diferencias significativas respecto a T0, solo entre T3 y T4, mientras que en la segunda temporada no hubo entre ningún tratamiento. En Río Claro, en 2022-2023, T4 presentó valores significativamente mayores que el resto de los tratamientos, los cuales no mostraron diferencias entre sí.
+:::
+
+::: panel-tabset
+#### Por tratamiento
+
+```{r, results='hide'}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_brix <- read_rds('data/brix.rds')
+
+data_cld <- data_brix |>
+  group_by(temporada,sitio) |>
+  reframe(cld(brix,tratamiento)) |>
+  rename(tratamiento = grupo)
+
+add <- diff(range(data_brix$brix))*0.2
+
+data_cld <- data_brix |>
+  group_by(temporada,sitio,tratamiento) |>
+  reframe(min = min(ifelse(length(boxplot.stats(brix)$out) != 0,
+                           min(boxplot.stats(brix)$out),9999999),
+                        boxplot.stats(brix)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(brix)$out) != 0,
+                           max(boxplot.stats(brix)$out),-9999999),
+                        boxplot.stats(brix)$stats[5])+add) |>
+  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+
+data_brix |>
+  ggplot(aes(tratamiento,brix,fill = sitio)) +
+  geom_boxplot() +
+  geom_text(data = data_cld, aes(tratamiento, max,label = cld),size=4) +
+  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  labs(y = 'Grados brix',
+       x = 'Tratamiento') +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+```
+
+#### Por temporada
+
+```{r, results = 'hide'}
+#| fig-width: 10
+#| fig-height: 5
+#| fig-align: center
+#| lightbox: true
+
+data_brix_2 <- data_brix |>
+  filter(sitio == 'la_esperanza')
+
+add <- diff(range(data_brix_2$brix))*0.2
+
+data_cld <- data_brix_2 |>
+  group_by(sitio, tratamiento) |>
+  reframe(cld(brix,temporada)) |>
+  rename(temporada = grupo)
+
+data_cld <- data_brix_2 |>
+  group_by(temporada,sitio,tratamiento) |>
+  reframe(min = min(ifelse(length(boxplot.stats(brix)$out) != 0,
+                           min(boxplot.stats(brix)$out),9999999),
+                        boxplot.stats(brix)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(brix)$out) != 0,
+                           max(boxplot.stats(brix)$out),-9999999),
+                        boxplot.stats(brix)$stats[5])+add) |>
+  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+
+data_brix_2 |>
+  ggplot(aes(temporada,brix,fill=tratamiento)) +
+  geom_boxplot() +
+  geom_text(data = data_cld, aes(temporada, max,label = cld),size=4) +
+  facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
+  labs(y = 'Grados brix',
        x = 'Temporada') +
   scale_fill_viridis_d(option = "viridis") +
   theme_bw() +
@@ -298,5 +604,105 @@ data_produccion_2 |>
         panel.grid.minor.x = element_blank(),
         panel.grid.major.x = element_line(linetype = "dashed"))
 
+```
+:::
+
+### Daño
+
+::: justify
+Respecto al porcentaje de frutos dañados del total de las muestras analizadas, fue posible concluir que no existieron diferencias significativas entre ningún grupo, para todos los casos. Sin embargo, fue posible evidenciar un aumento significativo de frutos dañados trasnversal entre todos los tratamientos para la segunda temporada en La Esperanza.
+:::
+
+::: panel-tabset
+#### Por tratamiento
+
+```{r, results='hide'}
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+
+data_daño <- read_rds('data/daño.rds') |>
+  mutate(daño = 100-(d_nulo/n)*100)
+
+data_cld <- data_daño |>
+  group_by(temporada,sitio) |>
+  reframe(cld(daño,tratamiento)) |>
+  rename(tratamiento = grupo)
+
+add <- diff(range(data_daño$daño))*0.2
+
+data_cld <- data_daño |>
+  group_by(temporada,sitio,tratamiento) |>
+  reframe(min = min(ifelse(length(boxplot.stats(daño)$out) != 0,
+                           min(boxplot.stats(daño)$out),9999999),
+                        boxplot.stats(daño)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(daño)$out) != 0,
+                           max(boxplot.stats(daño)$out),-9999999),
+                        boxplot.stats(daño)$stats[5])+add) |>
+  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+
+data_daño |>
+  ggplot(aes(tratamiento,daño,fill = sitio)) +
+  geom_boxplot() +
+  geom_text(data = data_cld, aes(tratamiento, max,label = cld),size=4) +
+  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  labs(y = 'Daño (%)',
+       x = 'Tratamiento') +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+```
+
+#### Por temporada
+
+```{r, results = 'hide'}
+#| fig-width: 10
+#| fig-height: 5
+#| fig-align: center
+#| lightbox: true
+
+data_daño_2 <- data_daño |>
+  filter(sitio == 'la_esperanza')
+
+add <- diff(range(data_daño_2$daño))*0.2
+
+data_cld <- data_daño_2 |>
+  group_by(sitio, tratamiento) |>
+  reframe(cld(daño,temporada)) |>
+  rename(temporada = grupo)
+
+data_cld <- data_daño_2 |>
+  group_by(temporada,sitio,tratamiento) |>
+  reframe(min = min(ifelse(length(boxplot.stats(daño)$out) != 0,
+                           min(boxplot.stats(daño)$out),9999999),
+                        boxplot.stats(daño)$stats[1])-add,
+          max = max(ifelse(length(boxplot.stats(daño)$out) != 0,
+                           max(boxplot.stats(daño)$out),-9999999),
+                        boxplot.stats(daño)$stats[5])+add) |>
+  left_join(data_cld,by=c('temporada','sitio','tratamiento'))
+
+data_daño_2 |>
+  ggplot(aes(temporada,daño,fill=tratamiento)) +
+  geom_boxplot() +
+  geom_text(data = data_cld, aes(temporada, max,label = cld),size=4) +
+  facet_grid(sitio~tratamiento, scales = 'free_x',labeller = as_labeller(names)) +
+  labs(y = 'Daño (%)',
+       x = 'Temporada') +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
 ```
 :::

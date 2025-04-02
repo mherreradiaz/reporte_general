@@ -31,7 +31,7 @@ book:
         - 103_data.qmd
         - 104_predictores.qmd
         - 105_modelo_potencial.qmd
-    - part: 'Producción'
+    - part: 'Resultados'
       chapters:
         - 201_produccion.qmd
         - 202_calidad.qmd

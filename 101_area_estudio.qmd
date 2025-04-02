@@ -23,3 +23,5 @@ El estudio se llevó a cabo en cultivos de cerezos (*Prunus avium* L., variedad 
 knitr::include_graphics("figuras/09_metodologia/area_estudio.png")
 ```
 :::
+
+El clima de la región es mediterráneo (tipo Csb según la clasificación de Beck et al., 2018), con precipitaciones moderadas que oscilan entre 200 y 500 mm año⁻¹ en los últimos 10 años. Las lluvias se concentran en invierno, seguido de una estación seca prolongada de 7 a 8 meses (DMC, 2024). Cada huerto cuenta con una estación meteorológica privada ubicada a 0.6 km del centro en Río Claro y 1.4 km del centro en La Esperanza, respectivamente.
