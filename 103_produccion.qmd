@@ -1,0 +1,21 @@
+# Producción y parámetros de calidad de la fruta
+
+```{r}
+source('script/setup.R')
+```
+
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+::: justify
+
+Para determinar la producción de los cerezos, se midieron dos variables: el peso total de la cosecha y la densidad de frutos. El peso total (kg) se obtuvo mediante el pesaje directo de la producción de cada árbol en campo, utilizando una balanza digital modelo ACS-30 LED con una capacidad máxima de 30 kg. Por otro lado, la densidad de frutos (frutos/kg) se determinó dividiendo el conteo total de cerezas recolectadas entre el peso total correspondiente.
+
+Por el otro lado, la calidad de las frutas se evaluó considerando las siguientes variables asociadas a los estándares comerciales: peso por unidad (gr), diámetro (mm) y color. Para medir peso (gr) se utilizó una balanza análica de laboratorio, mientras que para estimar el diámetro se empleó un pie de metro digital (0-150mm). En lo que respecta al color, se siguió la carta de color y la metodología recomendada por el Instituto Nacional de Tecnología Agropecuaria (INTA) (disponible en: <https://inta.gob.ar/documentos/carta-de-color-y-calibre-para-la-cosecha-de-cerezas>). Para ello se empleó una escala numérica del 1-6 , la cual variaba desde un rojo pálido (1) a un caoba oscuro (6). Finalmente, de cada sub-muestra se seleccionaron al azar 5 cerezas adicionales (15 por tratamientos), con las mismas se procedió a medir concentración de sólidos solubles (grados brix) utilizando para ello el refractómetro ATC (Brix 0-32) [@blanco2019a].
+:::
+
+
+

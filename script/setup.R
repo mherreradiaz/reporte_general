@@ -125,7 +125,7 @@ dif_summary <- \(data,var,group,sup_group) {
     pull(test) |> 
     unique()
   
-  if (available_test %in% 'kruskall-wallis + dunn') {
+  if ('kruskall-wallis + dunn' %in% available_test) {
     kw <- data_test |> 
       filter(test == 'kruskall-wallis + dunn') |> 
       group_by(!!!syms(sup_group)) |> 
@@ -137,7 +137,7 @@ dif_summary <- \(data,var,group,sup_group) {
       })
   } else kw <- data_test |> distinct(!!!syms(sup_group))
   
-  if (available_test %in% 'anova + tukey') {
+  if ('anova + tukey'  %in% available_test) {
     anova <- data_test |> 
       filter(test == 'anova + tukey') |> 
       group_by(!!!syms(sup_group)) |> 
@@ -162,7 +162,7 @@ dif_summary <- \(data,var,group,sup_group) {
   
   if (any(pull(diferencias,significativo))) {
     
-    if (available_test %in% 'kruskall-wallis + dunn') {
+    if ('kruskall-wallis + dunn' %in% available_test) {
       dunn <- data_diferencias |> 
         filter(significativo == T,
                test == 'kruskall-wallis + dunn') |> 
@@ -172,7 +172,7 @@ dif_summary <- \(data,var,group,sup_group) {
         select(all_of(c(sup_group,group)),cld)
     } else dunn <- data_diferencias |> distinct(!!!syms(c(sup_group,group)))
     
-    if (available_test %in% 'anova + tukey') {
+    if ('anova + tukey'  %in% available_test) {
       tukey <- data_diferencias |> 
         filter(significativo == T,
                test == 'anova + tukey') |> 
@@ -223,7 +223,7 @@ dif_summary_two <- \(data,var,group,sup_group) {
     pull(test) |> 
     unique()
   
-  if (available_test %in% 'kruskall-wallis + dunn') {
+  if ('kruskall-wallis + dunn' %in% available_test) {
     kw <- data_test |> 
       filter(test == 'kruskall-wallis + dunn') |> 
       group_by(!!!syms(sup_group),test) |> 
@@ -235,7 +235,7 @@ dif_summary_two <- \(data,var,group,sup_group) {
       })
   } else kw <- data_test |> distinct(!!!syms(sup_group))
   
-  if (available_test %in% 'anova + tukey') {
+  if ('anova + tukey'  %in% available_test) {
     anova <- data_test |> 
       filter(test == 'anova + tukey') |> 
       group_by(!!!syms(sup_group),test) |> 

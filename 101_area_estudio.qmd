@@ -22,6 +22,21 @@ El estudio se llevó a cabo en cultivos de cerezos (*Prunus avium* L., variedad 
 
 knitr::include_graphics("figuras/09_metodologia/area_estudio.png")
 ```
-:::
 
 El clima de la región es mediterráneo (tipo Csb según la clasificación de Beck et al., 2018), con precipitaciones moderadas que oscilan entre 200 y 500 mm año⁻¹ en los últimos 10 años. Las lluvias se concentran en invierno, seguido de una estación seca prolongada de 7 a 8 meses (DMC, 2024). Cada huerto cuenta con una estación meteorológica privada ubicada a 0.6 km del centro en Río Claro y 1.4 km del centro en La Esperanza, respectivamente.
+:::
+
+## Tratamientos de riego deficitario
+
+::: justify
+Para aumentar la variabilidad del estado hídrico de las plantas, se implementaron cinco tratamientos diferentes de reposición de riego en cada huerto. La cantidad de riego se gestionó utilizando el ET0 y Ψs como referencias. Los tratamientos de riego fueron T1, T2, T3 y T4, siendo T1 el menos restrictivo y T4 el más restrictivo en cuanto al suministro de agua ([@fig-area-estudio]c y [@fig-area-estudio]d). Además, se estableció un tratamiento control (T0), el cual recibió el riego estándar proporcionado por el productor local. Cada parcela de tratamiento contuvo 60 árboles y abarcó un área de 0.048 ha. Los tratamientos se aplicaron durante las temporadas consecutivas de crecimiento 2022–2023 y 2023–2024. No obstante, en la segunda temporada no se aplicaron los tratamientos T1 a T4 en La Esperanza, ya que los resultados obtenidos en la temporada anterior no mostraron un impacto significativo de los tratamientos de restricción hídrica. La [@fig-riego] ilustra la profundidad acumulada de agua (mm) para cada tratamiento durante el riego, así como el porcentaje relativo a ET0.
+
+```{r}
+#| label: fig-riego
+#| fig-cap: 'Variación de la profundidad acumulada diaria de agua (mm) aplicada por riego por tratamiento en comparación con la evapotranspiración de referencia (ET0). El punto de inicio para la acumulación de ET0 corresponde al primer día de riego para cada huerto y temporada.'
+#| fig-align: center
+#| lightbox: true
+
+knitr::include_graphics("figuras/09_metodologia/riego_lamina.png")
+```
+:::
