@@ -41,124 +41,102 @@
     ]
   },
   {
-    "objectID": "102_tratamientos.html",
-    "href": "102_tratamientos.html",
-    "title": "2  Tratamientos de riego deficitario",
+    "objectID": "101_area_estudio.html#tratamientos-de-riego-deficitario",
+    "href": "101_area_estudio.html#tratamientos-de-riego-deficitario",
+    "title": "1  Área de estudio",
     "section": "",
-    "text": "Para aumentar la variabilidad del estado hídrico de las plantas, se implementaron cinco tratamientos diferentes de reposición de riego en cada huerto. La cantidad de riego se gestionó utilizando el ET0 y Ψs como referencias. Los tratamientos de riego fueron T1, T2, T3 y T4, siendo T1 el menos restrictivo y T4 el más restrictivo en cuanto al suministro de agua (Figura 1.1c y Figura 1.1d). Además, se estableció un tratamiento control (T0), el cual recibió el riego estándar proporcionado por el productor local. Cada parcela de tratamiento contuvo 60 árboles y abarcó un área de 0.048 ha. Los tratamientos se aplicaron durante las temporadas consecutivas de crecimiento 2022–2023 y 2023–2024. No obstante, en la segunda temporada no se aplicaron los tratamientos T1 a T4 en La Esperanza, ya que los resultados obtenidos en la temporada anterior no mostraron un impacto significativo de los tratamientos de restricción hídrica. La Figura 2.1 ilustra la profundidad acumulada de agua (mm) para cada tratamiento durante el riego, así como el porcentaje relativo a ET0.\n\n\n\n\n\n\n\n\nFigura 2.1: Variación de la profundidad acumulada diaria de agua (mm) aplicada por riego por tratamiento en comparación con la evapotranspiración de referencia (ET0). El punto de inicio para la acumulación de ET0 corresponde al primer día de riego para cada huerto y temporada.",
+    "text": "Para aumentar la variabilidad del estado hídrico de las plantas, se implementaron cinco tratamientos diferentes de reposición de riego en cada huerto. La cantidad de riego se gestionó utilizando el ET0 y Ψs como referencias. Los tratamientos de riego fueron T1, T2, T3 y T4, siendo T1 el menos restrictivo y T4 el más restrictivo en cuanto al suministro de agua (Figura 1.1c y Figura 1.1d). Además, se estableció un tratamiento control (T0), el cual recibió el riego estándar proporcionado por el productor local. Cada parcela de tratamiento contuvo 60 árboles y abarcó un área de 0.048 ha. Los tratamientos se aplicaron durante las temporadas consecutivas de crecimiento 2022–2023 y 2023–2024. No obstante, en la segunda temporada no se aplicaron los tratamientos T1 a T4 en La Esperanza, ya que los resultados obtenidos en la temporada anterior no mostraron un impacto significativo de los tratamientos de restricción hídrica. La Figura 1.2 ilustra la profundidad acumulada de agua (mm) para cada tratamiento durante el riego, así como el porcentaje relativo a ET0.\n\n\n\n\n\n\n\n\nFigura 1.2: Variación de la profundidad acumulada diaria de agua (mm) aplicada por riego por tratamiento en comparación con la evapotranspiración de referencia (ET0). El punto de inicio para la acumulación de ET0 corresponde al primer día de riego para cada huerto y temporada.\n\n\n\n\n\n\n\n\n\nFigura 1.1: Área de estudio. El mapa a la izquierda muestra la ubicación de los huertos en la región central de Chile. Los mapas a la derecha muestran los huertos en (a) Rio Claro y (b) La Esperanza, y (c) y (d) representan los tratamientos de riego (T0, T1, T2, T3, T4). Los puntos rojos y azules representan los árboles experimentales seleccionados para las temporadas 2022-2023 y 2023-2024, respectivamente, mientras que los puntos amarillos indican los árboles seleccionados para ambas temporadas.\nFigura 1.2: Variación de la profundidad acumulada diaria de agua (mm) aplicada por riego por tratamiento en comparación con la evapotranspiración de referencia (ET0). El punto de inicio para la acumulación de ET0 corresponde al primer día de riego para cada huerto y temporada.",
     "crumbs": [
       "Materiales y métodos",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tratamientos de riego deficitario</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Área de estudio</span>"
     ]
   },
   {
-    "objectID": "103_data.html",
-    "href": "103_data.html",
-    "title": "3  Data",
+    "objectID": "102_data.html",
+    "href": "102_data.html",
+    "title": "2  Datos",
     "section": "",
-    "text": "3.1 Potencial hídrico xilemático y fluorescencia",
+    "text": "2.1 In-situ",
     "crumbs": [
       "Materiales y métodos",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datos</span>"
     ]
   },
   {
-    "objectID": "103_data.html#potencial-hídrico-xilemático-y-fluorescencia",
-    "href": "103_data.html#potencial-hídrico-xilemático-y-fluorescencia",
-    "title": "3  Data",
+    "objectID": "102_data.html#in-situ",
+    "href": "102_data.html#in-situ",
+    "title": "2  Datos",
     "section": "",
-    "text": "Posterior a la instalación del sistema de riego diferenciado, se seleccionaron 3 árboles por tratamiento (un total de 15 árboles por campo), teniendo en consideración el efecto de borde, esto con el propósito de monitorear en el tiempo el estatus hídrico de cada planta (3 réplicas por tratamiento). Para ello se emplearon 2 indicadores: (1) Potencial hídrico xilemático al mediodía; cuyas mediciones son consideradas el proxy más preciso del estado hídrico para los cerezos dulces (Víctor Blanco et al. 2019; Victor Blanco et al. 2019; Carrasco-Benavides, Meza, et al. 2020; Carrasco-Benavides, Antunez-Quilobrán, et al. 2020; E et al. 2023). (2) Fluorescencia; el cual constituye un indicador de eficacia de la actividad e integridad de la fotosíntesis y el contenido de la clorofila; lo que permite estudiar mecanismos de respuesta ante condiciones de estrés hídrico (Linke, Herppich, y Geyer 2010; Jiménez-Suancha, S., y Balaguera-López 2015).\nPara medición de los indicadores anteriormente mencionados se realizaron visitas quincenales a cada campo. En lo que respecta a la medición del potencial hídrico xilemático (Ψs), la misma se realizó sobre muestras de hojas colectadas entre 12:00-14:00 h provenientes de cada una de los 15 árboles monitoreados. En cada caso, se seleccionaron hojas maduras y en buen estado, ubicadas en el tercio medio del árbol, con orientación este y cercanas al tronco (McCutchan y Shackel 2019; Marsal et al. 2010; Víctor Blanco et al. 2019). Antes de ser cortadas, cada una de ellas fue envuelta por un período de 30 min en bolsas de papel de aluminio, a modo de lograr bloquear la transpiración y la radiación solar. Posterior a este período, cada hoja fue cortada por el pecíolo y colocada al interior de la cámara Scholander conectada a un cilindro de nitrógeno (Modelo 3000, Soil Moisture Equipment, Santa Barbara, CA, EEUU), donde se aplicó presión negativa hasta observar gotas de agua en el extremo del pecíolo cortado, registrándose la cantidad de megapascales (MPa) necesarios para extraer la primera gota de jugo xilemático.\nEn lo que respecta a la medición de la fluorescencia, se usó el fluorómetro PAR-FluorPen FP 110/D (PSI, Czech), empleando el método de transitorios de fluorescencia OJIP. Este método permitió obtener diferentes parámetros de rendimiento cuántico de la actividad fotosintética en el PSII y evaluar el potencial impacto del riego deficitario sobre este proceso (Küpper et al. 2019). Para obtener una medida de los parámetros de fluorescencia de la clorofila, el fluorómetro consta de un medidor de luz integrado para lecturas digitales directas de la radiación fotosintéticamente activa en el rango 400 a 700 nm. Para lograr una emisión de fluorescencia roja, es necesario exponer a la luz, hojas que previamente se encontraban adaptadas a la oscuridad (Moreno, Vela, y O Salcedo Alvarez 2008). Con este fin, el equipo consta de unos dispositivos o “clips” , que se colocan en la hoja previamente y que permiten bloquear todo acceso de luz a una porción de la misma. En nuestro caso, se utilizaron 4 clips por árbol del muestreo, los cuales fueron colocados entre las 11:00-13:00 h, seleccionando hojas que se encontrasen maduras, en buen estado, dentro del tercio medio del árbol y orientadas directamente al sol. Pasado el período de adaptación a la oscuridad (20 minutos), se procedió a hacer las mediciones directas con el fluorómetro, el cual dispone de una memoria interna que permite almacenar los datos de manera secuencial. A efecto de los análisis se utilizaron los siguientes indicadores: Fv/Fm o ΦP0 (máxima eficiencia quántica del Fotosistema II), Fo (valor mínimo de fluorescencia) y Fv/Fo (razón entre fluorescencia máxima y mínima)",
+    "text": "2.1.1 Potencial hídrico xilemático y fluorescencia\n\nPosterior a la instalación del sistema de riego diferenciado, se seleccionaron 3 árboles por tratamiento (un total de 15 árboles por campo), teniendo en consideración el efecto de borde, esto con el propósito de monitorear en el tiempo el estatus hídrico de cada planta (3 réplicas por tratamiento). Para ello se emplearon 2 indicadores: (1) Potencial hídrico xilemático al mediodía; cuyas mediciones son consideradas el proxy más preciso del estado hídrico para los cerezos dulces (Víctor Blanco et al. 2019; Victor Blanco et al. 2019; Carrasco-Benavides, Meza, et al. 2020; Carrasco-Benavides, Antunez-Quilobrán, et al. 2020; E et al. 2023). (2) Fluorescencia; el cual constituye un indicador de eficacia de la actividad e integridad de la fotosíntesis y el contenido de la clorofila; lo que permite estudiar mecanismos de respuesta ante condiciones de estrés hídrico (Linke, Herppich, y Geyer 2010; Jiménez-Suancha, S., y Balaguera-López 2015).\nPara medición de los indicadores anteriormente mencionados se realizaron visitas quincenales a cada campo. En lo que respecta a la medición del potencial hídrico xilemático (Ψs), la misma se realizó sobre muestras de hojas colectadas entre 12:00-14:00 h provenientes de cada una de los 15 árboles monitoreados. En cada caso, se seleccionaron hojas maduras y en buen estado, ubicadas en el tercio medio del árbol, con orientación este y cercanas al tronco (McCutchan y Shackel 2019; Marsal et al. 2010; Víctor Blanco et al. 2019). Antes de ser cortadas, cada una de ellas fue envuelta por un período de 30 min en bolsas de papel de aluminio, a modo de lograr bloquear la transpiración y la radiación solar. Posterior a este período, cada hoja fue cortada por el pecíolo y colocada al interior de la cámara Scholander conectada a un cilindro de nitrógeno (Modelo 3000, Soil Moisture Equipment, Santa Barbara, CA, EEUU), donde se aplicó presión negativa hasta observar gotas de agua en el extremo del pecíolo cortado, registrándose la cantidad de megapascales (MPa) necesarios para extraer la primera gota de jugo xilemático.\nEn lo que respecta a la medición de la fluorescencia, se usó el fluorómetro PAR-FluorPen FP 110/D (PSI, Czech), empleando el método de transitorios de fluorescencia OJIP. Este método permitió obtener diferentes parámetros de rendimiento cuántico de la actividad fotosintética en el PSII y evaluar el potencial impacto del riego deficitario sobre este proceso (Küpper et al. 2019). Para obtener una medida de los parámetros de fluorescencia de la clorofila, el fluorómetro consta de un medidor de luz integrado para lecturas digitales directas de la radiación fotosintéticamente activa en el rango 400 a 700 nm. Para lograr una emisión de fluorescencia roja, es necesario exponer a la luz, hojas que previamente se encontraban adaptadas a la oscuridad (Moreno, Vela, y O Salcedo Alvarez 2008). Con este fin, el equipo consta de unos dispositivos o “clips” , que se colocan en la hoja previamente y que permiten bloquear todo acceso de luz a una porción de la misma. En nuestro caso, se utilizaron 4 clips por árbol del muestreo, los cuales fueron colocados entre las 11:00-13:00 h, seleccionando hojas que se encontrasen maduras, en buen estado, dentro del tercio medio del árbol y orientadas directamente al sol. Pasado el período de adaptación a la oscuridad (20 minutos), se procedió a hacer las mediciones directas con el fluorómetro, el cual dispone de una memoria interna que permite almacenar los datos de manera secuencial. A efecto de los análisis se utilizaron los siguientes indicadores: Fv/Fm o ΦP0 (máxima eficiencia quántica del Fotosistema II), Fo (valor mínimo de fluorescencia) y Fv/Fo (razón entre fluorescencia máxima y mínima)\n\n\n\n2.1.2 Producción y calidad de la fruta\n\nLas cosechas se llevaron a cabo siguiendo el cronograma y la planificación de Garcés Fruit. Las mismas se realizaron el 12/12 del 2022 y 2023 en el campo La Esperanza y el 21/12 del 2022 en el campo Río Claro. En ambos casos, se recolectó la totalidad de los frutos de los 15 árboles que componían el muestreo (3 réplicas por tratamiento). El total de la frutas producidas por cada árbol fueron pesadas en campo mediante el empleo de una balanza digital modelo ACS- 30 LED (peso máximo 30 Kg). Posteriormente, utilizando una balanza electrónica modelo SF-400 (peso máximo 10kg) , se colectó al azar el equivalente de un 1kg de cerezas por cada árbol, los cuales fueron almacenados en envases plásticos y refrigerados en coolers para su posterior traslado al laboratorio. El resto de las muestras de cada árbol fueron examinadas de manera meticulosa en su totalidad, contabilizando aquellas cerezas que presentarán deformaciones y defectos en su forma o superficie, tales como pitting, pudrición, fisuras pronunciadas, sobremaduración, daños en la piel, palidez y frutos dobles. Se guardó registro fotográfico de las cerezas identificadas con daños para su posterior revisión y categorización en el laboratorio. Para esta caracterización se usó como base la guía Australian Cherry Quality Guide (disponible: https://www.cherrygrowers.org.au).\nUna vez en el laboratorio, las muestras de 1 Kg de cerezas por árbol fueron almacenadas en un refrigerador a 4°C. En un plazo menor de 72 h cada una de ellas fue analizada para evaluar la calidad de fruto, de manera de evitar degradaciones relacionadas con el tiempo de almacenamiento. Para ello, se tomó una submuestra al azar de 20 cerezas por árbol, siguiendo una metodología similar a Víctor Blanco et al. (2019) , para un total de 60 cerezas por tratamiento. La única condición para que una cereza fuese seleccionada, es que la misma se encuentre en buen estado, esto para disminuir la probabilidad de desviaciones relacionadas con daños experimentados durante el traslado e incurrir en el error de medir cerezas defectuosas.",
     "crumbs": [
       "Materiales y métodos",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datos</span>"
     ]
   },
   {
-    "objectID": "103_data.html#cosecha-y-evaluación-de-producción-y-calidad-de-la-fruta",
-    "href": "103_data.html#cosecha-y-evaluación-de-producción-y-calidad-de-la-fruta",
-    "title": "3  Data",
-    "section": "3.2 Cosecha y evaluación de producción y calidad de la fruta",
-    "text": "3.2 Cosecha y evaluación de producción y calidad de la fruta\n\nLas cosechas se llevaron a cabo siguiendo el cronograma y la planificación de Garcés Fruit. Las mismas se realizaron el 12/12 del 2022 y 2023 en el campo La Esperanza y el 21/12 del 2022 en el campo Río Claro. En ambos casos, se recolectó la totalidad de los frutos de los 15 árboles que componían el muestreo (3 réplicas por tratamiento). El total de la frutas producidas por cada árbol fueron pesadas en campo mediante el empleo de una balanza digital modelo ACS- 30 LED (peso máximo 30 Kg). Posteriormente, utilizando una balanza electrónica modelo SF-400 (peso máximo 10kg) , se colectó al azar el equivalente de un 1kg de cerezas por cada árbol, los cuales fueron almacenados en envases plásticos y refrigerados en coolers para su posterior traslado al laboratorio. El resto de las muestras de cada árbol fueron examinadas de manera meticulosa en su totalidad, contabilizando aquellas cerezas que presentarán deformaciones y defectos en su forma o superficie, tales como pitting, pudrición, fisuras pronunciadas, sobremaduración, daños en la piel, palidez y frutos dobles. Se guardó registro fotográfico de las cerezas identificadas con daños para su posterior revisión y categorización en el laboratorio. Para esta caracterización se usó como base la guía Australian Cherry Quality Guide (disponible: https://www.cherrygrowers.org.au).\nUna vez en el laboratorio, las muestras de 1 Kg de cerezas por árbol fueron almacenadas en un refrigerador a 4°C. En un plazo menor de 72 h cada una de ellas fue analizada para evaluar la calidad de fruto, de manera de evitar degradaciones relacionadas con el tiempo de almacenamiento. Para ello, se tomó una submuestra al azar de 20 cerezas por árbol, siguiendo una metodología similar a Víctor Blanco et al. (2019) , para un total de 60 cerezas por tratamiento. La única condición para que una cereza fuese seleccionada, es que la misma se encuentre en buen estado, esto para disminuir la probabilidad de desviaciones relacionadas con daños experimentados durante el traslado e incurrir en el error de medir cerezas defectuosas.\nPara evaluar la calidad de las frutas se consideraron las siguientes variables asociadas a los estándares comerciales: peso por unidad (gr), diámetro (mm) y color. Para medir peso (gr) se utilizó una balanza análica de laboratorio, mientras que para estimar el diámetro se empleó un pie de metro digital (0-150mm). En lo que respecta al color, se siguió la carta de color y la metodología recomendada por el Instituto Nacional de Tecnología Agropecuaria (INTA) (disponible en: https://inta.gob.ar/documentos/carta-de-color-y-calibre-para-la-cosecha-de-cerezas). Para ello se empleó una escala numérica del 1-6 , la cual variaba desde un rojo pálido (1) a un caoba oscuro (6). Finalmente, de cada sub-muestra se seleccionaron al azar 5 cerezas adicionales (15 por tratamientos), con las mismas se procedió a medir concentración de sólidos solubles (grados brix) utilizando para ello el refractómetro ATC (Brix 0-32) (Víctor Blanco et al. 2019).",
+    "objectID": "102_data.html#remotos",
+    "href": "102_data.html#remotos",
+    "title": "2  Datos",
+    "section": "2.2 Remotos",
+    "text": "2.2 Remotos\n\n2.2.1 Sentinel 2\n\nLa misión S2 consta de dos satélites idénticos, S2A y S2B, ambos equipados con un sensor multiespectral que cuenta con 13 bandas espectrales que cubren las regiones visible, infrarrojo cercano e infrarrojo de onda corta, con resoluciones espaciales de 10, 20 y 60 m (ver Tabla S2). En este estudio, utilizamos un total de 106 imágenes S2 (A/B): 54 para la temporada 2022-2023 y 52 para la 2023-2024, capturadas entre octubre y mayo en ambos huertos (cuadrícula T19HCB para La Esperanza y T19HBB para Río Claro). Las imágenes se obtuvieron de la colección corregida atmosféricamente S2 Level-2A de Planetary Computer (Microsoft Open Source et al., 2022), con una frecuencia de 5 días y aproximadamente a las 14:30 hora local (UTC-4). Una máscara fue aplicada basandose en la capa de clasificación de escena (SCL) para los valores correspondientes a “Cloud Shadows,” “Cloud Medium Probability,” y “Cloud High Probability,”.\n\n\n\n\n\nBlanco, Víctor, Ginés Benito Martínez-Hernández, Francisco Artés-Hernández, Pedro José Blaya-Ros, Roque Torres-Sánchez, y Rafael Domingo. 2019. «Water relations and quality changes throughout fruit development and shelf life of sweet cherry grown under regulated deficit irrigation». Agricultural Water Management 217. https://doi.org/10.1016/j.agwat.2019.02.028.\n\n\nBlanco, Victor, Roque Torres-Sánchez, Pedro José Blaya-Ros, Alejandro Pérez-Pastor, y Rafael Domingo. 2019. «Vegetative and reproductive response of “Prime Giant” sweet cherry trees to regulated deficit irrigation». Scientia Horticulturae 249. https://doi.org/10.1016/j.scienta.2019.02.016.\n\n\nCarrasco-Benavides, Marcos, Javiera Antunez-Quilobrán, Antonella Baffico-Hernández, Carlos Ávila-Sánchez, Samuel Ortega-Farías, Sergio Espinoza, John Gajardo, Marco Mora, y Sigfredo Fuentes. 2020. «Performance assessment of thermal infrared cameras of different resolutions to estimate tree water status from two cherry cultivars: An alternative to midday stem water potential and stomatal conductance». Sensors (Switzerland) 20. https://doi.org/10.3390/s20123596.\n\n\nCarrasco-Benavides, Marcos, Sergio Espinoza Meza, Jeissy Olguín-Cáceres, Diego Muñoz-Concha, Eduardo von Bennewitz, Carlos Ávila-Sánchez, y Samuel Ortega-Farías. 2020. «Effects of regulated post-harvest irrigation strategies on yield, fruit quality and water productivity in a drip-irrigated cherry orchard». New Zealand Journal of Crop and Horticultural Science 48. https://doi.org/10.1080/01140671.2020.1721544.\n\n\nE, Houghton, Bevandick K, Neilsen D, Hannam K, y Nelson L. 2023. «Effects of postharvest deficit irrigation on sweet cherry (Prunus avium) in five Okanagan Valley, Canada, orchards: II. Phenology, cold hardiness, fruit yield, and quality». Canadian Journal of Plant Science 100 (enero): 1-17.\n\n\nJiménez-Suancha, Sonia Constanza, Oscar Humberto Álvarado S., y Helber Enrique Balaguera-López. 2015. «Fluorescencia como indicador de estrés en &lt;i&gt;Helianthus annuus&lt;/i&gt; L. Una revisión». Revista Colombiana de Ciencias Hortícolas 9. https://doi.org/10.17584/rcch.2015v9i1.3753.\n\n\nKüpper, Hendrik, Zuzana Benedikty, Filis Morina, Elisa Andresen, Archana Mishra, y Martin Trtílek. 2019. «Analysis of OJIP Chlorophyll Fluorescence Kinetics and QA Reoxidation Kinetics by Direct Fast Imaging». Plant Physiology 179 (febrero): 369-81.\n\n\nLinke, Manfred, Werner B. Herppich, y Martin Geyer. 2010. «Green peduncles may indicate postharvest freshness of sweet cherries». Postharvest Biology and Technology 58. https://doi.org/10.1016/j.postharvbio.2010.05.014.\n\n\nMarsal, Jordi, G. Lopez, J. del Campo, M. Mata, A. Arbones, y J. Girona. 2010. «Postharvest regulated deficit irrigation in ’Summit’ sweet cherry: Fruit yield and quality in the following season». Irrigation Science 28. https://doi.org/10.1007/s00271-009-0174-z.\n\n\nMcCutchan, Harold, y K. A. Shackel. 2019. «Stem-water Potential as a Sensitive Indicator of Water Stress in Prune Trees (Prunus domestica L. cv. French)». Journal of the American Society for Horticultural Science 117. https://doi.org/10.21273/jashs.117.4.607.\n\n\nMoreno, González, Perales Vela, y Martha O Salcedo Alvarez. 2008. «LA FLUORESCENCIA DE LA CLOROFILA a COMO HERRAMIENTA EN LA INVESTIGACIÓN DE EFECTOS TÓXICOS EN EL APARATO FOTOSINTÉTICO DE PLANTAS Y ALGAS». Revista de Educación Bioquímica 27.",
     "crumbs": [
       "Materiales y métodos",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datos</span>"
     ]
   },
   {
-    "objectID": "103_data.html#sentinel-2",
-    "href": "103_data.html#sentinel-2",
-    "title": "3  Data",
-    "section": "3.3 Sentinel 2",
-    "text": "3.3 Sentinel 2\n\nLa misión S2 consta de dos satélites idénticos, S2A y S2B, ambos equipados con un sensor multiespectral que cuenta con 13 bandas espectrales que cubren las regiones visible, infrarrojo cercano e infrarrojo de onda corta, con resoluciones espaciales de 10, 20 y 60 m (ver Tabla S2). En este estudio, utilizamos un total de 106 imágenes S2 (A/B): 54 para la temporada 2022-2023 y 52 para la 2023-2024, capturadas entre octubre y mayo en ambos huertos (cuadrícula T19HCB para La Esperanza y T19HBB para Río Claro). Las imágenes se obtuvieron de la colección corregida atmosféricamente S2 Level-2A de Planetary Computer (Microsoft Open Source et al., 2022), con una frecuencia de 5 días y aproximadamente a las 14:30 hora local (UTC-4). Una máscara fue aplicada basandose en la capa de clasificación de escena (SCL) para los valores correspondientes a “Cloud Shadows,” “Cloud Medium Probability,” y “Cloud High Probability,”.\n\n\n\n\n\nBlanco, Víctor, Ginés Benito Martínez-Hernández, Francisco Artés-Hernández, Pedro José Blaya-Ros, Roque Torres-Sánchez, y Rafael Domingo. 2019. «Water relations and quality changes throughout fruit development and shelf life of sweet cherry grown under regulated deficit irrigation». Agricultural Water Management 217. https://doi.org/10.1016/j.agwat.2019.02.028.\n\n\nBlanco, Victor, Roque Torres-Sánchez, Pedro José Blaya-Ros, Alejandro Pérez-Pastor, y Rafael Domingo. 2019. «Vegetative and reproductive response of “Prime Giant” sweet cherry trees to regulated deficit irrigation». Scientia Horticulturae 249. https://doi.org/10.1016/j.scienta.2019.02.016.\n\n\nCarrasco-Benavides, Marcos, Javiera Antunez-Quilobrán, Antonella Baffico-Hernández, Carlos Ávila-Sánchez, Samuel Ortega-Farías, Sergio Espinoza, John Gajardo, Marco Mora, y Sigfredo Fuentes. 2020. «Performance assessment of thermal infrared cameras of different resolutions to estimate tree water status from two cherry cultivars: An alternative to midday stem water potential and stomatal conductance». Sensors (Switzerland) 20. https://doi.org/10.3390/s20123596.\n\n\nCarrasco-Benavides, Marcos, Sergio Espinoza Meza, Jeissy Olguín-Cáceres, Diego Muñoz-Concha, Eduardo von Bennewitz, Carlos Ávila-Sánchez, y Samuel Ortega-Farías. 2020. «Effects of regulated post-harvest irrigation strategies on yield, fruit quality and water productivity in a drip-irrigated cherry orchard». New Zealand Journal of Crop and Horticultural Science 48. https://doi.org/10.1080/01140671.2020.1721544.\n\n\nE, Houghton, Bevandick K, Neilsen D, Hannam K, y Nelson L. 2023. «Effects of postharvest deficit irrigation on sweet cherry (Prunus avium) in five Okanagan Valley, Canada, orchards: II. Phenology, cold hardiness, fruit yield, and quality». Canadian Journal of Plant Science 100 (enero): 1-17.\n\n\nJiménez-Suancha, Sonia Constanza, Oscar Humberto Álvarado S., y Helber Enrique Balaguera-López. 2015. «Fluorescencia como indicador de estrés en &lt;i&gt;Helianthus annuus&lt;/i&gt; L. Una revisión». Revista Colombiana de Ciencias Hortícolas 9. https://doi.org/10.17584/rcch.2015v9i1.3753.\n\n\nKüpper, Hendrik, Zuzana Benedikty, Filis Morina, Elisa Andresen, Archana Mishra, y Martin Trtílek. 2019. «Analysis of OJIP Chlorophyll Fluorescence Kinetics and QA Reoxidation Kinetics by Direct Fast Imaging». Plant Physiology 179 (febrero): 369-81.\n\n\nLinke, Manfred, Werner B. Herppich, y Martin Geyer. 2010. «Green peduncles may indicate postharvest freshness of sweet cherries». Postharvest Biology and Technology 58. https://doi.org/10.1016/j.postharvbio.2010.05.014.\n\n\nMarsal, Jordi, G. Lopez, J. del Campo, M. Mata, A. Arbones, y J. Girona. 2010. «Postharvest regulated deficit irrigation in ’Summit’ sweet cherry: Fruit yield and quality in the following season». Irrigation Science 28. https://doi.org/10.1007/s00271-009-0174-z.\n\n\nMcCutchan, Harold, y K. A. Shackel. 2019. «Stem-water Potential as a Sensitive Indicator of Water Stress in Prune Trees (Prunus domestica L. cv. French)». Journal of the American Society for Horticultural Science 117. https://doi.org/10.21273/jashs.117.4.607.\n\n\nMoreno, González, Perales Vela, y Martha O Salcedo Alvarez. 2008. «LA FLUORESCENCIA DE LA CLOROFILA a COMO HERRAMIENTA EN LA INVESTIGACIÓN DE EFECTOS TÓXICOS EN EL APARATO FOTOSINTÉTICO DE PLANTAS Y ALGAS». Revista de Educación Bioquímica 27.",
+    "objectID": "103_produccion.html",
+    "href": "103_produccion.html",
+    "title": "3  Producción y parámetros de calidad de la fruta",
+    "section": "",
+    "text": "Para determinar la producción de los cerezos, se midieron dos variables: el peso total de la cosecha y la densidad de frutos. El peso total (kg) se obtuvo mediante el pesaje directo de la producción de cada árbol en campo, utilizando una balanza digital modelo ACS-30 LED con una capacidad máxima de 30 kg. Por otro lado, la densidad de frutos (frutos/kg) se determinó dividiendo el conteo total de cerezas recolectadas entre el peso total correspondiente.\nPor el otro lado, la calidad de las frutas se evaluó considerando las siguientes variables asociadas a los estándares comerciales: peso por unidad (gr), diámetro (mm) y color. Para medir peso (gr) se utilizó una balanza análica de laboratorio, mientras que para estimar el diámetro se empleó un pie de metro digital (0-150mm). En lo que respecta al color, se siguió la carta de color y la metodología recomendada por el Instituto Nacional de Tecnología Agropecuaria (INTA) (disponible en: https://inta.gob.ar/documentos/carta-de-color-y-calibre-para-la-cosecha-de-cerezas). Para ello se empleó una escala numérica del 1-6 , la cual variaba desde un rojo pálido (1) a un caoba oscuro (6). Finalmente, de cada sub-muestra se seleccionaron al azar 5 cerezas adicionales (15 por tratamientos), con las mismas se procedió a medir concentración de sólidos solubles (grados brix) utilizando para ello el refractómetro ATC (Brix 0-32) (Blanco et al. 2019).\n\n\n\n\n\nBlanco, Víctor, Ginés Benito Martínez-Hernández, Francisco Artés-Hernández, Pedro José Blaya-Ros, Roque Torres-Sánchez, y Rafael Domingo. 2019. «Water relations and quality changes throughout fruit development and shelf life of sweet cherry grown under regulated deficit irrigation». Agricultural Water Management 217. https://doi.org/10.1016/j.agwat.2019.02.028.",
     "crumbs": [
       "Materiales y métodos",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Data</span>"
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Producción y parámetros de calidad de la fruta</span>"
     ]
   },
   {
-    "objectID": "104_predictores.html",
-    "href": "104_predictores.html",
-    "title": "4  Predictores espacio-temporales",
+    "objectID": "104_modelo_potencial.html",
+    "href": "104_modelo_potencial.html",
+    "title": "4  Modelado espacial diario de Ψs",
     "section": "",
-    "text": "4.1 Variables meteorológicas",
+    "text": "4.1 Predictores espacio-temporales",
     "crumbs": [
-      "Materiales y método",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Predictores espacio-temporales</span>"
+      "Materiales y métodos",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelado espacial diario de Ψ~s~</span>"
     ]
   },
   {
-    "objectID": "104_predictores.html#variables-meteorológicas",
-    "href": "104_predictores.html#variables-meteorológicas",
-    "title": "4  Predictores espacio-temporales",
+    "objectID": "104_modelo_potencial.html#predictores-espacio-temporales",
+    "href": "104_modelo_potencial.html#predictores-espacio-temporales",
+    "title": "4  Modelado espacial diario de Ψs",
     "section": "",
-    "text": "Las variables meteorológicas utilizadas en el desarrollo del modelo de potencial se obtuvieron a partir de estaciones meteorológicas automáticas en ambos huertos, las cuales registraron datos cada 15 minutos utilizando el modelo ATMOS-41 del grupo METER. Estas variables fueron temperatura (T°), humedad relativa (HR), déficit de presión de vapor (VPD), precipitación (PP) y evapotranspiración de referencia (ET0).\n\nTemperaturaHumedad RelativaDéficit de presión de vapor (VPD)Evapotranspiración de referencia (ET0)Precipitación\n\n\n\n\n\n\n\n\n\n\nFigura 4.1: Variación de la temperatura media diaria (°C) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigura 4.2: Variación de la humedad relativa media diaria (%) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigura 4.3: Variación del VPD medio (mbar/dia) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigura 4.4: Variación de la evapotranspiración de referencia acumulada mensual (mm) en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigura 4.5: Variación de la precipitación acumulada mensual (mm) en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\n\n\n\n\n\n\n\n\nAdemás de las variables meteorológicas, también se recopilaron datos de humedad del suelo. Para esto, se utilizaron sensores de humedad del suelo Water Scout SM100 (Spectrum Technologies, Inc.), los cuales miden en tiempo real el contenido volumétrico de agua (VWC). Estos sensores se instalaron a 15 cm de profundidad bajo cada árbol de los tratamientos.\n\nTemporada 2022-2023Temporada 2023-2024\n\n\n\n\n\n\n\n\n\n\nFigura 4.6: Variación de la humedad de suelo media (%VWC) al medio día en La Esperanza y Río Claro en los distintos tratamientos durante la temporada 2022-2023.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigura 4.7: Variación de la humedad de suelo media (%VWC) al medio día en La Esperanza y Río Claro en los distintos tratamientos durante la temporada 2023-2024.\n\n\n\n\n\n\n\n\nPara revisar los procedimientos específicos empleados o analizar los resultados de la temporada 2022-2023 de manera independiente, se recomienda acceder al reporte completo en el siguiente enlace.",
+    "text": "4.1.1 Variables meteorológicas\n\nLas variables meteorológicas utilizadas en el desarrollo del modelo de potencial se obtuvieron a partir de estaciones meteorológicas automáticas en ambos huertos, las cuales registraron datos cada 15 minutos utilizando el modelo ATMOS-41 del grupo METER. Estas variables fueron temperatura (T°), humedad relativa (HR), déficit de presión de vapor (VPD), precipitación (PP) y evapotranspiración de referencia (ET0).\n\nTemperaturaHumedad RelativaDéficit de presión de vapor (VPD)Evapotranspiración de referencia (ET0)Precipitación\n\n\n\n\n\n\n\n\n\n\nFigura 4.1: Variación de la temperatura media diaria (°C) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigura 4.2: Variación de la humedad relativa media diaria (%) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigura 4.3: Variación del VPD medio (mbar/dia) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigura 4.4: Variación de la evapotranspiración de referencia acumulada mensual (mm) en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigura 4.5: Variación de la precipitación acumulada mensual (mm) en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\n\n\n\n\n\n\n\n\nAdemás de las variables meteorológicas, también se recopilaron datos de humedad del suelo. Para esto, se utilizaron sensores de humedad del suelo Water Scout SM100 (Spectrum Technologies, Inc.), los cuales miden en tiempo real el contenido volumétrico de agua (VWC). Estos sensores se instalaron a 15 cm de profundidad bajo cada árbol de los tratamientos.\n\nTemporada 2022-2023Temporada 2023-2024\n\n\n\n\n\n\n\n\n\n\nFigura 4.6: Variación de la humedad de suelo media (%VWC) al medio día en La Esperanza y Río Claro en los distintos tratamientos durante la temporada 2022-2023.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigura 4.7: Variación de la humedad de suelo media (%VWC) al medio día en La Esperanza y Río Claro en los distintos tratamientos durante la temporada 2023-2024.\n\n\n\n\n\n\n\n\nPara revisar los procedimientos específicos empleados o analizar los resultados de la temporada 2022-2023 de manera independiente, se recomienda acceder al reporte completo en el siguiente enlace.\n\n\n\n4.1.2 Índices vegetacionales\n\nSe derivaron dieciséis índices de vegetación (IVs) relacionados con la condición de las plantas —vigor, estrés, funcionalidad fotosintética y contenido hídrico— a partir de datos de Sentinel-2 (S2), como se detalla en la Tabla 2. De estos, nueve índices no incorporaron información del red-edge (borde rojo), calculándose exclusivamente con bandas espectrales del visible, infrarrojo cercano (NIR) e infrarrojo de onda corta (SWIR): NDVI, EVI, GCI, NDWI, NBR, NDMI, MSI, NMDI y DWSI. Por otro lado, siete índices —CLr, Clg, NDRE1, NDRE2, NDCI, mSR705 y RESI— se obtuvieron mediante las bandas del red-edge. Todos los índices fueron calculados a partir de las imágenes preprocesadas de las bandas de S2, generándose series temporales para cada IV en ambos huertos y temporadas.\nPara reconstruir las series temporales (ej. en zonas afectadas por nubosidad), se aplicó un suavizado mediante regresión polinomial local (LOESS) (Cleveland, 1979). El método LOESS se configuró con un parámetro de suavizado (span) de 0.3, obteniéndose así series diarias continuas y suavizadas para cada índice, las cuales posteriormente fueron extraídas para cada árbol medido. Se llevó a cabo un análisis de correlación para evaluar la relación entre estas series suavizadas y los valores observados de Ψs. El coeficiente de correlación de Pearson (r) fue calculado diariamente para cada árbol, huerto y temporada, utilizando exclusivamente correlaciones significativas (p-value &lt; 0.05) para el cálculo de los valores promedio.",
     "crumbs": [
-      "Materiales y método",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Predictores espacio-temporales</span>"
+      "Materiales y métodos",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelado espacial diario de Ψ~s~</span>"
     ]
   },
   {
-    "objectID": "104_predictores.html#índices-vegetacionales",
-    "href": "104_predictores.html#índices-vegetacionales",
-    "title": "4  Predictores espacio-temporales",
-    "section": "4.2 Índices vegetacionales",
-    "text": "4.2 Índices vegetacionales\n\nSe derivaron dieciséis índices de vegetación (IVs) relacionados con la condición de las plantas —vigor, estrés, funcionalidad fotosintética y contenido hídrico— a partir de datos de Sentinel-2 (S2), como se detalla en la Tabla 2. De estos, nueve índices no incorporaron información del red-edge (borde rojo), calculándose exclusivamente con bandas espectrales del visible, infrarrojo cercano (NIR) e infrarrojo de onda corta (SWIR): NDVI, EVI, GCI, NDWI, NBR, NDMI, MSI, NMDI y DWSI. Por otro lado, siete índices —CLr, Clg, NDRE1, NDRE2, NDCI, mSR705 y RESI— se obtuvieron mediante las bandas del red-edge. Todos los índices fueron calculados a partir de las imágenes preprocesadas de las bandas de S2, generándose series temporales para cada IV en ambos huertos y temporadas.\nPara reconstruir las series temporales (ej. en zonas afectadas por nubosidad), se aplicó un suavizado mediante regresión polinomial local (LOESS) (Cleveland, 1979). El método LOESS se configuró con un parámetro de suavizado (span) de 0.3, obteniéndose así series diarias continuas y suavizadas para cada índice, las cuales posteriormente fueron extraídas para cada árbol medido. Se llevó a cabo un análisis de correlación para evaluar la relación entre estas series suavizadas y los valores observados de Ψs. El coeficiente de correlación de Pearson (r) fue calculado diariamente para cada árbol, huerto y temporada, utilizando exclusivamente correlaciones significativas (p-value &lt; 0.05) para el cálculo de los valores promedio.",
+    "objectID": "104_modelo_potencial.html#modelos-de-machine-learning",
+    "href": "104_modelo_potencial.html#modelos-de-machine-learning",
+    "title": "4  Modelado espacial diario de Ψs",
+    "section": "4.2 Modelos de machine learning",
+    "text": "4.2 Modelos de machine learning\n\nPara modelar el Ψs, se evaluaron tres algoritmos de machine learning:\n\nExtreme Gradient Boosting (XGBoost; Chen y Guestrin, 2016)\nRandom Forest(RF; Ho, 1995)\nSupport vector Machine (SVM; Cortes y Vapnik, 1995)\n\nLos dos primeros métodos se basan en árboles de decisión, mientras que el tercero utiliza vectores de soporte. Estos modelos fueron seleccionados por ser considerados de vanguardia, requerir un número reducido de muestras de entrenamiento (en comparación con redes neuronales) y ofrecer interpretabilidad. Todos los algoritmos pueden emplearse tanto para clasificación como para regresión. En este estudio, se realizó un análisis de regresión, utilizando el Ψs como variable respuesta y 21 predictores: cinco meteorológicos y 16 índices de vegetación (IVs).\nEl conjunto de datos incluyó mediciones de 26 fechas en la temporada 2022–2023 y 34 en la 2023–2024 (total: 60 fechas). Para cada fecha, se tomaron 30 mediciones (15 por huerto: Río Claro y La Esperanza), lo que resultó en un total de 883 observaciones. El proceso de modelado siguió las siguientes etapas:\n\nPreparación y división de datos: Segmentación del conjunto de datos en subconjuntos de entrenamiento y prueba.\nOptimización de hiperparámetros: Ajuste de los parámetros de los algoritmos utilizando el conjunto de entrenamiento.\nRemuestreo: Evaluación de la confiabilidad del modelo e identificación de las variables más relevantes para estimar Ψs.\nValidación: Evaluación del rendimiento del modelo con métricas de desempeño.\n\n\n\n\n\n\n\n\n\nFigura 4.8: Esquemas de división utilizados para agrupar los conjuntos de entrenamiento y prueba: división aleatoria (rnd_split) y división temporal independiente (tme_split).\n\n\n\n\n\nSe entrenaron los tres modelos utilizando dos esquemas de división (Figura 4.8): uno que consideró una división aleatoria de datos de entrenamiento y prueba (rnd_split) y otro que utilizó fechas independientes para entrenamiento y prueba (tme_split). En ambos casos, se seleccionó el 75% de los datos para entrenamiento y el 25% para prueba. Se aplicaron tres tipos de preprocesamiento a los datos de entrenamiento: i) eliminación de predictores con valores constantes (variables de varianza cero); ii) normalización de predictores (media cero y desviación estándar uno); y iii) una versión del modelo que empleó Partial Least Squares (PLS) para reducir la dimensionalidad, utilizando las cinco componentes principales como predictores. Como resultado, se usaron modelos con predictores normalizados y otros con las componentes principales de PLS.\nPara ajustar los parámetros de los modelos (XGBoost, RF, SVM), se empleó optimización de hiperparámetros. Se definieron rangos para cada parámetro y se utilizaron cinco folds de validación cruzada para ambos esquemas de división (rnd_split y tme_split). La optimización evaluó diez combinaciones de parámetros por modelo. El rendimiento se midió con las métricas R², RMSE (root-mean-square error) y MAE (mean absolute error). Finalmente, los modelos se clasificaron según el RMSE más bajo y el R² más alto, seleccionándose aquellos con mejor desempeño.",
     "crumbs": [
-      "Materiales y método",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Predictores espacio-temporales</span>"
+      "Materiales y métodos",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelado espacial diario de Ψ~s~</span>"
     ]
   },
   {
-    "objectID": "105_modelo_potencial.html",
-    "href": "105_modelo_potencial.html",
-    "title": "5  Modelado espacial diario de Ψs",
-    "section": "",
-    "text": "5.1 Modelos de machine learning",
+    "objectID": "104_modelo_potencial.html#evaluación-e-importancia-de-los-modelos",
+    "href": "104_modelo_potencial.html#evaluación-e-importancia-de-los-modelos",
+    "title": "4  Modelado espacial diario de Ψs",
+    "section": "4.3 Evaluación e importancia de los modelos",
+    "text": "4.3 Evaluación e importancia de los modelos\n\nPara evaluar el rendimiento de los modelos, se aplicó remuestreo (resampling) sobre el conjunto de entrenamiento en ambos esquemas de división (rnd_split y tme_split). Se utilizaron cinco particiones y se calcularon las métricas R², MAE (Error Absoluto Medio) y RMSE (Raíz del Error Cuadrático Medio) para cada una de estas.\nEn cuanto a la importancia de variables, el modelo de Bosques Aleatorios (RF) empleó un método de permutación out-of-bag en cada árbol, permutando los predictores y calculando el error cuadrático medio para cada instancia. Para XGBoost, se estimó la contribución fraccional de cada variable según la ganancia total en las divisiones donde participó. En el caso de SVM, se calcularon puntuaciones de importancia basadas en permutaciones (para más detalles, véase Greenwell y Boehmke, 2020).\n\n\n\n\nFigura 4.1: Variación de la temperatura media diaria (°C) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\nFigura 4.2: Variación de la humedad relativa media diaria (%) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\nFigura 4.3: Variación del VPD medio (mbar/dia) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\nFigura 4.4: Variación de la evapotranspiración de referencia acumulada mensual (mm) en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\nFigura 4.5: Variación de la precipitación acumulada mensual (mm) en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\nFigura 4.6: Variación de la humedad de suelo media (%VWC) al medio día en La Esperanza y Río Claro en los distintos tratamientos durante la temporada 2022-2023.\nFigura 4.7: Variación de la humedad de suelo media (%VWC) al medio día en La Esperanza y Río Claro en los distintos tratamientos durante la temporada 2023-2024.\nFigura 4.8: Esquemas de división utilizados para agrupar los conjuntos de entrenamiento y prueba: división aleatoria (rnd_split) y división temporal independiente (tme_split).",
     "crumbs": [
-      "Materiales y método",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Modelado espacial diario de Ψ~s~</span>"
-    ]
-  },
-  {
-    "objectID": "105_modelo_potencial.html#modelos-de-machine-learning",
-    "href": "105_modelo_potencial.html#modelos-de-machine-learning",
-    "title": "5  Modelado espacial diario de Ψs",
-    "section": "",
-    "text": "Para modelar el Ψs, se evaluaron tres algoritmos de machine learning:\n\nExtreme Gradient Boosting (XGBoost; Chen y Guestrin, 2016)\nRandom Forest(RF; Ho, 1995)\nSupport vector Machine (SVM; Cortes y Vapnik, 1995)\n\nLos dos primeros métodos se basan en árboles de decisión, mientras que el tercero utiliza vectores de soporte. Estos modelos fueron seleccionados por ser considerados de vanguardia, requerir un número reducido de muestras de entrenamiento (en comparación con redes neuronales) y ofrecer interpretabilidad. Todos los algoritmos pueden emplearse tanto para clasificación como para regresión. En este estudio, se realizó un análisis de regresión, utilizando el Ψs como variable respuesta y 21 predictores: cinco meteorológicos y 16 índices de vegetación (IVs).\nEl conjunto de datos incluyó mediciones de 26 fechas en la temporada 2022–2023 y 34 en la 2023–2024 (total: 60 fechas). Para cada fecha, se tomaron 30 mediciones (15 por huerto: Río Claro y La Esperanza), lo que resultó en un total de 883 observaciones. El proceso de modelado siguió las siguientes etapas:\n\nPreparación y división de datos: Segmentación del conjunto de datos en subconjuntos de entrenamiento y prueba.\nOptimización de hiperparámetros: Ajuste de los parámetros de los algoritmos utilizando el conjunto de entrenamiento.\nRemuestreo: Evaluación de la confiabilidad del modelo e identificación de las variables más relevantes para estimar Ψs.\nValidación: Evaluación del rendimiento del modelo con métricas de desempeño.\n\n\n\n\n\n\n\n\n\nFigura 5.1: Esquemas de división utilizados para agrupar los conjuntos de entrenamiento y prueba: división aleatoria (rnd_split) y división temporal independiente (tme_split).\n\n\n\n\n\nSe entrenaron los tres modelos utilizando dos esquemas de división (Figura 5.1): uno que consideró una división aleatoria de datos de entrenamiento y prueba (rnd_split) y otro que utilizó fechas independientes para entrenamiento y prueba (tme_split). En ambos casos, se seleccionó el 75% de los datos para entrenamiento y el 25% para prueba. Se aplicaron tres tipos de preprocesamiento a los datos de entrenamiento: i) eliminación de predictores con valores constantes (variables de varianza cero); ii) normalización de predictores (media cero y desviación estándar uno); y iii) una versión del modelo que empleó Partial Least Squares (PLS) para reducir la dimensionalidad, utilizando las cinco componentes principales como predictores. Como resultado, se usaron modelos con predictores normalizados y otros con las componentes principales de PLS.\nPara ajustar los parámetros de los modelos (XGBoost, RF, SVM), se empleó optimización de hiperparámetros. Se definieron rangos para cada parámetro y se utilizaron cinco folds de validación cruzada para ambos esquemas de división (rnd_split y tme_split). La optimización evaluó diez combinaciones de parámetros por modelo. El rendimiento se midió con las métricas R², RMSE (root-mean-square error) y MAE (mean absolute error). Finalmente, los modelos se clasificaron según el RMSE más bajo y el R² más alto, seleccionándose aquellos con mejor desempeño.",
-    "crumbs": [
-      "Materiales y método",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Modelado espacial diario de Ψ~s~</span>"
-    ]
-  },
-  {
-    "objectID": "105_modelo_potencial.html#evaluación-e-importancia-de-los-modelos",
-    "href": "105_modelo_potencial.html#evaluación-e-importancia-de-los-modelos",
-    "title": "5  Modelado espacial diario de Ψs",
-    "section": "5.2 Evaluación e importancia de los modelos",
-    "text": "5.2 Evaluación e importancia de los modelos\n\nPara evaluar el rendimiento de los modelos, se aplicó remuestreo (resampling) sobre el conjunto de entrenamiento en ambos esquemas de división (rnd_split y tme_split). Se utilizaron cinco particiones y se calcularon las métricas R², MAE (Error Absoluto Medio) y RMSE (Raíz del Error Cuadrático Medio) para cada una de estas.\nEn cuanto a la importancia de variables, el modelo de Bosques Aleatorios (RF) empleó un método de permutación out-of-bag en cada árbol, permutando los predictores y calculando el error cuadrático medio para cada instancia. Para XGBoost, se estimó la contribución fraccional de cada variable según la ganancia total en las divisiones donde participó. En el caso de SVM, se calcularon puntuaciones de importancia basadas en permutaciones (para más detalles, véase Greenwell y Boehmke, 2020).",
-    "crumbs": [
-      "Materiales y método",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Modelado espacial diario de Ψ~s~</span>"
+      "Materiales y métodos",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelado espacial diario de Ψ~s~</span>"
     ]
   },
   {
@@ -173,91 +151,25 @@
     ]
   },
   {
-    "objectID": "201_produccion.html#peso-total",
-    "href": "201_produccion.html#peso-total",
-    "title": "6  Producción",
+    "objectID": "201_produccion.html#producción",
+    "href": "201_produccion.html#producción",
+    "title": "5  Producción y calidad",
     "section": "",
-    "text": "En La Esperanza, el peso total de la producción fue menor en la temporada 2023-2024 en comparación con 2022-2023, con una reducción general en todos los tratamientos, incluido el control (T0). En ambos años, T2 y T4 presentaron valores ligeramente superiores en comparación con los demás tratamientos con déficit. En la primera temporada de Río Claro, T2 mostró los valores más altos, mientras que T4 presentó los más bajos.\n\n\nPor tratamientoPor temporada",
+    "text": "5.1.1 Peso total\n\nLa Figura 5.1 muestra el peso total de los árboles según tratamiento, sitio y temporada, evidenciando diferencias tanto entre sitios como entre temporadas. En La Esperanza, no se observaron diferencias significativas entre tratamientos en ninguna de las dos temporadas. En 2022-2023, T4 presentó el mayor peso (17 kg), seguido por T0 (16.4 kg), mientras que T1 registró el menor valor (10.5 kg), con una diferencia de 5.83 kg respecto a T0. En 2023-2024, los valores fueron menores en general, con T3 alcanzando el mayor peso (6.18 kg) y T4 el menor (5.18 kg), situándose 0.59 kg por debajo de T0 (5.78 kg). En Río Claro, T2 mostró el mayor peso total (16.9 kg), superando en 0.76 kg a T0 (16.1 kg), mientras que T4 presentó el menor valor (11.9 kg), siendo 4.16 kg inferior a T0. En esta localidad, solo T2 y T4 fueron significativamente diferentes entre sí. A nivel temporal, en La Esperanza, el peso total del árbol fue significativamente menor en la segunda temporada en todos los tratamientos, reflejando una disminución generalizada en el rendimiento.\n\n\n\n\n\n\n\n\n\nFigura 5.1: Comparación del peso total de producción por unidad de árbol (kg) según tratamiento, sitio y temporada.\n\n\n\n\n\n\n\n5.1.2 Densidad\n\nLa Figura 5.2 muestra la densidad de frutos por kilogramo según tratamiento, sitio y temporada, sin diferencias significativas entre tratamientos dentro de cada sitio y temporada, excepto en La Esperanza, donde T4 presentó una mayor densidad en la segunda temporada. En La Esperanza 2022-2023, T4 tuvo la menor densidad (89 frutos/kg), 4 frutos menos que T0 (93 frutos/kg), mientras que T2 alcanzó el mayor valor (98 frutos/kg), seguido por T3. En 2023-2024, los valores fueron similares, con T2 registrando la menor densidad (91 frutos/kg, apenas 1 fruto/kg menos que T0) y T1 la mayor (105 frutos/kg). En Río Claro, T0 mostró la menor densidad (97 frutos/kg), seguido por T4 (114 frutos/kg), mientras que T3 alcanzó el mayor valor (185 frutos/kg), superando en 88 frutos/kg a T0. A nivel temporal, solo en T4 de La Esperanza se observó un aumento significativo en la segunda temporada, lo que sugiere una mayor cantidad de frutos por kilogramo en ese tratamiento.\n\n\n\n\n\n\n\n\n\nFigura 5.2: Comparación de la densidad de producción por unidad de árbol (frutos/kg) según tratamiento, sitio y temporada.",
     "crumbs": [
-      "Producción",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Producción</span>"
+      "Resultados y análisis",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Producción y calidad</span>"
     ]
   },
   {
-    "objectID": "201_produccion.html#rendimiento",
-    "href": "201_produccion.html#rendimiento",
-    "title": "6  Producción",
-    "section": "6.2 Rendimiento",
-    "text": "6.2 Rendimiento\n\nPor tratamientoPor temporada",
+    "objectID": "201_produccion.html#calidad",
+    "href": "201_produccion.html#calidad",
+    "title": "5  Producción y calidad",
+    "section": "5.2 Calidad",
+    "text": "5.2 Calidad\n\n5.2.1 Peso\n\nLa Figura 5.3 muestra la distribución del peso por unidad de cereza según tratamiento, sitio y temporada, evidenciando diferencias significativas entre tratamientos y un mejor desempeño en La Esperanza respecto a Río Claro. En La Esperanza (2022-2023), T4 presentó la mayor mediana (11.7 g), superando en 1 g al control T0 (10.7 g), mientras que T2 tuvo la menor (10 g); todos los tratamientos superaron el estándar XL (6 g), con un 95-100% de frutos en esta categoría. En 2023-2024, T0 alcanzó la mediana más alta (11.2 g), seguido de T2 (11 g), manteniéndose todos los tratamientos sobre el umbral XL (95-100% XL). En contraste, Río Claro (2022-2023) mostró un menor rendimiento, con T3 registrando la mediana más baja (5.85 g) y solo un 38.3% de frutos XL, mientras que T0 alcanzó 10.8 g y 90% XL. En esta localidad y temporada, se observaron las únicas diferencias significativas entre tratamientos, donde todos presentaron valores significativamente menores que T0 y, además, T3 fue significativamente menor que el resto. En La Esperanza, las diferencias entre temporadas fueron menos marcadas, con T2 mostrando un incremento en 2023-2024. Estos resultados reflejan la influencia del tratamiento y la localidad en la calidad de la cosecha, con un rendimiento consistentemente superior en La Esperanza.\n\n\n\n\n\n\n\n\n\nFigura 5.3: Comparación del peso de una unidad de cereza (gr) según tratamiento, sitio y temporada.\n\n\n\n\n\n\n\n5.2.2 Diametro\n\nEn La Esperanza, los tratamientos con déficit hídrico mostraron algunas diferencias significativas en el diámetro del fruto en 2022-2023, donde T2 presentó menores valores que T0, mientras que T4 tuvo diámetros ligeramente mayores que T2 y T3. En 2023-2024, no hubo diferencias significativas entre tratamientos, excepto por T4, que mostró un leve incremento respecto al resto. En Río Claro, los tratamientos T2 al T4 reflejaron una disminución significativa del diametro del fruto en 2022-2023.\n\n\n\n\n\n\n\n\n\nFigura 5.4: Comparación del diametro de una unidad de cereza (mm) por tratamiento según sitio y temporada.\n\n\n\n\n\n\n\n5.2.3 Color\n\nEn La Esperanza, se presentaron similitudes en el grado de color con T0 en todos los casos, salvo T2 y T4 en la temporada 2022-2023, y T2 en la segunda temporada. En Río Claro, T2, T3 y T4 presentaron diferencias significativas con T0.\n\n\n\n\n\n\n\n\n\n\n\n\n5.2.4 Contenido de azucar\n\nEn La Esperanza, los sólidos solubles de lso tratamientos experimentales no presentaron diferencias significativas respecto a T0, solo entre T3 y T4, mientras que en la segunda temporada no hubo entre ningún tratamiento. En Río Claro, en 2022-2023, T4 presentó valores significativamente mayores que el resto de los tratamientos, los cuales no mostraron diferencias entre sí.\n\n\n\n\n\n\n\n\n\n\n\n\n5.2.5 Daño\n\nRespecto al porcentaje de frutos dañados del total de las muestras analizadas, fue posible concluir que no existieron diferencias significativas entre ningún grupo, para todos los casos. Sin embargo, fue posible evidenciar un aumento significativo de frutos dañados trasnversal entre todos los tratamientos para la segunda temporada en La Esperanza.\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigura 5.1: Comparación del peso total de producción por unidad de árbol (kg) según tratamiento, sitio y temporada.\nFigura 5.2: Comparación de la densidad de producción por unidad de árbol (frutos/kg) según tratamiento, sitio y temporada.\nFigura 5.3: Comparación del peso de una unidad de cereza (gr) según tratamiento, sitio y temporada.\nFigura 5.4: Comparación del diametro de una unidad de cereza (mm) por tratamiento según sitio y temporada.",
     "crumbs": [
-      "Producción",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Producción</span>"
-    ]
-  },
-  {
-    "objectID": "201_produccion.html#densidad",
-    "href": "201_produccion.html#densidad",
-    "title": "6  Producción",
-    "section": "6.3 Densidad",
-    "text": "6.3 Densidad\n\nLos resultados en la densidad muestran que, en La Esperanza, los valores fueron relativamente similares entre tratamientos y entre las temporadas, sin variaciones destacadas, lo que también ocurrió en T0. En Río Claro, se observaron mayores diferencias durante la temporada 2022-2023, donde T3 presentó valores más altos, superando los 200 frutos/kg en las tres unidades.\n\n\nPor tratamientoPor temporada",
-    "crumbs": [
-      "Producción",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Producción</span>"
-    ]
-  },
-  {
-    "objectID": "202_calidad.html",
-    "href": "202_calidad.html",
-    "title": "7  Calidad",
-    "section": "",
-    "text": "7.1 Apariencia",
-    "crumbs": [
-      "Producción",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Calidad</span>"
-    ]
-  },
-  {
-    "objectID": "202_calidad.html#apariencia",
-    "href": "202_calidad.html#apariencia",
-    "title": "7  Calidad",
-    "section": "",
-    "text": "7.1.1 Peso\n\nEn La Esperanza, no se observaron diferencias significativas en el peso de las cerezas entre tratamientos en ninguna de las temporadas, salvo por T4 en la temporada 2022-2023 donde el peso fue mayor. En contraste, en Río Claro durante la temporada 2022-2023, el peso del fruto disminuyó significativamente en los tratamientos con restricción hídrica respecto al control (T0), con la reducción más pronunciada en T3. T4 mostró una recuperación parcial, aunque sin alcanzar los valores del control.\n\n\nPor tratamientoPor temporada\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n7.1.2 Diametro\n\nEn La Esperanza, los tratamientos con déficit hídrico mostraron algunas diferencias significativas en el diámetro del fruto en 2022-2023, donde T2 presentó menores valores que T0, mientras que T4 tuvo diámetros ligeramente mayores que T2 y T3. En 2023-2024, no hubo diferencias significativas entre tratamientos, excepto por T4, que mostró un leve incremento respecto al resto. En Río Claro, los tratamientos T2 al T4 reflejaron una disminución significativa del diametro del fruto en 2022-2023.\n\n\nPor tratamientoPor temporada",
-    "crumbs": [
-      "Producción",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Calidad</span>"
-    ]
-  },
-  {
-    "objectID": "202_calidad.html#color",
-    "href": "202_calidad.html#color",
-    "title": "7  Calidad",
-    "section": "7.2 Color",
-    "text": "7.2 Color\n\nEn La Esperanza, se presentaron similitudes en el grado de color con T0 en todos los casos, salvo T2 y T4 en la temporada 2022-2023, y T2 en la segunda temporada. En Río Claro, T2, T3 y T4 presentaron diferencias significativas con T0.\n\n\nPor tratamientoPor temporada",
-    "crumbs": [
-      "Producción",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Calidad</span>"
-    ]
-  },
-  {
-    "objectID": "202_calidad.html#contenido-de-azucar",
-    "href": "202_calidad.html#contenido-de-azucar",
-    "title": "7  Calidad",
-    "section": "7.3 Contenido de azucar",
-    "text": "7.3 Contenido de azucar\n\nEn La Esperanza, los sólidos solubles de lso tratamientos experimentales no presentaron diferencias significativas respecto a T0, solo entre T3 y T4, mientras que en la segunda temporada no hubo entre ningún tratamiento. En Río Claro, en 2022-2023, T4 presentó valores significativamente mayores que el resto de los tratamientos, los cuales no mostraron diferencias entre sí.\n\n\nPor tratamientoPor temporada",
-    "crumbs": [
-      "Producción",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Calidad</span>"
-    ]
-  },
-  {
-    "objectID": "202_calidad.html#daño",
-    "href": "202_calidad.html#daño",
-    "title": "7  Calidad",
-    "section": "7.4 Daño",
-    "text": "7.4 Daño\n\nRespecto al porcentaje de frutos dañados del total de las muestras analizadas, fue posible concluir que no existieron diferencias significativas entre ningún grupo, para todos los casos. Sin embargo, fue posible evidenciar un aumento significativo de frutos dañados trasnversal entre todos los tratamientos para la segunda temporada en La Esperanza.\n\n\nPor tratamientoPor temporada",
-    "crumbs": [
-      "Producción",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Calidad</span>"
+      "Resultados y análisis",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Producción y calidad</span>"
     ]
   },
   {
@@ -296,45 +208,45 @@
   {
     "objectID": "402_curvas_pv.html",
     "href": "402_curvas_pv.html",
-    "title": "9  Curvas Presión-volumen",
+    "title": "7  Curvas Presión-volumen",
     "section": "",
-    "text": "9.1 La Esperanza",
+    "text": "7.1 La Esperanza",
     "crumbs": [
-      "Parámetros fisiológicos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Curvas Presión-volumen</span>"
+      "Resultados y análisis",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Curvas Presión-volumen</span>"
     ]
   },
   {
     "objectID": "402_curvas_pv.html#la-esperanza",
     "href": "402_curvas_pv.html#la-esperanza",
-    "title": "9  Curvas Presión-volumen",
+    "title": "7  Curvas Presión-volumen",
     "section": "",
     "text": "Tratamiento 0 (control)Tratamiento 4\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
     "crumbs": [
-      "Parámetros fisiológicos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Curvas Presión-volumen</span>"
+      "Resultados y análisis",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Curvas Presión-volumen</span>"
     ]
   },
   {
     "objectID": "402_curvas_pv.html#rio-claro",
     "href": "402_curvas_pv.html#rio-claro",
-    "title": "9  Curvas Presión-volumen",
-    "section": "9.2 Rio Claro",
-    "text": "9.2 Rio Claro\n\nTratamiento 0 (control)Tratamiento 1Tratamiento 2Tratamiento 3Tratamiento 4\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
+    "title": "7  Curvas Presión-volumen",
+    "section": "7.2 Rio Claro",
+    "text": "7.2 Rio Claro\n\nTratamiento 0 (control)Tratamiento 1Tratamiento 2Tratamiento 3Tratamiento 4\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
     "crumbs": [
-      "Parámetros fisiológicos",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Curvas Presión-volumen</span>"
+      "Resultados y análisis",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Curvas Presión-volumen</span>"
     ]
   },
   {
     "objectID": "403_tlp.html",
     "href": "403_tlp.html",
-    "title": "10  Punto de pérdida de turgor",
+    "title": "8  Punto de pérdida de turgor",
     "section": "",
     "text": "A continuación se presentan los puntos de pérdida de turgor de cada unidad, según tratamiento, sitio y temporada, a partir de las curvas presión-volumen.\n\n\n\n\n\n\n\n\n\n\nCombinando observaciones en terreno de potencial, y el punto de perdida de turgor obtenido a partir de las curvas presión-volumen (TLPla_esperanza = -2.54 MPa; TLPrio_claro = -2.2 MPa; ver Figura 2) se puede observar que este punto de estrés hídrico se alcanzó mayoritariamente en los meses de enero y febrero en el campo de Río Claro, durante la temporada 2022-2023. Además, en el mismo contexto se puede observar tendencias a la disminución de potencial para los tratamientos de estrés hídrico más severos (T3 y T4). Por el contrario, en La Esperanza no se observan disminuciones importantes de potencial, respecto al punto de pérdida de turgor, mientras que tampoco se aprecian diferencias a simple vista entre los tratamientos.\n\n\n\nFigura 1. Series temporales de potencial hídrico xilemático según temporada (2022-2023; 2023-2024), sitio y tratamientos (T0 a T4). La unidad indica cada árbol por tratamiento (tres por tratamiento), mientras que la línea segmentada indica el punto de pérdida de turgor para cada sitio.",
     "crumbs": [
-      "Parámetros fisiológicos",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Punto de pérdida de turgor</span>"
+      "Resultados y análisis",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Punto de pérdida de turgor</span>"
     ]
   },
   {
@@ -383,100 +295,100 @@
   {
     "objectID": "502_limpieza.html",
     "href": "502_limpieza.html",
-    "title": "12  Limpieza de datos: eliminación de clusters",
+    "title": "10  Limpieza de datos: eliminación de clusters",
     "section": "",
-    "text": "12.1 La Esperanza",
+    "text": "10.1 La Esperanza",
     "crumbs": [
       "Preprocesamiento de datos de turgor",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Limpieza de datos: eliminación de clusters</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Limpieza de datos: eliminación de clusters</span>"
     ]
   },
   {
     "objectID": "502_limpieza.html#la-esperanza",
     "href": "502_limpieza.html#la-esperanza",
-    "title": "12  Limpieza de datos: eliminación de clusters",
+    "title": "10  Limpieza de datos: eliminación de clusters",
     "section": "",
     "text": "T1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
     "crumbs": [
       "Preprocesamiento de datos de turgor",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Limpieza de datos: eliminación de clusters</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Limpieza de datos: eliminación de clusters</span>"
     ]
   },
   {
     "objectID": "502_limpieza.html#rio-claro",
     "href": "502_limpieza.html#rio-claro",
-    "title": "12  Limpieza de datos: eliminación de clusters",
-    "section": "12.2 Rio Claro",
-    "text": "12.2 Rio Claro\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
+    "title": "10  Limpieza de datos: eliminación de clusters",
+    "section": "10.2 Rio Claro",
+    "text": "10.2 Rio Claro\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
     "crumbs": [
       "Preprocesamiento de datos de turgor",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Limpieza de datos: eliminación de clusters</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Limpieza de datos: eliminación de clusters</span>"
     ]
   },
   {
     "objectID": "503_estandarizacion.html",
     "href": "503_estandarizacion.html",
-    "title": "13  Estandarización de clusters",
+    "title": "11  Estandarización de clusters",
     "section": "",
-    "text": "13.1 La Esperanza",
+    "text": "11.1 La Esperanza",
     "crumbs": [
       "Preprocesamiento de datos de turgor",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Estandarización de clusters</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Estandarización de clusters</span>"
     ]
   },
   {
     "objectID": "503_estandarizacion.html#la-esperanza",
     "href": "503_estandarizacion.html#la-esperanza",
-    "title": "13  Estandarización de clusters",
+    "title": "11  Estandarización de clusters",
     "section": "",
     "text": "T1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
     "crumbs": [
       "Preprocesamiento de datos de turgor",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Estandarización de clusters</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Estandarización de clusters</span>"
     ]
   },
   {
     "objectID": "503_estandarizacion.html#rio-claro",
     "href": "503_estandarizacion.html#rio-claro",
-    "title": "13  Estandarización de clusters",
-    "section": "13.2 Rio Claro",
-    "text": "13.2 Rio Claro\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
+    "title": "11  Estandarización de clusters",
+    "section": "11.2 Rio Claro",
+    "text": "11.2 Rio Claro\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
     "crumbs": [
       "Preprocesamiento de datos de turgor",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Estandarización de clusters</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Estandarización de clusters</span>"
     ]
   },
   {
     "objectID": "504_preprocesado.html",
     "href": "504_preprocesado.html",
-    "title": "14  Datos preprocesados",
+    "title": "12  Datos preprocesados",
     "section": "",
-    "text": "14.1 A nivel de unidad",
+    "text": "12.1 A nivel de unidad",
     "crumbs": [
       "Preprocesamiento de datos de turgor",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Datos preprocesados</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Datos preprocesados</span>"
     ]
   },
   {
     "objectID": "504_preprocesado.html#a-nivel-de-unidad",
     "href": "504_preprocesado.html#a-nivel-de-unidad",
-    "title": "14  Datos preprocesados",
+    "title": "12  Datos preprocesados",
     "section": "",
-    "text": "Para obtener el turgor preprocesado por árbol según tratamiento, se promediaron las series de los sensores por cada unidad, obteniendo una serie única para cada árbol de los tratamientos.\n\n\n14.1.1 La Esperanza\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\n\n\n\n14.1.2 Rio Claro\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
+    "text": "Para obtener el turgor preprocesado por árbol según tratamiento, se promediaron las series de los sensores por cada unidad, obteniendo una serie única para cada árbol de los tratamientos.\n\n\n12.1.1 La Esperanza\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\n\n\n\n12.1.2 Rio Claro\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3 \n\n\nUnidad 1 \nUnidad 2 \nUnidad 3",
     "crumbs": [
       "Preprocesamiento de datos de turgor",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Datos preprocesados</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Datos preprocesados</span>"
     ]
   },
   {
     "objectID": "504_preprocesado.html#a-nivel-de-tratamiento",
     "href": "504_preprocesado.html#a-nivel-de-tratamiento",
-    "title": "14  Datos preprocesados",
-    "section": "14.2 A nivel de tratamiento",
-    "text": "14.2 A nivel de tratamiento\nPara obtener el turgor preprocesado a nivel de tratamiento, se promediaron las series promediadas de cada unidad según tratamiento, obteniendo una serie única para cada tratamiento de en ambos sitios.\n\n14.2.1 La Esperanza\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n14.2.1.1 Rio Claro\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)",
+    "title": "12  Datos preprocesados",
+    "section": "12.2 A nivel de tratamiento",
+    "text": "12.2 A nivel de tratamiento\nPara obtener el turgor preprocesado a nivel de tratamiento, se promediaron las series promediadas de cada unidad según tratamiento, obteniendo una serie única para cada tratamiento de en ambos sitios.\n\n12.2.1 La Esperanza\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n12.2.1.1 Rio Claro\n\nT1 (2022-2023)T2 (2022-2023)T3 (2022-2023)T4 (2022-2023)T1 (2023-2024)T2 (2023-2024)T3 (2023-2024)T4 (2023-2024)",
     "crumbs": [
       "Preprocesamiento de datos de turgor",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Datos preprocesados</span>"
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Datos preprocesados</span>"
     ]
   },
   {
@@ -493,45 +405,45 @@
   {
     "objectID": "602_satori.html#descripción-general",
     "href": "602_satori.html#descripción-general",
-    "title": "16  SatOri",
-    "section": "16.1 Descripción general",
-    "text": "16.1 Descripción general\nEl resultado final de este proyecto corresponde al prototipo de plataforma web SatOri, cuyo objetivo es la optimización del riego en ambos huertos de cerezos (Río Claro y La Esperanza).\nComo se mencionó anteriomente, uno de los resultados del proyecto fue el desarrollo del modelo para la estimación del potencial hídrico xilemático con frecuencia diaria y de forma espacial. Además, para cada uno de los campos se logró obtener el punto umbral de potencial hídrico xilemático (TLP), el que corresponde al nivel mínimo al cuál puede llegar cada sector de riego.\nCon el modelo de estimación diaria y espacial, más el umbral mínimo de potencial hídrico xilemático se implementó la plataforma web de SatOri.",
+    "title": "14  SatOri",
+    "section": "14.1 Descripción general",
+    "text": "14.1 Descripción general\nEl resultado final de este proyecto corresponde al prototipo de plataforma web SatOri, cuyo objetivo es la optimización del riego en ambos huertos de cerezos (Río Claro y La Esperanza).\nComo se mencionó anteriomente, uno de los resultados del proyecto fue el desarrollo del modelo para la estimación del potencial hídrico xilemático con frecuencia diaria y de forma espacial. Además, para cada uno de los campos se logró obtener el punto umbral de potencial hídrico xilemático (TLP), el que corresponde al nivel mínimo al cuál puede llegar cada sector de riego.\nCon el modelo de estimación diaria y espacial, más el umbral mínimo de potencial hídrico xilemático se implementó la plataforma web de SatOri.",
     "crumbs": [
       "Modelo de potencial y SatOri",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>SatOri</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>SatOri</span>"
     ]
   },
   {
     "objectID": "602_satori.html#diseño-de-la-aplicación",
     "href": "602_satori.html#diseño-de-la-aplicación",
-    "title": "16  SatOri",
-    "section": "16.2 Diseño de la aplicación",
-    "text": "16.2 Diseño de la aplicación\nLa aplicación fue creada en el lenguaje de programación R y con las plataformas de desarrollo Github y el servidor Shinyapps.\nEn Github, mediante los “Github Actions” se automatizó la descarga de datos satelitales y meteorológicos de forma diaria para cada uno de los huertos, de acuerdo a disponibilidad. “Github Actions” se encarga de procesar los datos, suavizar los indicadores de vegetación obtenidos de Sentinel-2 y correr el modelo de machine learning, para estimar el potencial hídrico xilemático para cada día.\nLa plataforma fue creada con el paquete {shiny} de R.\n\n16.2.1 Funcionamiento de la aplicación\nEl riego en los huertos frutales se realiza por sectores de riego, por lo que SatOri debe adaptarse a cómo se riega. Por lo tanto, una vez que se tiene estimado el potencial hídrico xilemático, se promedia su valor para cada sector de riego. Por otra parte, se tienen los valores de umbrales de riego mínimo para cada huerto. De acuerdo a esto, la plataforma define tres zonas de estado hídrico del sector de riego.\nEsto se definió de la siguiente forma, la zona de color verde corresponde, a cuando el potencial hídrico xilemático se encuentra por sobre el umbral más un factor de seguridad. En este caso se asume que el sector se encuentra sin problemas de abastecimiento de agua. Luego, se tiene un sector amarillo, que se encuentra entre el punto umbral y el umbral más el factor de seguridad. Cuando el sector de riego llega a este nivel, la plataforma indica cuánto tiempo se debe regar. Esto lo realiza mediante el cálculo de la evapotranspiración de cultivo de los últimos dos días. Por último se tiene una zona naranja, la que indica que el sector de riego se encuentra por debajo del valor umbral. En este caso, la plataforma indica un tiempo de riego de acuerdo a los últimos cinco días de evapotranspiración de cultivo, esto con el objetivo de provocar un aumento rápido del estado hídrico.",
+    "title": "14  SatOri",
+    "section": "14.2 Diseño de la aplicación",
+    "text": "14.2 Diseño de la aplicación\nLa aplicación fue creada en el lenguaje de programación R y con las plataformas de desarrollo Github y el servidor Shinyapps.\nEn Github, mediante los “Github Actions” se automatizó la descarga de datos satelitales y meteorológicos de forma diaria para cada uno de los huertos, de acuerdo a disponibilidad. “Github Actions” se encarga de procesar los datos, suavizar los indicadores de vegetación obtenidos de Sentinel-2 y correr el modelo de machine learning, para estimar el potencial hídrico xilemático para cada día.\nLa plataforma fue creada con el paquete {shiny} de R.\n\n14.2.1 Funcionamiento de la aplicación\nEl riego en los huertos frutales se realiza por sectores de riego, por lo que SatOri debe adaptarse a cómo se riega. Por lo tanto, una vez que se tiene estimado el potencial hídrico xilemático, se promedia su valor para cada sector de riego. Por otra parte, se tienen los valores de umbrales de riego mínimo para cada huerto. De acuerdo a esto, la plataforma define tres zonas de estado hídrico del sector de riego.\nEsto se definió de la siguiente forma, la zona de color verde corresponde, a cuando el potencial hídrico xilemático se encuentra por sobre el umbral más un factor de seguridad. En este caso se asume que el sector se encuentra sin problemas de abastecimiento de agua. Luego, se tiene un sector amarillo, que se encuentra entre el punto umbral y el umbral más el factor de seguridad. Cuando el sector de riego llega a este nivel, la plataforma indica cuánto tiempo se debe regar. Esto lo realiza mediante el cálculo de la evapotranspiración de cultivo de los últimos dos días. Por último se tiene una zona naranja, la que indica que el sector de riego se encuentra por debajo del valor umbral. En este caso, la plataforma indica un tiempo de riego de acuerdo a los últimos cinco días de evapotranspiración de cultivo, esto con el objetivo de provocar un aumento rápido del estado hídrico.",
     "crumbs": [
       "Modelo de potencial y SatOri",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>SatOri</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>SatOri</span>"
     ]
   },
   {
     "objectID": "602_satori.html#dashboard-de-la-plataforma",
     "href": "602_satori.html#dashboard-de-la-plataforma",
-    "title": "16  SatOri",
-    "section": "16.3 Dashboard de la plataforma",
-    "text": "16.3 Dashboard de la plataforma\nEn la Fig. 1 se muestra el dashboard de inicio de la plataforma SatOri. En él, se distinguen dos pestañas: “Panel” y “Resumen Temporada”. La Fig. 1 se encuentra desplegando las opciones de la pestaña “Panel”.\n\n\n\nFigura 1: Dashboard ejemplo de la plataforma SatOri, pestaña “Panel”.\n\n\nEn los botones que se encuentran en la parte izquierda de la pantalla, el usuario puede seleccionar el huerto que quiere revisar, la temporada, y la fecha específica; para poder visualizar el potencial.\nEl mapa visualizará el potencial del huerto seleccionado y para el día seleccionado. En el mapa se puede pinchar en alguno de los sectores de riego. Al pinchar en alguno, los gráficos que se encuentran a la derecha, mostrarán los datos de potencial para dicho sector. La linea en rojo que se muestra, corresponde a los valores de potencial de los últimos siete días. Los colores, verde, amarillo y rojo, indican los diferentes niveles de estado hídrico que pueda alcanzar el sector. En el ejemplo, se ve que la línea para el sector de riego seleccionada se encuentra en verde por lo tanto no es necesario regar.\nEn el caso que la linea roja llegué a la zona de color amarillo, la plataforma dará un aviso de que es necesario regar e indicara el tiempo de riego para cada sector.\nPor otra parte, en la parte superior de la aplicación, se muestra un resumen de cuantos sectores de riego están en verde, amarillo y rojo.\nLa Fig. 2 muestra la plataforma en la pestaña “Panel”. En este caso se muestra un mapa ampliado con el detalle de la variación del potencial hídrico xilemático durante toda la temporada para los sectores de riego.\n\n\n\nFigura 2: Dashboard ejemplo plataforma SatOri, pestaña “Resumen Temporada”.",
+    "title": "14  SatOri",
+    "section": "14.3 Dashboard de la plataforma",
+    "text": "14.3 Dashboard de la plataforma\nEn la Fig. 1 se muestra el dashboard de inicio de la plataforma SatOri. En él, se distinguen dos pestañas: “Panel” y “Resumen Temporada”. La Fig. 1 se encuentra desplegando las opciones de la pestaña “Panel”.\n\n\n\nFigura 1: Dashboard ejemplo de la plataforma SatOri, pestaña “Panel”.\n\n\nEn los botones que se encuentran en la parte izquierda de la pantalla, el usuario puede seleccionar el huerto que quiere revisar, la temporada, y la fecha específica; para poder visualizar el potencial.\nEl mapa visualizará el potencial del huerto seleccionado y para el día seleccionado. En el mapa se puede pinchar en alguno de los sectores de riego. Al pinchar en alguno, los gráficos que se encuentran a la derecha, mostrarán los datos de potencial para dicho sector. La linea en rojo que se muestra, corresponde a los valores de potencial de los últimos siete días. Los colores, verde, amarillo y rojo, indican los diferentes niveles de estado hídrico que pueda alcanzar el sector. En el ejemplo, se ve que la línea para el sector de riego seleccionada se encuentra en verde por lo tanto no es necesario regar.\nEn el caso que la linea roja llegué a la zona de color amarillo, la plataforma dará un aviso de que es necesario regar e indicara el tiempo de riego para cada sector.\nPor otra parte, en la parte superior de la aplicación, se muestra un resumen de cuantos sectores de riego están en verde, amarillo y rojo.\nLa Fig. 2 muestra la plataforma en la pestaña “Panel”. En este caso se muestra un mapa ampliado con el detalle de la variación del potencial hídrico xilemático durante toda la temporada para los sectores de riego.\n\n\n\nFigura 2: Dashboard ejemplo plataforma SatOri, pestaña “Resumen Temporada”.",
     "crumbs": [
       "Modelo de potencial y SatOri",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>SatOri</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>SatOri</span>"
     ]
   },
   {
     "objectID": "602_satori.html#acceso-a-la-plataforma",
     "href": "602_satori.html#acceso-a-la-plataforma",
-    "title": "16  SatOri",
-    "section": "16.4 Acceso a la plataforma",
-    "text": "16.4 Acceso a la plataforma\nSe puede acceder a la plataforma por medio de la página web de difusión del proyecto https://s4tori.cl o directamente por medio del link https://s4tori.cl/app.",
+    "title": "14  SatOri",
+    "section": "14.4 Acceso a la plataforma",
+    "text": "14.4 Acceso a la plataforma\nSe puede acceder a la plataforma por medio de la página web de difusión del proyecto https://s4tori.cl o directamente por medio del link https://s4tori.cl/app.",
     "crumbs": [
       "Modelo de potencial y SatOri",
-      "<span class='chapter-number'>16</span>  <span class='chapter-title'>SatOri</span>"
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>SatOri</span>"
     ]
   },
   {
@@ -542,127 +454,6 @@
     "text": "Blanco, Víctor, Ginés Benito Martínez-Hernández, Francisco\nArtés-Hernández, Pedro José Blaya-Ros, Roque Torres-Sánchez, and Rafael\nDomingo. 2019. “Water Relations and Quality Changes Throughout\nFruit Development and Shelf Life of Sweet Cherry Grown Under Regulated\nDeficit Irrigation.” Agricultural Water Management 217.\nhttps://doi.org/10.1016/j.agwat.2019.02.028.\n\n\nBlanco, Victor, Roque Torres-Sánchez, Pedro José Blaya-Ros, Alejandro\nPérez-Pastor, and Rafael Domingo. 2019. “Vegetative and\nReproductive Response of ‘Prime Giant’ Sweet Cherry Trees\nto Regulated Deficit Irrigation.” Scientia Horticulturae\n249. https://doi.org/10.1016/j.scienta.2019.02.016.\n\n\nCarrasco-Benavides, Marcos, Javiera Antunez-Quilobrán, Antonella\nBaffico-Hernández, Carlos Ávila-Sánchez, Samuel Ortega-Farías, Sergio\nEspinoza, John Gajardo, Marco Mora, and Sigfredo Fuentes. 2020.\n“Performance Assessment of Thermal Infrared Cameras of Different\nResolutions to Estimate Tree Water Status from Two Cherry Cultivars: An\nAlternative to Midday Stem Water Potential and Stomatal\nConductance.” Sensors (Switzerland) 20. https://doi.org/10.3390/s20123596.\n\n\nCarrasco-Benavides, Marcos, Sergio Espinoza Meza, Jeissy Olguín-Cáceres,\nDiego Muñoz-Concha, Eduardo von Bennewitz, Carlos Ávila-Sánchez, and\nSamuel Ortega-Farías. 2020. “Effects of Regulated Post-Harvest\nIrrigation Strategies on Yield, Fruit Quality and Water Productivity in\na Drip-Irrigated Cherry Orchard.” New Zealand Journal of Crop\nand Horticultural Science 48. https://doi.org/10.1080/01140671.2020.1721544.\n\n\nE, Houghton, Bevandick K, Neilsen D, Hannam K, and Nelson L. 2023.\n“Effects of Postharvest Deficit Irrigation on Sweet Cherry (Prunus\nAvium) in Five Okanagan Valley, Canada, Orchards: II. Phenology, Cold\nHardiness, Fruit Yield, and Quality.” Canadian Journal of\nPlant Science 100 (January): 1–17.\n\n\nGarreaud, René D., Juan P. Boisier, Roberto Rondanelli, Aldo Montecinos,\nHector H. Sepúlveda, and Daniel Veloso-Aguila. 2020. “The Central\nChile Mega Drought (2010–2018): A Climate Dynamics Perspective.”\nInternational Journal of Climatology 40. https://doi.org/10.1002/joc.6219.\n\n\nGonzález, Manuel. 2022. “La Inserción Comercial Chilena En China:\nEl Caso de Las Cerezas.” Universidad de Chile.\n\n\nHalbritter, Aud H., Amy Eycott, Sabine Reinsch, and Hans De Boeck. 2020.\n“The Handbook for Standardised Field and Laboratory Measurements\nin Terrestrial Climate-Change Experiments and Observational Studies\n(ClimEx).” Methods in Ecology and Evolution 11 (1):\n22–37.\n\n\nHurlbert, Margot, and Joyeeta Gupta. 2017. “The Adaptive Capacity\nof Institutions in Canada, Argentina, and Chile to Droughts and\nFloods.” Regional Environmental Change 17. https://doi.org/10.1007/s10113-016-1078-0.\n\n\nJiménez-Suancha, Sonia Constanza, Oscar Humberto Álvarado S., and Helber\nEnrique Balaguera-López. 2015. “Fluorescencia Como Indicador de\nEstrés En &lt;i&gt;helianthus Annuus&lt;/i&gt; l. Una Revisión.”\nRevista Colombiana de Ciencias Hortícolas 9. https://doi.org/10.17584/rcch.2015v9i1.3753.\n\n\nKüpper, Hendrik, Zuzana Benedikty, Filis Morina, Elisa Andresen, Archana\nMishra, and Martin Trtílek. 2019. “Analysis of OJIP Chlorophyll\nFluorescence Kinetics and QA Reoxidation Kinetics by Direct Fast\nImaging.” Plant Physiology 179 (February): 369–81.\n\n\nLinke, Manfred, Werner B. Herppich, and Martin Geyer. 2010. “Green\nPeduncles May Indicate Postharvest Freshness of Sweet Cherries.”\nPostharvest Biology and Technology 58. https://doi.org/10.1016/j.postharvbio.2010.05.014.\n\n\nLópez-Olivari, R., and F. Ortega-Klose. 2021. “Response of Red\nClover to Deficit Irrigation: Dry Matter Yield, Populations, and\nIrrigation Water Use Efficiency in Southern Chile.”\nIrrigation Science 39. https://doi.org/10.1007/s00271-020-00693-0.\n\n\nMarsal, Jordi, G. Lopez, J. del Campo, M. Mata, A. Arbones, and J.\nGirona. 2010. “Postharvest Regulated Deficit Irrigation in\n’Summit’ Sweet Cherry: Fruit Yield and Quality in the Following\nSeason.” Irrigation Science 28. https://doi.org/10.1007/s00271-009-0174-z.\n\n\nMcCutchan, Harold, and K. A. Shackel. 2019. “Stem-Water Potential\nas a Sensitive Indicator of Water Stress in Prune Trees (Prunus\nDomestica l. Cv. French).” Journal of the American Society\nfor Horticultural Science 117. https://doi.org/10.21273/jashs.117.4.607.\n\n\nMoreno, González, Perales Vela, and Martha O Salcedo Alvarez. 2008.\n“LA FLUORESCENCIA DE LA CLOROFILA a COMO HERRAMIENTA EN LA\nINVESTIGACIÓN DE EFECTOS TÓXICOS EN EL APARATO FOTOSINTÉTICO DE PLANTAS\ny ALGAS.” Revista de Educación Bioquímica 27.\n\n\nPechan, Paul, Fabian Obster, Marchioro Linda, and Bohle Heidi. 2023.\n“Climate Change Impact on Fruit Farm Operations in Chile and\nTunisia.climate Change Impact on Fruit Farm Operations in Chile and\nTunisia.” AgriRxiv, January.\n\n\nPeña-Guerrero, M. D., A. Nauditt, C. Muñoz-Robles, L. Ribbe, and F.\nMeza. 2020. “Drought Impacts on Water Quality and Potential\nImplications for Agricultural Production in the Maipo River Basin,\nCentral Chile.” Hydrological Sciences Journal 65. https://doi.org/10.1080/02626667.2020.1711911.",
     "crumbs": [
       "References"
-    ]
-  },
-  {
-    "objectID": "201_produccion.html#producción",
-    "href": "201_produccion.html#producción",
-    "title": "5  Producción y calidad",
-    "section": "",
-    "text": "5.1.1 Peso total\n\nLa Figura 5.1 muestra el peso total de los árboles según tratamiento, sitio y temporada, evidenciando diferencias tanto entre sitios como entre temporadas. En La Esperanza, no se observaron diferencias significativas entre tratamientos en ninguna de las dos temporadas. En 2022-2023, T4 presentó el mayor peso (17 kg), seguido por T0 (16.4 kg), mientras que T1 registró el menor valor (10.5 kg), con una diferencia de 5.83 kg respecto a T0. En 2023-2024, los valores fueron menores en general, con T3 alcanzando el mayor peso (6.18 kg) y T4 el menor (5.18 kg), situándose 0.59 kg por debajo de T0 (5.78 kg). En Río Claro, T2 mostró el mayor peso total (16.9 kg), superando en 0.76 kg a T0 (16.1 kg), mientras que T4 presentó el menor valor (11.9 kg), siendo 4.16 kg inferior a T0. En esta localidad, solo T2 y T4 fueron significativamente diferentes entre sí. A nivel temporal, en La Esperanza, el peso total del árbol fue significativamente menor en la segunda temporada en todos los tratamientos, reflejando una disminución generalizada en el rendimiento.\n\n\n\n\n\n\n\n\n\nFigura 5.1: Comparación del peso total de producción por unidad de árbol (kg) según tratamiento, sitio y temporada.\n\n\n\n\n\n\n\n5.1.2 Densidad\n\nLa Figura 5.2 muestra la densidad de frutos por kilogramo según tratamiento, sitio y temporada, sin diferencias significativas entre tratamientos dentro de cada sitio y temporada, excepto en La Esperanza, donde T4 presentó una mayor densidad en la segunda temporada. En La Esperanza 2022-2023, T4 tuvo la menor densidad (89 frutos/kg), 4 frutos menos que T0 (93 frutos/kg), mientras que T2 alcanzó el mayor valor (98 frutos/kg), seguido por T3. En 2023-2024, los valores fueron similares, con T2 registrando la menor densidad (91 frutos/kg, apenas 1 fruto/kg menos que T0) y T1 la mayor (105 frutos/kg). En Río Claro, T0 mostró la menor densidad (97 frutos/kg), seguido por T4 (114 frutos/kg), mientras que T3 alcanzó el mayor valor (185 frutos/kg), superando en 88 frutos/kg a T0. A nivel temporal, solo en T4 de La Esperanza se observó un aumento significativo en la segunda temporada, lo que sugiere una mayor cantidad de frutos por kilogramo en ese tratamiento.\n\n\n\n\n\n\n\n\n\nFigura 5.2: Comparación de la densidad de producción por unidad de árbol (frutos/kg) según tratamiento, sitio y temporada.",
-    "crumbs": [
-      "Resultados y análisis",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Producción y calidad</span>"
-    ]
-  },
-  {
-    "objectID": "201_produccion.html#calidad",
-    "href": "201_produccion.html#calidad",
-    "title": "5  Producción y calidad",
-    "section": "5.2 Calidad",
-    "text": "5.2 Calidad\n\n5.2.1 Peso\n\nLa Figura 5.3 muestra la distribución del peso por unidad de cereza según tratamiento, sitio y temporada, evidenciando diferencias significativas entre tratamientos y un mejor desempeño en La Esperanza respecto a Río Claro. En La Esperanza (2022-2023), T4 presentó la mayor mediana (11.7 g), superando en 1 g al control T0 (10.7 g), mientras que T2 tuvo la menor (10 g); todos los tratamientos superaron el estándar XL (6 g), con un 95-100% de frutos en esta categoría. En 2023-2024, T0 alcanzó la mediana más alta (11.2 g), seguido de T2 (11 g), manteniéndose todos los tratamientos sobre el umbral XL (95-100% XL). En contraste, Río Claro (2022-2023) mostró un menor rendimiento, con T3 registrando la mediana más baja (5.85 g) y solo un 38.3% de frutos XL, mientras que T0 alcanzó 10.8 g y 90% XL. En esta localidad y temporada, se observaron las únicas diferencias significativas entre tratamientos, donde todos presentaron valores significativamente menores que T0 y, además, T3 fue significativamente menor que el resto. En La Esperanza, las diferencias entre temporadas fueron menos marcadas, con T2 mostrando un incremento en 2023-2024. Estos resultados reflejan la influencia del tratamiento y la localidad en la calidad de la cosecha, con un rendimiento consistentemente superior en La Esperanza.\n\n\n\n\n\n\n\n\n\nFigura 5.3: Comparación del peso de una unidad de cereza (gr) según tratamiento, sitio y temporada.\n\n\n\n\n\n\n\n5.2.2 Diametro\n\nEn La Esperanza, los tratamientos con déficit hídrico mostraron algunas diferencias significativas en el diámetro del fruto en 2022-2023, donde T2 presentó menores valores que T0, mientras que T4 tuvo diámetros ligeramente mayores que T2 y T3. En 2023-2024, no hubo diferencias significativas entre tratamientos, excepto por T4, que mostró un leve incremento respecto al resto. En Río Claro, los tratamientos T2 al T4 reflejaron una disminución significativa del diametro del fruto en 2022-2023.\n\n\n\n\n\n\n\n\n\nFigura 5.4: Comparación del diametro de una unidad de cereza (mm) por tratamiento según sitio y temporada.\n\n\n\n\n\n\n\n5.2.3 Color\n\nEn La Esperanza, se presentaron similitudes en el grado de color con T0 en todos los casos, salvo T2 y T4 en la temporada 2022-2023, y T2 en la segunda temporada. En Río Claro, T2, T3 y T4 presentaron diferencias significativas con T0.\n\n\n\n\n\n\n\n\n\n\n\n\n5.2.4 Contenido de azucar\n\nEn La Esperanza, los sólidos solubles de lso tratamientos experimentales no presentaron diferencias significativas respecto a T0, solo entre T3 y T4, mientras que en la segunda temporada no hubo entre ningún tratamiento. En Río Claro, en 2022-2023, T4 presentó valores significativamente mayores que el resto de los tratamientos, los cuales no mostraron diferencias entre sí.\n\n\n\n\n\n\n\n\n\n\n\n\n5.2.5 Daño\n\nRespecto al porcentaje de frutos dañados del total de las muestras analizadas, fue posible concluir que no existieron diferencias significativas entre ningún grupo, para todos los casos. Sin embargo, fue posible evidenciar un aumento significativo de frutos dañados trasnversal entre todos los tratamientos para la segunda temporada en La Esperanza.",
-    "crumbs": [
-      "Resultados y análisis",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Producción y calidad</span>"
-    ]
-  },
-  {
-    "objectID": "103_produccion.html",
-    "href": "103_produccion.html",
-    "title": "3  Producción y parámetros de calidad de la fruta",
-    "section": "",
-    "text": "Para determinar la producción de los cerezos, se midieron dos variables: el peso total de la cosecha y la densidad de frutos. El peso total (kg) se obtuvo mediante el pesaje directo de la producción de cada árbol en campo, utilizando una balanza digital modelo ACS-30 LED con una capacidad máxima de 30 kg. Por otro lado, la densidad de frutos (frutos/kg) se determinó dividiendo el conteo total de cerezas recolectadas entre el peso total correspondiente.\nPor el otro lado, la calidad de las frutas se evaluó considerando las siguientes variables asociadas a los estándares comerciales: peso por unidad (gr), diámetro (mm) y color. Para medir peso (gr) se utilizó una balanza análica de laboratorio, mientras que para estimar el diámetro se empleó un pie de metro digital (0-150mm). En lo que respecta al color, se siguió la carta de color y la metodología recomendada por el Instituto Nacional de Tecnología Agropecuaria (INTA) (disponible en: https://inta.gob.ar/documentos/carta-de-color-y-calibre-para-la-cosecha-de-cerezas). Para ello se empleó una escala numérica del 1-6 , la cual variaba desde un rojo pálido (1) a un caoba oscuro (6). Finalmente, de cada sub-muestra se seleccionaron al azar 5 cerezas adicionales (15 por tratamientos), con las mismas se procedió a medir concentración de sólidos solubles (grados brix) utilizando para ello el refractómetro ATC (Brix 0-32) (Blanco et al. 2019).\n\n\n\n\n\nBlanco, Víctor, Ginés Benito Martínez-Hernández, Francisco Artés-Hernández, Pedro José Blaya-Ros, Roque Torres-Sánchez, y Rafael Domingo. 2019. «Water relations and quality changes throughout fruit development and shelf life of sweet cherry grown under regulated deficit irrigation». Agricultural Water Management 217. https://doi.org/10.1016/j.agwat.2019.02.028.",
-    "crumbs": [
-      "Materiales y métodos",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Producción y parámetros de calidad de la fruta</span>"
-    ]
-  },
-  {
-    "objectID": "101_area_estudio.html#tratamientos-de-riego-deficitario",
-    "href": "101_area_estudio.html#tratamientos-de-riego-deficitario",
-    "title": "1  Área de estudio",
-    "section": "",
-    "text": "Para aumentar la variabilidad del estado hídrico de las plantas, se implementaron cinco tratamientos diferentes de reposición de riego en cada huerto. La cantidad de riego se gestionó utilizando el ET0 y Ψs como referencias. Los tratamientos de riego fueron T1, T2, T3 y T4, siendo T1 el menos restrictivo y T4 el más restrictivo en cuanto al suministro de agua (Figura 1.1c y Figura 1.1d). Además, se estableció un tratamiento control (T0), el cual recibió el riego estándar proporcionado por el productor local. Cada parcela de tratamiento contuvo 60 árboles y abarcó un área de 0.048 ha. Los tratamientos se aplicaron durante las temporadas consecutivas de crecimiento 2022–2023 y 2023–2024. No obstante, en la segunda temporada no se aplicaron los tratamientos T1 a T4 en La Esperanza, ya que los resultados obtenidos en la temporada anterior no mostraron un impacto significativo de los tratamientos de restricción hídrica. La Figura 1.2 ilustra la profundidad acumulada de agua (mm) para cada tratamiento durante el riego, así como el porcentaje relativo a ET0.\n\n\n\n\n\n\n\n\nFigura 1.2: Variación de la profundidad acumulada diaria de agua (mm) aplicada por riego por tratamiento en comparación con la evapotranspiración de referencia (ET0). El punto de inicio para la acumulación de ET0 corresponde al primer día de riego para cada huerto y temporada.",
-    "crumbs": [
-      "Materiales y métodos",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Área de estudio</span>"
-    ]
-  },
-  {
-    "objectID": "102_data.html",
-    "href": "102_data.html",
-    "title": "2  Datos",
-    "section": "",
-    "text": "2.1 In-situ",
-    "crumbs": [
-      "Materiales y métodos",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datos</span>"
-    ]
-  },
-  {
-    "objectID": "102_data.html#in-situ",
-    "href": "102_data.html#in-situ",
-    "title": "2  Datos",
-    "section": "",
-    "text": "2.1.1 Potencial hídrico xilemático y fluorescencia\n\nPosterior a la instalación del sistema de riego diferenciado, se seleccionaron 3 árboles por tratamiento (un total de 15 árboles por campo), teniendo en consideración el efecto de borde, esto con el propósito de monitorear en el tiempo el estatus hídrico de cada planta (3 réplicas por tratamiento). Para ello se emplearon 2 indicadores: (1) Potencial hídrico xilemático al mediodía; cuyas mediciones son consideradas el proxy más preciso del estado hídrico para los cerezos dulces (Víctor Blanco et al. 2019; Victor Blanco et al. 2019; Carrasco-Benavides, Meza, et al. 2020; Carrasco-Benavides, Antunez-Quilobrán, et al. 2020; E et al. 2023). (2) Fluorescencia; el cual constituye un indicador de eficacia de la actividad e integridad de la fotosíntesis y el contenido de la clorofila; lo que permite estudiar mecanismos de respuesta ante condiciones de estrés hídrico (Linke, Herppich, y Geyer 2010; Jiménez-Suancha, S., y Balaguera-López 2015).\nPara medición de los indicadores anteriormente mencionados se realizaron visitas quincenales a cada campo. En lo que respecta a la medición del potencial hídrico xilemático (Ψs), la misma se realizó sobre muestras de hojas colectadas entre 12:00-14:00 h provenientes de cada una de los 15 árboles monitoreados. En cada caso, se seleccionaron hojas maduras y en buen estado, ubicadas en el tercio medio del árbol, con orientación este y cercanas al tronco (McCutchan y Shackel 2019; Marsal et al. 2010; Víctor Blanco et al. 2019). Antes de ser cortadas, cada una de ellas fue envuelta por un período de 30 min en bolsas de papel de aluminio, a modo de lograr bloquear la transpiración y la radiación solar. Posterior a este período, cada hoja fue cortada por el pecíolo y colocada al interior de la cámara Scholander conectada a un cilindro de nitrógeno (Modelo 3000, Soil Moisture Equipment, Santa Barbara, CA, EEUU), donde se aplicó presión negativa hasta observar gotas de agua en el extremo del pecíolo cortado, registrándose la cantidad de megapascales (MPa) necesarios para extraer la primera gota de jugo xilemático.\nEn lo que respecta a la medición de la fluorescencia, se usó el fluorómetro PAR-FluorPen FP 110/D (PSI, Czech), empleando el método de transitorios de fluorescencia OJIP. Este método permitió obtener diferentes parámetros de rendimiento cuántico de la actividad fotosintética en el PSII y evaluar el potencial impacto del riego deficitario sobre este proceso (Küpper et al. 2019). Para obtener una medida de los parámetros de fluorescencia de la clorofila, el fluorómetro consta de un medidor de luz integrado para lecturas digitales directas de la radiación fotosintéticamente activa en el rango 400 a 700 nm. Para lograr una emisión de fluorescencia roja, es necesario exponer a la luz, hojas que previamente se encontraban adaptadas a la oscuridad (Moreno, Vela, y O Salcedo Alvarez 2008). Con este fin, el equipo consta de unos dispositivos o “clips” , que se colocan en la hoja previamente y que permiten bloquear todo acceso de luz a una porción de la misma. En nuestro caso, se utilizaron 4 clips por árbol del muestreo, los cuales fueron colocados entre las 11:00-13:00 h, seleccionando hojas que se encontrasen maduras, en buen estado, dentro del tercio medio del árbol y orientadas directamente al sol. Pasado el período de adaptación a la oscuridad (20 minutos), se procedió a hacer las mediciones directas con el fluorómetro, el cual dispone de una memoria interna que permite almacenar los datos de manera secuencial. A efecto de los análisis se utilizaron los siguientes indicadores: Fv/Fm o ΦP0 (máxima eficiencia quántica del Fotosistema II), Fo (valor mínimo de fluorescencia) y Fv/Fo (razón entre fluorescencia máxima y mínima)\n\n\n\n2.1.2 Producción y calidad de la fruta\n\nLas cosechas se llevaron a cabo siguiendo el cronograma y la planificación de Garcés Fruit. Las mismas se realizaron el 12/12 del 2022 y 2023 en el campo La Esperanza y el 21/12 del 2022 en el campo Río Claro. En ambos casos, se recolectó la totalidad de los frutos de los 15 árboles que componían el muestreo (3 réplicas por tratamiento). El total de la frutas producidas por cada árbol fueron pesadas en campo mediante el empleo de una balanza digital modelo ACS- 30 LED (peso máximo 30 Kg). Posteriormente, utilizando una balanza electrónica modelo SF-400 (peso máximo 10kg) , se colectó al azar el equivalente de un 1kg de cerezas por cada árbol, los cuales fueron almacenados en envases plásticos y refrigerados en coolers para su posterior traslado al laboratorio. El resto de las muestras de cada árbol fueron examinadas de manera meticulosa en su totalidad, contabilizando aquellas cerezas que presentarán deformaciones y defectos en su forma o superficie, tales como pitting, pudrición, fisuras pronunciadas, sobremaduración, daños en la piel, palidez y frutos dobles. Se guardó registro fotográfico de las cerezas identificadas con daños para su posterior revisión y categorización en el laboratorio. Para esta caracterización se usó como base la guía Australian Cherry Quality Guide (disponible: https://www.cherrygrowers.org.au).\nUna vez en el laboratorio, las muestras de 1 Kg de cerezas por árbol fueron almacenadas en un refrigerador a 4°C. En un plazo menor de 72 h cada una de ellas fue analizada para evaluar la calidad de fruto, de manera de evitar degradaciones relacionadas con el tiempo de almacenamiento. Para ello, se tomó una submuestra al azar de 20 cerezas por árbol, siguiendo una metodología similar a Víctor Blanco et al. (2019) , para un total de 60 cerezas por tratamiento. La única condición para que una cereza fuese seleccionada, es que la misma se encuentre en buen estado, esto para disminuir la probabilidad de desviaciones relacionadas con daños experimentados durante el traslado e incurrir en el error de medir cerezas defectuosas.",
-    "crumbs": [
-      "Materiales y métodos",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datos</span>"
-    ]
-  },
-  {
-    "objectID": "102_data.html#remotos",
-    "href": "102_data.html#remotos",
-    "title": "2  Datos",
-    "section": "2.2 Remotos",
-    "text": "2.2 Remotos\n\n2.2.1 Sentinel 2\n\nLa misión S2 consta de dos satélites idénticos, S2A y S2B, ambos equipados con un sensor multiespectral que cuenta con 13 bandas espectrales que cubren las regiones visible, infrarrojo cercano e infrarrojo de onda corta, con resoluciones espaciales de 10, 20 y 60 m (ver Tabla S2). En este estudio, utilizamos un total de 106 imágenes S2 (A/B): 54 para la temporada 2022-2023 y 52 para la 2023-2024, capturadas entre octubre y mayo en ambos huertos (cuadrícula T19HCB para La Esperanza y T19HBB para Río Claro). Las imágenes se obtuvieron de la colección corregida atmosféricamente S2 Level-2A de Planetary Computer (Microsoft Open Source et al., 2022), con una frecuencia de 5 días y aproximadamente a las 14:30 hora local (UTC-4). Una máscara fue aplicada basandose en la capa de clasificación de escena (SCL) para los valores correspondientes a “Cloud Shadows,” “Cloud Medium Probability,” y “Cloud High Probability,”.\n\n\n\n\n\nBlanco, Víctor, Ginés Benito Martínez-Hernández, Francisco Artés-Hernández, Pedro José Blaya-Ros, Roque Torres-Sánchez, y Rafael Domingo. 2019. «Water relations and quality changes throughout fruit development and shelf life of sweet cherry grown under regulated deficit irrigation». Agricultural Water Management 217. https://doi.org/10.1016/j.agwat.2019.02.028.\n\n\nBlanco, Victor, Roque Torres-Sánchez, Pedro José Blaya-Ros, Alejandro Pérez-Pastor, y Rafael Domingo. 2019. «Vegetative and reproductive response of “Prime Giant” sweet cherry trees to regulated deficit irrigation». Scientia Horticulturae 249. https://doi.org/10.1016/j.scienta.2019.02.016.\n\n\nCarrasco-Benavides, Marcos, Javiera Antunez-Quilobrán, Antonella Baffico-Hernández, Carlos Ávila-Sánchez, Samuel Ortega-Farías, Sergio Espinoza, John Gajardo, Marco Mora, y Sigfredo Fuentes. 2020. «Performance assessment of thermal infrared cameras of different resolutions to estimate tree water status from two cherry cultivars: An alternative to midday stem water potential and stomatal conductance». Sensors (Switzerland) 20. https://doi.org/10.3390/s20123596.\n\n\nCarrasco-Benavides, Marcos, Sergio Espinoza Meza, Jeissy Olguín-Cáceres, Diego Muñoz-Concha, Eduardo von Bennewitz, Carlos Ávila-Sánchez, y Samuel Ortega-Farías. 2020. «Effects of regulated post-harvest irrigation strategies on yield, fruit quality and water productivity in a drip-irrigated cherry orchard». New Zealand Journal of Crop and Horticultural Science 48. https://doi.org/10.1080/01140671.2020.1721544.\n\n\nE, Houghton, Bevandick K, Neilsen D, Hannam K, y Nelson L. 2023. «Effects of postharvest deficit irrigation on sweet cherry (Prunus avium) in five Okanagan Valley, Canada, orchards: II. Phenology, cold hardiness, fruit yield, and quality». Canadian Journal of Plant Science 100 (enero): 1-17.\n\n\nJiménez-Suancha, Sonia Constanza, Oscar Humberto Álvarado S., y Helber Enrique Balaguera-López. 2015. «Fluorescencia como indicador de estrés en &lt;i&gt;Helianthus annuus&lt;/i&gt; L. Una revisión». Revista Colombiana de Ciencias Hortícolas 9. https://doi.org/10.17584/rcch.2015v9i1.3753.\n\n\nKüpper, Hendrik, Zuzana Benedikty, Filis Morina, Elisa Andresen, Archana Mishra, y Martin Trtílek. 2019. «Analysis of OJIP Chlorophyll Fluorescence Kinetics and QA Reoxidation Kinetics by Direct Fast Imaging». Plant Physiology 179 (febrero): 369-81.\n\n\nLinke, Manfred, Werner B. Herppich, y Martin Geyer. 2010. «Green peduncles may indicate postharvest freshness of sweet cherries». Postharvest Biology and Technology 58. https://doi.org/10.1016/j.postharvbio.2010.05.014.\n\n\nMarsal, Jordi, G. Lopez, J. del Campo, M. Mata, A. Arbones, y J. Girona. 2010. «Postharvest regulated deficit irrigation in ’Summit’ sweet cherry: Fruit yield and quality in the following season». Irrigation Science 28. https://doi.org/10.1007/s00271-009-0174-z.\n\n\nMcCutchan, Harold, y K. A. Shackel. 2019. «Stem-water Potential as a Sensitive Indicator of Water Stress in Prune Trees (Prunus domestica L. cv. French)». Journal of the American Society for Horticultural Science 117. https://doi.org/10.21273/jashs.117.4.607.\n\n\nMoreno, González, Perales Vela, y Martha O Salcedo Alvarez. 2008. «LA FLUORESCENCIA DE LA CLOROFILA a COMO HERRAMIENTA EN LA INVESTIGACIÓN DE EFECTOS TÓXICOS EN EL APARATO FOTOSINTÉTICO DE PLANTAS Y ALGAS». Revista de Educación Bioquímica 27.",
-    "crumbs": [
-      "Materiales y métodos",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Datos</span>"
-    ]
-  },
-  {
-    "objectID": "104_modelo_potencial.html",
-    "href": "104_modelo_potencial.html",
-    "title": "4  Modelado espacial diario de Ψs",
-    "section": "",
-    "text": "4.1 Predictores espacio-temporales",
-    "crumbs": [
-      "Materiales y métodos",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelado espacial diario de Ψ~s~</span>"
-    ]
-  },
-  {
-    "objectID": "104_modelo_potencial.html#predictores-espacio-temporales",
-    "href": "104_modelo_potencial.html#predictores-espacio-temporales",
-    "title": "4  Modelado espacial diario de Ψs",
-    "section": "",
-    "text": "4.1.1 Variables meteorológicas\n\nLas variables meteorológicas utilizadas en el desarrollo del modelo de potencial se obtuvieron a partir de estaciones meteorológicas automáticas en ambos huertos, las cuales registraron datos cada 15 minutos utilizando el modelo ATMOS-41 del grupo METER. Estas variables fueron temperatura (T°), humedad relativa (HR), déficit de presión de vapor (VPD), precipitación (PP) y evapotranspiración de referencia (ET0).\n\nTemperaturaHumedad RelativaDéficit de presión de vapor (VPD)Evapotranspiración de referencia (ET0)Precipitación\n\n\n\n\n\n\n\n\n\n\nFigura 4.1: Variación de la temperatura media diaria (°C) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigura 4.2: Variación de la humedad relativa media diaria (%) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigura 4.3: Variación del VPD medio (mbar/dia) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigura 4.4: Variación de la evapotranspiración de referencia acumulada mensual (mm) en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigura 4.5: Variación de la precipitación acumulada mensual (mm) en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.\n\n\n\n\n\n\n\n\nAdemás de las variables meteorológicas, también se recopilaron datos de humedad del suelo. Para esto, se utilizaron sensores de humedad del suelo Water Scout SM100 (Spectrum Technologies, Inc.), los cuales miden en tiempo real el contenido volumétrico de agua (VWC). Estos sensores se instalaron a 15 cm de profundidad bajo cada árbol de los tratamientos.\n\nTemporada 2022-2023Temporada 2023-2024\n\n\n\n\n\n\n\n\n\n\nFigura 4.6: Variación de la humedad de suelo media (%VWC) al medio día en La Esperanza y Río Claro en los distintos tratamientos durante la temporada 2022-2023.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigura 4.7: Variación de la humedad de suelo media (%VWC) al medio día en La Esperanza y Río Claro en los distintos tratamientos durante la temporada 2023-2024.\n\n\n\n\n\n\n\n\nPara revisar los procedimientos específicos empleados o analizar los resultados de la temporada 2022-2023 de manera independiente, se recomienda acceder al reporte completo en el siguiente enlace.\n\n\n\n4.1.2 Índices vegetacionales\n\nSe derivaron dieciséis índices de vegetación (IVs) relacionados con la condición de las plantas —vigor, estrés, funcionalidad fotosintética y contenido hídrico— a partir de datos de Sentinel-2 (S2), como se detalla en la Tabla 2. De estos, nueve índices no incorporaron información del red-edge (borde rojo), calculándose exclusivamente con bandas espectrales del visible, infrarrojo cercano (NIR) e infrarrojo de onda corta (SWIR): NDVI, EVI, GCI, NDWI, NBR, NDMI, MSI, NMDI y DWSI. Por otro lado, siete índices —CLr, Clg, NDRE1, NDRE2, NDCI, mSR705 y RESI— se obtuvieron mediante las bandas del red-edge. Todos los índices fueron calculados a partir de las imágenes preprocesadas de las bandas de S2, generándose series temporales para cada IV en ambos huertos y temporadas.\nPara reconstruir las series temporales (ej. en zonas afectadas por nubosidad), se aplicó un suavizado mediante regresión polinomial local (LOESS) (Cleveland, 1979). El método LOESS se configuró con un parámetro de suavizado (span) de 0.3, obteniéndose así series diarias continuas y suavizadas para cada índice, las cuales posteriormente fueron extraídas para cada árbol medido. Se llevó a cabo un análisis de correlación para evaluar la relación entre estas series suavizadas y los valores observados de Ψs. El coeficiente de correlación de Pearson (r) fue calculado diariamente para cada árbol, huerto y temporada, utilizando exclusivamente correlaciones significativas (p-value &lt; 0.05) para el cálculo de los valores promedio.",
-    "crumbs": [
-      "Materiales y métodos",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelado espacial diario de Ψ~s~</span>"
-    ]
-  },
-  {
-    "objectID": "104_modelo_potencial.html#modelos-de-machine-learning",
-    "href": "104_modelo_potencial.html#modelos-de-machine-learning",
-    "title": "4  Modelado espacial diario de Ψs",
-    "section": "4.2 Modelos de machine learning",
-    "text": "4.2 Modelos de machine learning\n\nPara modelar el Ψs, se evaluaron tres algoritmos de machine learning:\n\nExtreme Gradient Boosting (XGBoost; Chen y Guestrin, 2016)\nRandom Forest(RF; Ho, 1995)\nSupport vector Machine (SVM; Cortes y Vapnik, 1995)\n\nLos dos primeros métodos se basan en árboles de decisión, mientras que el tercero utiliza vectores de soporte. Estos modelos fueron seleccionados por ser considerados de vanguardia, requerir un número reducido de muestras de entrenamiento (en comparación con redes neuronales) y ofrecer interpretabilidad. Todos los algoritmos pueden emplearse tanto para clasificación como para regresión. En este estudio, se realizó un análisis de regresión, utilizando el Ψs como variable respuesta y 21 predictores: cinco meteorológicos y 16 índices de vegetación (IVs).\nEl conjunto de datos incluyó mediciones de 26 fechas en la temporada 2022–2023 y 34 en la 2023–2024 (total: 60 fechas). Para cada fecha, se tomaron 30 mediciones (15 por huerto: Río Claro y La Esperanza), lo que resultó en un total de 883 observaciones. El proceso de modelado siguió las siguientes etapas:\n\nPreparación y división de datos: Segmentación del conjunto de datos en subconjuntos de entrenamiento y prueba.\nOptimización de hiperparámetros: Ajuste de los parámetros de los algoritmos utilizando el conjunto de entrenamiento.\nRemuestreo: Evaluación de la confiabilidad del modelo e identificación de las variables más relevantes para estimar Ψs.\nValidación: Evaluación del rendimiento del modelo con métricas de desempeño.\n\n\n\n\n\n\n\n\n\nFigura 4.8: Esquemas de división utilizados para agrupar los conjuntos de entrenamiento y prueba: división aleatoria (rnd_split) y división temporal independiente (tme_split).\n\n\n\n\n\nSe entrenaron los tres modelos utilizando dos esquemas de división (Figura 4.8): uno que consideró una división aleatoria de datos de entrenamiento y prueba (rnd_split) y otro que utilizó fechas independientes para entrenamiento y prueba (tme_split). En ambos casos, se seleccionó el 75% de los datos para entrenamiento y el 25% para prueba. Se aplicaron tres tipos de preprocesamiento a los datos de entrenamiento: i) eliminación de predictores con valores constantes (variables de varianza cero); ii) normalización de predictores (media cero y desviación estándar uno); y iii) una versión del modelo que empleó Partial Least Squares (PLS) para reducir la dimensionalidad, utilizando las cinco componentes principales como predictores. Como resultado, se usaron modelos con predictores normalizados y otros con las componentes principales de PLS.\nPara ajustar los parámetros de los modelos (XGBoost, RF, SVM), se empleó optimización de hiperparámetros. Se definieron rangos para cada parámetro y se utilizaron cinco folds de validación cruzada para ambos esquemas de división (rnd_split y tme_split). La optimización evaluó diez combinaciones de parámetros por modelo. El rendimiento se midió con las métricas R², RMSE (root-mean-square error) y MAE (mean absolute error). Finalmente, los modelos se clasificaron según el RMSE más bajo y el R² más alto, seleccionándose aquellos con mejor desempeño.",
-    "crumbs": [
-      "Materiales y métodos",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelado espacial diario de Ψ~s~</span>"
-    ]
-  },
-  {
-    "objectID": "104_modelo_potencial.html#evaluación-e-importancia-de-los-modelos",
-    "href": "104_modelo_potencial.html#evaluación-e-importancia-de-los-modelos",
-    "title": "4  Modelado espacial diario de Ψs",
-    "section": "4.3 Evaluación e importancia de los modelos",
-    "text": "4.3 Evaluación e importancia de los modelos\n\nPara evaluar el rendimiento de los modelos, se aplicó remuestreo (resampling) sobre el conjunto de entrenamiento en ambos esquemas de división (rnd_split y tme_split). Se utilizaron cinco particiones y se calcularon las métricas R², MAE (Error Absoluto Medio) y RMSE (Raíz del Error Cuadrático Medio) para cada una de estas.\nEn cuanto a la importancia de variables, el modelo de Bosques Aleatorios (RF) empleó un método de permutación out-of-bag en cada árbol, permutando los predictores y calculando el error cuadrático medio para cada instancia. Para XGBoost, se estimó la contribución fraccional de cada variable según la ganancia total en las divisiones donde participó. En el caso de SVM, se calcularon puntuaciones de importancia basadas en permutaciones (para más detalles, véase Greenwell y Boehmke, 2020).",
-    "crumbs": [
-      "Materiales y métodos",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Modelado espacial diario de Ψ~s~</span>"
     ]
   }
 ]
