@@ -33,9 +33,9 @@ book:
     - part: 'Resultados y análisis'
       chapters:
         - 201_produccion.qmd
-        - 401_parametros.qmd
-        - 402_curvas_pv.qmd
-        - 403_tlp.qmd
+        - 202_parametros.qmd
+        - 203_curvas_pv.qmd
+        - 204_tlp.qmd
     - part: 500_preproceso_turgor.qmd
       chapters: 
         - 501_clustering.qmd
@@ -44,8 +44,8 @@ book:
         - 504_preprocesado.qmd
     - part: 'Modelo de potencial y SatOri'
       chapters: 
-        - 601_potencial.qmd
-        - 602_satori.qmd
+        - 401_potencial.qmd
+        - 402_satori.qmd
     - references.qmd
 
 bibliography: references.bib

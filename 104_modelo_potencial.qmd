@@ -16,7 +16,7 @@ library(viridisLite)
 ### Variables meteorológicas
 
 ::::: justify
-Las variables meteorológicas utilizadas en el desarrollo del modelo de potencial se obtuvieron a partir de estaciones meteorológicas automáticas en ambos huertos, las cuales registraron datos cada 15 minutos utilizando el modelo ATMOS-41 del grupo METER. Estas variables fueron temperatura (T°), humedad relativa (HR), déficit de presión de vapor (VPD), precipitación (PP) y evapotranspiración de referencia (ET0).
+Las variables meteorológicas utilizadas en el desarrollo del modelo de potencial hídrico xilemático (Ψ~s~) se obtuvieron a partir de estaciones meteorológicas automáticas en ambos huertos, las cuales registraron datos cada 15 minutos utilizando el modelo ATMOS-41 del grupo METER. Estas variables fueron temperatura (T°), humedad relativa (HR), déficit de presión de vapor (VPD), precipitación (PP) y evapotranspiración de referencia (ET0).
 
 ```{r}
 data_clima <- read_rds('data/clima.rds') |> 

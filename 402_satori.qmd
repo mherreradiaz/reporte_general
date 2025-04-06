@@ -1,0 +1,57 @@
+# SatOri
+
+```{r}
+source('script/setup.R')
+```
+
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+::: justify
+## Descripción general
+
+El resultado final de este proyecto corresponde al prototipo de plataforma web SatOri, cuyo objetivo es la optimización del riego en ambos huertos de cerezos (Río Claro y La Esperanza).
+
+Como se mencionó anteriomente, uno de los resultados del proyecto fue el desarrollo del modelo para la estimación del potencial hídrico xilemático con frecuencia diaria y de forma espacial. Además, para cada uno de los campos se logró obtener el punto umbral de potencial hídrico xilemático (TLP), el que corresponde al nivel mínimo al cuál puede llegar cada sector de riego.
+
+Con el modelo de estimación diaria y espacial, más el umbral mínimo de potencial hídrico xilemático se implementó la plataforma web de SatOri.
+
+## Diseño de la aplicación
+
+La aplicación fue creada en el lenguaje de programación R y con las plataformas de desarrollo [Github](www.github.com) y el servidor [Shinyapps](www.shinyapps.io).
+
+En Github, mediante los “Github Actions” se automatizó la descarga de datos satelitales y meteorológicos de forma diaria para cada uno de los huertos, de acuerdo a disponibilidad. “Github Actions” se encarga de procesar los datos, suavizar los indicadores de vegetación obtenidos de Sentinel-2 y correr el modelo de machine learning, para estimar el potencial hídrico xilemático para cada día.
+
+La plataforma fue creada con el paquete {shiny} de R.
+
+### Funcionamiento de la aplicación
+
+El riego en los huertos frutales se realiza por sectores de riego, por lo que SatOri debe adaptarse a cómo se riega. Por lo tanto, una vez que se tiene estimado el potencial hídrico xilemático, se promedia su valor para cada sector de riego. Por otra parte, se tienen los valores de umbrales de riego mínimo para cada huerto. De acuerdo a esto, la plataforma define tres zonas de estado hídrico del sector de riego.
+
+Esto se definió de la siguiente forma, la zona de color verde corresponde, a cuando el potencial hídrico xilemático se encuentra por sobre el umbral más un factor de seguridad. En este caso se asume que el sector se encuentra sin problemas de abastecimiento de agua. Luego, se tiene un sector amarillo, que se encuentra entre el punto umbral y el umbral más el factor de seguridad. Cuando el sector de riego llega a este nivel, la plataforma indica cuánto tiempo se debe regar. Esto lo realiza mediante el cálculo de la evapotranspiración de cultivo de los últimos dos días. Por último se tiene una zona naranja, la que indica que el sector de riego se encuentra por debajo del valor umbral. En este caso, la plataforma indica un tiempo de riego de acuerdo a los últimos cinco días de evapotranspiración de cultivo, esto con el objetivo de provocar un aumento rápido del estado hídrico.
+
+## Dashboard de la plataforma
+
+En la [@fig-dashboard] se muestra el dashboard de inicio de la plataforma SatOri. En él, se distinguen dos pestañas: “Panel” y “Resumen Temporada”. La Fig. 1 se encuentra desplegando las opciones de la pestaña “Panel”.
+
+![Dashboard ejemplo de la plataforma SatOri, pestaña “Panel”.](figuras/08_satori/plataforma.png){#fig-dashboard .lightbox}
+
+En los botones que se encuentran en la parte izquierda de la pantalla, el usuario puede seleccionar el huerto que quiere revisar, la temporada, y la fecha específica; para poder visualizar el potencial.
+
+El mapa visualizará el potencial del huerto seleccionado y para el día seleccionado. En el mapa se puede pinchar en alguno de los sectores de riego. Al pinchar en alguno, los gráficos que se encuentran a la derecha, mostrarán los datos de potencial para dicho sector. La linea en rojo que se muestra, corresponde a los valores de potencial de los últimos siete días. Los colores, verde, amarillo y rojo, indican los diferentes niveles de estado hídrico que pueda alcanzar el sector. En el ejemplo, se ve que la línea para el sector de riego seleccionada se encuentra en verde por lo tanto no es necesario regar.
+
+En el caso que la linea roja llegué a la zona de color amarillo, la plataforma dará un aviso de que es necesario regar e indicara el tiempo de riego para cada sector.
+
+Por otra parte, en la parte superior de la aplicación, se muestra un resumen de cuantos sectores de riego están en verde, amarillo y rojo.
+
+La Fig. 2 muestra la plataforma en la pestaña “Panel”. En este caso se muestra un mapa ampliado con el detalle de la variación del potencial hídrico xilemático durante toda la temporada para los sectores de riego.
+
+![Figura 2: Dashboard ejemplo plataforma SatOri, pestaña “Resumen Temporada”.](figuras/08_satori/plataforma_2.png){.lightbox}
+
+## Acceso a la plataforma
+
+Se puede acceder a la plataforma por medio de la página web de difusión del proyecto <https://s4tori.cl> o directamente por medio del link <https://s4tori.cl/app>.
+:::

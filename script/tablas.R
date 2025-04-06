@@ -1,3 +1,5 @@
+source('script/setup.R')
+
 data_apariencia <- read_rds('data/apariencia.rds')
 
 data_produccion <- read_rds('data/produccion.rds')
@@ -48,6 +50,12 @@ brix <- data_brix |>
   group_by(sitio,temporada,tratamiento) |> 
   reframe(brix_optimo = mean(between(brix,19,20))*100,
           mediana = median(brix,na.rm=T)) |> 
+  group_by(sitio,temporada) |> 
+  mutate(dif_T0 = round(mediana-first(mediana),2))
+
+daño <- data_daño |> 
+  group_by(sitio,temporada,tratamiento) |> 
+  reframe(mediana = median(daño,na.rm=T)) |> 
   group_by(sitio,temporada) |> 
   mutate(dif_T0 = round(mediana-first(mediana),2))
 

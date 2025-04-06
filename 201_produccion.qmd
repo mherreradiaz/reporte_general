@@ -174,7 +174,7 @@ p1 / p2 + plot_layout(heights = c(2, 1))
 ### Peso
 
 ::: justify
-La [@fig-peso] muestra la distribución del peso por unidad de cereza según tratamiento, sitio y temporada, evidenciando diferencias significativas entre tratamientos y un mejor desempeño en La Esperanza respecto a Río Claro. En La Esperanza (2022-2023), T4 presentó la mayor mediana (11.7 g), superando en 1 g al control T0 (10.7 g), mientras que T2 tuvo la menor (10 g); todos los tratamientos superaron el estándar XL (6 g), con un 95-100% de frutos en esta categoría. En 2023-2024, T0 alcanzó la mediana más alta (11.2 g), seguido de T2 (11 g), manteniéndose todos los tratamientos sobre el umbral XL (95-100% XL). En contraste, Río Claro (2022-2023) mostró un menor rendimiento, con T3 registrando la mediana más baja (5.85 g) y solo un 38.3% de frutos XL, mientras que T0 alcanzó 10.8 g y 90% XL. En esta localidad y temporada, se observaron las únicas diferencias significativas entre tratamientos, donde todos presentaron valores significativamente menores que T0 y, además, T3 fue significativamente menor que el resto. En La Esperanza, las diferencias entre temporadas fueron menos marcadas, con T2 mostrando un incremento en 2023-2024. Estos resultados reflejan la influencia del tratamiento y la localidad en la calidad de la cosecha, con un rendimiento consistentemente superior en La Esperanza.
+La [@fig-peso] muestra la distribución del peso por unidad de cereza según tratamiento, sitio y temporada, evidenciando diferencias significativas entre tratamientos y un mejor desempeño en La Esperanza respecto a Río Claro. En La Esperanza (2022-2023), T4 presentó la mayor mediana (11.7 g), superando en 1 g al control T0 (10.7 g), mientras que T2 tuvo la menor (10 g); todos los tratamientos superaron el estándar comercial XL (6 g), con un 95-100% de frutos en esta categoría. En 2023-2024, T0 alcanzó la mediana más alta (11.2 g), seguido de T2 (11 g), manteniéndose todos los tratamientos sobre la talla XL (95-100% XL). En contraste, Río Claro (2022-2023) mostró un menor rendimiento, con T3 registrando la mediana más baja (5.85 g) y solo un 38.3% de frutos talla XL, mientras que T0 alcanzó 10.8 g y 90% XL. En esta localidad y temporada, se observaron las únicas diferencias significativas entre tratamientos, donde todos presentaron valores significativamente menores que T0 y, además, T3 fue significativamente menor que el resto. En La Esperanza, las diferencias entre temporadas fueron menos marcadas, con T2 mostrando un incremento en 2023-2024. Estos resultados reflejan la influencia del tratamiento y la localidad en la calidad de la cosecha, con un rendimiento consistentemente superior en La Esperanza.
 :::
 
 ```{r, results='hide'}
@@ -259,15 +259,15 @@ p1 / p2 + plot_layout(heights = c(2, 1))
 
 ```
 
-### Diametro
+### Calibre
 
 ::: justify
-En La Esperanza, los tratamientos con déficit hídrico mostraron algunas diferencias significativas en el diámetro del fruto en 2022-2023, donde T2 presentó menores valores que T0, mientras que T4 tuvo diámetros ligeramente mayores que T2 y T3. En 2023-2024, no hubo diferencias significativas entre tratamientos, excepto por T4, que mostró un leve incremento respecto al resto. En Río Claro, los tratamientos T2 al T4 reflejaron una disminución significativa del diametro del fruto en 2022-2023.
+La [@fig-calibre] muestra el calibre de los frutos por tratamiento, sitio y temporada. En La Esperanza 2022–2023, T2 presentó el menor diámetro (mediana = 25 mm), siendo significativamente inferior a todos los tratamientos, mientras que T4 alcanzó el mayor calibre (27 mm), siendo superior a T3, pero no difirió significativamente de T0 ni T1. Durante 2023–2024, los valores se incrementaron levemente: T1 presentó la menor mediana (27 mm), 0.7 mm por debajo de T0 (27.7 mm), y T4 la más alta (27.8 mm), mostrando diferencias significativas solo con T3. En ambos años, los frutos de T4 destacaron por mantener consistentemente el 100% de frutos dentro de los estándares comerciales L (≥22 mm) y XL (≥24 mm). En contraste, T2 mostró en 2022–2023 un 5% de frutos fuera del estándar mínimo, con apenas un 76.7% dentro del calibre XL. En Río Claro, todos los tratamientos difirieron significativamente entre sí, excepto T2 y T4. T0 presentó el mayor calibre (27.2 mm), mientras que T3 fue el más bajo (21.4 mm), con el 68.3% de frutos por debajo de la medida L y solo el 6.67% cumpliendo la XL. Temporalmente, en La Esperanza, T0, T2 y T4 mostraron un aumento significativo de calibre en 2023–2024 respecto a la temporada anterior, reforzando la mejora en la proporción de frutos comerciales, especialmente en T2, donde la proporción de calibre XL aumentó de 76.7% a 95%.
 :::
 
 ```{r, results = 'hide'}
-#| label: fig-diametro
-#| fig-cap: 'Comparación del diametro de una unidad de cereza (mm) por tratamiento según sitio y temporada.'
+#| label: fig-calibre
+#| fig-cap: 'Comparación del calibre de una unidad de cereza (mm) por tratamiento según sitio y temporada.'
 #| fig-width: 10
 #| fig-height: 10
 #| fig-align: center
@@ -350,10 +350,12 @@ p1 / p2 + plot_layout(heights = c(2, 1))
 ### Color
 
 ::: justify
-En La Esperanza, se presentaron similitudes en el grado de color con T0 en todos los casos, salvo T2 y T4 en la temporada 2022-2023, y T2 en la segunda temporada. En Río Claro, T2, T3 y T4 presentaron diferencias significativas con T0.
+La [@fig-color] presenta la distribución del color de las cerezas por tratamiento, sitio y temporada, en una escala de 1 a 6 donde los valores entre 4 y 5 (tonalidad caoba) corresponden a la categoría de mayor valoración comercial. En La Esperanza 2022–2023, T2 y T3 mostraron las medianas más bajas (4.5), siendo T2 significativamente inferior a todos los tratamientos salvo T3. En contraste, T4 alcanzó una mediana de 5, siendo significativamente superior a T2 pero no diferente de T0 ni T1. Las proporciones de frutos en categoría caoba fueron altas en todos los tratamientos (71.7–88.3%), destacando T4 con 88.3%. En 2023–2024, la mediana se redujo a 4 en la mayoría de los tratamientos, excepto T2 (4.5), que fue significativamente superior a T0 y T4. A pesar de esto, T2 alcanzó el mayor porcentaje de frutos caoba (90%), mientras que T0 y T4 descendieron a 51.7% y 56.7%, respectivamente. En Río Claro, T0 y T1 presentaron la mayor mediana (5), siendo significativamente superiores a T2, T3 y T4 (4.5). La proporción de frutos caoba fue superior al 70% en todos los tratamientos, con T2 alcanzando el 91.7%. Al comparar entre temporadas en La Esperanza, todos los tratamientos excepto T2 presentaron una disminución significativa en el color, indicando una pérdida general de tonalidad caoba en 2023–2024.
 :::
 
 ```{r, results = 'hide'}
+#| label: fig-color
+#| fig-cap: 'Comparación del color de una unidad de cereza según tratamiento, sitio y temporada.'
 #| fig-width: 10
 #| fig-height: 10
 #| fig-align: center
@@ -428,10 +430,12 @@ p1 / p2 + plot_layout(heights = c(2, 1))
 ### Contenido de azucar
 
 ::: justify
-En La Esperanza, los sólidos solubles de lso tratamientos experimentales no presentaron diferencias significativas respecto a T0, solo entre T3 y T4, mientras que en la segunda temporada no hubo entre ningún tratamiento. En Río Claro, en 2022-2023, T4 presentó valores significativamente mayores que el resto de los tratamientos, los cuales no mostraron diferencias entre sí.
+La concentración de sólidos solubles en cerezas se presenta en la [@fig-brix], considerando como referencia comercial óptima el rango de 19–20 °Brix. En La Esperanza 2022–2023, todos los tratamientos superaron la mediana de T0 (19.2), destacando T3 con 22.8 °Brix, que fue significativamente mayor que T0 y T4. La mayor proporción de frutos dentro del rango óptimo se observó en T4 (40%), seguido de T1 (26.7%), mientras que T3, pasando del rango ótimo, presentó solo un 13.3%. En la temporada 2023–2024, nuevamente todos los tratamientos superaron a T0 (21.4 °Brix), con T3 alcanzando la mayor mediana (23.8 °Brix), sin diferencias estadísticas entre tratamientos. No obstante, la proporción de frutos dentro del rango óptimo fue baja en todos los casos (\<14%). En Río Claro, T4 tuvo la mayor mediana (22.4 °Brix), 3.4 °Brix superior a T0 (19 °Brix), mientras que T2 fue el más bajo (17.4 °Brix). Tampoco se encontraron diferencias significativas entre tratamientos. Comparando entre temporadas en La Esperanza, ningún tratamiento presentó diferencias significativas, aunque en todos los casos las medianas fueron más altas en 2023–2024.
 :::
 
 ```{r, results='hide'}
+#| label: fig-brix
+#| fig-cap: 'Comparación de la concentración de sólidos solubles (° brix) de una unidad de cereza según tratamiento, sitio y temporada.'
 #| fig-width: 10
 #| fig-height: 10
 #| fig-align: center
@@ -455,7 +459,7 @@ p1 <- data_brix |>
   scale_fill_manual(values = colores) +
   facet_grid(sitio~temporada,labeller = as_labeller(names)) +
   geom_text(data = summary, aes(tratamiento, label_y,label = cld), size=4, vjust = -.5) +
-  labs(y = 'Grados brix',
+  labs(y = '°Brix',
        x = 'Tratamiento') +
   scale_y_continuous(expand = c(.12,0)) +
   theme_bw() +
@@ -487,7 +491,7 @@ p2 <- data_brix |>
   scale_fill_manual(values = colores[c(2,5)]) +
   facet_grid(sitio~tratamiento,labeller = as_labeller(names)) +
   geom_text(data = summary, aes(temporada, label_y,label = cld), size=4, vjust = -.5) +
-  labs(y = 'Grados brix',
+  labs(y = '°Brix',
        x = 'Temporada') +
   scale_y_continuous(expand = c(.12,0)) +
   theme_bw() +
@@ -507,10 +511,12 @@ p1 / p2 + plot_layout(heights = c(2, 1))
 ### Daño
 
 ::: justify
-Respecto al porcentaje de frutos dañados del total de las muestras analizadas, fue posible concluir que no existieron diferencias significativas entre ningún grupo, para todos los casos. Sin embargo, fue posible evidenciar un aumento significativo de frutos dañados trasnversal entre todos los tratamientos para la segunda temporada en La Esperanza.
+El porcentaje de frutas dañadas por tratamiento, sitio y temporada se muestra en la [@fig-daño]. En La Esperanza 2022–2023, la mediana más alta fue en T2 (21.2%), superior a T0 (12.9%), mientras que el menor valor correspondió a T4 (5.62%). En la temporada 2023–2024, T3 alcanzó el mayor valor (38%) y T4 el menor (26.9%). En ambos casos no se encontraron diferencias significativas entre tratamientos. En Río Claro, el mayor valor se observó en T4 (16.4%), superior a T0 (11.3%), y el menor en T1 (8.4%), sin diferencias estadísticas. Comparando entre temporadas en La Esperanza, todos los tratamientos presentaron porcentajes significativamente mayores de fruta dañada en 2023–2024. Cabe señalar que cada tratamiento se basó en tres muestras (n = 3), lo que representa una única proporción por tratamiento a partir del kilo de muestra por árbol, lo que puede haber influido en la detección de diferencias significativas.
 :::
 
 ```{r, results='hide'}
+#| label: fig-daño
+#| fig-cap: 'Comparación del porcentaje de daño (%) según tratamiento, sitio y temporada.'
 #| fig-width: 10
 #| fig-height: 10
 #| fig-align: center
