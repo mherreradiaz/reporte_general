@@ -57,7 +57,7 @@ En la segunda temporada, el comportamiento fue diferente. A pesar de la disminuc
 :::
 
 ```{r, results='hide'}
-#| label: fig-fluo-rio_claro
+#| label: fig-fluo-rio-claro
 #| fig-cap: 'Dinámica de la máxima eficiencia quántica del fotosistema II (Φ~P0~) media de cada tratamiento según temporada en Río Claro. En cada panel, se encuentra la comparación entre el tratamiento control T0 (línea negra punteada) y el tratamiento con RDC respectivo (línea sólida a color). La línea segmentada horizontal verde indica la fecha de cosecha en cada temporada.'
 #| fig-width: 8
 #| fig-height: 5
@@ -153,7 +153,7 @@ Para Río Claro (@fig-lai-rio-claro), en la temporada 2022-2023, los valores tam
 :::
 
 ```{r, results='hide'}
-#| label: fig-lai-rio_claro
+#| label: fig-lai-rio-claro
 #| fig-cap: 'Dinámica del LAI medio de cada tratamiento según temporada en Río Claro. En cada panel, se encuentra la comparación entre el tratamiento control T0 (línea negra punteada) y el tratamiento con RDC respectivo (línea sólida a color). La línea segmentada horizontal verde indica la fecha de cosecha en cada temporada.'
 #| fig-width: 8
 #| fig-height: 5
