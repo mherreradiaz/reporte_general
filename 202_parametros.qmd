@@ -18,202 +18,152 @@ sitio_reclass <- function(x) {
 }
 ```
 
-:::::: justify
+::: justify
 Los siguientes gráficos muestran la distribución durante el mes, para cada tratamiento, sitio y temporada, de los tres parámetros fisiológicos seleccionados del estudio. Estos fueron la Máxima Eficiencia Quántica del Fotosistema II (Φ~P0~), el Potencial Hídrico Xilemático (Ψ~s~) y el Índice de Área Foliar (LAI).
+:::
 
 ## Fluorescencia
 
-En general, los valores de ΦP0 presentan fluctuaciones a lo largo del tiempo sin una tendencia clara en la mayoría de los casos. Sin embargo, en la temporada 2022-2023 de Río Claro, se observa una disminución progresiva en todos los tratamientos. Se registran descensos marcados en noviembre y diciembre, seguidos de una relativa estabilidad en los meses siguientes. No se evidencian diferencias consistentes entre los tratamientos, ya que las curvas se superponen en la mayor parte del período evaluado. Sin embargo, onservado la distribución mensual de los valores, es posible evidenciar que T2 y T4 suelen presentar valores menores en comparación con los demás tratamientos, especialmente a partir de enero y febrero. En cuanto a las diferencias con T0, este último muestra valores más altos en la mayoría de los casos.
+### La Esperanza {.unnumbered}
 
-::: panel-tabset
-# Series temporales
+::: justify
+En la @fig-fluo-la-esperanza, se muestran los valores de la eficiencia máxima del fotosistema II (Φ~P0~) durante las temporadas 2022-2023 y 2023-2024 en La Esperanza. Durante ambas temporadas, los valores de Φ~P0~ se mantuvieron en torno a 0.8, con algunas fluctuaciones destacadas. En la primera temporada, a mediados de noviembre, todos los tratamientos presentaron una disminución abrupta en sus valores de Φ~P0~, alcanzando 0.5 en T0, T1 y T4. Después, los valores aumentaron rápidamente, superando el 0.8 y alcanzando un pico de 0.85 hacia finales de noviembre. Posteriormente, los valores disminuyeron ligeramente hasta 0.75 y se mantuvieron estables entre 0.7 y 0.8 hasta el final de la temporada. Sin embargo, en T0 se observaron caídas más pronunciadas, alcanzando los 0.65 en dos momentos clave: mediados de enero y principios de marzo. Estos descensos no se presentaron en los otros tratamientos, los cuales mostraron un comportamiento más estable a lo largo de la temporada (salvo en T3 alcanzando ~ 0.7en ese mismo periodo). En la temporada 2023-2024, el patrón fue muy similar, aunque los tratamientos con riego deficitario controlado (RDC) mostraron valores más bajos en noviembre (llegando a 0.6), mientras que T0 se mantuvo en 0.75. En diciembre y mayo, los valores de Φ~P0~ superaron los 0.8 con mayor frecuencia, alcanzando hasta 0.85, mientras que la disminución de enero también fue evidente, con valores cayendo a 0.65 en T0, de forma similar a lo observado en la temporada anterior.
+
+Estos resultados indican que los valores de Φ~P0~ en La Esperanza se mantuvieron cercanos a 0.8 durante la mayor parte de las temporadas, con fluctuaciones relacionadas con el estrés hídrico y las condiciones climáticas. Las caídas pronunciadas en T0, especialmente durante enero y marzo, sugieren un estrés hídrico más intenso en estos períodos. Los tratamientos con RDC mostraron mayor estabilidad en la eficiencia fotosintética en comparación con T0, lo que podría reflejar una mejor adaptación a las variaciones de disponibilidad de agua. Este comportamiento es coherente con las etapas fenológicas del cultivo, como la fase de rápido crecimiento y maduración de los frutos, que incrementa la demanda de agua y la actividad fotosintética [@cb2020b].
+:::
 
 ```{r, results='hide'}
+#| label: fig-fluo-la-esperanza
+#| fig-cap: 'Dinámica de la máxima eficiencia quántica del fotosistema II (Φ~P0~) media de cada tratamiento según temporada en La Esperanza. En cada panel, se encuentra la comparación entre el tratamiento control T0 (línea negra punteada) y el tratamiento con RDC respectivo (línea sólida a color). La línea segmentada horizontal verde indica la fecha de cosecha en cada temporada.'
 #| fig-width: 8
 #| fig-height: 5
 #| fig-align: center
 #| lightbox: true
 
-data <- read_rds('data/fluorescencia.rds')
+dir <- 'data/fluorescencia.rds'
+var <- 'Phi_Po'
+huerto <- 'la_esperanza'
+label = expression(Phi[P0])
 
-data |> distinct(sitio,temporada,fecha) |> 
-  group_by(sitio,temporada) |> 
-  reframe(n = n())
-
-data |> 
-  mutate(sitio = sitio_reclass(sitio),
-         fecha = as.Date(fecha)) |> 
-  group_by(sitio,temporada,fecha,tratamiento) |> 
-  reframe(value = mean(Phi_Po,na.rm=T)) |> 
-  ggplot(aes(fecha,value,color=tratamiento)) +
-  geom_point(alpha=.5,size=.9) +
-  geom_line(linewidth = .7,alpha = .6) +
-  facet_grid(sitio~temporada,scales='free_x') +
-  scale_x_date(date_breaks = "1 month", date_labels = "%b", expand = c(.15,0)) +
-  scale_color_viridis_d(option = "viridis") +
-  labs(x = NULL, y = expression(Phi[P0]), color = 'Tratamiento') +
-  theme_bw() +
-  theme(strip.background = element_rect(fill = 'white'),
-        legend.position = 'bottom',
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.x = element_line(linetype = "dashed"))
+graficar_parametros(dir,var,huerto,label)
 ```
 
-# Distribución por mes
+### Rio Claro {.unnumbered}
+
+::: justify
+En Rio Claro (@fig-fluo-rio-claro) durante la primera temorada, los valores de eficiencia fotosintética mostraron un comportamiento similar a La Esperanza durante el aumento de noviembre, seguido por una caída abrupta a finales de mes. En este caso, T0 presentó una disminución considerable en su valor hasta alcanzar aproximadamente 0.6, mientras que los tratamientos RDC (T1, T2, T3 y T4) también mostraron una disminución, aunque menos pronunciada. En particular, T3 y T4 no descendieron por debajo de 0.75, con T3 manteniéndose cecano a 0.8 en todo momento. Posteriormente, se observó un aumento abrupto en los valores, alcanzando 0.8 en todos los tratamientos hacia la fecha de cosecha en diciembre, seguida de una disminución gradual. Esta disminución fue más marcada en los tratamientos RDC en comparación con T0, con T2 mostrando un comportamiento particular al presentar un valle en principios de febrero antes de aumentar nuevamente para seguir la misma dinámica de T0. Los demás tratamientos disminuyeron a un ritmo similar al de T0 pero con valores algo más bajos.
+
+En la segunda temporada, el comportamiento fue diferente. A pesar de la disminución en noviembre, esta fue mucho más leve, con una caída de solo 0.07. Después de un pequeño pico en diciembre, los valores se mantuvieron estables entre 0.8 y 0.85 durante el resto de la temporada, sin descender por debajo de 0.7. Cabe destacar que durante esta temporada, la cosecha se atrasó, lo que significó que las plantas y frutos no estuvieron expuestos a las lluvias de noviembre y diciembre, lo que probablemente influenció en la estabilidad de los valores. Este comportamiento contrastó con el de la primera temporada, donde las variaciones fueron más pronunciadas y los valores fluctuaron más entre los tratamientos.
+:::
 
 ```{r, results='hide'}
-#| fig-width: 10
-#| fig-height: 7
+#| label: fig-fluo-rio_claro
+#| fig-cap: 'Dinámica de la máxima eficiencia quántica del fotosistema II (Φ~P0~) media de cada tratamiento según temporada en Río Claro. En cada panel, se encuentra la comparación entre el tratamiento control T0 (línea negra punteada) y el tratamiento con RDC respectivo (línea sólida a color). La línea segmentada horizontal verde indica la fecha de cosecha en cada temporada.'
+#| fig-width: 8
+#| fig-height: 5
 #| fig-align: center
 #| lightbox: true
 
-data_fluo <- read_rds('data/fluorescencia.rds')
+dir <- 'data/fluorescencia.rds'
+var <- 'Phi_Po'
+huerto <- 'rio_claro'
+label = expression(Phi[P0])
 
-data_fluo |> 
-  mutate(mes = factor(month(fecha),levels = c(6:12,1:5))) |> 
-  ggplot(aes(tratamiento,Phi_Po)) +
-  geom_boxplot() +
-  facet_grid(sitio+temporada~mes, labeller = labels, scales = 'free_y') +
-  labs(x = 'Tratamiento',y=expression(Phi[P0])) +
-  theme_bw() +
-  theme(text = element_text(size = 15),
-        axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)),
-        strip.background = element_rect(fill = 'white'),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.x = element_line(linetype = "dashed"))
+graficar_parametros(dir,var,huerto,label)
 ```
-:::
 
 ## Potencial
 
-Los valores de Ψs presentan variaciones a lo largo del tiempo con diferencias entre localidades y temporadas. En Río Claro, durante la temporada 2022-2023, se observa una disminución de Ψs desde octubre hasta diciembre, seguida de una alta variabilidad en los meses siguientes. Un patrón similar, aunque con menor amplitud, se presenta en 2023-2024, con una caída inicial y fluctuaciones posteriores. En La Esperanza, los valores de Ψs se mantienen más estables en ambas temporadas, con una ligera disminución en verano y un aumento hacia mayo. No se observan diferencias marcadas entre los tratamientos, ya que las curvas siguen tendencias similares a lo largo del período evaluado.
+### La Esperanza {.unnumbered}
 
-Respecto a la distribución mensual, en Rio Claro, los tratamientos con déficit hídrico presentan valores inferiores al tratamiento control, con una diferencia más pronunciada al final de la segunda temporada. En cambio, en La Esperanza, las diferencias son más sutiles y poco consistentes entre los meses.
+::: justify
+En la @fig-potencial-la-esperanza se muestran las dinámicas del potencial hídrico (Ψ~s~) en La Esperanza durante las temporadas 2022–2023 y 2023–2024. En ambas, los tratamientos con riego deficitario controlado (RDC) presentaron un comportamiento general similar al control (T0), particularmente durante los eventos de caída y aumento abrupto en noviembre, probablemente asociados a lluvias o nubosidad. A partir de finales de octubre y hasta comienzos de diciembre, se observó una disminución sostenida de Ψ~s~, que llevó a los cultivos desde condiciones sin estrés (Ψ~s~ > -1 MPa) hacia niveles de estrés hídrico moderado (-1 MPa > Ψ > -1.5 MPa) [@cb2020b; @c-b2022; @houghton2023]. Este período coincide con la etapa de rápido crecimiento y maduración de frutos, reportada en Chile para la variedad Regina desde la segunda quincena de noviembre [@arribillaga2013; @avium2021], y caracterizada por una mayor actividad fotosintética y demanda hídrica [@yoon1990]. Luego de la cosecha, todas las series mostraron una recuperación parcial del Ψ~s~, seguida de una disminución que alcanzó su punto más bajo entre enero y febrero, en concordancia con el aumento de temperatura. Posteriormente, el potencial hídrico aumentó progresivamente hacia el final de la temporada.
 
-::: panel-tabset
-# Series temporales
+Durante 2022–2023, los tratamientos T1, T2 y T4 cruzaron el umbral de estrés severo (-1.5 MPa > Ψ~s~ > -2 MPa) en enero, además de marzo en T4 y desde mediados de febrero en T2. En 2023–2024, en cambio, ningún tratamiento superó dicho umbral. En ambas temporadas, T2 presentó los valores más bajos de Ψ~s~, con diferencias de hasta 0.25–0.4 MPa respecto a T0 hacia el final del período evaluado. Este patrón indica una mayor sensibilidad al déficit hídrico bajo este tratamiento, con menor capacidad de recuperación. En general, las trayectorias temporales de los tratamientos RDC fueron paralelas a las de T0, aunque con valores levemente inferiores (~0.1 MPa), especialmente en T2. La recuperación observada tras los mínimos de enero-febrero refuerza la influencia de la variabilidad térmica y climática en la dinámica hídrica de los cultivos.
 
 ```{r, results='hide'}
+#| label: fig-potencial-la-esperanza
+#| fig-cap: 'Dinámica del potencial hídrico xilemático al medio día (Ψ~s~) medio de cada tratamiento según temporada en La Esperanza. En cada panel, se encuentra la comparación entre el tratamiento control T0 (línea negra punteada) y el tratamiento con RDC respectivo (línea sólida a color). La línea segmentada horizontal verde indica la fecha de cosecha en cada temporada.'
 #| fig-width: 8
 #| fig-height: 5
 #| fig-align: center
 #| lightbox: true
 
-data <- read_rds('data/potencial.rds') |> 
-  mutate(potencial = -potencial_bar/10)
+dir <- 'data/potencial.rds'
+var <- 'MPa'
+huerto <- 'la_esperanza'
+label <- expression(paste("-" * Psi[s], " (MPa)"))
 
-data |> distinct(sitio,temporada,fecha) |> 
-  group_by(sitio,temporada) |> 
-  reframe(n = n())
-
-data |> 
-  mutate(sitio = sitio_reclass(sitio),
-         fecha = as.Date(fecha)) |> 
-  group_by(sitio,temporada,fecha,tratamiento) |> 
-  reframe(value = mean(potencial,na.rm=T)) |> 
-  ggplot(aes(fecha,value,color=tratamiento)) +
-  geom_point(alpha=.5,size=.9) +
-  geom_line(linewidth = .7,alpha = .6) +
-  scale_color_viridis_d(option = "viridis") +
-  facet_grid(sitio~temporada,scales='free_x') +
-  theme_bw() +
-  theme(strip.background = element_rect(fill = 'white'),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.x = element_line(linetype = "dashed"),
-        legend.position = 'bottom') +
-  scale_x_date(date_breaks = "1 month", date_labels = "%b", expand = c(.15,0)) +
-  labs(x = NULL, y = expression(Psi[s]), color = 'Tratamiento')
-
+graficar_parametros(dir,var,huerto,label)
 ```
+:::
 
-# Distribución por mes
+### Rio Claro {.unnumbered}
+
+::: justify
+En Rio Claro (@fig-potencial-rio-claro), durante la temporada 2022-2023, todos los tratamientos comenzaron sin estrés hídrico significativo. Sin embargo, a partir de comienzos de noviembre, se produjo una caída abrupta en los valores de potencial hídrico, lo que llevó a todos los tratamientos a entrar en condiciones de estrés severo (Ψ~s~ < -1.5 MPa). A partir de ese momento, todos los tratamientos se recuperaron parcialmente, alcanzando condiciones de estrés moderado (Ψ~s~ entre -1.5 MPa y -2 MPa). No obstante, a partir de la cosecha a finales de diciembre, los tratamientos con riego deficitario controlado (RDC) volvieron a caer en condiciones de estrés severo y permanecieron en ese estado hasta el final de la temporada. En cambio, T0, aunque estuvo en estrés moderado durante gran parte de la temporada, también experimentó un descenso a estrés severo a partir de febrero, permaneciendo en esa condición hasta el final de la temporada. La diferencia más pronunciada entre T0 y los tratamientos RDC se observó en T3, donde, justo después de la cosecha en enero, se alcanzó una diferencia de hasta 1.75 MPa.
+
+En la temporada 2023-2024, los tratamientos con RDC mostraron un comportamiento más similar al de T0. Durante la fase inicial, todos los tratamientos experimentaron una disminución en el potencial hídrico, coincidiendo con la floración y la producción de frutos, con un pico de disminución en diciembre. A diferencia de T0, que no descendió del umbral de estrés severo en ningún momento, los tratamientos con RDC llegaron a valores de hasta -2.5 MPa, entrando en condiciones de estrés severo. T0 también alcanzó el umbral de -2.5 MPa en su punto más bajo en febrero, después de haber comenzado a disminuir en enero, pero se mantuvo en condiciones de estrés moderado hasta mediados de enero, cuando la cosecha provocó una caída hacia el estrés severo, aunque se recuperó hacia finales de la temporada, con un regreso a condiciones de estrés moderado a finales de marzo. Por otro lado, los tratamientos RDC aumentaron gradualmente sus valores de potencial tras alcanzar los puntos más bajos en enero-febrero, sin llegar a experimentar la recuperación tan pronunciada observada en T0.
 
 ```{r, results='hide'}
-#| fig-width: 10
-#| fig-height: 7
+#| label: fig-potencial-rio-claro
+#| fig-cap: 'Dinámica del potencial hídrico xilemático al medio día (Ψ~s~) medio de cada tratamiento según temporada en Río Claro. En cada panel, se encuentra la comparación entre el tratamiento control T0 (línea negra punteada) y el tratamiento con RDC respectivo (línea sólida a color). La línea segmentada horizontal verde indica la fecha de cosecha en cada temporada.'
+#| fig-width: 8
+#| fig-height: 5
 #| fig-align: center
 #| lightbox: true
 
-data_potencial <- read_rds('data/potencial.rds') |>
-  mutate(MPa = -potencial_bar/10)
+dir <- 'data/potencial.rds'
+var <- 'MPa'
+huerto <- 'rio_claro'
+label <- expression(paste("-" * Psi[s], " (MPa)"))
 
-data_potencial |> 
-  mutate(mes = factor(month(fecha),levels = c(6:12,1:5))) |> 
-  ggplot(aes(tratamiento,MPa)) +
-  geom_boxplot() +
-  facet_grid(sitio+temporada~mes, labeller = labels, scales = 'free_y') +
-  labs(x = 'Tratamiento',y= 'Potencial (MPa)') +
-  theme_bw() +
-  theme(text = element_text(size = 15),
-        axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)),
-        strip.background = element_rect(fill = 'white'),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.x = element_line(linetype = "dashed"))
-
+graficar_parametros(dir,var,huerto,label)
 ```
 :::
 
 ## LAI
 
-Los valores de LAI muestran patrones diferenciados entre temporadas y localidades. En Río Claro, la temporada 2022-2023 presenta un aumento pronunciado en enero, seguido de una caída y relativa estabilidad en los meses posteriores. En 2023-2024, se observa una tendencia ascendente más sostenida hasta febrero, con una leve disminución al final del período. En La Esperanza, la temporada 2022-2023 exhibe fluctuaciones en los primeros meses y una reducción marcada desde abril, mientras que en 2023-2024, el LAI aumenta progresivamente hasta febrero. No se evidencian diferencias consistentes entre tratamientos, ya que las curvas muestran tendencias similares en ambos sitios.
+### La Esperanza {.unnumbered}
 
-::: panel-tabset
-# Series temporales
+::: justify
+La @fig-lai-la-esperanza muestra los resultados del comportamiento del LAI en ambos sitios durante las dos temporadas. Para la temporada 2022-2023, los datos fueron tomados de febrero a mayo, mientras que en la temporada 2023-2024 se registraron durante toda la temporada. En la temporada 2022-2023 en La Esperanza, los valores de LAI se mantuvieron estables desde febrero hasta mayo, con una disminución suave hacia abril debido a la pérdida de hojas. Estos valores fueron más bajos que los observados en febrero de la temporada 2023-2024. En esta última, las diferencias entre tratamientos fueron sutiles, con los RDC mostrando una diferencia máxima de 1 de LAI en T2 en ciertos periodos. En la temporada 2023-2024, se observó un comportamiento de aumento del LAI en todos los tratamientos hasta la cosecha, con un incremento que osciló entre 2 y 5 unidades, seguido de una estabilización hasta el final de la temporada, lo cual es consistente con el crecimiento vegetativo de los cerezos.
+:::
 
 ```{r, results='hide'}
+#| label: fig-lai-la-esperanza
+#| fig-cap: 'Dinámica del LAI de cada tratamiento según temporada en La Esperanza. En cada panel, se encuentra la comparación entre el tratamiento control T0 (línea negra punteada) y el tratamiento con RDC respectivo (línea sólida a color). La línea segmentada horizontal verde indica la fecha de cosecha en cada temporada.'
 #| fig-width: 8
 #| fig-height: 5
 #| fig-align: center
 #| lightbox: true
 
-data <- read_rds('data/ceptometro.rds')
+dir <- 'data/ceptometro.rds'
+var <- 'lai'
+huerto <- 'la_esperanza'
+label <- 'LAI'
 
-data |> distinct(sitio,temporada,fecha) |> 
-  group_by(sitio,temporada) |> 
-  reframe(n = n())
-
-data |> 
-  mutate(sitio = sitio_reclass(sitio)) |> 
-  ggplot(aes(fecha,lai,color=tratamiento)) +
-  geom_point(alpha=.5,size=.9) +
-  geom_line(linewidth = .7,alpha = .6) +
-  scale_color_viridis_d(option = "viridis") +
-  facet_grid(sitio~temporada,scales='free_x') +
-  theme_bw() +
-  theme(strip.background = element_rect(fill = 'white'),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.x = element_line(linetype = "dashed"),
-        legend.position = 'bottom') +
-  scale_x_date(date_breaks = "1 month", date_labels = "%b", expand = c(.15,0)) +
-  labs(x = NULL, y = 'LAI', color = 'Tratamiento')
-
+graficar_parametros(dir,var,huerto,label)
 ```
 
-# Distribución por mes
+### Rio Claro {.unnumbered}
+
+::: justify
+Para Río Claro (@fig-lai-rio-claro), en la temporada 2022-2023, los valores también fueron más bajos, mostrando un comportamiento similar al de La Esperanza, con una disminución suave en la misma época pero con un peak importante durante febrero. En la temporada 2023-2024, el patrón fue casi idéntico al de La Esperanza, con un aumento del LAI que varió entre 2 y 4 unidades. Sin embargo, en Río Claro se observaron diferencias más marcadas entre los tratamientos RDC y T0, especialmente en diciembre, donde las diferencias alcanzaron hasta 1.5 de LAI en T2 y T3 en comparación con T0. Además, todos los tratamientos experimentaron una disminución abrupta a partir de febrero, lo que coincidió con la caída de hojas en este sitio y temporada.
+:::
 
 ```{r, results='hide'}
-#| fig-width: 10
-#| fig-height: 7
+#| label: fig-lai-rio_claro
+#| fig-cap: 'Dinámica del LAI medio de cada tratamiento según temporada en Río Claro. En cada panel, se encuentra la comparación entre el tratamiento control T0 (línea negra punteada) y el tratamiento con RDC respectivo (línea sólida a color). La línea segmentada horizontal verde indica la fecha de cosecha en cada temporada.'
+#| fig-width: 8
+#| fig-height: 5
 #| fig-align: center
 #| lightbox: true
 
-data_lai <- read_rds('data/ceptometro.rds')
+dir <- 'data/ceptometro.rds'
+var <- 'lai'
+huerto <- 'rio_claro'
+label <- 'LAI'
 
-data_lai |> 
-  mutate(mes = factor(month(fecha),levels = c(6:12,1:5))) |> 
-  ggplot(aes(tratamiento,lai)) +
-  geom_boxplot() +
-  facet_grid(sitio+temporada~mes, labeller = labels, scales = 'free_y') +
-  labs(x = 'Tratamiento',y= 'LAI') +
-  theme_bw() +
-  theme(text = element_text(size = 15),
-        axis.title.y = element_text(margin = margin(r = 17)),
-        axis.title.x = element_text(margin = margin(t = 17)),
-        strip.background = element_rect(fill = 'white'),
-        panel.grid.minor.x = element_blank(),
-        panel.grid.major.x = element_line(linetype = "dashed"))
+graficar_parametros(dir,var,huerto,label)
 ```
-:::
-::::::

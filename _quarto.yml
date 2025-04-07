@@ -34,8 +34,10 @@ book:
       chapters:
         - 201_produccion.qmd
         - 202_parametros.qmd
-        - 203_curvas_pv.qmd
-        - 204_tlp.qmd
+    - part: 'Curvas Presión-Volumen (PV) y Punto de Pérdida de TUrgor (TLP)'
+      chapters:
+        - 301_curvas_pv.qmd
+        - 302_tlp.qmd
     - part: 500_preproceso_turgor.qmd
       chapters: 
         - 501_clustering.qmd
@@ -44,8 +46,8 @@ book:
         - 504_preprocesado.qmd
     - part: 'Modelo de potencial y SatOri'
       chapters: 
-        - 401_potencial.qmd
-        - 402_satori.qmd
+        - 501_potencial.qmd
+        - 502_satori.qmd
     - references.qmd
 
 bibliography: references.bib

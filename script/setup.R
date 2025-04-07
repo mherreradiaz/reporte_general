@@ -267,4 +267,50 @@ max_label <- \(var) {
   return(max(c(max_out,max_stats),na.rm=T))
 }
 
+graficar_parametros <- \(dir,var,huerto,label) {
+  
+  cosecha_la_esperanza <- tibble(sitio = 'la_esperanza', fecha = as.Date('2022-12-12'), temporada = c('2022-2023','2023-2024'))
+  cosecha_rio_claro <- tibble(sitio = 'rio_claro', fecha = c(as.Date('2022-12-21'),as.Date('2023-01-12')), temporada = c('2022-2023','2023-2024'))
+  
+  cosecha <- bind_rows(cosecha_la_esperanza,cosecha_rio_claro) |> 
+    crossing(comparacion = factor(c('T1', 'T2', 'T3', 'T4'), levels = c('T1', 'T2', 'T3', 'T4')))
+  
+  fechas_mensuales <- seq.Date(from = as.Date("2022-09-01"), 
+                               to   = as.Date("2023-05-01"), 
+                               by   = "month")
+  
+  data <- read_rds(dir) |> 
+    group_by(sitio,temporada,tratamiento,fecha) |> 
+    reframe(mean_value = mean(!!sym(var),na.rm=T)) |> 
+    mutate(tratamiento = factor(tratamiento,levels=paste0('T',0:4)))
+  
+  data_plot <- data |> 
+    filter(tratamiento != 'T0') |> 
+    mutate(comparacion = tratamiento) |> 
+    bind_rows(
+      data |> 
+        filter(tratamiento == 'T0') |> 
+        crossing(comparacion = factor(c('T1', 'T2', 'T3', 'T4'), levels = c('T1','T2','T3','T4')))
+    ) |> 
+    mutate(fecha = case_when(temporada == '2023-2024' ~ fecha - years(1),
+                             .default = fecha))
+  
+  data_plot |> 
+    filter(sitio == huerto) |> 
+    ggplot(aes(fecha,mean_value, linetype = tratamiento, color = tratamiento)) +
+    geom_line(linewidth = .8, alpha= .7) +
+    geom_vline(xintercept = fechas_mensuales, linetype = "dotted", color = "grey30") +
+    geom_vline(data = cosecha |> filter(sitio == huerto), aes(xintercept = fecha), 
+               linewidth = .8, linetype = 'dashed', color = 'green4', alpha = .7) +
+    scale_linetype_manual(values = c('T0' = 'dotted', 'T1' = 'solid', 'T2' = 'solid', 'T3' = 'solid', 'T4' = 'solid')) +
+    scale_color_manual(values = c('T0' ="grey10",'T1' = "royalblue4",'T2' = "lightskyblue", 'T3' = "rosybrown2", 'T4' = "red3")) +
+    scale_x_date(date_breaks = "1 month", date_labels = "%b", expand = c(.1,0)) +
+    labs(x = NULL, y = label, color = 'Tratamiento') +
+    facet_grid(comparacion~temporada, scales = 'free_x') +
+    theme_bw() +
+    theme(strip.background = element_rect(fill = 'white'),
+          legend.position = 'none',
+          panel.grid.minor.x = element_blank(),
+          panel.grid.major.x = element_line(linetype = "dashed"))
+}
 

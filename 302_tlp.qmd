@@ -1,0 +1,55 @@
+# Punto de pérdida de turgor
+
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+::: justify
+En la [@fig-tlp] se pueden observar los puntos de pérdida de turgor (TLP) obtenidos a partir de las curvas presión-volumen. Los resultados muestran un TLP promedio de -2.54 MPa en La Esperanza y -2.20 MPa en Río Claro, lo que indica una diferencia en la capacidad de las plantas para mantener la turgencia entre ambos sitios. En La Esperanza, los valores de TLP fueron similares entre los tratamientos, con T0 y T4 registrando -2.48 y -2.60 MPa, respectivamente. En Río Claro, se encontraron más diferencias entre los tratamientos, con todos los valores menos negativos que el control T0 (-2.38 MPa), destacando T4 con el valor menos negativo (-1.95 MPa), lo que sugiere una mayor vulnerabilidad al estrés hídrico en ese tratamiento.
+:::
+
+```{r}
+#| label: fig-tlp
+#| fig-cap: 'Punto de pérdida de turgor (TLP) por unidad (árbol), según tratamiento y sitio para al temporada 2023-2024. Las líneas rojas segmentadas indican el promedio de TLP para cada sitio.'
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+source('script/setup.R')
+
+data_tlp <- read_rds('data/tlp.rds')
+
+tlp_info <- data_tlp |>
+  select(-tlp) |>
+  distinct() |>
+  arrange(temporada,sitio,tratamiento,unidad)
+
+data_mean <- data_tlp |> 
+  group_by(sitio,temporada) |> 
+  reframe(mean = mean(tlp,na.rm=T))
+
+data_tlp |>
+  ggplot(aes(unidad,tlp, color = unidad)) +
+  geom_point(alpha = .7, size = 2) +
+  geom_hline(data = data_mean, aes(yintercept = mean), linetype = 'dashed', linewidth = 1, alpha = .7, color = 'red2') +
+  geom_text(data = tlp_info, aes(unidad,-1.5,label = codigo),size=3, color = 'black') +
+  facet_grid(temporada+sitio~tratamiento, labeller = as_labeller(names)) +
+  labs(y = expression(Ψ[s]~"(MPa)"),
+       x = 'Unidad') +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
+  theme(legend.position = 'none',
+        text = element_text(size = 15),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+```
+
+Combinando observaciones en terreno de potencial, y el punto de perdida de turgor obtenido a partir de las curvas presión-volumen (TLP~la_esperanza~ = -2.54 MPa; TLP~rio_claro~ = -2.2 MPa; [@fig-series]) se puede observar que este punto de estrés hídrico se alcanzó mayoritariamente en los meses de enero y febrero en el campo de Río Claro, durante la temporada 2022-2023. Además, en el mismo contexto se puede observar tendencias a la disminución de potencial para los tratamientos de estrés hídrico más severos (T3 y T4). Por el contrario, en La Esperanza no se observan disminuciones importantes de potencial, respecto al punto de pérdida de turgor, mientras que tampoco se aprecian diferencias a simple vista entre las dinámicas temporales de los tratamientos.
+
+![Series temporales de potencial hídrico xilemático según temporada (2022-2023; 2023-2024), sitio y tratamientos (T0 a T4). La unidad indica cada árbol por tratamiento (tres por tratamiento), mientras que la línea segmentada indica el punto de pérdida de turgor para cada sitio.](figuras/08_satori/potencial_series.png){#fig-series .lightbox}

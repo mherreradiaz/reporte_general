@@ -1,6 +1,6 @@
 # Modelado espacial diario de Ψ~s~
 
-## Predictores espacio-temporales
+## Predictores espacio-temporales 
 
 ```{r}
 source('script/setup.R')
@@ -13,7 +13,7 @@ library(viridisLite)
 }
 ```
 
-### Variables meteorológicas
+### Variables meteorológicas {.unnumbered}
 
 ::::: justify
 Las variables meteorológicas utilizadas en el desarrollo del modelo de potencial hídrico xilemático (Ψ~s~) se obtuvieron a partir de estaciones meteorológicas automáticas en ambos huertos, las cuales registraron datos cada 15 minutos utilizando el modelo ATMOS-41 del grupo METER. Estas variables fueron temperatura (T°), humedad relativa (HR), déficit de presión de vapor (VPD), precipitación (PP) y evapotranspiración de referencia (ET0).
@@ -262,7 +262,7 @@ data_sm |>
 Para revisar los procedimientos específicos empleados o analizar los resultados de la temporada 2022-2023 de manera independiente, se recomienda acceder al reporte completo en el siguiente [enlace](https://mherreradiaz.github.io/reporte_general/static/anexos/01_reporte_calidad_produccion.pdf){target="_blank"}.
 :::::
 
-### Índices vegetacionales
+### Índices vegetacionales {.unnumbered}
 
 ::: justify
 Se derivaron dieciséis índices de vegetación (IVs) relacionados con la condición de las plantas —vigor, estrés, funcionalidad fotosintética y contenido hídrico— a partir de datos de Sentinel-2 (S2), como se detalla en la Tabla 2. De estos, nueve índices no incorporaron información del red-edge (borde rojo), calculándose exclusivamente con bandas espectrales del visible, infrarrojo cercano (NIR) e infrarrojo de onda corta (SWIR): NDVI, EVI, GCI, NDWI, NBR, NDMI, MSI, NMDI y DWSI. Por otro lado, siete índices —CLr, Clg, NDRE1, NDRE2, NDCI, mSR705 y RESI— se obtuvieron mediante las bandas del red-edge. Todos los índices fueron calculados a partir de las imágenes preprocesadas de las bandas de S2, generándose series temporales para cada IV en ambos huertos y temporadas.
@@ -288,16 +288,9 @@ El conjunto de datos incluyó mediciones de 26 fechas en la temporada 2022–202
 -   **Remuestreo**: Evaluación de la confiabilidad del modelo e identificación de las variables más relevantes para estimar Ψ~s~.
 -   **Validación**: Evaluación del rendimiento del modelo con métricas de desempeño.
 
-```{r}
-#| label: fig-split
-#| fig-cap: 'Esquemas de división utilizados para agrupar los conjuntos de entrenamiento y prueba: división aleatoria (rnd_split) y división temporal independiente (tme_split).'
-#| fig-align: center
-#| lightbox: true
-
-knitr::include_graphics('figuras/misc/esquema_split.png')
-```
-
 Se entrenaron los tres modelos utilizando dos esquemas de división ([@fig-split]): uno que consideró una división aleatoria de datos de entrenamiento y prueba (rnd_split) y otro que utilizó fechas independientes para entrenamiento y prueba (tme_split). En ambos casos, se seleccionó el 75% de los datos para entrenamiento y el 25% para prueba. Se aplicaron tres tipos de preprocesamiento a los datos de entrenamiento: i) eliminación de predictores con valores constantes (variables de varianza cero); ii) normalización de predictores (media cero y desviación estándar uno); y iii) una versión del modelo que empleó Partial Least Squares (PLS) para reducir la dimensionalidad, utilizando las cinco componentes principales como predictores. Como resultado, se usaron modelos con predictores normalizados y otros con las componentes principales de PLS.
+
+![Esquemas de división utilizados para agrupar los conjuntos de entrenamiento y prueba: división aleatoria (rnd_split) y división temporal independiente (tme_split).](figuras/misc/esquema_split.png){#fig-split fig-align="center".lightbox}
 
 Para ajustar los parámetros de los modelos (XGBoost, RF, SVM), se empleó optimización de hiperparámetros. Se definieron rangos para cada parámetro y se utilizaron cinco folds de validación cruzada para ambos esquemas de división (rnd_split y tme_split). La optimización evaluó diez combinaciones de parámetros por modelo. El rendimiento se midió con las métricas R², RMSE (root-mean-square error) y MAE (mean absolute error). Finalmente, los modelos se clasificaron según el RMSE más bajo y el R² más alto, seleccionándose aquellos con mejor desempeño.
 :::

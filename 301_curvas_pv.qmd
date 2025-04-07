@@ -1,0 +1,55 @@
+# Curvas Presión-volumen
+
+```{r}
+source('script/setup.R')
+```
+
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+::: justify
+Las curvas presión-volumen se generaron midiendo el potencial hídrico (Ψ~s~) con la cámara de presión de Scholander en hojas recolectadas antes de las 12 hrs (punto de máxima demanda hídrica), asegurando mayor turgencia, según la metodología propuesta por @halbritter. Las muestras se envolvieron en plástico, colcandole papel higiénico hidratado en el peciolo cortado y se refrigeraron para minimizar pérdidas de agua. Cada muestra se pesó antes y después de cada medición de Ψ~s~, insertándose en la cámara con el corte expuesto y aplicando presión gradual (0.1 bar/seg) hasta observar exudación de agua. Tras cada medición, las muestras se secaron al aire, repitiendo el proceso cada 2–5 minutos inicialmente y luego cada 15 minutos–2 horas hasta obtener 6–8 puntos en la zona lineal de la curva. El contenido relativo de agua (RWC) se calculó como: [(peso fresco − peso seco) / (peso turgente − peso seco)] × 100, donde el peso fresco fue el peso después de cada medición de Ψ~s~, el peso turgente el inicial y el peso seco tras secado a 70°C por 72 h. Los datos se graficaron como 1/−Ψw vs RWD = (100 − RWC), determinándose el punto de pérdida de turgencia (TLP) como el último punto de la curva de Ψ~s~ en función del RWD antes de comenzar su fracción lineal, como se muestra en la @fig-ejemplo-pv.
+
+![Ejemplo de una curva presión-volumen. Los círculos llenos representan las primeras 5 mediciones iterativas: los círculos abiertos representan las últimas 6 mediciones. La porción lineal (línea sólida) muestra el potencial osmótico (Ψo), la porción curva (línea discontinua) es el potencial hídrico antes del punto de pérdida de turgencia (TLP), y el área sombreada es el potencial de turgencia (Ψp). Fuente: @halbritter.](figuras/misc/tlp.png){#fig-ejemplo-pv .lightbox width="60%"}
+
+En base a esta misma metodología, a continuación se presentan las curvas presión-volumen de cada unidad medida.
+:::
+
+## La Esperanza
+
+::: panel-tabset
+### Tratamiento 0 (control)
+
+![](figuras/06_tlp/la_esperanza_T0.png){.lightbox fig-align="center"}
+
+### Tratamiento 4
+
+![](figuras/06_tlp/la_esperanza_T4.png){.lightbox fig-align="center"}
+:::
+
+## Rio Claro
+
+::: panel-tabset
+### Tratamiento 0 (control)
+
+![](figuras/06_tlp/rio_claro_T0.png){.lightbox fig-align="center"}
+
+### Tratamiento 1
+
+![](figuras/06_tlp/rio_claro_T1.png){.lightbox fig-align="center"}
+
+### Tratamiento 2
+
+![](figuras/06_tlp/rio_claro_T2.png){.lightbox fig-align="center"}
+
+### Tratamiento 3
+
+![](figuras/06_tlp/rio_claro_T3.png){.lightbox fig-align="center"}
+
+### Tratamiento 4
+
+![](figuras/06_tlp/rio_claro_T4.png){.lightbox fig-align="center"}
+:::
