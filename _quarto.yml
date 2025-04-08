@@ -37,7 +37,6 @@ book:
         - 202_produccion.qmd
         - 203_potencial.qmd
         - 204_satori.qmd
-    - part: 'Modelo de potencial y SatOri'
     - references.qmd
 
 bibliography: references.bib
