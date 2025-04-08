@@ -1,0 +1,31 @@
+# SatOri
+
+```{r}
+source('script/setup.R')
+```
+
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+::: justify
+En la [@fig-dashboard] se muestra el dashboard de inicio de la plataforma SatOri. En él, se distinguen dos pestañas: “Panel” y “Resumen Temporada”. La Fig. 1 se encuentra desplegando las opciones de la pestaña “Panel”.
+
+![Dashboard ejemplo de la plataforma SatOri, pestaña “Panel”.](figuras/08_satori/plataforma.png){#fig-dashboard .lightbox}
+
+En los botones que se encuentran en la parte izquierda de la pantalla, el usuario puede seleccionar el huerto que quiere revisar, la temporada, y la fecha específica; para poder visualizar el potencial.
+
+El mapa visualizará el potencial del huerto seleccionado y para el día seleccionado. En el mapa se puede pinchar en alguno de los sectores de riego. Al pinchar en alguno, los gráficos que se encuentran a la derecha, mostrarán los datos de potencial para dicho sector. La linea en rojo que se muestra, corresponde a los valores de potencial de los últimos siete días. Los colores, verde, amarillo y rojo, indican los diferentes niveles de estado hídrico que pueda alcanzar el sector. En el ejemplo, se ve que la línea para el sector de riego seleccionada se encuentra en verde por lo tanto no es necesario regar.
+
+En el caso que la linea roja llegué a la zona de color amarillo, la plataforma dará un aviso de que es necesario regar e indicara el tiempo de riego para cada sector.
+
+Por otra parte, en la parte superior de la aplicación, se muestra un resumen de cuantos sectores de riego están en verde, amarillo y rojo.
+
+La Fig. 2 muestra la plataforma en la pestaña “Panel”. En este caso se muestra un mapa ampliado con el detalle de la variación del potencial hídrico xilemático durante toda la temporada para los sectores de riego.
+
+![Figura 2: Dashboard ejemplo plataforma SatOri, pestaña “Resumen Temporada”.](figuras/08_satori/plataforma_2.png){.lightbox}
+
+Se puede acceder a la plataforma por medio de la página web de difusión del proyecto <https://s4tori.cl> o directamente por medio del link <https://s4tori.cl/app>.
+:::

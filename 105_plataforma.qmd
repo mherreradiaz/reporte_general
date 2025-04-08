@@ -1,0 +1,19 @@
+# Plataforma web SatOri
+
+```{r}
+source('script/setup.R')
+```
+
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+::: justify
+A partir del modelo de estimación espacio-temporal del potencial hídrico xilemático, se diseñó un prototipo de plataforma web denominada $SatOri$, orientada a la optimización del riego en los huertos de cerezos de los campos Río Claro y La Esperanza. Con el modelo de estimación espacial y temporal del potencial hídrico como base, y considerando los umbrales TLP previamente definidos, se desarrolló la plataforma utilizando el lenguaje de programación R y las plataformas [Github](https://github.com){target="_blank"} y [Shinyapps](https://shinyapps.io){target="_blank"}.
+
+La plataforma $SatOri$ fue implementada mediante el paquete {shiny} de R. En términos operativos, la descarga y el procesamiento automatizado de los datos satelitales y meteorológicos se gestionaron a través de *Github Actions*, que permiten la actualización diaria de los datos de los huertos, de acuerdo con su disponibilidad. Estos datos, provenientes de fuentes satelitales (como las imágenes de Sentinel-2) y meteorológicas, son procesados para suavizar los índices de vegetación. Posteriormente, se aplicó el modelo de machine learning para estimar el potencial hídrico xilemático de cada día, permitiendo a la plataforma ofrecer recomendaciones sobre el tiempo de riego requerido para cada sector.
+
+El sistema de riego en los huertos está segmentado en sectores, por lo que la plataforma $SatOri$ adaptó las recomendaciones de riego a esta estructura. Para ello, el valor estimado del potencial hídrico xilemático fue promediado para cada sector y comparado con los valores de umbral establecidos (TLP). En función de esta comparación, se definieron tres zonas de estado hídrico para cada sector de riego: verde, amarillo y naranja. La zona verde corresponde a situaciones en las que el potencial hídrico se encuentra por encima del umbral más un factor de seguridad, lo que representa un estado adecuado de abastecimiento hídrico. La zona amarilla se asocia a un estado intermedio, donde el potencial hídrico se ubica entre el umbral y el umbral más el factor de seguridad, activando una recomendación de riego basada en la evapotranspiración de cultivo de los últimos dos días. Finalmente, la zona naranja representa condiciones por debajo del umbral, lo que activa una recomendación de riego más intensiva, basada en los últimos cinco días de evapotranspiración, con el objetivo de promover una recuperación rápida del estado hídrico.
+:::

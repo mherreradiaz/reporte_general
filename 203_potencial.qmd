@@ -1,0 +1,25 @@
+# Modelos predictivos de potencial
+
+```{r}
+source('script/setup.R')
+```
+
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+::: justify
+La [@fig-modelo-r] muestra el ranking de R² para cada uno de los doce modelos entrenados con remuestreo (tres algoritmos, dos esquemas de partición y con o sin análisis de componentes principales por mínimos cuadrados parciales). El ranking basado en la métrica RMSE mostró un comportamiento equivalente. Con rnd_split, los valores de R² oscilaron entre 0.45 y 0.8, mientras que con tme_split disminuyeron a un rango entre 0.25 y 0.52. En el caso de rnd_split, los algoritmos XGBoost y RF alcanzaron los valores más altos de R², con una media de 0.77 y 0.76, respectivamente, seguidos por SVM con un R² de 0.68. En tme_split, la diferencia de R² entre modelos fue menor en comparación con aquellos entrenados con rnd_split. Los tres modelos que alcanzaron el mayor R² bajo tme_split fueron XGBoost, pls_SVM (entrenado con los cinco componentes principales obtenidos mediante análisis de mínimos cuadrados parciales como predictores) y SVM, con valores cercanos a 0.45. Se seleccionaron los tres modelos con mayor desempeño según la evaluación con remuestreo por esquema de partición, en adelante denominados RF, XGBoost y SVM.
+
+![Ranking de modelos de aprendizaje automático en el remuestreo según la métrica R². Los modelos son Random Forest (RF), Extreme Gradient Boosting (XGBoost) y Support Vector Machines (SVM). El acrónimo "pls" junto al nombre del modelo indica el uso de mínimos cuadrados parciales (partial least squares). Cada panel corresponde a un esquema de partición: división aleatoria (rnd_split) y división independiente del tiempo (tme_split).](figuras/07_modelo_potencial/modelo-r.png){#fig-modelo-r .lightbox}
+
+La [@fig-importancia] muestra las once variables más importantes en el rendimiento del modelo. En los dos esquemas de división, los datos meteorológicos, específicamente ET0, VPD y temperatura, tienen la mayor importancia y alcanzan su peso máximo. En el modelo SVM, la RH es el único predictor en el rnd_split, mientras que en el tme_split, RH, VPD y temperatura son los predictores de mayor importancia. Los predictores derivados de S2 ocupan el segundo lugar después de los datos meteorológicos. En el rnd_split, MSI, DWSI, mSR705, NDMI y NMDI son los predictores más relevantes para RF y XGBoost. Al considerar el tme_split, MSI, DWSI y NDMI son las variables que más contribuyen al rendimiento del modelo. En el caso del modelo SVM para tme_split, el parámetro biofísico CCC tiene la mayor importancia. Como era de esperar, los predictores de S2 más relacionados con Ψs fueron aquellos que utilizan la longitud de onda SWIR, que es la región espectral más sensible al agua.
+
+![Importancia de las variables escalada (0–1) por modelos de aprendizaje automático: random forest (RF), extreme gradient boosting (XGBoost) y support vector machines (SVM); para los dos esquemas de división: división aleatoria (rnd_split) y división independiente del tiempo (tme_split).](figuras/07_modelo_potencial/importancia.png){#fig-importancia .lightbox}
+
+Después de la evaluación por remuestreo, entrenamos los modelos en el conjunto de datos de prueba. En el rnd_split, el R2 fue de 0.76, 0.76 y 0.62 para XGBoost, RF y SVM, respectivamente (@fig-scatterplot). El RMSE estuvo entre 0.24 MPa (XGBoost y RF) y 0.3 MPa (SVM). En el rnd_split, RF y XGBoost mejoran significativamente en comparación con SVM. Cuando se entrenaron en el tme_split, el rendimiento de los modelos disminuyó en comparación con los entrenados con rnd_split. Entre ellos, los modelos se comportaron de manera similar, con un R2 de 0.59 para los tres modelos. El RMSE fue de entre 0.36 MPa para XGBoost y 0.39 MPa para SVM. En la @fig-scatterplot, se puede observar que el error (observado menos estimado) aumenta para valores menores a -1.5 MPa, lo que corresponde a menos puntos. Así, los modelos no cuentan con suficientes datos para mejorar su rendimiento. La razón de la menor cantidad de datos en este rango es que corresponde a niveles más altos de estrés hídrico. El estrés crítico puede llevar al cierre estomático de las plantas, lo que puede afectar tanto la producción como la calidad.
+
+![Valores predichos en el conjunto de datos de prueba versus valores observados de potencial hídrico en el tallo (Ψ~s~) para los huertos de La Esperanza y Río Claro. Los paneles verticales corresponden al modelo de aprendizaje automático: random forest (RF), extreme gradient boosting (XGBoost) y support vector machines (SVM). Los paneles horizontales corresponden a los esquemas de división: división aleatoria (rnd_split) y división independiente del tiempo (tme_split). Las métricas de rendimiento utilizadas son el coeficiente de determinación (R2), el error absoluto medio (MAE) y el error cuadrático medio (RMSE).](figuras/07_modelo_potencial/scatterplot.png){#fig-scatterplot .lightbox}
+:::

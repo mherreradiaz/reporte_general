@@ -3,6 +3,7 @@
 ```{r}
 source('script/setup.R')
 ```
+
 ```{css, echo = FALSE}
 .justify {
   text-align: justify !important
@@ -26,4 +27,6 @@ Además, trabajaron como asistentes de investigación los siguientes profesional
 
 -   Jesica Garrido - Centro Hemera UMayor
 -   Abel Herrera - Centro Hemera UMayor
+
+Para revisar los procedimientos específicos empleados o analizar los resultados del proyecto durante la temporada 2022-2023 de manera independiente, se recomienda acceder al reporte fabricado por Muñoz M. en el siguiente [enlace](https://mherreradiaz.github.io/reporte_general/static/anexos/01_reporte_calidad_produccion.pdf){target="_blank"}.
 :::

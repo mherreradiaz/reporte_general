@@ -1,0 +1,588 @@
+# Producción y calidad
+
+```{r}
+source('script/setup.R')
+names = c('2022-2023' = '2022-2023','2023-2024' = '2023-2024', 'rio_claro' = 'Rio Claro','la_esperanza' = 'La Esperanza','1' = '202-2023','2' = '2023-2024','T0' = 'T0','T1' = 'T1','T2' = 'T2','T3' = 'T3','T4' = 'T4')
+colores = c("azure3","royalblue4","lightskyblue","rosybrown2","red3")
+library(patchwork)
+```
+
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+## Producción
+
+### Peso total {.unnumbered}
+
+::: justify
+La [@fig-peso-total] muestra el peso total de los árboles según tratamiento, sitio y temporada, evidenciando diferencias tanto entre sitios como entre temporadas. En La Esperanza, no se observaron diferencias significativas entre tratamientos en ninguna de las dos temporadas. En 2022-2023, T4 presentó el mayor peso (17 kg), seguido por T0 (16.4 kg), mientras que T1 registró el menor valor (10.5 kg), con una diferencia de 5.83 kg respecto a T0. En 2023-2024, los valores fueron menores en general, con T3 alcanzando el mayor peso (6.18 kg) y T4 el menor (5.18 kg), situándose 0.59 kg por debajo de T0 (5.78 kg). En Río Claro, T2 mostró el mayor peso total (16.9 kg), superando en 0.76 kg a T0 (16.1 kg), mientras que T4 presentó el menor valor (11.9 kg), siendo 4.16 kg inferior a T0. En esta localidad, solo T2 y T4 fueron significativamente diferentes entre sí. A nivel temporal, en La Esperanza, el peso total del árbol fue significativamente menor en la segunda temporada en todos los tratamientos, reflejando una disminución generalizada en el rendimiento.
+:::
+
+```{r, results='hide'}
+#| label: fig-peso-total
+#| fig-cap: 'Comparación del peso total de producción por unidad de árbol (kg) según tratamiento, sitio y temporada.'
+#| fig-width: 10
+#| fig-height: 10
+#| fig-align: center
+#| lightbox: true
+
+data_produccion <- read_rds('data/produccion.rds')
+
+summary <- dif_summary(data_produccion,'peso_total','tratamiento',c('sitio','temporada')) |> left_join(
+  data_produccion |> 
+  group_by(sitio,temporada,tratamiento) |> 
+  reframe(label_y = max_label(peso_total))
+) |> 
+  suppressMessages()
+
+p1 <- data_produccion |>
+  ggplot(aes(tratamiento,peso_total,fill = tratamiento)) +
+  geom_boxplot(alpha = .8) +
+  geom_point(position = position_jitter(width = 0.2),shape=21,fill='white',size=2) +
+  scale_fill_manual(values = colores) +
+  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(tratamiento, label_y,label = cld), size=4, vjust = -.5) +
+  labs(y = 'Peso total (kg)',
+       x = 'Tratamiento') +
+  scale_y_continuous(expand = c(.12,0)) +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+summary <- dif_summary_two(
+  data_produccion |> 
+    filter(sitio == 'la_esperanza'),
+  'peso_total','temporada',c('sitio','tratamiento')) |> 
+  left_join(
+  data_produccion |> 
+  group_by(sitio,temporada,tratamiento) |> 
+  reframe(label_y = max_label(peso_total))
+) |> 
+  suppressMessages()
+
+p2 <- data_produccion |>
+  filter(sitio == 'la_esperanza') |> 
+  ggplot(aes(temporada,peso_total,fill = temporada)) +
+  geom_boxplot(alpha = .8) +
+  geom_point(position = position_jitter(width = 0.2),shape=21,fill='white',size=2) +
+  scale_fill_manual(values = colores[c(2,5)]) +
+  facet_grid(sitio~tratamiento,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(temporada, label_y,label = cld), size=4, vjust = -.5) +
+  labs(y = 'Peso total (kg)',
+       x = 'Temporada') +
+  scale_y_continuous(expand = c(.12,0)) +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        axis.text.x = element_text(angle = 45, hjust = .5, vjust = .5),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+p1 / p2 + plot_layout(heights = c(2, 1))
+
+```
+
+### Densidad {.unnumbered}
+
+::: justify
+La [@fig-densidad] muestra la densidad de frutos por kilogramo según tratamiento, sitio y temporada, sin diferencias significativas entre tratamientos dentro de cada sitio y temporada, excepto en La Esperanza, donde T4 presentó una mayor densidad en la segunda temporada. En La Esperanza 2022-2023, T4 tuvo la menor densidad (89 frutos/kg), 4 frutos menos que T0 (93 frutos/kg), mientras que T2 alcanzó el mayor valor (98 frutos/kg), seguido por T3. En 2023-2024, los valores fueron similares, con T2 registrando la menor densidad (91 frutos/kg, apenas 1 fruto/kg menos que T0) y T1 la mayor (105 frutos/kg). En Río Claro, T0 mostró la menor densidad (97 frutos/kg), seguido por T4 (114 frutos/kg), mientras que T3 alcanzó el mayor valor (185 frutos/kg), superando en 88 frutos/kg a T0. A nivel temporal, solo en T4 de La Esperanza se observó un aumento significativo en la segunda temporada, lo que sugiere una mayor cantidad de frutos por kilogramo en ese tratamiento.
+:::
+
+```{r, results='hide'}
+#| label: fig-densidad
+#| fig-cap: 'Comparación de la densidad de producción por unidad de árbol (frutos/kg) según tratamiento, sitio y temporada.'
+#| fig-width: 10
+#| fig-height: 10
+#| fig-align: center
+#| lightbox: true
+
+summary <- dif_summary(data_produccion,'densidad','tratamiento',c('sitio','temporada')) |> left_join(
+  data_produccion |> 
+  group_by(sitio,temporada,tratamiento) |> 
+  reframe(label_y = max_label(densidad))
+) |> 
+  suppressMessages()
+
+p1 <- data_produccion |>
+  ggplot(aes(tratamiento,densidad,fill = tratamiento)) +
+  geom_boxplot(alpha = .8) +
+  geom_point(position = position_jitter(width = 0.2),shape=21,fill='white',size=2) +
+  scale_fill_manual(values = colores) +
+  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(tratamiento, label_y,label = cld), size=4, vjust = -.5) +
+  labs(y = 'Densidad (frutos/kg)',
+       x = 'Tratamiento') +
+  scale_y_continuous(expand = c(.12,0)) +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+summary <- dif_summary_two(
+  data_produccion |> 
+    filter(sitio == 'la_esperanza'),
+  'densidad','temporada',c('sitio','tratamiento')) |> 
+  left_join(
+  data_produccion |> 
+  group_by(sitio,temporada,tratamiento) |> 
+  reframe(label_y = max_label(densidad))
+) |> 
+  suppressMessages()
+
+p2 <- data_produccion |>
+  filter(sitio == 'la_esperanza') |> 
+  ggplot(aes(temporada,densidad,fill = temporada)) +
+  geom_boxplot(alpha = .8) +
+  geom_point(position = position_jitter(width = 0.2),shape=21,fill='white',size=2) +
+  scale_fill_manual(values = colores[c(2,5)]) +
+  facet_grid(sitio~tratamiento,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(temporada, label_y,label = cld), size=4, vjust = -.5) +
+  labs(y = 'Densidad (frutos/kg)',
+       x = 'Temporada') +
+  scale_y_continuous(expand = c(.12,0)) +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        axis.text.x = element_text(angle = 45, hjust = .5, vjust = .5),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+p1 / p2 + plot_layout(heights = c(2, 1))
+
+```
+
+## Calidad
+
+### Peso {.unnumbered}
+
+::: justify
+La [@fig-peso] muestra la distribución del peso por unidad de cereza según tratamiento, sitio y temporada, evidenciando diferencias significativas entre tratamientos y un mejor desempeño en La Esperanza respecto a Río Claro. En La Esperanza (2022-2023), T4 presentó la mayor mediana (11.7 g), superando en 1 g al control T0 (10.7 g), mientras que T2 tuvo la menor (10 g); todos los tratamientos superaron el estándar comercial XL (6 g), con un 95-100% de frutos en esta categoría. En 2023-2024, T0 alcanzó la mediana más alta (11.2 g), seguido de T2 (11 g), manteniéndose todos los tratamientos sobre la talla XL (95-100% XL). En contraste, Río Claro (2022-2023) mostró un menor rendimiento, con T3 registrando la mediana más baja (5.85 g) y solo un 38.3% de frutos talla XL, mientras que T0 alcanzó 10.8 g y 90% XL. En esta localidad y temporada, se observaron las únicas diferencias significativas entre tratamientos, donde todos presentaron valores significativamente menores que T0 y, además, T3 fue significativamente menor que el resto. En La Esperanza, las diferencias entre temporadas fueron menos marcadas, con T2 mostrando un incremento en 2023-2024. Estos resultados reflejan la influencia del tratamiento y la localidad en la calidad de la cosecha, con un rendimiento consistentemente superior en La Esperanza.
+:::
+
+```{r, results='hide'}
+#| label: fig-peso
+#| fig-cap: 'Comparación del peso de una unidad de cereza (gr) según tratamiento, sitio y temporada.'
+#| fig-width: 10
+#| fig-height: 10
+#| fig-align: center
+#| lightbox: true
+
+data_apariencia <- read_rds('data/apariencia.rds')
+
+summary <- dif_summary(data_apariencia,'peso','tratamiento',c('sitio','temporada')) |> left_join(
+  data_apariencia |> 
+  group_by(sitio,temporada,tratamiento) |> 
+  reframe(label_y = max_label(peso))
+) |> 
+  suppressMessages()
+
+p1 <- data_apariencia |>
+  ggplot(aes(tratamiento,peso,fill = tratamiento)) +
+  geom_hline(yintercept = 4, colour = 'red',linetype="dotted") +
+  geom_hline(yintercept = 6, colour = 'blue',linetype="dotted") +
+  geom_boxplot(outlier.shape = NA,alpha = .8) +
+  geom_point(position = position_jitter(width = 0.3),size=1,alpha=.7) +
+  scale_fill_manual(values = colores) +
+  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(tratamiento, label_y,label = cld), size=4, vjust = -.5) +
+  geom_text(aes(label="L", y= 4, x= "T4"), hjust = -5.5, vjust = -.25) +
+  geom_text(aes(label="XL", y= 6, x= "T4"), hjust = -2, vjust = -.25) +
+  labs(y = 'Peso (gr)',
+       x = 'Tratamiento') +
+  scale_y_continuous(expand = c(.13,0)) +
+  scale_x_discrete(expand = c(.18,0)) +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+summary <- dif_summary_two(
+  data_apariencia |> 
+    filter(sitio == 'la_esperanza'),
+  'peso','temporada',c('sitio','tratamiento')) |> 
+  left_join(
+  data_apariencia |> 
+  group_by(sitio,temporada,tratamiento) |> 
+  reframe(label_y = max_label(peso))
+) |> 
+  suppressMessages()
+
+p2 <- data_apariencia |>
+  filter(sitio == 'la_esperanza') |> 
+  ggplot(aes(temporada,peso,fill = temporada)) +
+  geom_hline(yintercept = 4, colour = 'red',linetype="dotted") +
+  geom_hline(yintercept = 6, colour = 'blue',linetype="dotted") +
+  geom_boxplot(outlier.shape = NA,alpha = .8) +
+  geom_point(position = position_jitter(width = 0.3),size=1,alpha=.7) +
+  scale_fill_manual(values = colores[c(2,5)]) +
+  facet_grid(sitio~tratamiento,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(temporada, label_y,label = cld), size=4, vjust = -.5) +
+  labs(y = 'Peso (gr)',
+       x = 'Temporada') +
+  scale_y_continuous(expand = c(.12,0)) +
+  scale_x_discrete(expand = c(.9,0)) +
+  geom_text(aes(label="L", y= 4, x= "2023-2024"), hjust = -5, vjust = -.25) +
+  geom_text(aes(label="XL", y= 6, x= "2023-2024"), hjust = -1.85, vjust = -.25) +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        axis.text.x = element_text(angle = 45, hjust = .5, vjust = .5),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+p1 / p2 + plot_layout(heights = c(2, 1))
+
+```
+
+### Calibre {.unnumbered}
+
+::: justify
+La [@fig-calibre] muestra el calibre de los frutos por tratamiento, sitio y temporada. En La Esperanza 2022–2023, T2 presentó el menor diámetro (mediana = 25 mm), siendo significativamente inferior a todos los tratamientos, mientras que T4 alcanzó el mayor calibre (27 mm), siendo superior a T3, pero no difirió significativamente de T0 ni T1. Durante 2023–2024, los valores se incrementaron levemente: T1 presentó la menor mediana (27 mm), 0.7 mm por debajo de T0 (27.7 mm), y T4 la más alta (27.8 mm), mostrando diferencias significativas solo con T3. En ambos años, los frutos de T4 destacaron por mantener consistentemente el 100% de frutos dentro de los estándares comerciales L (≥22 mm) y XL (≥24 mm). En contraste, T2 mostró en 2022–2023 un 5% de frutos fuera del estándar mínimo, con apenas un 76.7% dentro del calibre XL. En Río Claro, todos los tratamientos difirieron significativamente entre sí, excepto T2 y T4. T0 presentó el mayor calibre (27.2 mm), mientras que T3 fue el más bajo (21.4 mm), con el 68.3% de frutos por debajo de la medida L y solo el 6.67% cumpliendo la XL. Temporalmente, en La Esperanza, T0, T2 y T4 mostraron un aumento significativo de calibre en 2023–2024 respecto a la temporada anterior, reforzando la mejora en la proporción de frutos comerciales, especialmente en T2, donde la proporción de calibre XL aumentó de 76.7% a 95%.
+:::
+
+```{r, results = 'hide'}
+#| label: fig-calibre
+#| fig-cap: 'Comparación del calibre de una unidad de cereza (mm) por tratamiento según sitio y temporada.'
+#| fig-width: 10
+#| fig-height: 10
+#| fig-align: center
+#| lightbox: true
+
+data_apariencia <- read_rds('data/apariencia.rds')
+
+summary <- dif_summary(data_apariencia,'diametro','tratamiento',c('sitio','temporada')) |> left_join(
+  data_apariencia |> 
+  group_by(sitio,temporada,tratamiento) |> 
+  reframe(label_y = max_label(diametro))
+) |> 
+  suppressMessages()
+
+p1 <- data_apariencia |>
+  ggplot(aes(tratamiento,diametro,fill = tratamiento)) +
+    geom_hline(yintercept =22, colour = 'red',linetype="dotted") +
+  geom_hline(yintercept = 24, colour = 'blue',linetype="dotted") +
+  geom_boxplot(outlier.shape = NA,alpha = .8) +
+  geom_point(position = position_jitter(width = 0.3),size=1,alpha=.7) +
+  scale_fill_manual(values = colores) +
+  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(tratamiento, label_y,label = cld), size=4, vjust = -.5) +
+  labs(y = 'Calibre (mm)',
+       x = 'Tratamiento') +
+  geom_text(aes(label="L", y= 22, x= "T4"), hjust = -5.5, vjust = -.25) +
+  geom_text(aes(label="XL", y= 24, x= "T4"), hjust = -2, vjust = -.25) +
+  scale_y_continuous(expand = c(.13,0)) +
+  scale_x_discrete(expand = c(.18,0)) +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+summary <- dif_summary_two(
+  data_apariencia |> 
+    filter(sitio == 'la_esperanza'),
+  'diametro','temporada',c('sitio','tratamiento')) |> 
+  left_join(
+  data_apariencia |> 
+  group_by(sitio,temporada,tratamiento) |> 
+  reframe(label_y = max_label(diametro))
+) |> 
+  suppressMessages()
+
+p2 <- data_apariencia |>
+  filter(sitio == 'la_esperanza') |> 
+  ggplot(aes(temporada,diametro,fill = temporada)) +
+  geom_hline(yintercept = 22, colour = 'red',linetype="dotted") +
+  geom_hline(yintercept = 24, colour = 'blue',linetype="dotted") +
+  geom_boxplot(outlier.shape = NA,alpha = .8) +
+  geom_point(position = position_jitter(width = 0.3),size=1,alpha=.7) +
+  scale_fill_manual(values = colores[c(2,5)]) +
+  facet_grid(sitio~tratamiento,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(temporada, label_y,label = cld), size=4, vjust = -.5) +
+  labs(y = 'Calibre (mm)',
+       x = 'Temporada') +
+  scale_y_continuous(expand = c(.12,0)) +
+  scale_x_discrete(expand = c(.9,0)) +
+  geom_text(aes(label="L", y= 22, x= "2023-2024"), hjust = -5, vjust = -.25) +
+  geom_text(aes(label="XL", y= 24, x= "2023-2024"), hjust = -1.85, vjust = -.25) +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        axis.text.x = element_text(angle = 45, hjust = .5, vjust = .5),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+p1 / p2 + plot_layout(heights = c(2, 1))
+
+```
+
+### Color {.unnumbered}
+
+::: justify
+La [@fig-color] presenta la distribución del color de las cerezas por tratamiento, sitio y temporada, en una escala de 1 a 6 donde los valores entre 4 y 5 (tonalidad caoba) corresponden a la categoría de mayor valoración comercial. En La Esperanza 2022–2023, T2 y T3 mostraron las medianas más bajas (4.5), siendo T2 significativamente inferior a todos los tratamientos salvo T3. En contraste, T4 alcanzó una mediana de 5, siendo significativamente superior a T2 pero no diferente de T0 ni T1. Las proporciones de frutos en categoría caoba fueron altas en todos los tratamientos (71.7–88.3%), destacando T4 con 88.3%. En 2023–2024, la mediana se redujo a 4 en la mayoría de los tratamientos, excepto T2 (4.5), que fue significativamente superior a T0 y T4. A pesar de esto, T2 alcanzó el mayor porcentaje de frutos caoba (90%), mientras que T0 y T4 descendieron a 51.7% y 56.7%, respectivamente. En Río Claro, T0 y T1 presentaron la mayor mediana (5), siendo significativamente superiores a T2, T3 y T4 (4.5). La proporción de frutos caoba fue superior al 70% en todos los tratamientos, con T2 alcanzando el 91.7%. Al comparar entre temporadas en La Esperanza, todos los tratamientos excepto T2 presentaron una disminución significativa en el color, indicando una pérdida general de tonalidad caoba en 2023–2024.
+:::
+
+```{r, results = 'hide'}
+#| label: fig-color
+#| fig-cap: 'Comparación del color de una unidad de cereza según tratamiento, sitio y temporada.'
+#| fig-width: 10
+#| fig-height: 10
+#| fig-align: center
+#| lightbox: true
+
+data_apariencia <- read_rds('data/apariencia.rds')
+
+summary <- dif_summary(data_apariencia,'color','tratamiento',c('sitio','temporada')) |> left_join(
+  data_apariencia |> 
+  group_by(sitio,temporada,tratamiento) |> 
+  reframe(label_y = max_label(color))
+) |> 
+  suppressMessages()
+
+p1 <- data_apariencia |>
+  ggplot(aes(tratamiento,color,fill = tratamiento)) +
+  annotate("rect", xmin=-Inf, xmax=Inf, ymin=4, ymax=5, alpha=0.2, fill="red") +
+  geom_boxplot(outlier.shape = NA,alpha = .8) +
+  geom_point(position = position_jitter(width = 0.3),size=1,alpha=.7) +
+  scale_fill_manual(values = colores) +
+  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(tratamiento, label_y,label = cld), size=4, vjust = -.5) +
+  labs(y = 'Grado de color',
+       x = 'Tratamiento') +
+  scale_y_continuous(expand = c(.12,0)) +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+summary <- dif_summary_two(
+  data_apariencia |> 
+    filter(sitio == 'la_esperanza'),
+  'color','temporada',c('sitio','tratamiento')) |>
+  left_join(
+    data_apariencia |>
+      group_by(sitio,temporada,tratamiento) |>
+      reframe(label_y = max_label(color))
+    ) |> 
+  suppressMessages()
+
+p2 <- data_apariencia |>
+  filter(sitio == 'la_esperanza') |> 
+  ggplot(aes(temporada,color,fill = temporada)) +
+  annotate("rect", xmin=-Inf, xmax=Inf, ymin=4, ymax=5, alpha=0.2, fill="red") +
+  geom_boxplot(outlier.shape = NA,alpha = .8) +
+  geom_point(position = position_jitter(width = 0.3),size=1,alpha=.7) +
+  scale_fill_manual(values = colores[c(2,5)]) +
+  facet_grid(sitio~tratamiento,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(temporada, label_y,label = cld), size=4, vjust = -.5) +
+  labs(y = 'Grado de color',
+       x = 'Temporada') +
+  scale_y_continuous(expand = c(.12,0)) +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        axis.text.x = element_text(angle = 45, hjust = .5, vjust = .5),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+p1 / p2 + plot_layout(heights = c(2, 1))
+
+```
+
+### Contenido de azucar {.unnumbered}
+
+::: justify
+La concentración de sólidos solubles en cerezas se presenta en la [@fig-brix], considerando como referencia comercial óptima el rango de 19–20 °Brix. En La Esperanza 2022–2023, todos los tratamientos superaron la mediana de T0 (19.2), destacando T3 con 22.8 °Brix, que fue significativamente mayor que T0 y T4. La mayor proporción de frutos dentro del rango óptimo se observó en T4 (40%), seguido de T1 (26.7%), mientras que T3, pasando del rango ótimo, presentó solo un 13.3%. En la temporada 2023–2024, nuevamente todos los tratamientos superaron a T0 (21.4 °Brix), con T3 alcanzando la mayor mediana (23.8 °Brix), sin diferencias estadísticas entre tratamientos. No obstante, la proporción de frutos dentro del rango óptimo fue baja en todos los casos (\<14%). En Río Claro, T4 tuvo la mayor mediana (22.4 °Brix), 3.4 °Brix superior a T0 (19 °Brix), mientras que T2 fue el más bajo (17.4 °Brix). Tampoco se encontraron diferencias significativas entre tratamientos. Comparando entre temporadas en La Esperanza, ningún tratamiento presentó diferencias significativas, aunque en todos los casos las medianas fueron más altas en 2023–2024.
+:::
+
+```{r, results='hide'}
+#| label: fig-brix
+#| fig-cap: 'Comparación de la concentración de sólidos solubles (° brix) de una unidad de cereza según tratamiento, sitio y temporada.'
+#| fig-width: 10
+#| fig-height: 10
+#| fig-align: center
+#| lightbox: true
+
+data_brix <- read_rds('data/brix.rds')
+
+summary <- dif_summary(data_brix,'brix','tratamiento',c('sitio','temporada')) |> 
+  left_join(
+    data_brix |>
+      group_by(sitio,temporada,tratamiento) |>
+      reframe(label_y = max_label(brix))
+    ) |> 
+  suppressMessages()
+
+p1 <- data_brix |>
+  ggplot(aes(tratamiento,brix,fill = tratamiento)) +
+  annotate("rect", xmin=-Inf, xmax=Inf, ymin=19, ymax=20, alpha=0.2, fill="red") +
+  geom_boxplot(outlier.shape = NA,alpha = .8) +
+  geom_point(position = position_jitter(width = 0.3),size=1,alpha=.7) +
+  scale_fill_manual(values = colores) +
+  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(tratamiento, label_y,label = cld), size=4, vjust = -.5) +
+  labs(y = '°Brix',
+       x = 'Tratamiento') +
+  scale_y_continuous(expand = c(.12,0)) +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+summary <- dif_summary_two(
+  data_brix |> 
+    filter(sitio == 'la_esperanza'),
+  'brix','temporada',c('sitio','tratamiento')) |>
+  left_join(
+    data_brix |>
+      group_by(sitio,temporada,tratamiento) |>
+      reframe(label_y = max_label(brix))
+    ) |> 
+  suppressMessages()
+
+p2 <- data_brix |>
+  filter(sitio == 'la_esperanza') |> 
+  ggplot(aes(temporada,brix,fill = temporada)) +
+  annotate("rect", xmin=-Inf, xmax=Inf, ymin=19, ymax=20, alpha=0.2, fill="red") +
+  geom_boxplot(outlier.shape = NA,alpha = .8) +
+  geom_point(position = position_jitter(width = 0.3),size=1,alpha=.7) +
+  scale_fill_manual(values = colores[c(2,5)]) +
+  facet_grid(sitio~tratamiento,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(temporada, label_y,label = cld), size=4, vjust = -.5) +
+  labs(y = '°Brix',
+       x = 'Temporada') +
+  scale_y_continuous(expand = c(.12,0)) +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        axis.text.x = element_text(angle = 45, hjust = .5, vjust = .5),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+p1 / p2 + plot_layout(heights = c(2, 1))
+
+```
+
+### Daño {.unnumbered}
+
+::: justify
+El porcentaje de frutas dañadas por tratamiento, sitio y temporada se muestra en la [@fig-daño]. En La Esperanza 2022–2023, la mediana más alta fue en T2 (21.2%), superior a T0 (12.9%), mientras que el menor valor correspondió a T4 (5.62%). En la temporada 2023–2024, T3 alcanzó el mayor valor (38%) y T4 el menor (26.9%). En ambos casos no se encontraron diferencias significativas entre tratamientos. En Río Claro, el mayor valor se observó en T4 (16.4%), superior a T0 (11.3%), y el menor en T1 (8.4%), sin diferencias estadísticas. Comparando entre temporadas en La Esperanza, todos los tratamientos presentaron porcentajes significativamente mayores de fruta dañada en 2023–2024. Cabe señalar que cada tratamiento se basó en tres muestras (n = 3), lo que representa una única proporción por tratamiento a partir del kilo de muestra por árbol, lo que puede haber influido en la detección de diferencias significativas.
+:::
+
+```{r, results='hide'}
+#| label: fig-daño
+#| fig-cap: 'Comparación del porcentaje de daño (%) según tratamiento, sitio y temporada.'
+#| fig-width: 10
+#| fig-height: 10
+#| fig-align: center
+#| lightbox: true
+
+data_daño <- read_rds('data/daño.rds') |> 
+  mutate(daño = 100-(d_nulo/n)*100)
+
+summary <- dif_summary(data_daño,'daño','tratamiento',c('sitio','temporada')) |> 
+  left_join(
+    data_daño |>
+      group_by(sitio,temporada,tratamiento) |>
+      reframe(label_y = max_label(daño))
+    ) |> 
+  suppressMessages()
+
+p1 <- data_daño |>
+  ggplot(aes(tratamiento,daño,fill = tratamiento)) +
+  geom_boxplot(outlier.shape = NA,alpha = .8) +
+  geom_point(position = position_jitter(width = 0.3),size=1,alpha=.7) +
+  scale_fill_manual(values = colores) +
+  facet_grid(sitio~temporada,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(tratamiento, label_y,label = cld), size=4, vjust = -.5) +
+  labs(y = 'Daño (%)',
+       x = 'Tratamiento') +
+  scale_y_continuous(expand = c(.12,0)) +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+summary <- dif_summary_two(
+  data_daño |> 
+    filter(sitio == 'la_esperanza'),
+  'daño','temporada',c('sitio','tratamiento')) |>
+  left_join(
+    data_daño |>
+      group_by(sitio,temporada,tratamiento) |>
+      reframe(label_y = max_label(daño))
+    ) |> 
+  suppressMessages()
+
+p2 <- data_daño |>
+  filter(sitio == 'la_esperanza') |> 
+  ggplot(aes(temporada,daño,fill = temporada)) +
+  geom_boxplot(outlier.shape = NA,alpha = .8) +
+  geom_point(position = position_jitter(width = 0.3),size=1,alpha=.7) +
+  scale_fill_manual(values = colores[c(2,5)]) +
+  facet_grid(sitio~tratamiento,labeller = as_labeller(names)) +
+  geom_text(data = summary, aes(temporada, label_y,label = cld), size=4, vjust = -.5) +
+  labs(y = 'Daño (%)',
+       x = 'Temporada') +
+  scale_y_continuous(expand = c(.12,0)) +
+  theme_bw() +
+  theme(legend.position = "none",
+        text = element_text(size = 14),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        axis.text.x = element_text(angle = 45, hjust = .5, vjust = .5),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+p1 / p2 + plot_layout(heights = c(2, 1))
+```

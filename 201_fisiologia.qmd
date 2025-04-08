@@ -1,0 +1,907 @@
+# Parámetros fisiológicos
+
+```{r}
+source('script/setup.R')
+
+labels = as_labeller(c('10' = 'Oct','11' = 'Nov','12' = 'Dic','1' = 'Ene','2' = 'Feb','3' = 'Mar', '4' = 'Abr','2022-2023' = '2022-2023','2023-2024' = '2023-2024', 'rio_claro' = 'Rio Claro','la_esperanza' = 'La Esperanza'))
+
+sitio_reclass <- function(x) {
+  factor(case_when(x == 'la_esperanza' ~ 'La Esperanza',
+                   x == 'rio_claro' ~ 'Rio Claro'),
+         levels = c('Rio Claro','La Esperanza'))
+}
+```
+
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+::: justify
+Los siguientes gráficos muestran la distribución durante el mes, para cada tratamiento, sitio y temporada, de los tres parámetros fisiológicos seleccionados del estudio. Estos fueron la Máxima Eficiencia Quántica del Fotosistema II ($F_v / F_m$), el Potencial Hídrico Xilemático ($\Psi_s$) y el Índice de Área Foliar ($LAI$).
+:::
+
+## Fluorescencia
+
+### La Esperanza {.unnumbered}
+
+::: justify
+En la @fig-fluo-la-esperanza, se muestran los valores de la eficiencia máxima del fotosistema II ($F_v / F_m$) durante las temporadas 2022-2023 y 2023-2024 en La Esperanza. Durante ambas temporadas, los valores de $F_v / F_m$ se mantuvieron en torno a 0.8, con algunas fluctuaciones destacadas. En la primera temporada, a mediados de noviembre, todos los tratamientos presentaron una disminución abrupta en sus valores de $F_v / F_m$, alcanzando 0.5 en T0, T1 y T4. Después, los valores aumentaron rápidamente, superando el 0.8 y alcanzando un pico de 0.85 hacia finales de noviembre. Posteriormente, los valores disminuyeron ligeramente hasta 0.75 y se mantuvieron estables entre 0.7 y 0.8 hasta el final de la temporada. Sin embargo, en T0 se observaron caídas más pronunciadas, alcanzando los 0.65 en dos momentos clave: mediados de enero y principios de marzo. Estos descensos no se presentaron en los otros tratamientos, los cuales mostraron un comportamiento más estable a lo largo de la temporada (salvo en T3 alcanzando \~ 0.7en ese mismo periodo). En la temporada 2023-2024, el patrón fue muy similar, aunque los tratamientos con riego deficitario controlado (RDC) mostraron valores más bajos en noviembre (llegando a 0.6), mientras que T0 se mantuvo en 0.75. En diciembre y mayo, los valores de $F_v / F_m$ superaron los 0.8 con mayor frecuencia, alcanzando hasta 0.85, mientras que la disminución de enero también fue evidente, con valores cayendo a 0.65 en T0, de forma similar a lo observado en la temporada anterior.
+
+Estos resultados indican que los valores de $F_v / F_m$ en La Esperanza se mantuvieron cercanos a 0.8 durante la mayor parte de las temporadas, con fluctuaciones relacionadas con el estrés hídrico y las condiciones climáticas. Las caídas pronunciadas en T0, especialmente durante enero y marzo, sugieren un estrés hídrico más intenso en estos períodos. Los tratamientos con RDC mostraron mayor estabilidad en la eficiencia fotosintética en comparación con T0, lo que podría reflejar una mejor adaptación a las variaciones de disponibilidad de agua. Este comportamiento es coherente con las etapas fenológicas del cultivo, como la fase de rápido crecimiento y maduración de los frutos, que incrementa la demanda de agua y la actividad fotosintética [@cb2020b].
+:::
+
+```{r, results='hide'}
+#| label: fig-fluo-la-esperanza
+#| fig-cap: 'Dinámica de la máxima eficiencia quántica del fotosistema II (Φ~P0~) media de cada tratamiento según temporada en La Esperanza. En cada panel, se encuentra la comparación entre el tratamiento control T0 (línea negra punteada) y el tratamiento con RDC respectivo (línea sólida a color). La línea segmentada horizontal verde indica la fecha de cosecha en cada temporada.'
+#| fig-width: 8
+#| fig-height: 5
+#| fig-align: center
+#| lightbox: true
+
+dir <- 'data/fluorescencia.rds'
+var <- 'Phi_Po'
+huerto <- 'la_esperanza'
+label = expression(F[v]/F[m])
+
+graficar_parametros(dir,var,huerto,label)
+```
+
+### Rio Claro {.unnumbered}
+
+::: justify
+En Rio Claro (@fig-fluo-rio-claro) durante la primera temorada, los valores de eficiencia fotosintética mostraron un comportamiento similar a La Esperanza durante el aumento de noviembre, seguido por una caída abrupta a finales de mes. En este caso, T0 presentó una disminución considerable en su valor hasta alcanzar $F_v / F_m$ \~ 0.6, mientras que los tratamientos RDC (T1, T2, T3 y T4) también mostraron una disminución, aunque menos pronunciada. En particular, T3 y T4 no descendieron por debajo de 0.75, con T3 manteniéndose cercano a 0.8 en todo momento. Posteriormente, se observó un aumento abrupto en los valores, alcanzando un $F_v / F_m$ de 0.8 en todos los tratamientos hacia la fecha de cosecha en diciembre, seguida de una disminución gradual. Esta disminución fue más marcada en los tratamientos RDC en comparación con T0, con T2 mostrando un comportamiento particular al presentar un valle en principios de febrero antes de aumentar nuevamente para seguir la misma dinámica de T0. Los demás tratamientos disminuyeron a un ritmo similar al de T0 pero con valores algo más bajos.
+
+En la segunda temporada, el comportamiento de $F_v / F_m$ fue diferente. A pesar de la disminución en noviembre, esta fue mucho más leve, con una caída de solo 0.07. Después de un pequeño pico en diciembre, los valores se mantuvieron estables entre 0.8 y 0.85 durante el resto de la temporada, sin descender por debajo de 0.7. Cabe destacar que durante esta temporada, la cosecha se atrasó, lo que significó que las plantas y frutos no estuvieron expuestos a las lluvias de noviembre y diciembre, lo que probablemente influenció en la estabilidad de los valores. Este comportamiento contrastó con el de la primera temporada, donde las variaciones fueron más pronunciadas y los valores fluctuaron más entre los tratamientos.
+:::
+
+```{r, results='hide'}
+#| label: fig-fluo-rio-claro
+#| fig-cap: 'Dinámica de la máxima eficiencia quántica del fotosistema II (Φ~P0~) media de cada tratamiento según temporada en Río Claro. En cada panel, se encuentra la comparación entre el tratamiento control T0 (línea negra punteada) y el tratamiento con RDC respectivo (línea sólida a color). La línea segmentada horizontal verde indica la fecha de cosecha en cada temporada.'
+#| fig-width: 8
+#| fig-height: 5
+#| fig-align: center
+#| lightbox: true
+
+dir <- 'data/fluorescencia.rds'
+var <- 'Phi_Po'
+huerto <- 'rio_claro'
+label = expression(F[v]/F[m])
+
+graficar_parametros(dir,var,huerto,label)
+```
+
+## Potencial
+
+### La Esperanza {.unnumbered}
+
+::: justify
+En la @fig-potencial-la-esperanza se muestran las dinámicas del potencial hídrico ($\Psi_s$) en La Esperanza durante las temporadas 2022–2023 y 2023–2024. En ambas, los tratamientos con riego deficitario controlado (RDC) presentaron un comportamiento general similar al control (T0), particularmente durante los eventos de caída y aumento abrupto en noviembre, probablemente asociados a lluvias o nubosidad. A partir de finales de octubre y hasta comienzos de diciembre, se observó una disminución sostenida de $\Psi_s$, que llevó a los cultivos desde condiciones sin estrés ($\Psi_s$ \> -1 MPa) hacia niveles de estrés hídrico moderado (-1 MPa \> $\Psi_s$ \> -1.5 MPa) [@cb2020b; @c-b2022; @houghton2023]. Este período coincide con la etapa de rápido crecimiento y maduración de frutos, reportada en Chile para la variedad Regina desde la segunda quincena de noviembre [@arribillaga2013; @avium2021], y caracterizada por una mayor actividad fotosintética y demanda hídrica [@yoon1990]. Luego de la cosecha, todas las series mostraron una recuperación parcial del $\Psi_s$, seguida de una disminución que alcanzó su punto más bajo entre enero y febrero, en concordancia con el aumento de temperatura. Posteriormente, el potencial hídrico aumentó progresivamente hacia el final de la temporada.
+
+Durante 2022–2023, los tratamientos T1, T2 y T4 cruzaron el umbral de estrés severo (-1.5 MPa \> $\Psi_s$ \> -2 MPa) en enero, además de marzo en T4 y desde mediados de febrero en T2. En 2023–2024, en cambio, ningún tratamiento superó dicho umbral. En ambas temporadas, T2 presentó los valores más bajos de $\Psi_s$, con diferencias de hasta 0.25–0.4 MPa respecto a T0 hacia el final del período evaluado. Este patrón indica una mayor sensibilidad al déficit hídrico bajo este tratamiento, con menor capacidad de recuperación. En general, las trayectorias temporales de los tratamientos RDC fueron paralelas a las de T0, aunque con valores levemente inferiores (\~0.1 MPa), especialmente en T2. La recuperación observada tras los mínimos de enero-febrero refuerza la influencia de la variabilidad térmica y climática en la dinámica hídrica de los cultivos.
+
+```{r, results='hide'}
+#| label: fig-potencial-la-esperanza
+#| fig-cap: 'Dinámica del potencial hídrico xilemático al medio día (Ψ~s~) medio de cada tratamiento según temporada en La Esperanza. En cada panel, se encuentra la comparación entre el tratamiento control T0 (línea negra punteada) y el tratamiento con RDC respectivo (línea sólida a color). La línea segmentada horizontal verde indica la fecha de cosecha en cada temporada.'
+#| fig-width: 8
+#| fig-height: 5
+#| fig-align: center
+#| lightbox: true
+
+dir <- 'data/potencial.rds'
+var <- 'MPa'
+huerto <- 'la_esperanza'
+label <- expression(paste("-" * Psi[s], " (MPa)"))
+
+graficar_parametros(dir,var,huerto,label)
+```
+:::
+
+### Rio Claro {.unnumbered}
+
+::: justify
+En Rio Claro (@fig-potencial-rio-claro), durante la temporada 2022-2023, todos los tratamientos comenzaron sin estrés hídrico significativo. Sin embargo, a partir de comienzos de noviembre, se produjo una caída abrupta en los valores de potencial hídrico, lo que llevó a todos los tratamientos a entrar en condiciones de estrés severo ($\Psi_s$ \< -1.5 MPa). A partir de ese momento, todos los tratamientos se recuperaron parcialmente, alcanzando condiciones de estrés moderado ($\Psi_s$ entre -1.5 MPa y -2 MPa). No obstante, a partir de la cosecha a finales de diciembre, los tratamientos con riego deficitario controlado (RDC) volvieron a caer en condiciones de estrés severo y permanecieron en ese estado hasta el final de la temporada. En cambio, T0, aunque estuvo en estrés moderado durante gran parte de la temporada, también experimentó un descenso a estrés severo a partir de febrero, permaneciendo en esa condición hasta el final de la temporada. La diferencia más pronunciada entre T0 y los tratamientos RDC se observó en T3, donde, justo después de la cosecha en enero, se alcanzó una diferencia de hasta 1.75 MPa.
+
+En la temporada 2023-2024, los tratamientos con RDC mostraron un comportamiento más similar al de T0. Durante la fase inicial, todos los tratamientos experimentaron una disminución en el potencial hídrico, coincidiendo con la floración y la producción de frutos, con un pico de disminución en diciembre. A diferencia de T0, que no descendió del umbral de estrés severo en ningún momento, los tratamientos con RDC llegaron a valores de hasta -2.5 MPa, entrando en condiciones de estrés severo. T0 también alcanzó el umbral de -2.5 MPa en su punto más bajo en febrero, después de haber comenzado a disminuir en enero, pero se mantuvo en condiciones de estrés moderado hasta mediados de enero, cuando la cosecha provocó una caída hacia el estrés severo, aunque se recuperó hacia finales de la temporada, con un regreso a condiciones de estrés moderado a finales de marzo. Por otro lado, los tratamientos RDC aumentaron gradualmente sus valores de potencial tras alcanzar los puntos más bajos en enero-febrero, sin llegar a experimentar la recuperación tan pronunciada observada en T0.
+
+```{r, results='hide'}
+#| label: fig-potencial-rio-claro
+#| fig-cap: 'Dinámica del potencial hídrico xilemático al medio día (Ψ~s~) medio de cada tratamiento según temporada en Río Claro. En cada panel, se encuentra la comparación entre el tratamiento control T0 (línea negra punteada) y el tratamiento con RDC respectivo (línea sólida a color). La línea segmentada horizontal verde indica la fecha de cosecha en cada temporada.'
+#| fig-width: 8
+#| fig-height: 5
+#| fig-align: center
+#| lightbox: true
+
+dir <- 'data/potencial.rds'
+var <- 'MPa'
+huerto <- 'rio_claro'
+label <- expression(paste("-" * Psi[s], " (MPa)"))
+
+graficar_parametros(dir,var,huerto,label)
+```
+:::
+
+## LAI
+
+### La Esperanza {.unnumbered}
+
+::: justify
+La @fig-lai-la-esperanza muestra los resultados del comportamiento del $LAI$ en ambos sitios durante las dos temporadas. Para la temporada 2022-2023, los datos fueron tomados de febrero a mayo, mientras que en la temporada 2023-2024 se registraron durante toda la temporada. En la temporada 2022-2023 en La Esperanza, los valores de $LAI$ se mantuvieron estables desde febrero hasta mayo, con una disminución suave hacia abril debido a la pérdida de hojas. Estos valores fueron más bajos que los observados en febrero de la temporada 2023-2024. En esta última, las diferencias entre tratamientos fueron sutiles, con los RDC mostrando una diferencia máxima de 1 de $LAI$ en T2 en ciertos periodos. En la temporada 2023-2024, se observó un comportamiento de aumento del $LAI$ en todos los tratamientos hasta la cosecha, con un incremento que osciló entre 2 y 5 unidades, seguido de una estabilización hasta el final de la temporada, lo cual es consistente con el crecimiento vegetativo de los cerezos.
+:::
+
+```{r, results='hide'}
+#| label: fig-lai-la-esperanza
+#| fig-cap: 'Dinámica del LAI de cada tratamiento según temporada en La Esperanza. En cada panel, se encuentra la comparación entre el tratamiento control T0 (línea negra punteada) y el tratamiento con RDC respectivo (línea sólida a color). La línea segmentada horizontal verde indica la fecha de cosecha en cada temporada.'
+#| fig-width: 8
+#| fig-height: 5
+#| fig-align: center
+#| lightbox: true
+
+dir <- 'data/ceptometro.rds'
+var <- 'lai'
+huerto <- 'la_esperanza'
+label <- 'LAI'
+
+graficar_parametros(dir,var,huerto,label)
+```
+
+### Rio Claro {.unnumbered}
+
+::: justify
+Para Río Claro (@fig-lai-rio-claro), en la temporada 2022-2023, los valores también fueron más bajos, mostrando un comportamiento similar al de La Esperanza, con una disminución suave en la misma época pero con un peak importante durante febrero. En la temporada 2023-2024, el patrón fue casi idéntico al de La Esperanza, con un aumento del $LAI$ que varió entre 2 y 4 unidades. Sin embargo, en Río Claro se observaron diferencias más marcadas entre los tratamientos RDC y T0, especialmente en diciembre, donde las diferencias alcanzaron hasta 1.5 de $LAI$ en T2 y T3 en comparación con T0. Además, todos los tratamientos experimentaron una disminución abrupta a partir de febrero, lo que coincidió con la caída de hojas en este sitio y temporada.
+:::
+
+```{r, results='hide'}
+#| label: fig-lai-rio-claro
+#| fig-cap: 'Dinámica del LAI medio de cada tratamiento según temporada en Río Claro. En cada panel, se encuentra la comparación entre el tratamiento control T0 (línea negra punteada) y el tratamiento con RDC respectivo (línea sólida a color). La línea segmentada horizontal verde indica la fecha de cosecha en cada temporada.'
+#| fig-width: 8
+#| fig-height: 5
+#| fig-align: center
+#| lightbox: true
+
+dir <- 'data/ceptometro.rds'
+var <- 'lai'
+huerto <- 'rio_claro'
+label <- 'LAI'
+
+graficar_parametros(dir,var,huerto,label)
+```
+
+## Punto de pérdida de turgor (TLP)
+
+::: justify
+Las siguientes figuras muestran los resultados de las curvas Presión-Volumen obtenidas de las mediciones de $\Psi_s$ y el peso de las hojas.
+
+### La Esperanza {.unnumbered}
+
+::: panel-tabset
+#### Tratamiento 0
+
+![](figuras/06_tlp/la_esperanza_T0.png){.lightbox fig-align="center"}
+
+#### Tratamiento 4
+
+![](figuras/06_tlp/la_esperanza_T4.png){.lightbox fig-align="center"}
+:::
+
+### Rio Claro {.unnumbered}
+
+::: panel-tabset
+### Tratamiento 0 (control)
+
+![](figuras/06_tlp/rio_claro_T0.png){.lightbox fig-align="center"}
+
+### Tratamiento 1
+
+![](figuras/06_tlp/rio_claro_T1.png){.lightbox fig-align="center"}
+
+### Tratamiento 2
+
+![](figuras/06_tlp/rio_claro_T2.png){.lightbox fig-align="center"}
+
+### Tratamiento 3
+
+![](figuras/06_tlp/rio_claro_T3.png){.lightbox fig-align="center"}
+
+### Tratamiento 4
+
+![](figuras/06_tlp/rio_claro_T4.png){.lightbox fig-align="center"}
+:::
+:::
+
+::: justify
+En la [@fig-tlp] se pueden observar los puntos de pérdida de turgor (TLP) obtenidos a partir de las estas curvas PV. Los resultados muestran un TLP promedio de -2.54 MPa en La Esperanza y -2.20 MPa en Río Claro, lo que indica una diferencia en la capacidad de las plantas para mantener la turgencia entre ambos sitios. En La Esperanza, los valores de TLP fueron similares entre los tratamientos, con T0 y T4 registrando -2.48 y -2.60 MPa, respectivamente. En Río Claro, se encontraron más diferencias entre los tratamientos, con todos los valores menos negativos que el control T0 (-2.38 MPa), destacando T4 con el valor menos negativo (-1.95 MPa), lo que sugiere una mayor vulnerabilidad al estrés hídrico en ese tratamiento.
+
+```{r}
+#| label: fig-tlp
+#| fig-cap: 'Punto de pérdida de turgor (TLP) por unidad (árbol), según tratamiento y sitio para al temporada 2023-2024. Las líneas rojas segmentadas indican el promedio de TLP para cada sitio.'
+#| fig-width: 10
+#| fig-height: 7
+#| fig-align: center
+#| lightbox: true
+source('script/setup.R')
+
+data_tlp <- read_rds('data/tlp.rds')
+
+tlp_info <- data_tlp |>
+  select(-tlp) |>
+  distinct() |>
+  arrange(temporada,sitio,tratamiento,unidad)
+
+data_mean <- data_tlp |> 
+  group_by(sitio,temporada) |> 
+  reframe(mean = mean(tlp,na.rm=T))
+
+data_tlp |>
+  ggplot(aes(unidad,tlp, color = unidad)) +
+  geom_point(alpha = .7, size = 2) +
+  geom_hline(data = data_mean, aes(yintercept = mean), linetype = 'dashed', linewidth = 1, alpha = .7, color = 'red2') +
+  geom_text(data = tlp_info, aes(unidad,-1.5,label = codigo),size=3, color = 'black') +
+  facet_grid(temporada+sitio~tratamiento, labeller = as_labeller(names)) +
+  labs(y = expression(Ψ[s]~"(MPa)"),
+       x = 'Unidad') +
+  scale_fill_viridis_d(option = "viridis") +
+  theme_bw() +
+  theme(legend.position = 'none',
+        text = element_text(size = 15),
+        axis.title.y = element_text(margin = margin(r = 17)),
+        axis.title.x = element_text(margin = margin(t = 17)),
+        strip.background = element_rect(fill = 'white'),
+        panel.grid.minor.x = element_blank(),
+        panel.grid.major.x = element_line(linetype = "dashed"))
+
+```
+
+Combinando observaciones en terreno de potencial, y el punto de perdida de turgor obtenido a partir de las curvas presión-volumen (TLP~la_esperanza~ = -2.54 MPa; TLP~rio_claro~ = -2.2 MPa; [@fig-series]) se puede observar que este punto de estrés hídrico se alcanzó mayoritariamente en los meses de enero y febrero en el campo de Río Claro, durante la temporada 2022-2023. Además, en el mismo contexto se puede observar tendencias a la disminución de potencial para los tratamientos de estrés hídrico más severos (T3 y T4). Por el contrario, en La Esperanza no se observan disminuciones importantes de potencial, respecto al punto de pérdida de turgor, mientras que tampoco se aprecian diferencias a simple vista entre las dinámicas temporales de los tratamientos.
+
+![Series temporales de potencial hídrico xilemático según temporada (2022-2023; 2023-2024), sitio y tratamientos (T0 a T4). La unidad indica cada árbol por tratamiento (tres por tratamiento), mientras que la línea segmentada indica el punto de pérdida de turgor para cada sitio.](figuras/08_satori/potencial_series.png){#fig-series .lightbox}
+:::
+
+## Presión de turgor
+
+::: justify
+
+A pesar de la metodología de preprocesamiento propuesta para solucionar la variabilidad en la magnitud de datos después de la recalibración, finalmente no fue posible utilizar los valores obtenidos de turgor. La necesidad de estandarización y modelado para corregir las inconsistencias terminó eliminando la magnitud de los valores y las diferencias entre unidades, lo que impidió un análisis adecuado de las variaciones de turgor entre tratamientos y temporadas. De todas formas, a continuación se presentan los resultados obtenidos de cada proceso.
+:::
+
+### Clustering {.unnumbered}
+
+::: justify
+A continuación, se muestran las series temporales de turgor diferenciadas por clúster, así como la distribución de las horas de turgor mínimo y máximo para cada uno de ellos, junto con su ciclo horario diario, abarcando todos los sensores en todas las unidades durante las temporadas 2022-2023 y 2023-2024.
+:::
+
+#### La Esperanza {.unnumbered}
+
+::: panel-tabset
+##### T1 (2022-2023)
+
+Unidad 1 ![](figuras/01_turgor_sensor/2022_2023_La_Esperanza_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/01_turgor_sensor/2022_2023_La_Esperanza_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/01_turgor_sensor/2022_2023_La_Esperanza_T1_Unidad_3.png){.lightbox}
+
+##### T2 (2022-2023)
+
+Unidad 1 ![](figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/01_turgor_sensor/2022_2023_La_Esperanza_T2_Unidad_3.png){.lightbox}
+
+##### T3 (2022-2023)
+
+Unidad 1 ![](figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/01_turgor_sensor/2022_2023_La_Esperanza_T3_Unidad_3.png){.lightbox}
+
+##### T4 (2022-2023)
+
+Unidad 1 ![](figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/01_turgor_sensor/2022_2023_La_Esperanza_T4_Unidad_3.png){.lightbox}
+
+##### T1 (2023-2024)
+
+Unidad 1 ![](figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/01_turgor_sensor/2023_2024_La_Esperanza_T1_Unidad_3.png){.lightbox}
+
+##### T2 (2023-2024)
+
+Unidad 1 ![](figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/01_turgor_sensor/2023_2024_La_Esperanza_T2_Unidad_3.png){.lightbox}
+
+##### T3 (2023-2024)
+
+Unidad 1 ![](figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/01_turgor_sensor/2023_2024_La_Esperanza_T3_Unidad_3.png){.lightbox}
+
+##### T4 (2023-2024)
+
+Unidad 1 ![](figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/01_turgor_sensor/2023_2024_La_Esperanza_T4_Unidad_3.png){.lightbox}
+:::
+
+#### Rio Claro {.unnumbered}
+
+::: panel-tabset
+##### T1 (2022-2023)
+
+Unidad 1 ![](figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/01_turgor_sensor/2022_2023_Rio_Claro_T1_Unidad_3.png){.lightbox}
+
+##### T2 (2022-2023)
+
+Unidad 1 ![](figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/01_turgor_sensor/2022_2023_Rio_Claro_T2_Unidad_3.png){.lightbox}
+
+##### T3 (2022-2023)
+
+Unidad 1 ![](figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/01_turgor_sensor/2022_2023_Rio_Claro_T3_Unidad_3.png){.lightbox}
+
+##### T4 (2022-2023)
+
+Unidad 1 ![](figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/01_turgor_sensor/2022_2023_Rio_Claro_T4_Unidad_3.png){.lightbox}
+
+##### T1 (2023-2024)
+
+Unidad 1 ![](figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/01_turgor_sensor/2023_2024_Rio_Claro_T1_Unidad_3.png){.lightbox}
+
+##### T2 (2023-2024)
+
+Unidad 1 ![](figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/01_turgor_sensor/2023_2024_Rio_Claro_T2_Unidad_3.png){.lightbox}
+
+##### T3 (2023-2024)
+
+Unidad 1 ![](figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/01_turgor_sensor/2023_2024_Rio_Claro_T3_Unidad_3.png){.lightbox}
+
+##### T4 (2023-2024)
+
+Unidad 1 ![](figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/01_turgor_sensor/2023_2024_Rio_Claro_T4_Unidad_3.png){.lightbox}
+:::
+
+### Limpieza de datos: eliminación de clusters {.unnumbered}
+
+::: justify
+Para limpiar los datos de turgor, se emplearon series temporales de VPD y temperatura provenientes de las estaciones meteorológicas de los dos sitios de estudio. Se procedió a calcular el coeficiente de correlación entre cada cluster y los valores de VPD y temperatura respecto al tiempo (escala horaria) y el sitio. Se obtuvo un coeficiente de correlación promedio en relación con ambas variables, y se estableció un umbral de corte de r \> 0.5. Aquellos clusters de turgor cuyo promedio de correlación resultó menor a 0.5 fueron descartados.
+:::
+
+#### La Esperanza {.unnumbered}
+
+::: panel-tabset
+##### T1 (2022-2023)
+
+Unidad 1 ![](figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T1_Unidad_3.png){.lightbox}
+
+##### T2 (2022-2023)
+
+Unidad 1 ![](figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T2_Unidad_3.png){.lightbox}
+
+##### T3 (2022-2023)
+
+Unidad 1 ![](figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T3_Unidad_3.png){.lightbox}
+
+##### T4 (2022-2023)
+
+Unidad 1 ![](figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/02_turgor_limpiado/2022_2023_La_Esperanza_T4_Unidad_3.png){.lightbox}
+
+##### T1 (2023-2024)
+
+Unidad 1 ![](figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T1_Unidad_3.png){.lightbox}
+
+##### T2 (2023-2024)
+
+Unidad 1 ![](figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T2_Unidad_3.png){.lightbox}
+
+##### T3 (2023-2024)
+
+Unidad 1 ![](figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T3_Unidad_3.png){.lightbox}
+
+##### T4 (2023-2024)
+
+Unidad 1 ![](figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/02_turgor_limpiado/2023_2024_La_Esperanza_T4_Unidad_3.png){.lightbox}
+:::
+
+#### Rio Claro {.unnumbered}
+
+::: panel-tabset
+##### T1 (2022-2023)
+
+Unidad 1 ![](figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T1_Unidad_3.png){.lightbox}
+
+##### T2 (2022-2023)
+
+Unidad 1 ![](figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T2_Unidad_3.png){.lightbox}
+
+##### T3 (2022-2023)
+
+Unidad 1 ![](figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T3_Unidad_3.png){.lightbox}
+
+##### T4 (2022-2023)
+
+Unidad 1 ![](figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/02_turgor_limpiado/2022_2023_Rio_Claro_T4_Unidad_3.png){.lightbox}
+
+##### T1 (2023-2024)
+
+Unidad 1 ![](figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T1_Unidad_1.png){.lightbox}
+
+Unidad 3 ![](figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T1_Unidad_3.png){.lightbox}
+
+##### T2 (2023-2024)
+
+Unidad 1 ![](figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T2_Unidad_3.png){.lightbox}
+
+##### T3 (2023-2024)
+
+Unidad 1 ![](figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T3_Unidad_3.png){.lightbox}
+
+##### T4 (2023-2024)
+
+Unidad 1 ![](figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/02_turgor_limpiado/2023_2024_Rio_Claro_T4_Unidad_3.png){.lightbox}
+:::
+
+### Estandarización de clusters {.unnumbered}
+
+::: justify
+Para generar series únicas continuas por sensor (i.e. disminuir las discordancias entre periodos de recalibración de los sensores), se realizó una estandarización de cada cluster, lo cual significó una unificación las series temporales de estos a nivel de sensor. A continuación se muestran dichas series resultantes, además de su correlación con temperatura y VPD, y el ciclo horario del día.
+:::
+
+#### La Esperanza {.unnumbered}
+
+::: panel-tabset
+##### T1 (2022-2023)
+
+Unidad 1 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T1_Unidad_3.png){.lightbox}
+
+##### T2 (2022-2023)
+
+Unidad 1 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T2_Unidad_3.png){.lightbox}
+
+##### T3 (2022-2023)
+
+Unidad 1 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T3_Unidad_3.png){.lightbox}
+
+##### T4 (2022-2023)
+
+Unidad 1 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2022_2023_La_Esperanza_T4_Unidad_3.png){.lightbox}
+
+##### T1 (2023-2024)
+
+Unidad 1 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T1_Unidad_3.png){.lightbox}
+
+##### T2 (2023-2024)
+
+Unidad 1 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T2_Unidad_3.png){.lightbox}
+
+##### T3 (2023-2024)
+
+Unidad 1 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T3_Unidad_3.png){.lightbox}
+
+##### T4 (2023-2024)
+
+Unidad 1 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2023_2024_La_Esperanza_T4_Unidad_3.png){.lightbox}
+:::
+
+#### Rio Claro {.unnumbered}
+
+::: panel-tabset
+##### T1 (2022-2023)
+
+Unidad 1 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T1_Unidad_3.png){.lightbox}
+
+##### T2 (2022-2023)
+
+Unidad 1 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T2_Unidad_3.png){.lightbox}
+
+##### T3 (2022-2023)
+
+Unidad 1 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T3_Unidad_3.png){.lightbox}
+
+##### T4 (2022-2023)
+
+Unidad 1 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2022_2023_Rio_Claro_T4_Unidad_3.png){.lightbox}
+
+##### T1 (2023-2024)
+
+Unidad 1 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T1_Unidad_1.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T1_Unidad_3.png){.lightbox}
+
+##### T2 (2023-2024)
+
+Unidad 1 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T2_Unidad_3.png){.lightbox}
+
+##### T3 (2023-2024)
+
+Unidad 1 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T3_Unidad_3.png){.lightbox}
+
+##### T4 (2023-2024)
+
+Unidad 1 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/03_turgor_union/2023_2024_Rio_Claro_T4_Unidad_3.png){.lightbox}
+:::
+
+### Datos preprocesados {.unnumbered}
+
+#### A nivel de unidad {.unnumbered}
+
+::: justify
+Para obtener el turgor preprocesado por árbol según tratamiento, se promediaron las series de los sensores por cada unidad, obteniendo una serie única para cada árbol de los tratamientos.
+:::
+
+##### La Esperanza {.unnumbered}
+
+::: panel-tabset
+###### T1 (2022-2023)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T1_Unidad_3.png){.lightbox}
+
+###### T2 (2022-2023)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T2_Unidad_3.png){.lightbox}
+
+###### T3 (2022-2023)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T3_Unidad_3.png){.lightbox}
+
+###### T4 (2022-2023)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2022_2023_La_Esperanza_T4_Unidad_3.png){.lightbox}
+
+###### T1 (2023-2024)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T1_Unidad_3.png){.lightbox}
+
+###### T2 (2023-2024)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T2_Unidad_3.png){.lightbox}
+
+###### T3 (2023-2024)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T3_Unidad_3.png){.lightbox}
+
+###### T4 (2023-2024)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2023_2024_La_Esperanza_T4_Unidad_3.png){.lightbox}
+:::
+
+##### Rio Claro {.unnumbered}
+
+::: panel-tabset
+###### T1 (2022-2023)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T1_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T1_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T1_Unidad_3.png){.lightbox}
+
+###### T2 (2022-2023)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T2_Unidad_3.png){.lightbox}
+
+###### T3 (2022-2023)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T3_Unidad_3.png){.lightbox}
+
+###### T4 (2022-2023)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2022_2023_Rio_Claro_T4_Unidad_3.png){.lightbox}
+
+###### T1 (2023-2024)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T1_Unidad_1.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T1_Unidad_3.png){.lightbox}
+
+###### T2 (2023-2024)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T2_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T2_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T2_Unidad_3.png){.lightbox}
+
+###### T3 (2023-2024)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T3_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T3_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T3_Unidad_3.png){.lightbox}
+
+###### T4 (2023-2024)
+
+Unidad 1 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T4_Unidad_1.png){.lightbox}
+
+Unidad 2 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T4_Unidad_2.png){.lightbox}
+
+Unidad 3 ![](figuras/04_turgor_unidad/2023_2024_Rio_Claro_T4_Unidad_3.png){.lightbox}
+:::
+
+#### A nivel de tratamiento {.unnumbered}
+
+Para obtener el turgor preprocesado a nivel de tratamiento, se promediaron las series promediadas de cada unidad según tratamiento, obteniendo una serie única para cada tratamiento de en ambos sitios.
+
+##### La Esperanza {.unnumbered}
+
+::: panel-tabset
+###### T1 (2022-2023)
+
+![](figuras/05_turgor_tratamiento/2022_2023_La_Esperanza_T1.png){.lightbox}
+
+###### T2 (2022-2023)
+
+![](figuras/05_turgor_tratamiento/2022_2023_La_Esperanza_T2.png){.lightbox}
+
+###### T3 (2022-2023)
+
+![](figuras/05_turgor_tratamiento/2022_2023_La_Esperanza_T3.png){.lightbox}
+
+###### T4 (2022-2023)
+
+![](figuras/05_turgor_tratamiento/2022_2023_La_Esperanza_T4.png){.lightbox}
+
+###### T1 (2023-2024)
+
+![](figuras/05_turgor_tratamiento/2023_2024_La_Esperanza_T1.png){.lightbox}
+
+###### T2 (2023-2024)
+
+![](figuras/05_turgor_tratamiento/2023_2024_La_Esperanza_T2.png){.lightbox}
+
+###### T3 (2023-2024)
+
+![](figuras/05_turgor_tratamiento/2023_2024_La_Esperanza_T3.png){.lightbox}
+
+###### T4 (2023-2024)
+
+![](figuras/05_turgor_tratamiento/2023_2024_La_Esperanza_T4.png){.lightbox}
+:::
+
+##### Rio Claro {.unnumbered}
+
+::: panel-tabset
+###### T1 (2022-2023)
+
+![](figuras/05_turgor_tratamiento/2022_2023_Rio_Claro_T1.png){.lightbox}
+
+###### T2 (2022-2023)
+
+![](figuras/05_turgor_tratamiento/2022_2023_Rio_Claro_T2.png){.lightbox}
+
+###### T3 (2022-2023)
+
+![](figuras/05_turgor_tratamiento/2022_2023_Rio_Claro_T3.png){.lightbox}
+
+###### T4 (2022-2023)
+
+![](figuras/05_turgor_tratamiento/2022_2023_Rio_Claro_T4.png){.lightbox}
+
+###### T1 (2023-2024)
+
+![](figuras/05_turgor_tratamiento/2023_2024_Rio_Claro_T1.png){.lightbox}
+
+###### T2 (2023-2024)
+
+![](figuras/05_turgor_tratamiento/2023_2024_Rio_Claro_T2.png){.lightbox}
+
+###### T3 (2023-2024)
+
+![](figuras/05_turgor_tratamiento/2023_2024_Rio_Claro_T3.png){.lightbox}
+
+###### T4 (2023-2024)
+
+![](figuras/05_turgor_tratamiento/2023_2024_Rio_Claro_T4.png){.lightbox}
+:::
+

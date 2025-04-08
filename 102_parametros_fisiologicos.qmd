@@ -1,0 +1,45 @@
+# Parametros fisiológicos
+
+```{r}
+source('script/setup.R')
+```
+
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+## Potencial hídrico xilemático ($\Psi_s$) y fluorescencia
+
+::: justify
+Posterior a la instalación del sistema de riego diferenciado, se seleccionaron tres árboles por tratamiento (un total de 15 árboles por campo), teniendo en consideración el efecto de borde, esto con el propósito de monitorear en el tiempo el estatus hídrico de cada planta (tres réplicas por tratamiento). Para ello se emplearon 2 indicadores: (1) **Potencial hídrico xilemático de tallo al mediodía** ($\Psi_s$); cuyas mediciones son consideradas el proxy más preciso del estado hídrico para los cerezos dulces [@blanco2019a; @blanco2019b; @cb2020b; @cb2020a; @houghton2023]. (2) **Fluorescencia**; el cual constituye un indicador de eficacia de la actividad e integridad de la fotosíntesis y el contenido de la clorofila; lo que permite estudiar mecanismos de respuesta ante condiciones de estrés hídrico [@linke2010; @jimenez2015].
+
+Para la medición de estos indicadores se realizaron visitas quincenales a cada campo. En lo que respecta a la medición de $\Psi_s$, la misma se realizó sobre muestras de hojas colectadas entre 12:00-14:00 h provenientes de cada una de los 15 árboles monitoreados. En cada caso, se seleccionaron hojas maduras y en buen estado, ubicadas en el tercio medio del árbol, con orientación este y cercanas al tronco [@mccutchan2019; @marsal2010; @blanco2019a]. Antes de ser cortadas, cada una de ellas fue envuelta por un período de 30 min en bolsas de papel de aluminio, a modo de lograr bloquear la transpiración y la radiación solar. Posterior a este período, cada hoja fue cortada por el pecíolo y colocada al interior de la cámara Scholander conectada a un cilindro de nitrógeno (Modelo 3000, Soil Moisture Equipment, Santa Barbara, CA, EEUU), donde se aplicó presión negativa hasta observar gotas de agua en el extremo del pecíolo cortado, registrándose la cantidad de megapascales (MPa) necesarios para extraer la primera gota de jugo xilemático.
+
+En lo que respecta a la medición de la fluorescencia, se usó el fluorómetro PAR-FluorPen FP 110/D (PSI, Czech), empleando el método de transitorios de fluorescencia OJIP. Este método permitió obtener diferentes parámetros de rendimiento cuántico de la actividad fotosintética en el PSII y evaluar el potencial impacto del riego deficitario sobre este proceso [@kupper2019]. Para obtener una medida de los parámetros de fluorescencia de la clorofila, el fluorómetro consta de un medidor de luz integrado para lecturas digitales directas de la radiación fotosintéticamente activa en el rango 400 a 700 nm. Para lograr una emisión de fluorescencia roja, es necesario exponer a la luz, hojas que previamente se encontraban adaptadas a la oscuridad [@moreno2008]. Con este fin, el equipo consta de unos dispositivos o "clips" , que se colocan en la hoja previamente y que permiten bloquear todo acceso de luz a una porción de la misma. En nuestro caso, se utilizaron 4 clips por árbol del muestreo, los cuales fueron colocados entre las 11:00-13:00 h, seleccionando hojas que se encontrasen maduras, en buen estado, dentro del tercio medio del árbol y orientadas directamente al sol. Pasado el período de adaptación a la oscuridad (20 minutos), se procedió a hacer las mediciones directas con el fluorómetro, el cual dispone de una memoria interna que permite almacenar los datos de manera secuencial. A efecto de los análisis, se utilizó la M+axioma Eficiencia Quántica del Fotosistema II o $F_v / F_m$.
+:::
+
+## Punto de pérdida de turgor (TLP)
+
+::: justify
+El punto de pérdida de turgor (TLP, por sus siglas en inglés) se define como el valor de potencial hídrico en el que la presión de turgor en las células se reduce a cero, lo que indica el inicio del colapso celular por déficit hídrico [@halbritter]. Este punto se determinó a partir de la presión osmótica previa al inicio de la fase lineal de deshidratación en la curva presión-volumen (Tyree & Hammel, 1972). Las curvas presión-volumen describen la relación entre $\Psi_s$ y el contenido relativo de agua (RWC) de una hoja durante un proceso controlado de deshidratación, y permiten estimar otros parámetros fisiológicos como el potencial osmótico a plena turgencia ($\Psi_o$) y el módulo de elasticidad celular ($\varepsilon$) (Meinzer et al., 2016).
+
+Las curvas se generaron midiendo el $\Psi_s$ mediante una cámara de presión de Scholander, utilizando hojas recolectadas antes de las 12:00 h (coincidiendo con el punto de máxima demanda hídrica), asegurando mayor turgencia, según la metodología propuesta por @halbritter. Las muestras se envolvieron en plástico, colcandole papel higiénico hidratado en el peciolo cortado y se refrigeraron para minimizar pérdidas de agua. Cada muestra se pesó antes y después de cada medición de $\Psi_s$, insertándose en la cámara con el corte expuesto y aplicando presión gradual (0.1 bar/seg) hasta observar exudación de agua. Tras cada medición, las muestras se secaron al aire, repitiendo el proceso cada 2–5 minutos inicialmente y luego cada 15 minutos–2 horas hasta obtener 6–8 puntos en la zona lineal de la curva. El contenido relativo de agua (RWC) se calculó como: 
+
+$[(peso_{fresco} − peso_{seco}) / (peso_{turgente} − peso_{seco})] × 100$
+
+, donde el peso fresco fue el peso después de cada medición de $\Psi_s$, el peso turgente el inicial y el peso seco tras secado a 70°C por 72 h. Los datos se graficaron como $1/−\Psi_s$ vs $RWD = (100 − RWC)$, determinándose el punto de pérdida de turgencia (TLP) como el último punto de la curva de $\Psi_s$ en función del RWD antes de comenzar su fracción lineal, como se muestra en la @fig-ejemplo-pv.
+
+![Ejemplo de una curva presión-volumen. Los círculos llenos representan las primeras 5 mediciones iterativas: los círculos abiertos representan las últimas 6 mediciones. La porción lineal (línea sólida) muestra el potencial osmótico ($\Psi_o$), la porción curva (línea discontinua) es el potencial hídrico antes del punto de pérdida de turgencia (TLP), y el área sombreada es el potencial de turgencia (Ψp). Fuente: @halbritter.](figuras/misc/tlp.png){#fig-ejemplo-pv .lightbox width="60%"}
+:::
+
+## Presión de turgor en la hoja
+
+::: justify
+La presión de turgor foliar fue monitoreada mediante sensores YARA ZIM, los cuales consisten en dos pequeños imanes que se sujetan a ambos lados de una hoja y registran valores cada 15 minutos en unidades de kPa. Se instaló un transmisor por árbol en los mismos tres árboles seleccionados por tratamiento, y en cada uno se colocaron dos sensores. La instalación siguió un protocolo estandarizado que consideró hojas maduras (no jóvenes), sanas, sin heridas, limpias, orientadas hacia el este y ubicadas en la mitad superior del árbol. Además, se evitó posicionar los sensores sobre la nervadura central para asegurar una lectura estable. Debido a la alta sensibilidad del sistema frente a perturbaciones físicas (como viento, caída de hojas o contacto accidental), fue necesario realizar recalibraciones manuales en múltiples ocasiones a lo largo de la temporada.
+
+Dado que la magnitud y el rango de los valores registrados varía incluso entre la misma hoja despúes de la recalibración, se implementó un procedimiento de preprocesamiento basado en tres etapas [@fig-preproceso]: filtrado, agrupamiento y modelado. En primer lugar, se eliminaron los registros inconsistentes según tres criterios: (i) estabilidad en la serie de tiempo (diferencias estandarizadas < 1), (ii) correlaciones esperadas con la temperatura del aire y el déficit de presión de vapor (positiva y negativa, respectivamente), y (iii) una correlación mínima de 0.5 con al menos una de estas variables. Luego, los datos fueron agrupados por sitio, temporada y sensor, resumiendo cada día mediante la mediana, el valor máximo y el mínimo, y se aplicó el algoritmo DBSCAN para identificar patrones coherentes. Finalmente, se ajustaron modelos lineales entre los valores de turgor y los dos primeros componentes principales (PC1 y PC2), a partir de los cuales se generó una serie modelada que fue escalada para su análisis y comparación.
+
+![Preprocesamiento de datos de presión de turgor foliar. Los cuadros con vértices rectos representan datos, mientras que los redondeados los procesos utilizados](figuras/01_turgor_sensor/preproceso.png){#fig-preproceso .lightbox width="60%"}
+:::

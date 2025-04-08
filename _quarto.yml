@@ -7,7 +7,7 @@ project:
 book:
   title: "Informe ID21I10297"
   output-file: "reporte_general"
-  author: "M. Abel Herrera y Francisco Zambrano"
+  author: "Herrera A.; Muñoz M. & F. Zambrano"
   date: today
   page-footer:
     left: |
@@ -27,27 +27,17 @@ book:
     - part: 'Materiales y métodos'
       chapters:
         - 101_area_estudio.qmd
-        - 102_data.qmd
-        - 103_produccion.qmd
+        - 102_parametros_fisiologicos.qmd
+        - 103_parametros_produccion.qmd
         - 104_modelo_potencial.qmd
+        - 105_plataforma.qmd
     - part: 'Resultados y análisis'
       chapters:
-        - 201_produccion.qmd
-        - 202_parametros.qmd
-    - part: 'Curvas Presión-Volumen (PV) y Punto de Pérdida de TUrgor (TLP)'
-      chapters:
-        - 301_curvas_pv.qmd
-        - 302_tlp.qmd
-    - part: 500_preproceso_turgor.qmd
-      chapters: 
-        - 501_clustering.qmd
-        - 502_limpieza.qmd
-        - 503_estandarizacion.qmd
-        - 504_preprocesado.qmd
+        - 201_fisiologia.qmd
+        - 202_produccion.qmd
+        - 203_potencial.qmd
+        - 204_satori.qmd
     - part: 'Modelo de potencial y SatOri'
-      chapters: 
-        - 501_potencial.qmd
-        - 502_satori.qmd
     - references.qmd
 
 bibliography: references.bib

@@ -1,0 +1,29 @@
+# Parámetros de producción y calidad
+
+```{r}
+source('script/setup.R')
+```
+
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+## Cosecha y frutos
+
+::: justify
+Las cosechas se llevaron a cabo siguiendo el cronograma y la planificación de Garcés Fruit. Las mismas se realizaron el 12/12 del 2022 y 2023 en el campo La Esperanza y el 21/12 del 2022 en el campo Río Claro. En estas fechas, se recolectó la totalidad de lis frutos para los mismos tres árboles por tratamiento seleccionados para muestrear los parámetros fisiológicos. Posteriormente, utilizando una balanza electrónica modelo SF-400 (peso máximo 10kg), se colectó al azar el equivalente de un 1kg de cerezas por cada árbol, los cuales fueron almacenados en envases plásticos y refrigerados en coolers para su posterior traslado al laboratorio.
+
+Una vez en el laboratorio, las muestras de 1 Kg de cerezas por árbol fueron almacenadas en un refrigerador a 4°C. En un plazo menor de 72 h cada una de ellas fue analizada para evaluar la calidad de fruto, de manera de evitar degradaciones relacionadas con el tiempo de almacenamiento. Para ello, se tomó una submuestra al azar de 20 cerezas por árbol, siguiendo una metodología similar a @blanco2019a , para un total de 60 cerezas por tratamiento. La única condición para que una cereza fuese seleccionada, es que la misma se encuentre en buen estado, esto para disminuir la probabilidad de desviaciones relacionadas con daños experimentados durante el traslado e incurrir en el error de medir cerezas defectuosas.
+:::
+
+## Producción y calidad
+
+::: justify
+Para determinar la producción de los cerezos, se midieron dos variables: el *peso total* y *densidad*. El peso total (kg) se obtuvo mediante el pesaje directo de la producción de cada árbol en campo, utilizando una balanza digital modelo ACS-30 LED con una capacidad máxima de 30 kg. Por otro lado, la densidad de producción (frutos/kg) se determinó dividiendo el conteo total de cerezas recolectadas entre el peso total correspondiente.
+
+Las muestras de 1 kg de cada árbol almacenadas y refrigeradas fueron examinadas de manera meticulosa en su totalidad, contabilizando aquellas cerezas que presentarán deformaciones y defectos en su forma o superficie, tales como pitting, pudrición, fisuras pronunciadas, sobremaduración, daños en la piel, palidez y frutos dobles. Se guardó registro fotográfico de las cerezas identificadas con daños para su posterior revisión y categorización en el laboratorio. Para esta caracterización se usó como base la [guía Australian Cherry Quality Guide](https://www.cherrygrowers.org.au){target="_blank"})
+
+Por el otro lado, la calidad de las frutas se evaluó considerando las siguientes variables asociadas a los estándares comerciales: peso por unidad (gr), calibre (diametro; mm) y color. Para medir peso (gr) se utilizó una balanza análica de laboratorio, mientras que para estimar el calibre se empleó un pie de metro digital (0-150 mm). En lo que respecta al color, se siguió la [carta de color](https://inta.gob.ar/documentos/carta-de-color-y-calibre-para-la-cosecha-de-cerezas){target="_blank"} y la metodología recomendada por el Instituto Nacional de Tecnología Agropecuaria (INTA). Para ello se empleó una escala numérica del 1-6 , la cual variaba desde un rojo pálido (1) a un caoba oscuro (6). Finalmente, de cada sub-muestra se seleccionaron al azar 5 cerezas adicionales (15 por tratamientos), con las mismas se procedió a medir concentración de sólidos solubles (grados brix) utilizando para ello el refractómetro ATC (Brix 0-32) [@blanco2019a].
+:::
