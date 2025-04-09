@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Modelado espacial diario de \Psi_s – Informe ID21I10297</title>
+<title>Informe ID21I10297 - 4&nbsp; Modelado espacial diario de \(\Psi_s\)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -38,10 +58,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8da5b4427184b79ecddefad3d342027e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -73,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -111,13 +131,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./101_area_estudio.html">Materiales y métodos</a></li><li class="breadcrumb-item"><a href="./104_modelo_potencial.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modelado espacial diario de <span class="math inline">\(\Psi_s\)</span></span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./101_area_estudio.html">Metodología</a></li><li class="breadcrumb-item"><a href="./104_modelo_potencial.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modelado espacial diario de <span class="math inline">\(\Psi_s\)</span></span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -159,9 +179,9 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Materiales y métodos</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Metodología</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -200,9 +220,9 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Resultados y análisis</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Alternar sección">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Resultados</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -262,7 +282,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./101_area_estudio.html">Materiales y métodos</a></li><li class="breadcrumb-item"><a href="./104_modelo_potencial.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modelado espacial diario de <span class="math inline">\(\Psi_s\)</span></span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./101_area_estudio.html">Metodología</a></li><li class="breadcrumb-item"><a href="./104_modelo_potencial.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modelado espacial diario de <span class="math inline">\(\Psi_s\)</span></span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Modelado espacial diario de <span class="math inline">\(\Psi_s\)</span></span></h1>
 </div>
@@ -300,10 +320,10 @@ window.Quarto = {
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-temperatura" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-temperatura" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-temperatura-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="104_modelo_potencial_files/figure-html/fig-temperatura-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figura&nbsp;4.1: Variación de la temperatura media diaria (°C) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024."><img src="104_modelo_potencial_files/figure-html/fig-temperatura-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1104"></a>
+<a href="104_modelo_potencial_files/figure-html/fig-temperatura-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-1" data-gallery="quarto-lightbox-gallery-1"><img src="104_modelo_potencial_files/figure-html/fig-temperatura-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1104"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-temperatura-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;4.1: Variación de la temperatura media diaria (°C) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.
@@ -316,10 +336,10 @@ Figura&nbsp;4.1: Variación de la temperatura media diaria (°C) del medio día 
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-rh" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-rh" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rh-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="104_modelo_potencial_files/figure-html/fig-rh-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figura&nbsp;4.2: Variación de la humedad relativa media diaria (%) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024."><img src="104_modelo_potencial_files/figure-html/fig-rh-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1104"></a>
+<a href="104_modelo_potencial_files/figure-html/fig-rh-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2"><img src="104_modelo_potencial_files/figure-html/fig-rh-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1104"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rh-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;4.2: Variación de la humedad relativa media diaria (%) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.
@@ -332,10 +352,10 @@ Figura&nbsp;4.2: Variación de la humedad relativa media diaria (%) del medio d�
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-vpd" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-vpd" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-vpd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="104_modelo_potencial_files/figure-html/fig-vpd-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figura&nbsp;4.3: Variación del VPD medio (mbar/dia) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024."><img src="104_modelo_potencial_files/figure-html/fig-vpd-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1104"></a>
+<a href="104_modelo_potencial_files/figure-html/fig-vpd-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="quarto-lightbox-gallery-3"><img src="104_modelo_potencial_files/figure-html/fig-vpd-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1104"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-vpd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;4.3: Variación del VPD medio (mbar/dia) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.
@@ -348,10 +368,10 @@ Figura&nbsp;4.3: Variación del VPD medio (mbar/dia) del medio día en La Espera
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-eto" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-eto" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-eto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="104_modelo_potencial_files/figure-html/fig-eto-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figura&nbsp;4.4: Variación de la evapotranspiración de referencia acumulada mensual (mm) en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024."><img src="104_modelo_potencial_files/figure-html/fig-eto-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1104"></a>
+<a href="104_modelo_potencial_files/figure-html/fig-eto-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="quarto-lightbox-gallery-4"><img src="104_modelo_potencial_files/figure-html/fig-eto-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1104"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-eto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;4.4: Variación de la evapotranspiración de referencia acumulada mensual (mm) en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.
@@ -364,10 +384,10 @@ Figura&nbsp;4.4: Variación de la evapotranspiración de referencia acumulada me
 <div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-pp" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-pp" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="104_modelo_potencial_files/figure-html/fig-pp-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figura&nbsp;4.5: Variación de la precipitación acumulada mensual (mm) en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024."><img src="104_modelo_potencial_files/figure-html/fig-pp-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1104"></a>
+<a href="104_modelo_potencial_files/figure-html/fig-pp-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-5" data-gallery="quarto-lightbox-gallery-5"><img src="104_modelo_potencial_files/figure-html/fig-pp-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1104"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;4.5: Variación de la precipitación acumulada mensual (mm) en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.
@@ -386,10 +406,10 @@ Figura&nbsp;4.5: Variación de la precipitación acumulada mensual (mm) en La Es
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-sm2022" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-sm2022" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sm2022-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="104_modelo_potencial_files/figure-html/fig-sm2022-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figura&nbsp;4.6: Variación de la humedad de suelo media (%VWC) al medio día en La Esperanza y Río Claro en los distintos tratamientos durante la temporada 2022-2023."><img src="104_modelo_potencial_files/figure-html/fig-sm2022-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1104"></a>
+<a href="104_modelo_potencial_files/figure-html/fig-sm2022-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-6" data-gallery="quarto-lightbox-gallery-6"><img src="104_modelo_potencial_files/figure-html/fig-sm2022-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1104"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sm2022-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;4.6: Variación de la humedad de suelo media (%VWC) al medio día en La Esperanza y Río Claro en los distintos tratamientos durante la temporada 2022-2023.
@@ -402,10 +422,10 @@ Figura&nbsp;4.6: Variación de la humedad de suelo media (%VWC) al medio día en
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-sm2023" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-sm2023" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sm2023-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="104_modelo_potencial_files/figure-html/fig-sm2023-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figura&nbsp;4.7: Variación de la humedad de suelo media (%VWC) al medio día en La Esperanza y Río Claro en los distintos tratamientos durante la temporada 2023-2024."><img src="104_modelo_potencial_files/figure-html/fig-sm2023-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1104"></a>
+<a href="104_modelo_potencial_files/figure-html/fig-sm2023-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-7" data-gallery="quarto-lightbox-gallery-7"><img src="104_modelo_potencial_files/figure-html/fig-sm2023-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1104"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sm2023-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;4.7: Variación de la humedad de suelo media (%VWC) al medio día en La Esperanza y Río Claro en los distintos tratamientos durante la temporada 2023-2024.
@@ -422,9 +442,9 @@ Figura&nbsp;4.7: Variación de la humedad de suelo media (%VWC) al medio día en
 <section id="datos-de-teledetección-y-ivs" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="datos-de-teledetección-y-ivs">Datos de teledetección y IVs</h3>
 <div class="justify">
-<p>Para obtener variabilidad espacial en el modelamiento de <span class="math inline">\(\Psi_s\)</span>, se utilizó información satelital a partir del satélite Sentinel-2 (S2). La misión S2 consta de dos satélites idénticos, S2A y S2B, ambos equipados con un sensor multiespectral que cuenta con 13 bandas espectrales que cubren las regiones visible, infrarrojo cercano e infrarrojo de onda corta, con resoluciones espaciales de 10, 20 y 60 m (ver Tabla S2). En este estudio, utilizamos un total de 106 imágenes S2 (A/B): 54 para la temporada 2022-2023 y 52 para la 2023-2024, capturadas entre octubre y mayo en ambos huertos (cuadrícula T19HCB para La Esperanza y T19HBB para Río Claro). Las imágenes se obtuvieron de la colección corregida atmosféricamente S2 Level-2A de Planetary Computer (Microsoft Open Source et al., 2022), con una frecuencia de 5 días y aproximadamente a las 14:30 hora local (UTC-4). Una máscara fue aplicada basandose en la capa de clasificación de escena (SCL) para los valores correspondientes a “Cloud Shadows,” “Cloud Medium Probability,” y “Cloud High Probability,”.</p>
+<p>Para obtener variabilidad espacial en el modelamiento de <span class="math inline">\(\Psi_s\)</span>, se utilizó información satelital a partir del satélite Sentinel-2 (S2). La misión S2 consta de dos satélites idénticos, S2A y S2B, ambos equipados con un sensor multiespectral que cuenta con 13 bandas espectrales que cubren las regiones visible, infrarrojo cercano e infrarrojo de onda corta, con resoluciones espaciales de 10, 20 y 60 m (ver Tabla S2). En este estudio, utilizamos un total de 106 imágenes S2 (A/B): 54 para la temporada 2022-2023 y 52 para la 2023-2024, capturadas entre octubre y mayo en ambos huertos (cuadrícula T19HCB para La Esperanza y T19HBB para Río Claro). Las imágenes se obtuvieron de la colección corregida atmosféricamente S2 Level-2A de Planetary Computer <span class="citation" data-cites="microsoft2022">(<a href="references.html#ref-microsoft2022" role="doc-biblioref">Microsoft Open Source et&nbsp;al. 2022</a>)</span>, con una frecuencia de 5 días y aproximadamente a las 14:30 hora local (UTC-4). Una máscara fue aplicada basandose en la capa de clasificación de escena (SCL) para los valores correspondientes a “Cloud Shadows,” “Cloud Medium Probability,” y “Cloud High Probability,”.</p>
 <p>A partir de estos datos de S2, se derivaron dieciséis índices de vegetación (IVs) relacionados con la condición de las plantas vigor, estrés, funcionalidad fotosintética y contenido hídrico. De estos, nueve índices no incorporaron información del red-edge (borde rojo), calculándose exclusivamente con bandas espectrales del visible, infrarrojo cercano (NIR) e infrarrojo de onda corta (SWIR): NDVI, EVI, GCI, NDWI, NBR, NDMI, MSI, NMDI y DWSI. Por otro lado, siete índices —CLr, Clg, NDRE1, NDRE2, NDCI, mSR705 y RESI— se obtuvieron mediante las bandas del red-edge. Todos los índices fueron calculados a partir de las imágenes preprocesadas de las bandas de S2, generándose series temporales para cada IV en ambos huertos y temporadas.</p>
-<p>Para reconstruir las series temporales (ej. en zonas afectadas por nubosidad), se aplicó un suavizado mediante regresión polinomial local (LOESS) (Cleveland, 1979). El método LOESS se configuró con un parámetro de suavizado (span) de 0.3, obteniéndose así series diarias continuas y suavizadas para cada índice, las cuales posteriormente fueron extraídas para cada árbol medido. Se llevó a cabo un análisis de correlación para evaluar la relación entre estas series suavizadas y los valores observados de <span class="math inline">\(\Psi_s\)</span>. El coeficiente de correlación de Pearson (<span class="math inline">\(r\)</span>) fue calculado diariamente para cada árbol, huerto y temporada, utilizando exclusivamente correlaciones significativas (<em>p-value</em> &lt; 0.05) para el cálculo de los valores promedio.</p>
+<p>Para reconstruir las series temporales (ej. en zonas afectadas por nubosidad), se aplicó un suavizado mediante regresión polinomial local (LOESS) <span class="citation" data-cites="cleveland1979">(<a href="references.html#ref-cleveland1979" role="doc-biblioref">Cleveland 1979</a>)</span>. El método LOESS se configuró con un parámetro de suavizado (span) de 0.3, obteniéndose así series diarias continuas y suavizadas para cada índice, las cuales posteriormente fueron extraídas para cada árbol medido. Se llevó a cabo un análisis de correlación para evaluar la relación entre estas series suavizadas y los valores observados de <span class="math inline">\(\Psi_s\)</span>. El coeficiente de correlación de Pearson (<span class="math inline">\(r\)</span>) fue calculado diariamente para cada árbol, huerto y temporada, utilizando exclusivamente correlaciones significativas (<em>p-value</em> &lt; 0.05) para el cálculo de los valores promedio.</p>
 </div>
 </section>
 </section>
@@ -433,9 +453,9 @@ Figura&nbsp;4.7: Variación de la humedad de suelo media (%VWC) al medio día en
 <div class="justify">
 <p>Para modelar el <span class="math inline">\(\Psi_s\)</span>, se evaluaron tres algoritmos de machine learning:</p>
 <ul>
-<li><strong>Extreme Gradient Boosting</strong> (XGBoost; Chen y Guestrin, 2016)</li>
-<li><strong>Random Forest</strong>(RF; Ho, 1995)</li>
-<li><strong>Support vector Machine</strong> (SVM; Cortes y Vapnik, 1995)</li>
+<li><strong>Extreme Gradient Boosting</strong> (XGBoost; <span class="citation" data-cites="chen2016">Chen y Guestrin (<a href="references.html#ref-chen2016" role="doc-biblioref">2016</a>)</span>)</li>
+<li><strong>Random Forest</strong>(RF; <span class="citation" data-cites="ho1995">Tin Kam Ho (<a href="references.html#ref-ho1995" role="doc-biblioref">1995</a>)</span>)</li>
+<li><strong>Support vector Machine</strong> (SVM; <span class="citation" data-cites="cortes1995">Cortes y Vapnik (<a href="references.html#ref-cortes1995" role="doc-biblioref">1995</a>)</span>)</li>
 </ul>
 <p>Los dos primeros métodos se basan en árboles de decisión, mientras que el tercero utiliza vectores de soporte. Estos modelos fueron seleccionados por ser considerados de vanguardia, requerir un número reducido de muestras de entrenamiento (en comparación con redes neuronales) y ofrecer interpretabilidad. Todos los algoritmos pueden emplearse tanto para clasificación como para regresión. En este estudio, se realizó un análisis de regresión, utilizando el <span class="math inline">\(\Psi_s\)</span> como variable respuesta y 21 predictores: cinco meteorológicos y 16 índices de vegetación (IVs).</p>
 <p>El conjunto de datos incluyó mediciones de 26 fechas en la temporada 2022–2023 y 34 en la 2023–2024 (total: 60 fechas). Para cada fecha, se tomaron 30 mediciones (15 por huerto: Río Claro y La Esperanza), lo que resultó en un total de 883 observaciones. El proceso de modelado siguió las siguientes etapas:</p>
@@ -446,10 +466,10 @@ Figura&nbsp;4.7: Variación de la humedad de suelo media (%VWC) al medio día en
 <li><strong>Validación</strong>: Evaluación del rendimiento del modelo con métricas de desempeño.</li>
 </ul>
 <p>Se entrenaron los tres modelos utilizando dos esquemas de división (<a href="#fig-split" class="quarto-xref">Figura&nbsp;<span>4.8</span></a>): uno que consideró una división aleatoria de datos de entrenamiento y prueba (<em>rnd_split</em>) y otro que utilizó fechas independientes para entrenamiento y prueba (<em>tme_split</em>). En ambos casos, se seleccionó el 75% de los datos para entrenamiento y el 25% para prueba. Se aplicaron tres tipos de preprocesamiento a los datos de entrenamiento: i) eliminación de predictores con valores constantes (variables de varianza cero); ii) normalización de predictores (media cero y desviación estándar uno); y iii) una versión del modelo que empleó Partial Least Squares (PLS) para reducir la dimensionalidad, utilizando las cinco componentes principales como predictores. Como resultado, se usaron modelos con predictores normalizados y otros con las componentes principales de PLS.</p>
-<div id="fig-split" class="lightbox quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<div id="fig-split" class="lightbox quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-split-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="figuras/misc/esquema_split.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figura&nbsp;4.8: Esquemas de división utilizados para agrupar los conjuntos de entrenamiento y prueba: división aleatoria (rnd_split) y división temporal independiente (tme_split)."><img src="figuras/misc/esquema_split.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+<a href="figuras/misc/esquema_split.png" class="lightbox" data-glightbox="description: .lightbox-desc-8" data-gallery="quarto-lightbox-gallery-8"><img src="figuras/misc/esquema_split.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-split-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figura&nbsp;4.8: Esquemas de división utilizados para agrupar los conjuntos de entrenamiento y prueba: división aleatoria (rnd_split) y división temporal independiente (tme_split).
@@ -463,10 +483,40 @@ Figura&nbsp;4.8: Esquemas de división utilizados para agrupar los conjuntos de 
 <h2 data-number="4.3" class="anchored" data-anchor-id="evaluación-e-importancia-de-los-modelos"><span class="header-section-number">4.3</span> Evaluación e importancia de los modelos</h2>
 <div class="justify">
 <p>Para evaluar el rendimiento de los modelos, se aplicó remuestreo (resampling) sobre el conjunto de entrenamiento en ambos esquemas de división (<em>rnd_split</em> y <em>tme_split</em>). Se utilizaron cinco particiones y se calcularon las métricas R², MAE (Error Absoluto Medio) y RMSE (Raíz del Error Cuadrático Medio) para cada una de estas.</p>
-<p>En cuanto a la importancia de variables, el modelo de Bosques Aleatorios (RF) empleó un método de permutación <em>out-of-bag</em> en cada árbol, permutando los predictores y calculando el error cuadrático medio para cada instancia. Para XGBoost, se estimó la contribución fraccional de cada variable según la ganancia total en las divisiones donde participó. En el caso de SVM, se calcularon puntuaciones de importancia basadas en permutaciones (para más detalles, véase Greenwell y Boehmke, 2020).</p>
+<p>En cuanto a la importancia de variables, el modelo de Bosques Aleatorios (RF) empleó un método de permutación <em>out-of-bag</em> en cada árbol, permutando los predictores y calculando el error cuadrático medio para cada instancia. Para XGBoost, se estimó la contribución fraccional de cada variable según la ganancia total en las divisiones donde participó. En el caso de SVM, se calcularon puntuaciones de importancia basadas en permutaciones (para más detalles, véase <span class="citation" data-cites="greenwell2020">Greenwell y Boehmke (<a href="references.html#ref-greenwell2020" role="doc-biblioref">2020</a>)</span>).</p>
 </div>
 
 
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-1">Figura&nbsp;4.1: Variación de la temperatura media diaria (°C) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.</span>
+<span class="glightbox-desc lightbox-desc-2">Figura&nbsp;4.2: Variación de la humedad relativa media diaria (%) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.</span>
+<span class="glightbox-desc lightbox-desc-3">Figura&nbsp;4.3: Variación del VPD medio (mbar/dia) del medio día en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.</span>
+<span class="glightbox-desc lightbox-desc-4">Figura&nbsp;4.4: Variación de la evapotranspiración de referencia acumulada mensual (mm) en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.</span>
+<span class="glightbox-desc lightbox-desc-5">Figura&nbsp;4.5: Variación de la precipitación acumulada mensual (mm) en La Esperanza y Río Claro durante las temporadas 2022-2023 y 2023-2024.</span>
+<span class="glightbox-desc lightbox-desc-6">Figura&nbsp;4.6: Variación de la humedad de suelo media (%VWC) al medio día en La Esperanza y Río Claro en los distintos tratamientos durante la temporada 2022-2023.</span>
+<span class="glightbox-desc lightbox-desc-7">Figura&nbsp;4.7: Variación de la humedad de suelo media (%VWC) al medio día en La Esperanza y Río Claro en los distintos tratamientos durante la temporada 2023-2024.</span>
+<span class="glightbox-desc lightbox-desc-8">Figura&nbsp;4.8: Esquemas de división utilizados para agrupar los conjuntos de entrenamiento y prueba: división aleatoria (rnd_split) y división temporal independiente (tme_split).</span>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-chen2016" class="csl-entry" role="listitem">
+Chen, Tianqi, y Carlos Guestrin. 2016. <span>«<span>XGBoost</span>: <span>A</span> <span>Scalable</span> <span>Tree</span> <span>Boosting</span> <span>System</span>»</span>. En <em>Proceedings of the 22nd <span>ACM</span> <span>SIGKDD</span> <span>International</span> <span>Conference</span> on <span>Knowledge</span> <span>Discovery</span> and <span>Data</span> <span>Mining</span></em>, 785-94. San Francisco California USA: ACM. <a href="https://doi.org/10.1145/2939672.2939785">https://doi.org/10.1145/2939672.2939785</a>.
+</div>
+<div id="ref-cleveland1979" class="csl-entry" role="listitem">
+Cleveland, William S. 1979. <span>«Robust <span>Locally</span> <span>Weighted</span> <span>Regression</span> and <span>Smoothing</span> <span>Scatterplots</span>»</span>. <em>Journal of the American Statistical Association</em> 74 (368): 829-36. <a href="https://doi.org/10.1080/01621459.1979.10481038">https://doi.org/10.1080/01621459.1979.10481038</a>.
+</div>
+<div id="ref-cortes1995" class="csl-entry" role="listitem">
+Cortes, Corinna, y Vladimir Vapnik. 1995. <span>«Support-vector networks»</span>. <em>Machine Learning</em> 20 (3): 273-97. <a href="https://doi.org/10.1007/BF00994018">https://doi.org/10.1007/BF00994018</a>.
+</div>
+<div id="ref-greenwell2020" class="csl-entry" role="listitem">
+Greenwell, Brandon, M., y Bradley Boehmke C. 2020. <span>«Variable <span>Importance</span> <span>Plots</span>—<span>An</span> <span>Introduction</span> to the vip <span>Package</span>»</span>. <em>The R Journal</em> 12 (1): 343. <a href="https://doi.org/10.32614/RJ-2020-013">https://doi.org/10.32614/RJ-2020-013</a>.
+</div>
+<div id="ref-microsoft2022" class="csl-entry" role="listitem">
+Microsoft Open Source, Matt McFarland, Rob Emanuele, Dan Morris, y Tom Augspurger. 2022. <span>«microsoft/<span>PlanetaryComputer</span>: <span>October</span> 2022»</span>. Zenodo. <a href="https://zenodo.org/record/7261897">https://zenodo.org/record/7261897</a>.
+</div>
+<div id="ref-ho1995" class="csl-entry" role="listitem">
+Tin Kam Ho. 1995. <span>«Random decision forests»</span>. En <em>Proceedings of 3rd <span>International</span> <span>Conference</span> on <span>Document</span> <span>Analysis</span> and <span>Recognition</span></em>, 1:278-82. Montreal, Que., Canada: IEEE Comput. Soc. Press. <a href="https://doi.org/10.1109/ICDAR.1995.598994">https://doi.org/10.1109/ICDAR.1995.598994</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -505,7 +555,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -537,45 +598,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -610,11 +633,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -662,6 +681,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -913,37 +933,30 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","loop":false,"closeEffect":"zoom","openEffect":"zoom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
         }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
       }
-    });
-  
-  };
-  
-})();
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
           </script>
 
 

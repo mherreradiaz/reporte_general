@@ -170,7 +170,7 @@ graficar_parametros(dir,var,huerto,label)
 
 ## Punto de pérdida de turgor (TLP)
 
-::: justify
+::::: justify
 Las siguientes figuras muestran los resultados de las curvas Presión-Volumen obtenidas de las mediciones de $\Psi_s$ y el peso de las hojas.
 
 ### La Esperanza {.unnumbered}
@@ -208,7 +208,7 @@ Las siguientes figuras muestran los resultados de las curvas Presión-Volumen ob
 
 ![](figuras/06_tlp/rio_claro_T4.png){.lightbox fig-align="center"}
 :::
-:::
+:::::
 
 ::: justify
 En la [@fig-tlp] se pueden observar los puntos de pérdida de turgor (TLP) obtenidos a partir de las estas curvas PV. Los resultados muestran un TLP promedio de -2.54 MPa en La Esperanza y -2.20 MPa en Río Claro, lo que indica una diferencia en la capacidad de las plantas para mantener la turgencia entre ambos sitios. En La Esperanza, los valores de TLP fueron similares entre los tratamientos, con T0 y T4 registrando -2.48 y -2.60 MPa, respectivamente. En Río Claro, se encontraron más diferencias entre los tratamientos, con todos los valores menos negativos que el control T0 (-2.38 MPa), destacando T4 con el valor menos negativo (-1.95 MPa), lo que sugiere una mayor vulnerabilidad al estrés hídrico en ese tratamiento.
@@ -261,7 +261,6 @@ Combinando observaciones en terreno de potencial, y el punto de perdida de turgo
 ## Presión de turgor
 
 ::: justify
-
 A pesar de la metodología de preprocesamiento propuesta para solucionar la variabilidad en la magnitud de datos después de la recalibración, finalmente no fue posible utilizar los valores obtenidos de turgor. La necesidad de estandarización y modelado para corregir las inconsistencias terminó eliminando la magnitud de los valores y las diferencias entre unidades, lo que impidió un análisis adecuado de las variaciones de turgor entre tratamientos y temporadas. De todas formas, a continuación se presentan los resultados obtenidos de cada proceso.
 :::
 
@@ -904,4 +903,3 @@ Para obtener el turgor preprocesado a nivel de tratamiento, se promediaron las s
 
 ![](figuras/05_turgor_tratamiento/2023_2024_Rio_Claro_T4.png){.lightbox}
 :::
-

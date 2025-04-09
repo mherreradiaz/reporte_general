@@ -27,5 +27,5 @@ La Fig. 2 muestra la plataforma en la pestaña “Panel”. En este caso se mues
 
 ![Figura 2: Dashboard ejemplo plataforma SatOri, pestaña “Resumen Temporada”.](figuras/08_satori/plataforma_2.png){.lightbox}
 
-Se puede acceder a la plataforma por medio de la página web de difusión del proyecto <https://s4tori.cl> o directamente por medio del link <https://s4tori.cl/app>.
+Se puede acceder a la plataforma por medio de la página web de difusión del proyecto [https://s4tori.cl](https://s4tori.cl){target="blank"} o directamente por medio del link [https://s4tori.cl/app](https://s4tori.cl/app){target="blank"}.
 :::

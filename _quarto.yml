@@ -24,14 +24,14 @@ book:
     - index.qmd
     - 001_prefacio.qmd
     - 002_intro.qmd
-    - part: 'Materiales y métodos'
+    - part: 'Metodología'
       chapters:
         - 101_area_estudio.qmd
         - 102_parametros_fisiologicos.qmd
         - 103_parametros_produccion.qmd
         - 104_modelo_potencial.qmd
         - 105_plataforma.qmd
-    - part: 'Resultados y análisis'
+    - part: 'Resultados'
       chapters:
         - 201_fisiologia.qmd
         - 202_produccion.qmd
